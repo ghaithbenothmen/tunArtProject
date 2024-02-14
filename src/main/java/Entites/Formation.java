@@ -12,6 +12,28 @@ public class Formation {
     private String description;
     private int cat_id;
 
+    public Formation() {
+    }
+
+    public Formation(int id, String nom, int artiste_id, Date dateDebut, Date dateFin, Niveau niveau, String description, int cat_id) {
+        this.id=id;
+        this.nom=nom;
+        this.artiste_id = artiste_id;
+        this.dateDebut = dateDebut;
+        this.dateFin = dateFin;
+        this.niveau = niveau;
+        this.description = description;
+        this.cat_id = cat_id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getNom() {
         return nom;
     }
@@ -68,19 +90,19 @@ public class Formation {
         this.cat_id = cat_id;
     }
 
-    public Formation( String nom, int artiste, Date dateDebut, Date dateFin, Niveau niveau, String description,int categorie) {
+    public Formation(String nom, int artiste_id, Date dateDebut, Date dateFin, Niveau niveau, String description,int cat_id) {
         this.nom=nom;
-        this.artiste_id = artiste;
+        this.artiste_id = artiste_id;
         this.dateDebut = dateDebut;
         this.dateFin = dateFin;
         this.niveau = niveau;
         this.description = description;
-        this.cat_id = categorie;
+        this.cat_id = cat_id;
     }
 
     @Override
     public String toString() {
-        return "Formation{" +
+        return "\nFormation{\n" +
                 "id=" + id +
                 ", nom='" + nom + '\'' +
                 ", artiste=" + artiste_id +
