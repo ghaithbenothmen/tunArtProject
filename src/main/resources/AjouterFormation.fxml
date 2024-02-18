@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AjouterFormationController">
+   <children>
+      <Button layoutX="405.0" layoutY="339.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="122.0" style="-fx-background-color: #8cbeb2;" text="Ajouter formation" textFill="WHITE" />
+      <TextField fx:id="txtdesc" accessibleRole="TEXT_AREA" layoutX="354.0" layoutY="170.0" prefHeight="71.0" prefWidth="171.0" />
+      <TextField fx:id="txtnom" layoutX="84.0" layoutY="104.0" prefHeight="26.0" prefWidth="171.0" promptText="Donnez le nom" />
+      <Label layoutX="84.0" layoutY="77.0" text="Nom de la formation" textFill="#5c4d51">
+         <font>
+            <Font name="Futura Heavy BT" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="84.0" layoutY="208.0" text="Date début de la formation" textFill="#5c4d51">
+         <font>
+            <Font name="Futura Heavy BT" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="84.0" layoutY="273.0" text="Date fin de la formation" textFill="#5c4d51">
+         <font>
+            <Font name="Futura Heavy BT" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="354.0" layoutY="77.0" text="Niveau de la formation" textFill="#5c4d51" />
+      <Label layoutX="354.0" layoutY="143.0" text="Description" textFill="#5c4d51">
+         <font>
+            <Font name="Futura Heavy BT" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="353.0" layoutY="256.0" text="Catégorie" textFill="#5c4d51" />
+      <SplitMenuButton fx:id="selectcat" layoutX="354.0" layoutY="286.0" mnemonicParsing="false" text="Séléctionner la catégorie">
+        <items>
+          <MenuItem mnemonicParsing="false" text="Action 1" />
+          <MenuItem mnemonicParsing="false" text="Action 2" />
+        </items>
+      </SplitMenuButton>
+      <SplitMenuButton fx:id="selectniveau" layoutX="354.0" layoutY="104.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="171.0" text="Séléctionner le niveau">
+        <items>
+          <MenuItem mnemonicParsing="false" text="Action 1" />
+          <MenuItem mnemonicParsing="false" text="Action 2" />
+        </items>
+      </SplitMenuButton>
+      <Text fill="#5c4d51" layoutX="34.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajouter une formation">
+         <font>
+            <Font name="Futura Heavy BT" size="26.0" />
+         </font>
+      </Text>
+      <SplitMenuButton layoutX="82.0" layoutY="170.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="175.0" text="Séléctionnez l'artiste">
+        <items>
+          <MenuItem mnemonicParsing="false" text="Action 1" />
+          <MenuItem mnemonicParsing="false" text="Action 2" />
+        </items>
+      </SplitMenuButton>
+      <DatePicker layoutX="84.0" layoutY="239.0" promptText="jj/mm/aaaa" />
+      <DatePicker layoutX="84.0" layoutY="299.0" promptText="jj/mm/aaaa" />
+      <Label layoutX="84.0" layoutY="142.0" text="Artiste" textFill="#5c4d51">
+         <font>
+            <Font name="Futura Heavy BT" size="12.0" />
+         </font>
+      </Label>
+      <Button layoutX="310.0" layoutY="339.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="85.0" style="-fx-background-color: ffffff;" text="Reset" textFill="#8cbeb2" />
+   </children>
+</AnchorPane>
