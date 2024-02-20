@@ -1,7 +1,9 @@
 package Test;
 
+import Entites.Categorie;
 import Entites.Formation;
 import Entites.Niveau;
+import Services.CategorieService;
 import Services.FormationService;
 
 import java.sql.*;
@@ -10,13 +12,27 @@ import java.util.List;
 public class Test {
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
 
+        CategorieService serCat=CategorieService.getInstance();
         FormationService ser=FormationService.getInstance();
         Date dd=Date.valueOf("2000-10-22");
         Date df=Date.valueOf("2000-10-23");
 
-        Formation f1=new Formation("bbb",2, dd,  df, Niveau.DIFFICILE,"hello",2);
+       // Categorie c2=new Categorie("cat1");
+
+        Categorie catFind=serCat.findById(2);
+        Formation f1=new Formation("bbb", dd,  df, Niveau.DIFFICILE,"hello",catFind);
+
+        Categorie c1=new Categorie("cat");
+
+       /*try {
+            serCat.add(c2);
+            System.out.println("added");
+        }catch (SQLException e)
+        {
+            System.out.println(e);
+        }*/
 
         //add
        try {
@@ -62,7 +78,7 @@ public class Test {
 
 
         //update
-        try {
+   /*     try {
 
             FormationService formationService = FormationService.getInstance();
 
@@ -91,7 +107,7 @@ public class Test {
             }
         } catch (SQLException e) {
             System.out.println("Une erreur s'est produite : " + e.getMessage());
-        }
+        }*/
     }
 
 }

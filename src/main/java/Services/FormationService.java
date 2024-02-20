@@ -1,5 +1,6 @@
 package Services;
 
+import Entites.Categorie;
 import Entites.Formation;
 import Entites.Niveau;
 import Utils.ConnexionDB;
@@ -15,7 +16,7 @@ public class FormationService implements IService<Formation> {
 
     private static FormationService ser;
 
-    private FormationService() {
+    public FormationService() {
         try {
             Connection con1 = ConnexionDB.getInstance().getCon();
             ste = con1.createStatement();
@@ -30,8 +31,8 @@ public class FormationService implements IService<Formation> {
 
     @Override
     public void add(Formation formation) throws SQLException {
-        String req = "INSERT INTO `formation` (`id`,`nom`, `artiste_id`, `dateDebut`, `dateFin`, `niveau`, `description`, `cat_id`) " +
-                "VALUES (NULL, '" + formation.getNom() + "', '" + formation.getArtiste_id() + "', '" + formation.getDateDebut() + "', '" + formation.getDateFin() + "', '" + formation.getNiveau() + "', '" + formation.getDescription() + "', '" + formation.getCat_id() + "');";
+        String req = "INSERT INTO `formation` (`id`,`nom`, `dateDebut`, `dateFin`, `niveau`, `description`, `cat_id`) " +
+                "VALUES (NULL, '" + formation.getNom() + /*"', '" + formation.getArtiste_id() + */ "', '" + formation.getDateDebut() + "', '" + formation.getDateFin() + "', '" + formation.getNiveau() + "', '" + formation.getDescription() + "', '" + formation.getCat_id().getId() + "');";
         ste.executeUpdate(req);
     }
 
@@ -45,8 +46,8 @@ public class FormationService implements IService<Formation> {
 
     @Override
     public boolean update(Formation formation) throws SQLException {
-        String req = "UPDATE `formation` SET `nom`='" + formation.getNom() + "', `artiste_id`='" + formation.getArtiste_id() + "', `dateDebut`='" + formation.getDateDebut()
-                +  "', `dateFin`='" + formation.getDateFin() +  "', `niveau`='" + formation.getNiveau() +  "', `description`='" + formation.getDescription() +  "', `cat_id`='" + formation.getCat_id()
+        String req = "UPDATE `formation` SET `nom`='" + formation.getNom() /*+ "', `artiste_id`='" + formation.getArtiste_id() */+ "', `dateDebut`='" + formation.getDateDebut()
+                +  "', `dateFin`='" + formation.getDateFin() +  "', `niveau`='" + formation.getNiveau() +  "', `description`='" + formation.getDescription() +  "', `cat_id`='" + formation.getCat_id().getId()
                 + "' WHERE id='" + formation.getId() + "';";
 
         int rowsUpdated = ste.executeUpdate(req);
@@ -55,8 +56,8 @@ public class FormationService implements IService<Formation> {
     }
 
     @Override
-    public Formation findById(Formation formation) throws SQLException {
-        String req = "SELECT * FROM `formation` WHERE id='" + formation.getId() + "';";
+    public Formation findById(int idd) throws SQLException {
+        String req = "SELECT * FROM `formation` WHERE id='" +idd + "';";
         ResultSet res = ste.executeQuery(req);
 
         if (res.next()) {
@@ -66,11 +67,15 @@ public class FormationService implements IService<Formation> {
             Date dateDebut = res.getDate("dateDebut");
             Date dateFin = res.getDate("dateFin");
             Niveau niveau = Niveau.valueOf(res.getString("niveau"));
+
             String description = res.getString("description");
             int cat_id = res.getInt("cat_id");
 
+            CategorieService categorieService = new CategorieService();
+            Categorie categorie = categorieService.findById(cat_id);
 
-            return new Formation(id, nom, artiste_id, dateDebut,dateFin,niveau,description,cat_id);
+
+            return new Formation(id, nom, dateDebut,dateFin,niveau,description,categorie);
         }
 
         return null;
@@ -84,7 +89,7 @@ public class FormationService implements IService<Formation> {
             while (res.next()) {
                 int id = res.getInt(1);
                 String nom = res.getString(2);
-                int artiste_id = res.getInt(3);
+                //int artiste_id = res.getInt(3);
                 Date dateDebut = res.getDate("dateDebut");
                 Date dateFin = res.getDate("dateFin");
                 Niveau niveau = Niveau.valueOf(res.getString("niveau"));
@@ -93,8 +98,11 @@ public class FormationService implements IService<Formation> {
                 /*System.out.println("id :" + id + "nom :" + nom + "artiste :" + artiste_id + " dateDebut :"
                         + dateDebut+ " dateFin :" +dateFin+ " niveau :" +niveau+ " description :" +description+ " cat_id :" +cat_id);*/
 
-                Formation f = new Formation(id, nom, artiste_id, dateDebut,dateFin,niveau,description,cat_id);
-                System.out.println(f);
+                CategorieService categorieService = new CategorieService();
+                Categorie categorie = categorieService.findById(cat_id);
+
+                Formation f = new Formation(id, nom, dateDebut,dateFin,niveau,description,categorie);
+                //System.out.println(f);
                 l1.add(f);
 
             }
