@@ -81,6 +81,7 @@ public class GestionCategorieController {
         }
     }
 
+
     @FXML
     void deleteCat(ActionEvent event) {
         Categorie selectedCategorie = categorieTable.getSelectionModel().getSelectedItem();
