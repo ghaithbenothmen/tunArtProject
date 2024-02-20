@@ -70,14 +70,14 @@ public class GestionCategorieController {
             Categorie categorie = new Categorie(nom);
             try {
                 categorieService.add(categorie);
-                // Refresh table after adding
+
                 refreshTable();
             } catch (SQLException e) {
                 e.printStackTrace();
-                // Handle exception
+
             }
         } else {
-            // Handle empty input
+
         }
     }
 
@@ -87,14 +87,14 @@ public class GestionCategorieController {
         if (selectedCategorie != null) {
             try {
                 categorieService.delete(selectedCategorie);
-                // Refresh table after deleting
+
                 refreshTable();
             } catch (SQLException e) {
                 e.printStackTrace();
-                // Handle exception
+
             }
         } else {
-            // Handle no selection
+
         }
     }
 
@@ -112,18 +112,18 @@ public class GestionCategorieController {
             selectedCategorie.setNom(newNom);
             System.out.println(selectedCategorie);
             try {
-                // Update the category in the database
+
                 categorieService.update(selectedCategorie);
-                // Refresh table after updating
+
                 refreshTable();
-                // Clear the form fields after updating
+
                 txtcat.clear();
             } catch (SQLException e) {
                 e.printStackTrace();
-                // Handle exception
+
             }
         } else {
-            // Handle no selection or empty input
+
         }
     }
 
