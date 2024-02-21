@@ -1,9 +1,11 @@
 package Test;
 
 import Entites.Categorie;
+import Entites.Evenement;
 import Entites.Formation;
 import Entites.Niveau;
 import Services.CategorieService;
+import Services.EvenementService;
 import Services.FormationService;
 
 import java.sql.*;
@@ -108,6 +110,29 @@ public class Test {
         } catch (SQLException e) {
             System.out.println("Une erreur s'est produite : " + e.getMessage());
         }*/
+
+
+
+    //Jamyla
+        /*
+           EvenementService serEv=new EvenementService();
+        Date dEv= java.sql.Date.valueOf("25-02-2024");
+
+        Evenement e1 =new Evenement(1,"Tunis","Soirée Rap",520,dEv);
+
+        try { serEv.add(e1); }
+        catch (SQLException e)
+        { System.out.println(e); }
+
+
+         */
+
+
+
+
+
+
+
     }
 
 }
