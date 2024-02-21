@@ -41,7 +41,7 @@ public class SupprimerEvenementController {
         try{
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/SupprimerEvenement.fxml"));
             Parent root =loader.load();
-            controllers.AfficherEvenementController dc = loader.getController();
+            Controllers.AfficherEvenementController dc = loader.getController();
             dc.setLbNom(txtId_Evenement.getText());
             txtId_Evenement.getScene().setRoot(root);}
 

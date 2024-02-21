@@ -65,7 +65,7 @@ public class AjouterEvenementController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/AfficherEvenement.fxml"));
             Parent root =loader.load();
 
-            controllers.AfficherEvenementController dc = loader.getController();
+            Controllers.AfficherEvenementController dc = loader.getController();
             dc.setLbNom(txtId.getText());
             txtId.getScene().setRoot(root);
         }
