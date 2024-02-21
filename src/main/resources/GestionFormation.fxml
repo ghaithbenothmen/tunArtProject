@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.GestionFormationController">
    <children>
       <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="400.0" prefWidth="600.0" stylesheets="@dashboardDesign.css">
@@ -48,7 +47,6 @@
                               <Font name="Futura Light BT" size="12.0" />
                            </font>
                         </Button>
-                        <Button layoutX="135.0" layoutY="325.0" mnemonicParsing="false" onAction="#resetForm" prefHeight="35.0" prefWidth="88.0" styleClass="clear-btn" text="Reset" />
                      </children>
                   </AnchorPane>
                </children>

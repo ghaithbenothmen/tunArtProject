@@ -109,7 +109,7 @@ public class GestionCategorieController {
         Categorie selectedCategorie = categorieTable.getSelectionModel().getSelectedItem();
         String newNom = txtcat.getText();
         if (selectedCategorie != null && !newNom.isEmpty()) {
-            // Update the selected category's name
+
             selectedCategorie.setNom(newNom);
             System.out.println(selectedCategorie);
             try {

@@ -11,6 +11,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
 
 import java.sql.SQLException;
 import java.time.LocalDate;
@@ -98,8 +99,10 @@ public class AjouterFormationController {
 
     }
 
-    private Date convertToDate(LocalDate localDate) {
-        return Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+    private GestionFormationController parentController;
+
+    public void setParentController(GestionFormationController parentController) {
+        this.parentController = parentController;
     }
     @FXML
     void ajouterFormation(ActionEvent event) {
@@ -131,10 +134,16 @@ public class AjouterFormationController {
 
         try {
             service.add(f);
-            showAlert(Alert.AlertType.CONFIRMATION, "Succès", "Formation ajoutée", "La formation a été ajoutée avec succès.");
-        } catch (Exception e) {
-            System.out.println(e);
-            showAlert(Alert.AlertType.ERROR, "Erreur", "Erreur d'ajout", "Une erreur s'est produite lors de l'ajout de la formation : " + e.getMessage());
+            showAlert(Alert.AlertType.CONFIRMATION, "Succès", "Formation mise à jour", "La formation a été mise à jour avec succès.");
+
+
+            Stage stage = (Stage) txtnom.getScene().getWindow();
+            stage.close();
+
+            //refreshi tab
+            parentController.refreshTable();
+        } catch (SQLException e) {
+            showAlert(Alert.AlertType.ERROR, "Erreur", "Erreur de mise à jour", "Une erreur s'est produite lors de la mise à jour de la formation : " + e.getMessage());
         }
     }
 

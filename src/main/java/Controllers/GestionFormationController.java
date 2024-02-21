@@ -8,12 +8,14 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.TableCell;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Date;
 
@@ -76,10 +78,20 @@ public class GestionFormationController {
         FormationTable.setItems(formationList);
 
         refreshTable();
-
-
+        //search
         searchFor.textProperty().addListener((observable, oldValue, newValue) -> {
             filterData(newValue);
+        });
+
+        FormationTable.setRowFactory(tv -> {
+            TableRow<Formation> row = new TableRow<>();
+            row.setOnMouseClicked(event -> {
+                if (event.getClickCount() == 2 && !row.isEmpty()) {
+                    Formation formation = row.getItem();
+                    openUpdateFormationPage(formation);
+                }
+            });
+            return row;
         });
     }
     private void filterData(String searchText) {
@@ -92,9 +104,39 @@ public class GestionFormationController {
             FormationTable.setItems(filteredList);
         }
     }
+
+    private void openUpdateFormationPage(Formation formation) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../UpdateFormation.fxml"));
+            Parent root = loader.load();
+            UpdateFormationController controller = loader.getController();
+            controller.initData(formation);
+            controller.setGestionFormationController(this); // Pass a reference to GestionFormationController
+            Stage stage = new Stage();
+            stage.setTitle("Update Formation");
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
     @FXML
     void ajouterFor(ActionEvent event) {
-
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../AjouterFormation.fxml"));
+            Parent root = loader.load();
+            AjouterFormationController controller = loader.getController();
+            controller.setParentController(this); // Pass the current controller to the AddFormationController
+            Stage stage = new Stage();
+            stage.setTitle("Add Formation");
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
@@ -121,10 +163,13 @@ public class GestionFormationController {
 
     @FXML
     void updateFor(ActionEvent event) {
-
+        Formation selectedFormation = FormationTable.getSelectionModel().getSelectedItem();
+        if (selectedFormation != null) {
+            openUpdateFormationPage(selectedFormation);
+        }
     }
 
-    private void refreshTable() throws SQLException {
+    public void refreshTable() throws SQLException {
         FormationTable.getItems().clear();
         FormationTable.getItems().addAll(formationService.findAll());
     }
