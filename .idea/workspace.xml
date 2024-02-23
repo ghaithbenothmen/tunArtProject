@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7bb59e3-46d1-454e-ae11-af60aee04d34" name="Changes" comment="helmi_branch:add_AjouterActualiteController.java">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/AjouterActualite.fxml" afterDir="false" />
+    <list default="true" id="a7bb59e3-46d1-454e-ae11-af60aee04d34" name="Changes" comment="helmi_branch:update AfficherActualiteController.java/ondelete">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Entites/Commentaire.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -17,8 +17,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -79,7 +79,7 @@
       <workItem from="1708541028686" duration="3638000" />
       <workItem from="1708556824466" duration="10000" />
       <workItem from="1708629573333" duration="2621000" />
-      <workItem from="1708682765278" duration="2246000" />
+      <workItem from="1708682765278" duration="3042000" />
     </task>
     <task id="LOCAL-00001" summary="helmi_branch:add_entite_Actualite.java">
       <option name="closed" value="true" />
@@ -105,7 +105,31 @@
       <option name="project" value="LOCAL" />
       <updated>1708684656767</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="helmi_branch:add_AjouterActualite.fxml">
+      <option name="closed" value="true" />
+      <created>1708685064971</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1708685064971</updated>
+    </task>
+    <task id="LOCAL-00005" summary="helmi_branch:add AfficherActualite.fxml and AfficherActualiteController.java">
+      <option name="closed" value="true" />
+      <created>1708685632333</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1708685632333</updated>
+    </task>
+    <task id="LOCAL-00006" summary="helmi_branch:update AfficherActualiteController.java/ondelete">
+      <option name="closed" value="true" />
+      <created>1708685753122</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1708685753122</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -126,6 +150,9 @@
     <MESSAGE value="helmi_branch:add_entite_Actualite.java" />
     <MESSAGE value="helmi_branch:add_ActualiteService.java" />
     <MESSAGE value="helmi_branch:add_AjouterActualiteController.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="helmi_branch:add_AjouterActualiteController.java" />
+    <MESSAGE value="helmi_branch:add_AjouterActualite.fxml" />
+    <MESSAGE value="helmi_branch:add AfficherActualite.fxml and AfficherActualiteController.java" />
+    <MESSAGE value="helmi_branch:update AfficherActualiteController.java/ondelete" />
+    <option name="LAST_COMMIT_MESSAGE" value="helmi_branch:update AfficherActualiteController.java/ondelete" />
   </component>
 </project>
