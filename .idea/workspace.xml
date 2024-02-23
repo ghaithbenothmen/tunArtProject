@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7bb59e3-46d1-454e-ae11-af60aee04d34" name="Changes" comment="helmi_branch:add_ActualiteService.java">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/AjouterActualiteController.java" afterDir="false" />
+    <list default="true" id="a7bb59e3-46d1-454e-ae11-af60aee04d34" name="Changes" comment="helmi_branch:add_AjouterActualiteController.java">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/AjouterActualite.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -18,6 +18,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -78,7 +79,7 @@
       <workItem from="1708541028686" duration="3638000" />
       <workItem from="1708556824466" duration="10000" />
       <workItem from="1708629573333" duration="2621000" />
-      <workItem from="1708682765278" duration="1817000" />
+      <workItem from="1708682765278" duration="2246000" />
     </task>
     <task id="LOCAL-00001" summary="helmi_branch:add_entite_Actualite.java">
       <option name="closed" value="true" />
@@ -96,7 +97,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708683931084</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="helmi_branch:add_AjouterActualiteController.java">
+      <option name="closed" value="true" />
+      <created>1708684656767</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1708684656767</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -116,6 +125,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="helmi_branch:add_entite_Actualite.java" />
     <MESSAGE value="helmi_branch:add_ActualiteService.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="helmi_branch:add_ActualiteService.java" />
+    <MESSAGE value="helmi_branch:add_AjouterActualiteController.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="helmi_branch:add_AjouterActualiteController.java" />
   </component>
 </project>

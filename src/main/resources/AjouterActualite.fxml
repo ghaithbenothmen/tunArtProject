@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="754.0" prefWidth="1017.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AjouterActualiteController">
+    <children>
+        <Button fx:id="BtnAjouter" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" layoutX="261.0" layoutY="512.0" mnemonicParsing="false" onAction="#ajouterAct" prefHeight="18.0" prefWidth="179.0" text="Ajouter" textAlignment="CENTER">
+            <font>
+                <Font name="System Bold" size="17.0" />
+            </font>
+        </Button>
+        <Label alignment="CENTER" layoutX="228.0" layoutY="53.0" prefHeight="81.0" prefWidth="564.0" text="Interface Actualite" textFill="#f5be07">
+            <font>
+                <Font name="Berlin Sans FB Bold" size="50.0" />
+            </font>
+        </Label>
+        <TextArea fx:id="ActualiteTA" layoutX="395.0" layoutY="268.0" prefHeight="118.0" prefWidth="243.0" />
+        <TextField fx:id="DateTF" layoutX="395.0" layoutY="402.0" prefHeight="31.0" prefWidth="243.0" />
+        <Label layoutX="289.0" layoutY="317.0" text="Actualite :">
+            <font>
+                <Font name="System Bold Italic" size="15.0" />
+            </font></Label>
+        <Label layoutX="302.0" layoutY="407.0" text="Date :">
+            <font>
+                <Font name="System Bold Italic" size="15.0" />
+            </font></Label>
+        <Button fx:id="BtnAfficher" alignment="CENTER" defaultButton="true" layoutX="613.0" layoutY="512.0" mnemonicParsing="false" onAction="#naviguezVersAffichage" prefHeight="31.0" prefWidth="179.0" text="Afficher">
+            <font>
+                <Font name="System Bold" size="17.0" />
+            </font>
+        </Button>
+    </children>
+</AnchorPane>
