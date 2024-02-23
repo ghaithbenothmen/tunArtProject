@@ -9,6 +9,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public class AfficherActualiteController {
@@ -24,7 +25,7 @@ public class AfficherActualiteController {
     @FXML
     private TableView<Actualite> TableView;
     @FXML
-    void ondelete() {
+    void ondelete() throws SQLException {
         Actualite selectedActualite = TableView.getSelectionModel().getSelectedItem();
         if (selectedActualite != null) {
             cs.delete(selectedActualite);
