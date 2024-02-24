@@ -15,5 +15,4 @@ public class AfficherEvenementController {
 
     public Label getLbNom() {
         return lbNom;
-    }
-}
+    } }
