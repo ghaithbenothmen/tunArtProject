@@ -1,6 +1,5 @@
 package Entites;
 import javafx.scene.control.TextField;
-
 import java.util.Date;
 import java.util.Objects;
 
@@ -11,7 +10,8 @@ public class Evenement {
     private Date date;
     private Billet idBillet;
 
-    public Evenement() {}
+    public Evenement(TextField txtId_Evenement) {}
+    //     public Evenement(TextField txtId_Evenement) {this.txtId_Evenement=txtId_Evenement;}
 
     public Evenement(int idEvent, String lieu, String nom_Event,
                      int nb_publique, Date date,Billet idBillet)  {

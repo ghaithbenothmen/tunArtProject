@@ -4,10 +4,10 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="446.0" prefWidth="491.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AfficherEvenementController">
     <children>
-        <Label layoutX="49.0" layoutY="38.0" text="Nom :" />
         <Label layoutX="112.0" layoutY="38.0" />
         <TableView fx:id="tableview" layoutX="14.0" layoutY="84.0" prefHeight="319.0" prefWidth="466.0" AnchorPane.bottomAnchor="43.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="84.0">
             <columns>
@@ -18,5 +18,10 @@
             <TableColumn fx:id="colomneDate" prefWidth="82.39996337890625" text="date" />
             </columns>
         </TableView>
+      <Label layoutX="25.0" layoutY="27.0" text="Afficher de l'evenement ">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>

@@ -6,23 +6,27 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0"
-            xmlns="http://javafx.com/javafx/21"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AjouterEvenementController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AjouterEvenementController">
     <children>
-        <Button layoutX="464.0" layoutY="295.0" mnemonicParsing="false" onAction="#ajouterEvenement" text="Ajouter" />
-        <Accordion layoutX="56.0" layoutY="132.0" />
-        <TextField fx:id="txtId" layoutX="164.0" layoutY="57.0" />
-        <TextField fx:id="txtLieu" layoutX="164.0" layoutY="92.0" />
-        <TextField fx:id="txtNomEv" layoutX="164.0" layoutY="132.0" />
-        <TextField fx:id="txtNbPublic" layoutX="164.0" layoutY="174.0" />
-        <Label layoutX="20.0" layoutY="52.0" text="Id_evenement : " />
-        <Label layoutX="28.0" layoutY="96.0" text="Lieu :" />
-        <Label layoutX="28.0" layoutY="136.0" text="Nom_Evenement :" />
-        <Label layoutX="28.0" layoutY="178.0" text="Nombre de publics : " />
-        <Label layoutX="67.0" layoutY="253.0" text="Date :" />
-        <DatePicker fx:id="txtDate" layoutX="151.0" layoutY="249.0" />
-        <Button layoutX="438.0" layoutY="347.0" mnemonicParsing="false" onAction="#afficherEvenement" text="Afficher" />
+        <Button layoutX="456.0" layoutY="335.0" mnemonicParsing="false" onAction="#ajouterEvenement" prefHeight="38.0" prefWidth="127.0" style="-fx-background-color: #8cbeb2;" text="Ajouter evenement" textFill="WHITE" />
+        <Accordion layoutX="61.0" layoutY="184.0" />
+        <TextField fx:id="txtId" layoutX="64.0" layoutY="125.0" prefHeight="38.0" prefWidth="158.0" promptText="donner l id de levenement" />
+        <TextField fx:id="txtLieu" layoutX="61.0" layoutY="224.0" promptText="donner le lieu" />
+        <TextField fx:id="txtNomEv" layoutX="61.0" layoutY="321.0" promptText="donner le nom" />
+        <TextField fx:id="txtNbPublic" layoutX="334.0" layoutY="125.0" prefHeight="38.0" prefWidth="158.0" promptText="donner le nombre de public" />
+        <Label layoutX="72.0" layoutY="91.0" prefHeight="26.0" prefWidth="127.0" text="Id de l evenement :" />
+        <Label layoutX="68.0" layoutY="183.0" prefHeight="26.0" prefWidth="90.0" text="Lieu :" />
+        <Label layoutX="61.0" layoutY="276.0" prefHeight="38.0" prefWidth="127.0" text="Nom de l'evenement :" />
+        <Label layoutX="343.0" layoutY="87.0" prefHeight="26.0" prefWidth="143.0" text="Nombre de publics : " />
+        <Label layoutX="343.0" layoutY="183.0" prefHeight="26.0" prefWidth="58.0" text="Date :" />
+        <DatePicker fx:id="txtDate" layoutX="334.0" layoutY="224.0" prefHeight="38.0" prefWidth="188.0" promptText="jj/mm/aaaa" />
+        <Button layoutX="304.0" layoutY="331.0" mnemonicParsing="false" onAction="#afficherEvenement" prefHeight="45.0" prefWidth="135.0" style="-fx-background-color: ffffff;" text="Afficher evenement" textFill="#8cbeb2" />
+      <Label layoutX="24.0" layoutY="25.0" text="Ajouter un evenement " textFill="#5c4d51">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>

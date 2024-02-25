@@ -10,7 +10,7 @@ import java.util.List;
 
 public class BilletService implements IService<Billet> {
     private Statement ste;
-    private static BilletService serBillet;
+    public static BilletService serBillet;
     private Billet idBillet;
 
     @Override

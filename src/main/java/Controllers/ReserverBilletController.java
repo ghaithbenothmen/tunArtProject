@@ -26,8 +26,8 @@ public class ReserverBilletController {
 
 
 
-         //   int idBillet = Integer.parseInt(txtNomEvent.getText());
-           // Billet b1 = new Billet(idBillet,prixBillet) ;
+            int idBillet = Integer.parseInt(txtNomEvent.getText());
+           Billet b1 = new Billet(idBillet,prixBillet) ;
 
 
             Alert alert1 = new Alert(Alert.AlertType.CONFIRMATION);

@@ -6,10 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="0a1f9f9d-d6fe-4d2c-85ae-b73937e5ac47" name="Changes" comment="Jamyla:ajouterEntitéBillet,controller+.fxml+Srvice">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Test/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Test/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/AfficherEvenement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AfficherEvenement.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/AjouterEvenement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AjouterEvenement.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ReserverBillet.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ReserverBillet.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/SupprimerEvenementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/SupprimerEvenementController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entites/Evenement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entites/Evenement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/SupprimerEvenement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/SupprimerEvenement.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entites/Evenement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entites/Evenement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Test/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Test/Test.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
