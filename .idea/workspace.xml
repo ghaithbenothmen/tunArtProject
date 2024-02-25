@@ -4,21 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a1f9f9d-d6fe-4d2c-85ae-b73937e5ac47" name="Changes" comment="Jamyla:ajouter:Main+Test:TEst">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/GestionEvenementController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/ReserverBilletController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Entites/Billet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Services/BilletService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/GestionEvenement.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ReserverBillet.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/AfficherEvenementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/AfficherEvenementController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/AjouterEvenementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/AjouterEvenementController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Entites/Evenement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entites/Evenement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Services/EvenementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/EvenementService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Services/FormationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/FormationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Test/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Test/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Entites/Evenement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entites/Evenement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Test/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Test/Test.class" afterDir="false" />
+    <list default="true" id="0a1f9f9d-d6fe-4d2c-85ae-b73937e5ac47" name="Changes" comment="Jamyla:ajouterEntitéBillet,controller+.fxml+Srvice">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Test/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Test/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/AfficherEvenement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AfficherEvenement.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/AjouterEvenement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AjouterEvenement.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ReserverBillet.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ReserverBillet.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +95,9 @@
       <workItem from="1708625757515" duration="1917000" />
       <workItem from="1708629715603" duration="763000" />
       <workItem from="1708719622700" duration="3564000" />
-      <workItem from="1708771903268" duration="5705000" />
+      <workItem from="1708771903268" duration="6193000" />
+      <workItem from="1708808420728" duration="28000" />
+      <workItem from="1708856108782" duration="3750000" />
     </task>
     <task id="LOCAL-00001" summary="Jamyla:Afficher,ajouter,supprimerEvnementController">
       <option name="closed" value="true" />
@@ -138,7 +131,23 @@
       <option name="project" value="LOCAL" />
       <updated>1708531173330</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Jamyla:ajouterEntitéBillet,controller+.fxml+Srvice">
+      <option name="closed" value="true" />
+      <created>1708805807602</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1708805807602</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Jamyla:ajouterEntitéBillet,controller+.fxml+Srvice">
+      <option name="closed" value="true" />
+      <created>1708805826245</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1708805826245</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,6 +181,7 @@
     <MESSAGE value="Jamyla:entiteEvenement,Evenementservice" />
     <MESSAGE value="Jamyla:update:EvenementController;ajouter: fichiersXMLEvenement" />
     <MESSAGE value="Jamyla:ajouter:Main+Test:TEst" />
-    <option name="LAST_COMMIT_MESSAGE" value="Jamyla:ajouter:Main+Test:TEst" />
+    <MESSAGE value="Jamyla:ajouterEntitéBillet,controller+.fxml+Srvice" />
+    <option name="LAST_COMMIT_MESSAGE" value="Jamyla:ajouterEntitéBillet,controller+.fxml+Srvice" />
   </component>
 </project>

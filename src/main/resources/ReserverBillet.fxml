@@ -4,12 +4,16 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ReserverBilletController">
    <children>
-      <Label layoutX="84.0" layoutY="55.0" text="Reserver billet " />
-      <TextField fx:id="txtNomEvent" layoutX="226.0" layoutY="51.0" prefHeight="26.0" prefWidth="217.0" promptText="saisir le nom de l'evenement" />
-      <Button layoutX="309.0" layoutY="226.0" mnemonicParsing="false" onAction="#ReserverBillet" text="Reserver" />
+      <Label layoutX="97.0" layoutY="46.0" prefHeight="50.0" prefWidth="224.0" text="Reserver billet ">
+         <font>
+            <Font size="26.0" />
+         </font></Label>
+      <TextField fx:id="txtNomEvent" layoutX="97.0" layoutY="161.0" prefHeight="38.0" prefWidth="224.0" promptText="saisir le nom de l'evenement" />
+      <Button layoutX="471.0" layoutY="338.0" mnemonicParsing="false" onAction="#ReserverBillet" style="-fx-background-color: #8cbeb2;" text="Reserver billet" textFill="WHITE" />
+      <Label layoutX="97.0" layoutY="113.0" prefHeight="38.0" prefWidth="194.0" text="Saisir le nom de l'evenement " />
    </children>
 </AnchorPane>

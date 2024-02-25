@@ -22,27 +22,33 @@ public class Main extends Application {
         stage.show();
 
 /*
-        System.out.println("PROGRAM ENTRY:##");
-        try {
+//Jamyla
             FXMLLoader loader1 = new FXMLLoader(getClass().getResource("../AjouterEvenement.fxml"));
-            System.out.println("TRY CATCH ENTRY:##");
 
             Parent root1 = loader1.load();
-            System.out.println("Lancement de stage");
-            Scene scene1 = new Scene(root);
+            Scene scene1 = new Scene(root1);
             Stage.setScene(scene1);
             Stage.show();
-            System.out.println("Stage lancé");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
+            FXMLLoader loader2 = new FXMLLoader(getClass().getResource("../SupprimerEvenement.fxml"));
+
+        stage.setScene(scene);
+            Parent root2 = loader2.load();
+            Scene scene2 = new Scene(root2);
+            Stage.setScene(scene2);
+            Stage.show();
 
 
+        FXMLLoader loader3 = new FXMLLoader(getClass().getResource("../ReserverBillet.fxml"));
 
- */
+        Parent root3 = loader3.load();
+        Scene scene3 = new Scene(root3);
+        Stage.setScene(scene3);
+        Stage.show();
+*/
+
+
     }
-
-
 
     public static void main(String[] args){
         launch(args);
