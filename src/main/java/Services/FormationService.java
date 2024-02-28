@@ -31,8 +31,9 @@ public class FormationService implements IService<Formation> {
 
     @Override
     public void add(Formation formation) throws SQLException {
-        String req = "INSERT INTO `formation` (`id`,`nom`, `dateDebut`, `dateFin`, `niveau`, `description`, `cat_id`) " +
-                "VALUES (NULL, '" + formation.getNom() + /*"', '" + formation.getArtiste_id() + */ "', '" + formation.getDateDebut() + "', '" + formation.getDateFin() + "', '" + formation.getNiveau() + "', '" + formation.getDescription() + "', '" + formation.getCat_id().getId() + "');";
+        String uri = formation.getImage().replace("\\", "/");
+        String req = "INSERT INTO `formation` (`id`,`nom`, `dateDebut`, `dateFin`, `niveau`, `description`, `cat_id`,`image`) " +
+                "VALUES (NULL, '" + formation.getNom() + /*"', '" + formation.getArtiste_id() + */ "', '" + formation.getDateDebut() + "', '" + formation.getDateFin() + "', '" + formation.getNiveau() + "', '" + formation.getDescription() + "', '" + formation.getCat_id().getId()+ "', '" + uri + "');";
         ste.executeUpdate(req);
     }
 
@@ -48,7 +49,7 @@ public class FormationService implements IService<Formation> {
     public boolean update(Formation formation) throws SQLException {
         String req = "UPDATE `formation` SET `nom`='" + formation.getNom() /*+ "', `artiste_id`='" + formation.getArtiste_id() */+ "', `dateDebut`='" + formation.getDateDebut()
                 +  "', `dateFin`='" + formation.getDateFin() +  "', `niveau`='" + formation.getNiveau() +  "', `description`='" + formation.getDescription() +  "', `cat_id`='" + formation.getCat_id().getId()
-                + "' WHERE id='" + formation.getId() + "';";
+                +  "', `image`='" + formation.getImage()+ "' WHERE id='" + formation.getId() + "';";
 
         int rowsUpdated = ste.executeUpdate(req);
 
@@ -74,8 +75,9 @@ public class FormationService implements IService<Formation> {
             CategorieService categorieService = new CategorieService();
             Categorie categorie = categorieService.findById(cat_id);
 
+            String image=res.getString("image");
 
-            return new Formation(id, nom, dateDebut,dateFin,niveau,description,categorie);
+            return new Formation(id, nom, dateDebut,dateFin,niveau,description,categorie,image);
         }
 
         return null;
@@ -101,7 +103,10 @@ public class FormationService implements IService<Formation> {
                 CategorieService categorieService = new CategorieService();
                 Categorie categorie = categorieService.findById(cat_id);
 
-                Formation f = new Formation(id, nom, dateDebut,dateFin,niveau,description,categorie);
+
+                String image=res.getString("image");
+
+                Formation f = new Formation(id, nom, dateDebut,dateFin,niveau,description,categorie,image);
                 //System.out.println(f);
                 l1.add(f);
 

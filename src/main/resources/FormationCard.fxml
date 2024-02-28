@@ -9,57 +9,50 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="336.0" prefWidth="250.0" stylesheets="@dashboardDesign.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="336.0" prefWidth="250.0" stylesheets="@dashboardDesign.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FormationCardController">
     <children>
         <VBox layoutX="75.0" layoutY="25.0" prefHeight="250.0" prefWidth="250.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
-                <HBox alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="250.0">
-                    <children>
-                        <Label contentDisplay="CENTER" prefHeight="18.0" prefWidth="121.0" styleClass="titre" text="Formation">
-                            <font>
-                                <Font name="Futura Heavy BT" size="14.0" />
-                            </font>
-                            <HBox.margin>
-                                <Insets left="5.0" />
-                            </HBox.margin>
-                        </Label>
-                        <Label text="NomFormation">
-                            <padding>
-                                <Insets right="5.0" />
-                            </padding>
-                        </Label>
-                    </children>
-                </HBox>
                 <AnchorPane prefHeight="258.0" prefWidth="250.0">
                     <children>
-                        <ImageView fitHeight="138.0" fitWidth="207.0" layoutX="22.0" pickOnBounds="true" preserveRatio="true" />
-                        <HBox layoutX="14.0" layoutY="138.0" prefHeight="107.0" prefWidth="222.0">
+                        <ImageView fx:id="imageFor" fitHeight="138.0" fitWidth="207.0" layoutX="22.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+                        <HBox layoutX="14.0" layoutY="152.0" prefHeight="107.0" prefWidth="222.0">
                             <children>
                                 <HBox prefHeight="107.0" prefWidth="123.0">
                                     <children>
-                                        <VBox prefHeight="107.0" prefWidth="156.0">
+                                        <VBox alignment="CENTER" prefHeight="107.0" prefWidth="156.0">
                                             <children>
-                                                <Label prefHeight="24.0" prefWidth="111.0" styleClass="titre" text="Artiste :">
+                                          <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="121.0" styleClass="titre" text="Formation">
+                                              <font>
+                                                  <Font name="Futura Heavy BT" size="14.0" />
+                                              </font>
+                                       <VBox.margin>
+                                          <Insets bottom="7.0" right="7.0" top="7.0" />
+                                       </VBox.margin>
+                                          </Label>
+                                                <Label alignment="CENTER" prefHeight="24.0" prefWidth="111.0" styleClass="titre" text="Artiste :">
                                                     <opaqueInsets>
                                                         <Insets />
                                                     </opaqueInsets>
                                                     <VBox.margin>
-                                                        <Insets />
+                                                        <Insets bottom="7.0" right="7.0" top="7.0" />
                                                     </VBox.margin>
                                                 </Label>
-                                                <Label prefHeight="24.0" prefWidth="83.0" styleClass="titre" text="Catégorie :">
+                                                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="24.0" prefWidth="83.0" styleClass="titre" text="Catégorie :">
                                                     <opaqueInsets>
                                                         <Insets />
                                                     </opaqueInsets>
                                                     <VBox.margin>
-                                                        <Insets bottom="5.0" right="5.0" top="7.0" />
+                                                        <Insets bottom="7.0" right="7.0" top="7.0" />
                                                     </VBox.margin>
                                                 </Label>
-                                                <Label prefHeight="24.0" prefWidth="88.0" styleClass="titre" text="Niveau :">
+                                                <Label alignment="CENTER" prefHeight="24.0" prefWidth="88.0" styleClass="titre" text="Niveau :">
                                                     <opaqueInsets>
                                                         <Insets />
                                                     </opaqueInsets>
+                                       <VBox.margin>
+                                          <Insets bottom="7.0" right="7.0" top="7.0" />
+                                       </VBox.margin>
                                                 </Label>
                                             </children>
                                         </VBox>
@@ -67,17 +60,28 @@
                                 </HBox>
                                 <HBox prefHeight="107.0" prefWidth="143.0">
                                     <children>
-                                        <VBox prefHeight="107.0" prefWidth="139.0">
+                                        <VBox alignment="CENTER" prefHeight="107.0" prefWidth="139.0">
                                             <children>
-                                                <Label prefHeight="26.0" prefWidth="91.0" text="NomArtiste" />
-                                                <Label prefHeight="26.0" prefWidth="91.0" text="NomCat">
+                                          <Label fx:id="nomFor" alignment="CENTER" contentDisplay="CENTER" text="NomFormation">
+                                              <padding>
+                                                  <Insets right="5.0" />
+                                              </padding>
+                                       <VBox.margin>
+                                          <Insets bottom="7.0" right="7.0" top="7.0" />
+                                       </VBox.margin>
+                                          </Label>
+                                                <Label fx:id="nomArtiste" alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="91.0" text="NomArtiste">
+                                       <VBox.margin>
+                                          <Insets bottom="7.0" right="7.0" top="7.0" />
+                                       </VBox.margin></Label>
+                                                <Label fx:id="nomCat" alignment="CENTER" prefHeight="26.0" prefWidth="91.0" text="NomCat">
                                                     <VBox.margin>
-                                                        <Insets top="4.0" />
+                                                        <Insets bottom="7.0" right="7.0" top="7.0" />
                                                     </VBox.margin>
                                                 </Label>
-                                                <Label prefHeight="31.0" prefWidth="91.0" text="Nv">
+                                                <Label fx:id="niveau" alignment="CENTER" prefHeight="31.0" prefWidth="91.0" text="Nv">
                                                     <VBox.margin>
-                                                        <Insets />
+                                                        <Insets bottom="7.0" right="7.0" top="7.0" />
                                                     </VBox.margin>
                                                 </Label>
                                             </children>
@@ -90,7 +94,7 @@
                 </AnchorPane>
                 <HBox alignment="CENTER" prefHeight="70.0" prefWidth="250.0">
                     <children>
-                        <Button mnemonicParsing="false" prefHeight="38.0" prefWidth="75.0" styleClass="add-btn" stylesheets="@dashboardDesign.css" text="S'inscrire" />
+                        <Button mnemonicParsing="false" onAction="#inscrire" prefHeight="38.0" prefWidth="75.0" styleClass="add-btn" stylesheets="@dashboardDesign.css" text="S'inscrire" />
                     </children>
                 </HBox>
             </children>
