@@ -1,10 +1,9 @@
 package Controllers;
 
-import Entites.Niveau;
 import Entites.Oeuvre;
 import Entites.TypeOeuvre;
 import java.io.File;
-import java.nio.file.Files;
+
 import Services.OeuvreService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -15,8 +14,7 @@ import javafx.stage.Stage;
 import javafx.stage.FileChooser;
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.time.ZoneId;
-import java.util.Date;
+
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
@@ -62,7 +60,7 @@ public class AjouterOeuvreControler {
                 // Display the image in the ImageView
                 imagePreview.setImage(image);
                 // Store the path of the selected image file
-                imagePath = selectedFile.getName();
+                imagePath = selectedFile.getAbsolutePath();
             } catch (Exception e) {
                 // Handle any errors that may occur during image loading
                 e.printStackTrace();
@@ -93,9 +91,11 @@ public class AjouterOeuvreControler {
         });
     }
 
-    private AfficherOeuvreControler parentController;
+    private AfficherController parentController;
 
-    public void setParentController(AfficherOeuvreControler parentController) {
+
+
+    public void setParentController(AfficherController parentController) {
         this.parentController = parentController;
     }
     // Event handler for adding Oeuvre
@@ -103,7 +103,7 @@ public class AjouterOeuvreControler {
     void AjouterOeuvre(ActionEvent event) {
 
         String nom = txtnom.getText();
-        String image = imagePreview.getImage().getUrl();
+//        String image = imagePreview.getImage().getUrl();
         String description = desc.getText();
 
         // TypeOeuvre type = TypeOeuvre.valueOf(String) selectType.getSelectionModel().getSelectedItem(); // Use getValue() for ComboBox
@@ -112,17 +112,17 @@ public class AjouterOeuvreControler {
         LocalDate datedb = date.getValue();
         java.sql.Date sqlDatePublication = java.sql.Date.valueOf(datedb);
 
-        Oeuvre o = new Oeuvre(nom, image, description, type, sqlDatePublication);
+        Oeuvre o = new Oeuvre(nom, imagePath, description, type, sqlDatePublication);
         try {
             oeuvre.add(o);
             showAlert(Alert.AlertType.CONFIRMATION, "Succès", "Oeuvre Ajouté", "L'Oeuvre a été ajouté avec succès.");
 
 
             Stage stage = (Stage) txtnom.getScene().getWindow();
-            stage.close();
 
-            //refreshi tab
-            parentController.refreshTable();
+            stage.close();
+            parentController.refreshScrollPane();
+
         } catch (SQLException e) {
             showAlert(Alert.AlertType.ERROR, "Erreur", "Erreur de mise à jour", " " + e.getMessage());
         }

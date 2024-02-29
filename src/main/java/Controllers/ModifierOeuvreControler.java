@@ -1,8 +1,6 @@
-package Controlers;
+package Controllers;
 
-import Controllers.AfficherOeuvreControler;
 import Entites.*;
-import Services.FormationService;
 import Services.OeuvreService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -11,6 +9,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
+import javax.swing.*;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.ZoneId;
@@ -53,23 +52,7 @@ public class ModifierOeuvreControler {
     void importer_image(ActionEvent event) {
 
     }
-    //    public void initialize() {
-//        ObservableList<String> TypeNames = FXCollections.observableArrayList();
-//
-//        for (TypeOeuvre type : TypeOeuvre.values()) {
-//            TypeNames.add(type.toString());
-//        }
-//        selectType.setItems(TypeNames);
-//        selectType.setValue(TypeNames.get(0));
-//
-//        selectType.valueProperty().addListener((observable, oldValue, newValue) -> {
-//            if (newValue != null) {
-//                TypeOeuvre type = TypeOeuvre.valueOf((String) newValue);
-//                System.out.println("Selected type: " + type);
-//
-//            }
-//        });
-//    }
+
     @FXML
     void ModifierOeuvre(ActionEvent event){
         String nom=txtnom.getText();
@@ -100,16 +83,16 @@ public class ModifierOeuvreControler {
             stage.close();
 
 
-            afficherOeuvreControler.refreshTable();
+
             System.out.println(updatedOeuvre);
         } catch (SQLException e) {
             showAlert(Alert.AlertType.ERROR, "Erreur", "Erreur de mise à jour", " " + e.getMessage());
         }
     }
-    private AfficherOeuvreControler afficherOeuvreControler;
+    private OneOeuvreController oneOeuvreController;
 
-    public void setAfficherOeuvreControler(AfficherOeuvreControler afficherOeuvreControler) {
-        this.afficherOeuvreControler = afficherOeuvreControler;
+    public void setAfficherController(OneOeuvreController oneOeuvreController) {
+        this.oneOeuvreController = oneOeuvreController;
     }
     @FXML
     private void annuler(ActionEvent event) {
@@ -147,6 +130,11 @@ public class ModifierOeuvreControler {
         alert.setContentText(content);
         alert.showAndWait();
     }
+    private ObservableList<Oeuvre> oeuvreListe = FXCollections.observableArrayList();
+
+//    private void refresh() throws SQLException {
+//        oeuvreListe.addAll(oeuvreService.findAll());
+//    }
 
 
 

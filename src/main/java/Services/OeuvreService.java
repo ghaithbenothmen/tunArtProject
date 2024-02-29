@@ -38,11 +38,12 @@ public class OeuvreService implements IOeuvre<Oeuvre>{
 
         // Handle null value for the note field
         Boolean noteValue = o.getNote() != null ? o.getNote() : false;
+        String uri = o.getImg().replace("\\", "/");
 
         String req = "INSERT INTO `Oeuvre` (`Ref`, `nom_Oeuvre`, `img`, `date_Publication`, `description`, `note`, `TypeOeuvre`) " +
                 "VALUES (NULL, '"
                 +o.getNom_Ouvre() + "', '"
-                +o.getImg()+ "', '"
+                +uri+ "', '"
                 + formattedDate + "', '"
                 +o.getDescription() + "', "
                 + noteValue + ", '"
