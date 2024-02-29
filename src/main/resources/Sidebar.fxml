@@ -16,7 +16,7 @@
             <children>
                 <ImageView fitHeight="166.0" fitWidth="200.0" layoutX="12.0" layoutY="18.0">
                     <image>
-                        <Image url="/images/Capture_d_écran_2024-02-25_195559-removebg-preview.png" />
+                        <Image url="/assets/Capture_d_écran_2024-02-25_195559-removebg-preview.png" />
                     </image>
                 </ImageView>
             </children>
