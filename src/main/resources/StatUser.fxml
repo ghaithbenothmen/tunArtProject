@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.scene.chart.BarChart?>
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.NumberAxis?>
-<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="539.0" prefWidth="737.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.StatUserController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.StatUserController">
+
     <children>
-        <BarChart fx:id="barChart" layoutX="115.0" layoutY="87.0">
+        <BarChart fx:id="barChart" layoutX="118.0" layoutY="238.0" prefHeight="266.0" prefWidth="500.0" title="Nombres d'utilisateurs">
             <xAxis>
                 <CategoryAxis side="BOTTOM" fx:id="xAxis" />
             </xAxis>
@@ -18,10 +20,61 @@
                 <NumberAxis fx:id="yAxis" side="LEFT" />
             </yAxis>
         </BarChart>
-        <Text fill="#5c4b51" layoutX="221.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Statistique sur utilisateurs" textAlignment="CENTER">
+        <Text fill="#5c4b51" layoutX="224.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Statistique sur utilisateurs" textAlignment="CENTER">
             <font>
                 <Font name="System Bold" size="24.0" />
             </font></Text>
-        <Button fx:id="backbtn" layoutX="30.0" layoutY="18.0" mnemonicParsing="false" onAction="#back" prefHeight="26.0" prefWidth="61.0" style="-fx-background-color: f3b562;" text="Back" textFill="WHITE" />
+        <AnchorPane layoutY="65.0" prefHeight="154.0" prefWidth="742.0">
+            <children>
+                <AnchorPane layoutX="29.0" layoutY="14.0" prefHeight="126.0" prefWidth="200.0" styleClass="left-form" stylesheets="@loginDesign.css">
+                    <children>
+                  <Label fx:id="helo" alignment="TOP_RIGHT" layoutX="90.0" layoutY="14.0" prefHeight="16.0" prefWidth="90.0" text="0" textFill="WHITE">
+                     <font>
+                        <Font size="17.0" />
+                     </font></Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="58.0" layoutY="74.0" prefHeight="26.0" prefWidth="128.0" text="Total utilisateurs" textFill="WHITE">
+                            <font>
+                                <Font name="Futura Book BT" size="17.0" />
+                            </font>
+                        </Label>
+
+
+
+                    </children>
+                </AnchorPane>
+                <AnchorPane layoutX="271.0" layoutY="14.0" prefHeight="126.0" prefWidth="200.0" styleClass="left-form" stylesheets="@loginDesign.css">
+                    <children>
+                        <Label alignment="CENTER_RIGHT" layoutX="47.0" layoutY="75.0" prefHeight="26.0" prefWidth="128.0" text="Total artistes" textFill="WHITE">
+                            <font>
+                                <Font name="Futura Book BT" size="17.0" />
+                            </font>
+                        </Label>
+                  <Label fx:id="totart" alignment="TOP_RIGHT" layoutX="98.0" layoutY="12.0" prefHeight="16.0" prefWidth="90.0" text="0" textFill="WHITE">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                    </children>
+                </AnchorPane>
+                <AnchorPane layoutX="517.0" layoutY="13.0" prefHeight="126.0" prefWidth="200.0" styleClass="left-form" stylesheets="@loginDesign.css">
+                    <children>
+                        <Label alignment="CENTER_RIGHT" layoutX="75.0" layoutY="75.0" prefHeight="26.0" prefWidth="110.0" text="Total clients" textFill="WHITE">
+                            <font>
+                                <Font name="Futura Book BT" size="17.0" />
+                            </font>
+                        </Label>
+                  <Label fx:id="totcl" alignment="TOP_RIGHT" layoutX="91.0" layoutY="14.0" prefHeight="16.0" prefWidth="90.0" text="0" textFill="WHITE">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                    </children>
+                </AnchorPane>
+            </children>
+        </AnchorPane>
     </children>
+    <styleClass>
+        <String fx:value="white-bg" />
+        <String fx:value="shadow" />
+    </styleClass>
 </AnchorPane>

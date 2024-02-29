@@ -25,6 +25,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 
+
 public class AfficherUserController {
 
 
@@ -39,8 +40,6 @@ public class AfficherUserController {
     @FXML
     private TableColumn<User, String> emailuser;
 
-    @FXML
-    private TableColumn<User,Integer> iduser;
 
     @FXML
     private TableColumn<User,String> nomuser;
@@ -87,6 +86,8 @@ private  final UserService userService = new UserService();
             filterData(newValue);
         });
 
+
+
     }
 
 
@@ -126,55 +127,7 @@ private  final UserService userService = new UserService();
 
 
 
-    @FXML
-    private void chercherkey(KeyEvent event) throws IOException {
-        String nom = cher.getText();
-        try {
-            List<User> users_ch = us.rechercherParNom(nom);
-            grid.getChildren().clear();
-            int row = 0;
-            int column = 0;
-            for (int i = 0; i < users_ch.size(); i++){
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/User.fxml"));
-                AnchorPane pane = loader.load();
-                UserController controller = loader.getController();
-                if(users_ch.get(i).getRole().equals("ARTISTE") || users_ch.get(i).getRole().equals("CLIENT")){
-                    User user=users_ch.get(i);
-                    controller.setUser(user);
-                    grid.add(pane, column, row);
-                    row++;
-                    if (column > 0) {
-                        column = 0;
-                        row++;
-                    }
-                }
-            }
-        } catch (SQLException | IOException ex) {
-            System.out.println(ex.getMessage());
-        }
 
-
-
-
-
-    }
-
-    /*@FXML
-    private void stats(ActionEvent event) throws IOException {
-
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("StatUser.fxml"));
-        Parent root = loader.load();
-
-
-        Scene scene = new Scene(root);
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setTitle("Statistique");
-        stage.setScene(scene);
-        stage.show();
-
-
-
-    }*/
     @FXML
     void deleteUser(ActionEvent event) {
         User selectedUser = userTable.getSelectionModel().getSelectedItem();
@@ -210,7 +163,7 @@ private  final UserService userService = new UserService();
             controller.initData(user);
             controller.setAfficherUserController(this);
             Stage stage = new Stage();
-            stage.setTitle("Update User");
+            stage.setTitle("Modifier utilisateurs");
             stage.setScene(new Scene(root));
             stage.show();
         } catch (IOException e) {

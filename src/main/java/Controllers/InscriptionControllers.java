@@ -14,12 +14,17 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
+
 import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -41,6 +46,8 @@ public class InscriptionControllers implements Initializable {
     private PasswordField txtmdp;
     @FXML
     private Button ajouter;
+    @FXML
+    private Button cnctbtn;
 
     UserService us= new UserService();
     @FXML
@@ -49,10 +56,15 @@ public class InscriptionControllers implements Initializable {
     private Button uploadImgBtn;
 
     private String imageData;
+    private Image image;
     @FXML
     private Text iscriL;
     @FXML
     private Button ret;
+    @FXML
+    private ImageView imageFor;
+    @FXML
+    private AnchorPane main_form;
 
 
 
@@ -62,8 +74,8 @@ public class InscriptionControllers implements Initializable {
         for (Role role : Role.values()) {
             roleNames.add(role.toString());
         }
-        choices.setItems(roleNames);
-        choices.setValue(roleNames.get(0));
+        choices.setItems(FXCollections.observableArrayList(Role.ARTISTE, Role.CLIENT));
+        choices.setValue(Role.ARTISTE); // Définir la valeur par défaut
 
         choices.valueProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue != null) {
@@ -159,6 +171,8 @@ public class InscriptionControllers implements Initializable {
         }
     }
 
+
+
     @FXML
     private void annuler(ActionEvent event) {
 
@@ -174,16 +188,34 @@ public class InscriptionControllers implements Initializable {
     private void onUploadButtonClick(ActionEvent event) {
 
         FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Open Image File");
         fileChooser.getExtensionFilters().addAll(
-                new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif"));
-        File selectedFile = fileChooser.showOpenDialog(null);
-        if (selectedFile != null) {
-            //imageData = Files.readAllBytes(selectedFile.toPath());
-            imageData=selectedFile.getPath();
+                new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif")
+        );
+        File file = fileChooser.showOpenDialog(main_form.getScene().getWindow());
 
+        if (file != null) {
+
+            imageData = file.getAbsolutePath();
+            image = new Image(file.toURI().toString(), 147, 89, false, true);
+            imageFor.setImage(image);
         }
-        System.out.println(imageData);
+    }
+
+    @FXML
+    void importImage(ActionEvent event) {
+
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif")
+        );
+        File file = fileChooser.showOpenDialog(main_form.getScene().getWindow());
+
+        if (file != null) {
+
+            imageData = file.getAbsolutePath();
+            image = new Image(file.toURI().toString(), 147, 89, false, true);
+            imageFor.setImage(image);
+        }
     }
 
     @FXML
@@ -196,7 +228,7 @@ public class InscriptionControllers implements Initializable {
 //
         Scene scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setTitle("Affiche Users");
+        stage.setTitle("Se connecter");
         stage.setScene(scene);
         stage.show();
 //
@@ -204,5 +236,25 @@ public class InscriptionControllers implements Initializable {
 
 
     }
+
+    @FXML
+    private void seConnecter(ActionEvent event) throws IOException {
+//
+//
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Login.fxml"));
+        Parent root = loader.load();
+//
+//
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("Se connecter");
+        stage.setScene(scene);
+        stage.show();
+//
+//       }
+
+
+    }
+
 
 }

@@ -6,39 +6,44 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="223.0" style="-fx-background-color: #f2ebbf;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.SidebarController">
+<AnchorPane id="AnchorPane" prefHeight="664.0" prefWidth="223.0" style="-fx-background-color: #f2ebbf;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.SidebarController">
     <children>
-        <Button fx:id="homeBtn" layoutX="1.0" layoutY="202.0" mnemonicParsing="false" onAction="#homePage" prefHeight="40.0" prefWidth="223.0" styleClass="menuButton" text="Accueil" textFill="WHITE">
+        <Button fx:id="homeBtn" layoutY="254.0" mnemonicParsing="false" onAction="#homePage" prefHeight="40.0" prefWidth="223.0" styleClass="nav-button" stylesheets="@dashboardDesign.css" text="Accueil">
             <font>
                 <Font name="Leelawadee UI" size="17.0" />
             </font></Button>
         <AnchorPane prefHeight="202.0" prefWidth="223.0" style="-fx-background-color: #f2ebbf;">
             <children>
-                <ImageView fitHeight="166.0" fitWidth="200.0" layoutX="12.0" layoutY="18.0">
+                <ImageView fitHeight="205.0" fitWidth="223.0" layoutX="-2.0" layoutY="-1.0">
                     <image>
-                        <Image url="/assets/Capture_d_écran_2024-02-25_195559-removebg-preview.png" />
+                        <Image url="@assets/Capture_d_écran_2024-02-25_195559-removebg-preview.png" />
                     </image>
                 </ImageView>
             </children>
         </AnchorPane>
-        <Button fx:id="eventListBtn" layoutX="1.0" layoutY="242.0" mnemonicParsing="false" onAction="#eventListPage" prefHeight="40.0" prefWidth="223.0" styleClass="menuButton" text="Evénements" textFill="WHITE">
+        <Button fx:id="eventListBtn" layoutY="294.0" mnemonicParsing="false" onAction="#eventListPage" prefHeight="40.0" prefWidth="223.0" styleClass="nav-button" stylesheets="@dashboardDesign.css" text="Evénements">
             <font>
                 <Font size="17.0" />
             </font></Button>
-        <Button fx:id="produitsBtn" layoutX="1.0" layoutY="282.0" mnemonicParsing="false" onAction="#produitsPage" prefHeight="40.0" prefWidth="223.0" styleClass="menuButton" text="Formations" textFill="WHITE">
+        <Button fx:id="produitsBtn" layoutY="334.0" mnemonicParsing="false" onAction="#produitsPage" prefHeight="40.0" prefWidth="223.0" styleClass="nav-button" stylesheets="@dashboardDesign.css" text="Formations">
             <font>
                 <Font name="Leelawadee UI" size="17.0" />
             </font>
         </Button>
-        <Button fx:id="reclamationsBtn" layoutX="1.0" layoutY="322.0" mnemonicParsing="false" onAction="#reclamationPage" prefHeight="40.0" prefWidth="223.0" styleClass="menuButton" text="Artistes" textFill="WHITE">
+        <Button fx:id="reclamationsBtn" layoutY="374.0" mnemonicParsing="false" onAction="#reclamationPage" prefHeight="40.0" prefWidth="223.0" styleClass="nav-button" stylesheets="@dashboardDesign.css" text="Artistes">
             <font>
                 <Font name="Leelawadee UI" size="17.0" />
             </font>
         </Button>
-        <Button fx:id="locauxBtn" layoutX="1.0" layoutY="362.0" mnemonicParsing="false" onAction="#locauxPage" prefHeight="40.0" prefWidth="223.0" styleClass="menuButton" text="Locaux" textFill="WHITE">
+        <Button fx:id="locauxBtn" layoutY="414.0" mnemonicParsing="false" onAction="#locauxPage" prefHeight="40.0" prefWidth="223.0" styleClass="nav-button" stylesheets="@dashboardDesign.css" text="Locaux">
             <font>
                 <Font name="Leelawadee UI" size="17.0" />
             </font>
         </Button>
+      <Button fx:id="utilisateursBtn" layoutX="26.0" layoutY="516.0" mnemonicParsing="false" onAction="#utilisateursPage" prefHeight="40.0" prefWidth="170.0" styleClass="login-btn" stylesheets="@loginDesign.css" text="Se déconnecter" textFill="WHITE">
+         <font>
+            <Font name="Futura Light BT" size="17.0" />
+         </font>
+      </Button>
     </children>
 </AnchorPane>

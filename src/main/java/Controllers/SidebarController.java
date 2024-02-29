@@ -71,38 +71,11 @@ public class SidebarController implements Initializable {
         }
     }
 
-    @FXML
-    private void produitsPage(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("AfficherProduit.fxml"));
-        Parent root = loader.load();
 
-        // Set the root of the current scene to the new FXML file
-        produitsBtn.getScene().setRoot(root);
 
-    }
 
-    @FXML
-    private void reclamationPage(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("ChoisirReclamationType.fxml"));
-        Parent root = loader.load();
 
-        // Set the root of the current scene to the new FXML file
-        reclamationsBtn.getScene().setRoot(root);
-    }
 
-    @FXML
-    private void locauxPage(ActionEvent event) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("interfaceU.fxml"));
-            Parent root = loader.load();
-            Scene scene = new Scene(root);
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException ex) {
-            System.out.println(ex.getMessage());
-        }
-    }
 
 
 }

@@ -6,51 +6,51 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="223.0" style="-fx-background-color: #8cbeb2;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.SidebarAdminController">
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="223.0" style="-fx-background-color: #8cbeb2;" styleClass="nav-form" stylesheets="@dashboardDesign.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.SidebarAdminController">
     <children>
-        <Button fx:id="homeBtn" layoutX="1.0" layoutY="202.0" mnemonicParsing="false" onAction="#homePage" prefHeight="40.0" prefWidth="223.0" styleClass="GeneralButton2" text="Accueil" textFill="WHITE">
+        <Button fx:id="stats" alignment="CENTER" layoutY="240.0" mnemonicParsing="false" onAction="#stats" prefHeight="40.0" prefWidth="223.0" styleClass="nav-btn" stylesheets="@loginDesign.css" text="Dashboard" textFill="WHITE">
             <font>
                 <Font name="Leelawadee UI" size="17.0" />
             </font></Button>
-        <AnchorPane prefHeight="202.0" prefWidth="223.0" style="-fx-background-color: #8cbeb2;">
+        <AnchorPane prefHeight="220.0" prefWidth="223.0" style="-fx-background-color: #8cbeb2;">
             <children>
-                <ImageView fitHeight="166.0" fitWidth="200.0" layoutX="12.0" layoutY="18.0">
+                <ImageView fitHeight="220.0" fitWidth="223.0">
                     <image>
-                        <Image url="/assets/Capture_d_écran_2024-02-25_195559-removebg-preview.png" />
+                        <Image url="@assets/Capture_d_écran_2024-02-25_195559-removebg-preview.png" />
                     </image>
                 </ImageView>
             </children>
         </AnchorPane>
-        <Button fx:id="eventListBtn" layoutX="1.0" layoutY="242.0" mnemonicParsing="false" onAction="#eventListPage" prefHeight="40.0" prefWidth="223.0" styleClass="GeneralButton2" text="Evénements" textFill="WHITE">
+        <Button fx:id="listut" alignment="CENTER" layoutY="280.0" mnemonicParsing="false" onAction="#listut" prefHeight="40.0" prefWidth="223.0" styleClass="nav-btn" stylesheets="@loginDesign.css" text="Liste utilisateurs" textFill="WHITE">
             <font>
                 <Font size="17.0" />
             </font></Button>
-        <Button fx:id="produitsBtn" layoutX="1.0" layoutY="322.0" mnemonicParsing="false" onAction="#produitsPage" prefHeight="40.0" prefWidth="223.0" styleClass="GeneralButton2" text="Formations" textFill="WHITE">
+        <Button alignment="CENTER" layoutY="360.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="223.0" styleClass="nav-btn" stylesheets="@loginDesign.css" text="Liste artistes" textFill="WHITE">
             <font>
                 <Font name="Leelawadee UI" size="17.0" />
             </font>
         </Button>
-        <Button fx:id="reclamationsBtn" layoutX="1.0" layoutY="362.0" mnemonicParsing="false" onAction="#reclamationPage" prefHeight="40.0" prefWidth="223.0" styleClass="GeneralButton2" text="Artistes" textFill="WHITE">
+        <Button alignment="CENTER" layoutY="400.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="223.0" styleClass="nav-btn" stylesheets="@loginDesign.css" text="Concours" textFill="WHITE">
             <font>
                 <Font name="Leelawadee UI" size="17.0" />
             </font>
         </Button>
-        <Button fx:id="commandeBtn" layoutX="1.0" layoutY="402.0" mnemonicParsing="false" onAction="#commandePage" prefHeight="40.0" prefWidth="223.0" styleClass="GeneralButton2" text="Commande" textFill="WHITE">
+        <Button fx:id="collab" alignment="CENTER" layoutY="440.0" mnemonicParsing="false" onAction="#collab" prefHeight="40.0" prefWidth="223.0" styleClass="nav-btn" stylesheets="@loginDesign.css" text="Collaborateurs" textFill="WHITE">
             <font>
                 <Font name="Leelawadee UI" size="17.0" />
             </font>
         </Button>
-        <Button fx:id="LocationBtn" layoutX="1.0" layoutY="442.0" mnemonicParsing="false" onAction="#locationPage" prefHeight="40.0" prefWidth="223.0" styleClass="GeneralButton2" text="Location" textFill="WHITE">
+        <Button alignment="CENTER" layoutY="480.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="223.0" styleClass="nav-btn" stylesheets="@loginDesign.css" text="Réclamations" textFill="WHITE">
             <font>
                 <Font name="Leelawadee UI" size="17.0" />
             </font>
         </Button>
-        <Button fx:id="utilisateursBtn" layoutX="1.0" layoutY="482.0" mnemonicParsing="false" onAction="#utilisateursPage" prefHeight="40.0" prefWidth="223.0" styleClass="GeneralButton2" text="Utilisateurs" textFill="WHITE">
+        <Button fx:id="connect" layoutX="26.0" layoutY="599.0" mnemonicParsing="false" onAction="#connect" prefHeight="40.0" prefWidth="170.0" styleClass="login-btn" stylesheets="@loginDesign.css" text="Se déconnecter" textFill="WHITE">
             <font>
-                <Font name="Leelawadee UI" size="17.0" />
+                <Font name="Futura Light BT" size="17.0" />
             </font>
         </Button>
-        <Button fx:id="ticketsBtn" layoutX="1.0" layoutY="282.0" mnemonicParsing="false" onAction="#ticketsPage" prefHeight="40.0" prefWidth="223.0" styleClass="GeneralButton2" text="Tickets" textFill="WHITE">
+        <Button alignment="CENTER" layoutY="320.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="223.0" styleClass="nav-btn" stylesheets="@loginDesign.css" text="Liste évenments" textFill="WHITE">
             <font>
                 <Font size="17.0" />
             </font>

@@ -50,8 +50,8 @@ public class AjouterPersonnesControllers {
     private final UserService ser = new UserService();
 
     public void initialize(URL url, ResourceBundle rb) {
-        choices.getItems().addAll(Role.ADMIN, Role.CLIENT, Role.ARTISTE);
-        choices.getSelectionModel().select(Role.ADMIN);
+        choices.getItems().addAll(Role.CLIENT, Role.ARTISTE);
+        choices.getSelectionModel().select(Role.CLIENT);
 
 
 

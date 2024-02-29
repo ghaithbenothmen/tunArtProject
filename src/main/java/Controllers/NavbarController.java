@@ -33,7 +33,7 @@ public class NavbarController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         String name = UserConnected.getNom();
-        welcomeText.setText("Binevenue, "+name+"!");
+        welcomeText.setText("Bienvenue, "+name+"!");
         if(UserConnected.getRole().equals("Artiste")){
             profileIcon.setVisible(false);
             panierIcon.setVisible(false);

@@ -83,7 +83,7 @@ public class UpdateUserController {
             //refreshi tab
             afficherUserController.refreshTable();
         } catch (SQLException e) {
-            showAlert(Alert.AlertType.ERROR, "Erreur", "Erreur de mise à jour", "Une erreur s'est produite lors de la mise à jour de la formation : " + e.getMessage());
+            showAlert(Alert.AlertType.ERROR, "Erreur", "Erreur de mise à jour", "Une erreur s'est produite lors de la mise à jour : " + e.getMessage());
         }
     }
 

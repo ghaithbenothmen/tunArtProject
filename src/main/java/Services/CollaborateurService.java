@@ -11,11 +11,18 @@ public class CollaborateurService implements IService<Collaborateur>{
 
     Connection Con;
 
+
+
+    private static Statement ste;
+    public static UserService ser;
     public CollaborateurService() {
-        Con = ConnexionDB.getInstance().getCon();
+        try {
+            Con = ConnexionDB.getInstance().getCon();
+            ste = Con.createStatement();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
     }
-
-
 
     public boolean existEmail(String email) throws SQLException {
         boolean exist = false;
@@ -61,12 +68,9 @@ public class CollaborateurService implements IService<Collaborateur>{
 
     @Override
     public boolean delete(Collaborateur c) throws SQLException {
-        String req = "DELETE FROM collaborateur WHERE id=?";
-        PreparedStatement ste = Con.prepareStatement(req);
-        ste.setInt(1, c.getId());
-        ste.executeUpdate();
+        String req2 = "DELETE FROM `collaborateur` WHERE id='" + c.getId() + "';";
+        int rowsDeleted = ste.executeUpdate(req2);
 
-        int rowsDeleted = ste.executeUpdate(req);
 
         return rowsDeleted > 0;
 
@@ -99,8 +103,8 @@ public class CollaborateurService implements IService<Collaborateur>{
         while (res.next()) {
             Collaborateur c = new Collaborateur();
             c.setId(res.getInt(1));
-            c.setNomComplet(res.getString("nom"));
-            c.setEmail(res.getString("email"));
+            c.setNomComplet(res.getString("NomComplet"));
+            c.setEmail(res.getString("Email"));
             data.add(c);
 
         }

@@ -11,11 +11,11 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws Exception {
 
-        FXMLLoader loader=new FXMLLoader(getClass().getResource("../ajouterPersonnes.fxml"));
+        FXMLLoader loader=new FXMLLoader(getClass().getResource("../AfficherCollaborateur.fxml"));
 
         Parent root=loader.load();
         Scene scene=new Scene(root);
-        stage.setTitle("Gérer formation");
+        stage.setTitle("");
         stage.setScene(scene);
         stage.show();
     }
