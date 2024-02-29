@@ -5,7 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="21315bfc-118e-44e1-a34f-1ed61d3c161c" name="Changes" comment="Formations interface Inscription">
-      <change beforePath="$PROJECT_DIR$/target/classes/Test/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Test/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/fontawesomefx_8_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/InscriptionInfoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/InscriptionInfo.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_02_2024_14_18_[Changes]/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_02_2024_14_18_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_02_2024_14_18__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/AjouterFormationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/AjouterFormationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/FormationCardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/FormationCardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/InscriptionFormationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/InscriptionFormationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/UpdateFormationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/UpdateFormationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Services/FormationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/FormationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Test/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Test/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FormationCard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FormationCard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/GestionCategorie.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/GestionCategorie.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/GestionFormation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/GestionFormation.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/InscriptionFormation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/InscriptionFormation.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/UpdateFormation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/UpdateFormation.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/FormationCardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/FormationCardController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/InscriptionFormationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/InscriptionFormationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FormationCard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FormationCard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestionCategorie.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestionCategorie.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestionFormation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestionFormation.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/InscriptionFormation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/InscriptionFormation.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +40,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -73,7 +97,7 @@
     &quot;git-widget-placeholder&quot;: &quot;Ghaith-branch&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;last_directory_selection&quot;: &quot;C:/Users/user/IdeaProjects/tunArtProject/src/main/java&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Program Files/Java/javafx-sdk-21.0.2/lib/fontawesomefx-8.9.jar&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Program Files/Java/javafx-sdk-21.0.2/lib/fontawesomefx-8.2.jar&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -83,7 +107,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.5601266&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.language&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -190,7 +214,10 @@
       <workItem from="1708887908290" duration="443000" />
       <workItem from="1708906173211" duration="2077000" />
       <workItem from="1709046164503" duration="7660000" />
-      <workItem from="1709117288263" duration="7999000" />
+      <workItem from="1709117288263" duration="9387000" />
+      <workItem from="1709128272838" duration="11363000" />
+      <workItem from="1709162704589" duration="4665000" />
+      <workItem from="1709196842576" duration="5649000" />
     </task>
     <task id="LOCAL-00001" summary="first-commit &quot;Formation&quot;">
       <option name="closed" value="true" />
@@ -312,7 +339,23 @@
       <option name="project" value="LOCAL" />
       <updated>1709126773893</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Formations interface Inscription">
+      <option name="closed" value="true" />
+      <created>1709126887584</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1709126887584</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Formations interface Inscription">
+      <option name="closed" value="true" />
+      <created>1709126914867</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1709126914867</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -47,9 +47,12 @@ public class FormationService implements IService<Formation> {
 
     @Override
     public boolean update(Formation formation) throws SQLException {
+        System.out.println(formation.getImage());
+        String uri = formation.getImage().replace("\\", "/");
+
         String req = "UPDATE `formation` SET `nom`='" + formation.getNom() /*+ "', `artiste_id`='" + formation.getArtiste_id() */+ "', `dateDebut`='" + formation.getDateDebut()
                 +  "', `dateFin`='" + formation.getDateFin() +  "', `niveau`='" + formation.getNiveau() +  "', `description`='" + formation.getDescription() +  "', `cat_id`='" + formation.getCat_id().getId()
-                +  "', `image`='" + formation.getImage()+ "' WHERE id='" + formation.getId() + "';";
+                +  "', `image`='" + uri+ "' WHERE id='" + formation.getId() + "';";
 
         int rowsUpdated = ste.executeUpdate(req);
 

@@ -160,6 +160,7 @@ public class AjouterFormationController {
             parentController.refreshTable();
         } catch (SQLException e) {
             showAlert(Alert.AlertType.ERROR, "Erreur", "Erreur de mise à jour", "Une erreur s'est produite lors de la mise à jour de la formation : " + e.getMessage());
+            System.out.println(e.getMessage());
         }
     }
 
@@ -191,7 +192,7 @@ public class AjouterFormationController {
 
         if (file != null) {
 
-             imagePath = file.getAbsolutePath();
+            imagePath = file.getAbsolutePath();
             image = new Image(file.toURI().toString(), 147, 89, false, true);
             imageFor.setImage(image);
         }

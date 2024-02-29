@@ -7,6 +7,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 
@@ -18,9 +19,11 @@ public class InscriptionFormationController  implements Initializable {
 
     @FXML
     private GridPane gridFor;
-
+    @FXML
+    private TextField searchFor;
     private final FormationService formationService = new FormationService();
     private ObservableList<Formation> formationList = FXCollections.observableArrayList();
+
 
 
     public ObservableList<Formation> getAllFormationCard() throws SQLException {
@@ -31,28 +34,26 @@ public class InscriptionFormationController  implements Initializable {
     int row = 0;
     int column = 0;
 
-    public void displayAllFormationCard() throws SQLException {
-        formationList.clear();
-        formationList.addAll(formationService.findAll());
-
+    public void displayFormationCards(ObservableList<Formation> formationList) {
         gridFor.getRowConstraints().clear();
         gridFor.getColumnConstraints().clear();
-        for (int q = 0; q < formationList.size(); q++) {
+        int row = 0;
+        int column = 0;
+        for (Formation formation : formationList) {
             try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("../FormationCard.fxml")); // Set the location of the FXML file
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("../FormationCard.fxml"));
                 AnchorPane pane = loader.load();
                 FormationCardController forCard = loader.getController();
-                forCard.setData(formationList.get(q));
-
-                gridFor.addRow(row); // Add a new row if needed
+                forCard.setData(formation);
+                forCard.setFormation(formation);
+                gridFor.addRow(row);
                 gridFor.add(pane, column, row);
 
                 column++;
                 if (column == 3) {
                     column = 0;
-                    row += 1;
+                    row++;
                 }
-
             } catch (Exception e) {
                 System.out.println(e);
             }
@@ -63,9 +64,25 @@ public class InscriptionFormationController  implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
-            displayAllFormationCard();
+            getAllFormationCard();
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        displayFormationCards(formationList);
+        searchFor.textProperty().addListener((observable, oldValue, newValue) -> {
+            filterData(newValue);
+        });
+
+    }
+    private void filterData(String searchText) {
+        ObservableList<Formation> filteredList = FXCollections.observableArrayList();
+        for (Formation formation : formationList) {
+            if (formation.getNom().toLowerCase().contains(searchText.toLowerCase())) {
+                filteredList.add(formation);
+            }
+        }
+        gridFor.getChildren().clear();
+        displayFormationCards(filteredList);
     }
 }

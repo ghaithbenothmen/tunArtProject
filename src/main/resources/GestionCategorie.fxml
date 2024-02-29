@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
 <?import java.lang.String?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -27,7 +28,8 @@
                             <TableColumn fx:id="nomcat" prefWidth="373.60003662109375" text="Nom" />
                           </columns>
                         </TableView>
-                        <TextField fx:id="searchCat" layoutX="14.0" layoutY="14.0" promptText="    Rechercher" />
+                        <TextField fx:id="searchCat" layoutX="14.0" layoutY="14.0" promptText="  Rechercher" />
+                        <FontAwesomeIcon fill="#dcdcdc" glyphName="SEARCH" layoutX="146.0" layoutY="30.0" />
                        
                      </children>
                   </AnchorPane>
