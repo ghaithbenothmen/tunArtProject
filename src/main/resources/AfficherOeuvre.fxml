@@ -21,7 +21,7 @@
                   <String fx:value="white-bg" />
                </styleClass>
                <children>
-                  <ScrollPane layoutX="26.0" layoutY="64.0" prefHeight="414.0" prefWidth="711.0">
+                  <ScrollPane layoutX="-2.0" layoutY="64.0" prefHeight="414.0" prefWidth="783.0">
                      <content>
                         <AnchorPane>
                            <children>
@@ -37,7 +37,7 @@
                         </AnchorPane>
                      </content>
                   </ScrollPane>
-                  <TextField fx:id="searchOeuvre" layoutX="26.0" layoutY="38.0" promptText="    Rechercher" />
+                  <TextField fx:id="searchOeuvre" layoutX="8.0" layoutY="38.0" promptText="    Rechercher" />
                </children>
             </AnchorPane>
             <Text fill="#8cbeb2" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste des Oeuvres">

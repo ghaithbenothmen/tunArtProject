@@ -9,9 +9,15 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 import javafx.stage.FileChooser;
+
+import java.io.IOException;
 import java.sql.SQLException;
 import java.time.LocalDate;
 
@@ -44,10 +50,35 @@ public class AjouterOeuvreControler {
     @FXML
     private ComboBox  selectType;
     private String imagePath;
+    private AfficherController afficherController ;
 
     @FXML
     private void onUploadButtonClick(ActionEvent event) {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Open Image File");
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif"));
+        File selectedFile = fileChooser.showOpenDialog(null);
+        if (selectedFile != null) {
+            try {
 
+                // Load the selected image file
+                Image image = new Image(selectedFile.toURI().toString());
+                // Display the image in the ImageView
+                imagePreview.setImage(image);
+                // Store the path of the selected image file
+                imagePath = selectedFile.getAbsolutePath();
+            } catch (Exception e) {
+                // Handle any errors that may occur during image loading
+                e.printStackTrace();
+                // Optionally, display an error message to the user
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("Unable to load image");
+                alert.setContentText("An error occurred while loading the selected image file.");
+                alert.showAndWait();
+            }
+        }
     }
     public void initialize() {
         ObservableList<String> TypeNames = FXCollections.observableArrayList();
@@ -97,10 +128,19 @@ public class AjouterOeuvreControler {
             Stage stage = (Stage) txtnom.getScene().getWindow();
 
             stage.close();
-            parentController.refreshScrollPane();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../AfficherOeuvre.fxml"));
+            Parent root = loader.load();
+            afficherController = loader.getController();
+            Stage Rstage = new Stage();
+            Rstage.setTitle("Afficher Oeuvre");
+            Rstage.setScene(new Scene(root));
+            Rstage.show();
+//            parentController.refreshScrollPane();
 
         } catch (SQLException e) {
             showAlert(Alert.AlertType.ERROR, "Erreur", "Erreur de mise à jour", " " + e.getMessage());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
     @FXML
@@ -118,6 +158,20 @@ public class AjouterOeuvreControler {
         alert.setHeaderText(header);
         alert.setContentText(content);
         alert.showAndWait();
+    }
+    @FXML
+    private void Retour(ActionEvent event) throws IOException {
+
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../AfficherOeuvre.fxml"));
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        stage.setScene(scene);
+        stage.show();
+        stage.close();
+
     }
 
 }

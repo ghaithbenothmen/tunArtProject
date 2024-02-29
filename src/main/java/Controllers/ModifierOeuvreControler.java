@@ -7,6 +7,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -16,6 +17,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import javax.swing.*;
+import java.awt.event.MouseEvent;
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -26,6 +28,8 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class ModifierOeuvreControler {
+
+
 
     @FXML
     private Button Importer;
@@ -57,6 +61,10 @@ public class ModifierOeuvreControler {
     private String imagePath;
     private Image image;
     OeuvreService oeuvreService=new OeuvreService();
+    private Scene previousScene;
+
+    public void setPreviousScene(Scene scene) {
+        this.previousScene = scene;}
     private  AfficherController afficherController;
     private Date convertToDate(LocalDate localDate) {
         return Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
@@ -116,6 +124,7 @@ public class ModifierOeuvreControler {
         updatedOeuvre.setNote(null);
         updatedOeuvre.setImg(image);
         System.out.println(updatedOeuvre);
+
 
         try {
             oeuvreService.update(updatedOeuvre);
@@ -197,6 +206,21 @@ public class ModifierOeuvreControler {
 //        oeuvreListe.addAll(oeuvreService.findAll());
 //    }
 
+
+
+    @FXML
+    void Retour(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AfficherOeuvre.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
 
 
 

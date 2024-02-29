@@ -27,11 +27,12 @@
         <Text layoutX="335.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type de l'oeuvre" wrappingWidth="181.5999999999999" />
         <DatePicker fx:id="date" layoutX="334.0" layoutY="165.0" prefHeight="26.0" prefWidth="182.0" promptText="dd/mm/yyyy" />
         <Text layoutX="335.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date de publication" wrappingWidth="181.5999999999999" />
-        <Button fx:id="add" layoutX="463.0" layoutY="325.0" mnemonicParsing="false" onAction="#AjouterOeuvre" prefHeight="35.0" prefWidth="88.0" styleClass="add-btn" style="-fx-background-color: #8cbeb2;" text="Ajouter"/>
+        <Button fx:id="add" layoutX="463.0" layoutY="325.0" mnemonicParsing="false" onAction="#AjouterOeuvre" prefHeight="35.0" prefWidth="88.0" style="-fx-background-color: #8cbeb2;" styleClass="add-btn" text="Ajouter" />
         <Button fx:id="reset" layoutX="347.0" layoutY="325.0" mnemonicParsing="false" onAction="#annuler" prefHeight="35.0" prefWidth="88.0" style="-fx-background-color: ffffff;" text="Réinitialiser" textFill="#8cbeb2" />
         <Button fx:id="Importer" layoutX="71.0" layoutY="191.0" mnemonicParsing="false" onAction="#onUploadButtonClick" text="Importer" />
         <ComboBox fx:id="selectType" layoutX="334.0" layoutY="102.0" prefHeight="26.0" prefWidth="182.0" promptText="Séléctionner le type de l'oeuvre" />
         <ImageView fx:id="imagePreview" fitHeight="150.0" fitWidth="200.0" layoutX="335.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true" />
+      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#Retour" prefHeight="26.0" prefWidth="36.0" text="Retour" />
 
     </children>
 </AnchorPane>

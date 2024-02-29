@@ -6,7 +6,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.OneOeuvreController">
    <children>
       <ImageView fx:id="img" fitHeight="239.0" fitWidth="194.0" layoutX="14.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true" />
@@ -52,5 +51,6 @@
             <Font size="15.0" />
          </font>
       </Label>
+      <Button layoutX="8.0" layoutY="14.0" mnemonicParsing="false" onAction="#Retour" text="Retour" />
    </children>
 </AnchorPane>

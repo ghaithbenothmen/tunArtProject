@@ -1,5 +1,6 @@
 package Controllers;
 
+import Entites.Formation;
 import Entites.Oeuvre;
 import Services.OeuvreService;
 import javafx.collections.FXCollections;
@@ -41,6 +42,8 @@ public class AfficherController implements Initializable {
 
 
 
+
+
     @FXML
     void ajouterOeuvre(ActionEvent event) {
         try {
@@ -61,7 +64,7 @@ public class AfficherController implements Initializable {
     }
     public void refreshScrollPane() throws SQLException {
         grid.getChildren().clear();
-        displayAllOeuvreCard();
+        getAllOeuvreCard();
 //       oeuvreList.addAll(oeuvreService.findAll());
 
     }
@@ -76,19 +79,22 @@ public class AfficherController implements Initializable {
     int row = 0;
     int column=0;
 
-    public void displayAllOeuvreCard() throws SQLException {
-        oeuvreList.clear();
-        oeuvreList.addAll(oeuvreService.findAll());
+    public void displayAllOeuvreCard(ObservableList<Oeuvre> oeuvreList) {
+//        oeuvreList.clear();
+//        oeuvreList.addAll(oeuvreService.findAll());
 
         grid.getRowConstraints().clear();
         grid.getColumnConstraints().clear();
-        for(int i =0; i<oeuvreList.size();i++) {
+        int row = 0;
+        int column = 0;
+
+        for(Oeuvre oeuvre : oeuvreList) {
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("../OeuvreCard.fxml"));
                 AnchorPane pane = loader.load();
                 OeuvreCardController OCard = loader.getController();
-                OCard.setData(oeuvreList.get(i));
-                OCard.setOeuvre(oeuvreList.get(i));
+                OCard.setData(oeuvre);
+                OCard.setOeuvre(oeuvre);
                 grid.addRow(row);
                 grid.add(pane, column, row);
 
@@ -106,10 +112,28 @@ public class AfficherController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
-            displayAllOeuvreCard();
+            getAllOeuvreCard();
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+
+        displayAllOeuvreCard(oeuvreList);
+        searchOeuvre.textProperty().addListener((observable, oldValue, newValue) -> {
+            filterData(newValue);
+
+        });
+
+    }
+    private void filterData(String searchText)  {
+        ObservableList<Oeuvre> filteredList = FXCollections.observableArrayList();
+        for (Oeuvre oeuvre : oeuvreList) {
+            if (oeuvre.getNom_Ouvre().toLowerCase().contains(searchText.toLowerCase())) {
+                filteredList.add(oeuvre);
+            }
+        }
+        grid.getChildren().clear();
+        displayAllOeuvreCard(filteredList);
     }
 
 

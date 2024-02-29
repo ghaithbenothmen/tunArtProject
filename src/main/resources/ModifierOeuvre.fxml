@@ -31,5 +31,6 @@
         <Button fx:id="Importer" layoutX="334.0" layoutY="200.0" mnemonicParsing="false" onAction="#importer_image" text="Importer" />
         <ComboBox fx:id="selectType" layoutX="334.0" layoutY="102.0" prefHeight="26.0" prefWidth="182.0" promptText="Séléctionner le type de l'oeuvre" />
       <ImageView fx:id="imageView" fitHeight="117.0" fitWidth="182.0" layoutX="335.0" layoutY="226.0" pickOnBounds="true" preserveRatio="true" />
+      <Button layoutX="14.0" layoutY="21.0" mnemonicParsing="false" onAction="#Retour" text="Button" />
     </children>
 </AnchorPane>
