@@ -43,6 +43,8 @@ public class LoginController implements Initializable {
 
 
     public static User UserConnected;
+
+
     UserService us= new UserService();
     @FXML
     private Button icibt;
@@ -103,7 +105,17 @@ public class LoginController implements Initializable {
                 alert.setContentText("Welcome"+" "+UserConnected.getNom()+" "+UserConnected.getPrenom());
                 alert.show();
 
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/GestionFormation.fxml"));
+                Parent root = loader.load();
 
+                GestionFormationController gestionFormationController = loader.getController();
+                gestionFormationController.initData(UserConnected.getId()); // Pass the user_id to the controller
+
+                Scene scene = new Scene(root);
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                stage.setTitle("Gestion Formation");
+                stage.setScene(scene);
+                stage.show();
 
             }
             else{
@@ -117,23 +129,7 @@ public class LoginController implements Initializable {
             }
 
 
-            if(UserConnected != null){
-
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/InscriptionUser.fxml"));
-                Parent root = loader.load();
-
-
-                Scene scene = new Scene(root);
-                //Load CSS
-
-
-                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                stage.setTitle("TunArt");
-                stage.setScene(scene);
-                stage.show();
-
-
-            }
+            
         }
 
     }

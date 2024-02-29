@@ -1,11 +1,11 @@
 package Services;
 
-import Entites.Role;
-import Entites.User;
+import Entites.*;
 import Utils.ConnexionDB;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class UserService implements IService<User> {
@@ -76,7 +76,28 @@ public class UserService implements IService<User> {
     }
 
     @Override
-    public User findById(int id) throws SQLException {
+    public User findById(int idd) throws SQLException {
+        String req = "SELECT * FROM `user` WHERE id='" +idd + "';";
+        ResultSet res = ste.executeQuery(req);
+
+        if (res.next()) {
+            int id = res.getInt(1);
+            String Nom = res.getString(2);
+            String Prenom = res.getString(3);
+            String Email = res.getString(4);
+            String Mdp = res.getString(5);
+            int Tel = res.getInt(6);
+            Role role = Role.valueOf(res.getString(7));
+            String image = res.getString(8);
+
+
+
+
+
+
+            return new User( id,  Tel, Nom, Prenom, Email, Mdp, image,role);
+        }
+
         return null;
     }
 

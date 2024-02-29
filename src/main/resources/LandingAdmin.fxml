@@ -18,9 +18,9 @@
                 <Font name="Leelawadee UI Semilight" size="23.0" />
             </font>
         </Text>
-        <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="400.0" layoutY="108.0">
+        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="109.0" layoutY="181.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="/assets/admin.png" />
+                <Image url="@assets/admin.png" />
             </image>
         </ImageView>
     </children>

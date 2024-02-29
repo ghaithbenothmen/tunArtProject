@@ -3,8 +3,10 @@ package Controllers;
 import Entites.Categorie;
 import Entites.Formation;
 import Entites.Niveau;
+import Entites.User;
 import Services.CategorieService;
 import Services.FormationService;
+import Services.UserService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -28,6 +30,8 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Calendar;
+
+import static Controllers.LoginController.UserConnected;
 
 public class UpdateFormationController {
     @FXML
@@ -63,8 +67,16 @@ public class UpdateFormationController {
     private Image image;
     private Image imageGet;
     private  String imagePath;
+    public UserService userService=new UserService();
+
+    private GestionFormationController parentController;
+
+    public void setParentController(GestionFormationController parentController) {
+        this.parentController = parentController;
+    }
+
     @FXML
-    void updateFormation(ActionEvent event) {
+    void updateFormation(ActionEvent event) throws SQLException {
 
         String nom = txtnom.getText();
         String desc = txtdesc.getText();
@@ -91,6 +103,12 @@ public class UpdateFormationController {
         updatedFormation.setDescription(desc);
         updatedFormation.setCat_id(selectedCategorieIns);
 
+        int artisteId = UserConnected.getId();
+        System.out.println(artisteId);
+        User artiste = userService.findById(artisteId);
+        System.out.println(artiste);
+        updatedFormation.setArtiste_id(artiste);
+
         updatedFormation.setImage(img);
         System.out.println("hello mmmm");
 
@@ -103,7 +121,7 @@ public class UpdateFormationController {
             stage.close();
 
             //refreshi tab
-            gestionFormationController.refreshTable();
+            gestionFormationController.initData(artisteId);
         } catch (SQLException e) {
             showAlert(Alert.AlertType.ERROR, "Erreur", "Erreur de mise à jour", "Une erreur s'est produite lors de la mise à jour de la formation : " + e.getMessage());
         }

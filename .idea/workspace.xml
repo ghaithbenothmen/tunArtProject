@@ -5,25 +5,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="21315bfc-118e-44e1-a34f-1ed61d3c161c" name="Changes" comment="new branch yassine">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Services/CollaborateurService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Services/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Sidebar.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/Capture_d_écran_2024-02-25_195559-removebg-preview.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/admin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/art.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/logo.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/profile-removebg-preview.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/telech.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/logo png.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/loginDesign.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/AjouterFormationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/AjouterFormationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/GestionFormationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/GestionFormationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/MainContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/MainContainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/UpdateFormationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/UpdateFormationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/UpdateUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/UpdateUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entites/Formation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entites/Formation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entites/Inscription.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entites/Inscription.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entites/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entites/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Services/FormationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/FormationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Test/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Test/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/ConnexionDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utils/ConnexionDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/LandingAdmin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/LandingAdmin.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/LandingPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/LandingPage.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Navbar.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Navbar.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SidebarAdmin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/SidebarAdmin.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/User.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/User.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ajouterPersonnes.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ajouterPersonnes.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/Monday (3).jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/Tips about time management with learningate.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dashboardDesign.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dashboardDesign.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/AjouterFormationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/AjouterFormationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/GestionFormationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/GestionFormationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/UpdateFormationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/UpdateFormationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entites/Actualité.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entites/Concours.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entites/Evenement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entites/Formation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entites/Formation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entites/Inscription.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entites/Inscription.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entites/Oeuvre.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entites/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entites/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Services/FormationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Services/FormationService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/SideBar.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/SideBar.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Test/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Test/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Utils/ConnexionDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Utils/ConnexionDB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dashboardDesign.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dashboardDesign.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,10 +104,10 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Yassine-branch",
+    "git-widget-placeholder": "Ghaith-branch",
     "ignore.virus.scanning.warn.message": "true",
     "last_directory_selection": "C:/Users/user/IdeaProjects/tunArtProject/src/main/java",
-    "last_opened_file_path": "C:/Users/essid/IdeaProjects/tunArtProject/src/main/resources",
+    "last_opened_file_path": "C:/Users/user/IdeaProjects/tunArtProject/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -107,11 +123,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\user\IdeaProjects\tunArtProject\src\main\resources" />
+      <recent name="C:\Users\user\IdeaProjects\tunArtProject\src\main\resources\assets" />
       <recent name="C:\Users\essid\IdeaProjects\tunArtProject\src\main\resources" />
       <recent name="C:\Users\essid\IdeaProjects\tunArtProject\src\main\resources\assets" />
       <recent name="C:\Users\essid\IdeaProjects\tunArtProject\src\main\java\Services" />
-      <recent name="C:\Users\essid\IdeaProjects\tunArtProject\src\main\java\Entites" />
-      <recent name="C:\Users\essid\IdeaProjects\tunArtProject\src\main\java\Controllers" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\user\IdeaProjects\tunArtProject\src\main\resources\assets" />

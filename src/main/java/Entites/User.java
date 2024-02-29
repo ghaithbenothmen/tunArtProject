@@ -24,6 +24,7 @@ public class User {
         this.email = email;
         this.mdp = mdp;
         this.role = role;
+
     }
 
     public User(String nom, String prenom) {
