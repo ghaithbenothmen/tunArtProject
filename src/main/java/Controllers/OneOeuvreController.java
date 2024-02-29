@@ -55,7 +55,12 @@ public class OneOeuvreController {
     private final OeuvreService oeuvreService = new OeuvreService();
     private Oeuvre oeuvre;
     private OneOeuvreController oneOeuvreController;
-    private AfficherController parentController ;
+    private AfficherController afficherController ;
+
+
+//    public void setAfficherController(AfficherController afficherController) {
+//        this.afficherController = afficherController;
+//    }
 
     @FXML
     void ModifierOeuvre(ActionEvent event) {
@@ -69,6 +74,10 @@ public class OneOeuvreController {
             stage.show();
             ModifierOeuvreControler controler = loader.getController();
             controler.initData(oeuvre);
+            //stage.close();
+
+
+//            parentController.refreshScrollPane();
         } catch (IOException e) {
             e.printStackTrace();
         } catch (SQLException e) {
@@ -93,11 +102,22 @@ public class OneOeuvreController {
         try{
             oeuvreService.delete(this.oeuvre);
             showAlert(Alert.AlertType.CONFIRMATION, "Succès", "Oeuvre supprimer", "L'oeuvre a été supprimer avec succès.");
-            Stage stage = (Stage) nom_Oeuvre.getScene().getWindow();
-            stage.close();
+            Stage Currentstage = (Stage) nom_Oeuvre.getScene().getWindow();
+            Currentstage.close();
+//            afficherController.refreshScrollPane();*
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../AfficherOeuvre.fxml"));
+            Parent root = loader.load();
+            afficherController = loader.getController();
+            Stage stage = new Stage();
+            stage.setTitle("Afficher Oeuvre");
+            stage.setScene(new Scene(root));
+            stage.show();
             
         }catch (SQLException e){
             System.out.println(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
 
     }

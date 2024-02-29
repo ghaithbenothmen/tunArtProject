@@ -53,9 +53,10 @@ public class OeuvreService implements IOeuvre<Oeuvre>{
 
     @Override
     public boolean update(Oeuvre o) throws SQLException {
+        String uri = o.getImg().replace("\\", "/");
 
         String req = "UPDATE `Oeuvre` SET `nom_Oeuvre`='" + o.getNom_Ouvre()
-                + "', `img`='" +o.getImg()
+                + "', `img`='" +uri
                 + "', `date_Publication`='" + o.getDate_Publication()
                 + "', `description`='" +o.getDescription()
                 + "', `note`='" + 33

@@ -6,10 +6,19 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import javax.swing.*;
+import java.io.File;
+import java.io.IOException;
+import java.net.MalformedURLException;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.ZoneId;
@@ -20,6 +29,9 @@ public class ModifierOeuvreControler {
 
     @FXML
     private Button Importer;
+
+    @FXML
+    private ImageView imageView;
 
     @FXML
     private Button add;
@@ -42,14 +54,43 @@ public class ModifierOeuvreControler {
     @FXML
     private ComboBox selectType;
     private Oeuvre oeuvre;
+    private String imagePath;
+    private Image image;
     OeuvreService oeuvreService=new OeuvreService();
-
+    private  AfficherController afficherController;
     private Date convertToDate(LocalDate localDate) {
         return Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
     }
 
     @FXML
     void importer_image(ActionEvent event) {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Open Image File");
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif"));
+        File selectedFile = fileChooser.showOpenDialog(null);
+        if (selectedFile != null) {
+            try {
+
+                // Load the selected image file
+                Image image = new Image(selectedFile.toURI().toString());
+                // Display the image in the ImageView
+                imageView.setImage(image);
+
+                // Store the path of the selected image file
+                imagePath = selectedFile.getAbsolutePath();
+                img.setText(imagePath);
+            } catch (Exception e) {
+                // Handle any errors that may occur during image loading
+                e.printStackTrace();
+                // Optionally, display an error message to the user
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("Unable to load image");
+                alert.setContentText("An error occurred while loading the selected image file.");
+                alert.showAndWait();
+            }
+        }
 
     }
 
@@ -61,16 +102,19 @@ public class ModifierOeuvreControler {
         TypeOeuvre type = (TypeOeuvre) selectType.getSelectionModel().getSelectedItem();
         LocalDate datedb=date.getValue();
 
+
+
         java.sql.Date sqlDateDebut = java.sql.Date.valueOf(datedb);
 
         Oeuvre updatedOeuvre = new Oeuvre();
         updatedOeuvre.setRef(oeuvre.getRef());
         updatedOeuvre.setNom_Ouvre(nom);
         updatedOeuvre.setDate_Publication(sqlDateDebut);
-        updatedOeuvre.setImg(image);
+        //updatedOeuvre.setImg(imagePath);
         updatedOeuvre.setDescription(description);
         updatedOeuvre.setTypeOeuvre(type);
         updatedOeuvre.setNote(null);
+        updatedOeuvre.setImg(image);
         System.out.println(updatedOeuvre);
 
         try {
@@ -78,15 +122,23 @@ public class ModifierOeuvreControler {
             showAlert(Alert.AlertType.CONFIRMATION, "Succès", "Oeuvre mise à jour", "L'Oeuvre a été mise à jour avec succès.");
 
 
-            Stage stage = (Stage) txtnom.getScene().getWindow();
+            Stage Currentstage = (Stage) txtnom.getScene().getWindow();
 
-            stage.close();
+            Currentstage.close();
 
-
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../AfficherOeuvre.fxml"));
+            Parent root = loader.load();
+             afficherController = loader.getController();
+            Stage stage = new Stage();
+            stage.setTitle("Afficher Oeuvre");
+            stage.setScene(new Scene(root));
+            stage.show();
 
             System.out.println(updatedOeuvre);
         } catch (SQLException e) {
             showAlert(Alert.AlertType.ERROR, "Erreur", "Erreur de mise à jour", " " + e.getMessage());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
     private OneOeuvreController oneOeuvreController;
@@ -110,6 +162,15 @@ public class ModifierOeuvreControler {
         txtnom.setText(oeuvre.getNom_Ouvre());
         desc.setText(oeuvre.getDescription());
         img.setText(oeuvre.getImg());
+        String path = oeuvre.getImg();
+
+        try {
+            image = new Image(new File(path).toURI().toURL().toString(),207,138,false,true);
+            imageView.setImage(image);
+
+        } catch (MalformedURLException e){
+            e.printStackTrace();
+        }
 
 
         ObservableList<TypeOeuvre> TypeList = FXCollections.observableArrayList(TypeOeuvre.values());

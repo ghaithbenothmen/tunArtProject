@@ -70,7 +70,7 @@ public class OeuvreCardController {
 
 
         String path = oeuvre.getImg();
-        System.out.println(path);
+
         try {
             image = new Image(new File(path).toURI().toURL().toString(),207,138,false,true);
             img.setImage(image);

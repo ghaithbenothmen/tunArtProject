@@ -47,31 +47,7 @@ public class AjouterOeuvreControler {
 
     @FXML
     private void onUploadButtonClick(ActionEvent event) {
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Open Image File");
-        fileChooser.getExtensionFilters().addAll(
-                new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif"));
-        File selectedFile = fileChooser.showOpenDialog(null);
-        if (selectedFile != null) {
-            try {
 
-                // Load the selected image file
-                Image image = new Image(selectedFile.toURI().toString());
-                // Display the image in the ImageView
-                imagePreview.setImage(image);
-                // Store the path of the selected image file
-                imagePath = selectedFile.getAbsolutePath();
-            } catch (Exception e) {
-                // Handle any errors that may occur during image loading
-                e.printStackTrace();
-                // Optionally, display an error message to the user
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Error");
-                alert.setHeaderText("Unable to load image");
-                alert.setContentText("An error occurred while loading the selected image file.");
-                alert.showAndWait();
-            }
-        }
     }
     public void initialize() {
         ObservableList<String> TypeNames = FXCollections.observableArrayList();
