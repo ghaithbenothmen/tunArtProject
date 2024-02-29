@@ -18,7 +18,7 @@
             <children>
                 <ImageView fx:id="logo" fitHeight="229.0" fitWidth="259.0" layoutX="28.0" layoutY="23.0">
                     <image>
-                        <Image url="/images/telech.jpg" />
+                        <Image url="/assets/telech.jpg" />
                     </image>
 
                 </ImageView>

@@ -24,7 +24,7 @@
                 </Text>
                 <ImageView fx:id="pdp" fitHeight="110.0" fitWidth="120.0" layoutX="13.0" layoutY="17.0">
                     <image>
-                        <Image url="@/images/telech.jpg" />
+                        <Image url="@/assets/Capture_d_écran_2024-02-25_195559-removebg-preview.png" />
                     </image>
                 </ImageView>
                 <Button fx:id="btinfos" layoutX="151.0" layoutY="99.0" mnemonicParsing="false" onAction="#infos" style="-fx-background-color: rgba(238,213,88,0.71);" text="Plus d'informations" textFill="WHITE">

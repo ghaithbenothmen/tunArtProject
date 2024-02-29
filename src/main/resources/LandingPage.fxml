@@ -14,7 +14,7 @@
             </font></Text>
         <ImageView fitHeight="373.0" fitWidth="574.0" layoutX="213.0" layoutY="124.0">
             <image>
-                <Image url="/images/Capture_d_écran_2024-02-25_195559-removebg-preview.png" />
+                <Image url="/assets/Capture_d_écran_2024-02-25_195559-removebg-preview.png" />
             </image>
         </ImageView>
         <Text layoutX="153.0" layoutY="545.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vous pouvez trouver une variété d'événements ici, obtenir des billets, acheter des produits d'artistes, tout en un !" wrappingWidth="743.67236328125">

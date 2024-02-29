@@ -45,7 +45,7 @@
             <ComboBox fx:id="choices" layoutX="83.0" layoutY="394.0" prefWidth="150.0" />
             <ImageView fitHeight="209.0" fitWidth="250.0" layoutX="459.0" layoutY="196.0" pickOnBounds="true" preserveRatio="true" >
                 <image>
-                    <Image url="/images/Capture_d_écran_2024-02-25_195559-removebg-preview.png"/>
+                    <Image url="/assets/Capture_d_écran_2024-02-25_195559-removebg-preview.png"/>
                 </image>
             </ImageView>
             </children>

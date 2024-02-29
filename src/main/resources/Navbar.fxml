@@ -8,7 +8,7 @@
     <children>
         <ImageView fx:id="profileIcon" fitHeight="52.0" fitWidth="53.0" layoutX="971.0" layoutY="12.0" onMouseClicked="#openProfile">
             <image>
-                <Image url="/images/profile-removebg-preview.png" />
+                <Image url="/assets/profile-removebg-preview.png" />
             </image>
         </ImageView>
 

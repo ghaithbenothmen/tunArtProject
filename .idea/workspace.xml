@@ -4,42 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21315bfc-118e-44e1-a34f-1ed61d3c161c" name="Changes" comment="Formations interface Inscription">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/AfficherArtistesController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/AfficherUserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/AjouterPersonnesControllers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/CollaborateurController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/EditController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/InscriptionControllers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/LandingAdminController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/LandingPageController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/MCCSaver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/MainContainer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/NavbarController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/SidebarAdminController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/StatUserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/UpdateUserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Entites/Collaborateur.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Entites/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Entites/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/AfficherArtistes.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/AfficherUser.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Collaborateur.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/LandingAdmin.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/LandingPage.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Login.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/MainContainer.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Navbar.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/SidebarAdmin.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/StatUser.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/UpdateUser.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/User.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ajouterPersonnes.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/SideBarController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SideBar.fxml" beforeDir="false" />
+    <list default="true" id="21315bfc-118e-44e1-a34f-1ed61d3c161c" name="Changes" comment="new branch yassine">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Services/CollaborateurService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Services/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Sidebar.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/Capture_d_écran_2024-02-25_195559-removebg-preview.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/admin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/art.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/logo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/profile-removebg-preview.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/telech.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/LandingAdmin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/LandingAdmin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/LandingPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/LandingPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Navbar.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Navbar.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/SidebarAdmin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/SidebarAdmin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/User.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/User.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ajouterPersonnes.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ajouterPersonnes.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/Monday (3).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/Tips about time management with learningate.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +42,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="Ghaith-branch" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -104,7 +88,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Ghaith-branch",
+    "git-widget-placeholder": "Yassine-branch",
     "ignore.virus.scanning.warn.message": "true",
     "last_directory_selection": "C:/Users/user/IdeaProjects/tunArtProject/src/main/java",
     "last_opened_file_path": "C:/Users/essid/IdeaProjects/tunArtProject/src/main/resources",
@@ -134,6 +118,7 @@
       <recent name="C:\Users\user\IdeaProjects\tunArtProject\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Services" />
       <recent name="Test" />
     </key>
   </component>
@@ -235,7 +220,7 @@
       <workItem from="1709128272838" duration="11363000" />
       <workItem from="1709162704589" duration="4665000" />
       <workItem from="1709196842576" duration="5649000" />
-      <workItem from="1709206127731" duration="215000" />
+      <workItem from="1709206127731" duration="1138000" />
     </task>
     <task id="LOCAL-00001" summary="first-commit &quot;Formation&quot;">
       <option name="closed" value="true" />
@@ -373,7 +358,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709126914867</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="new branch yassine">
+      <option name="closed" value="true" />
+      <created>1709206498690</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1709206498690</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -429,7 +422,8 @@
     <MESSAGE value="Gestion Catégorie+Formation(Compléte)" />
     <MESSAGE value="Formations interface" />
     <MESSAGE value="Formations interface Inscription" />
-    <option name="LAST_COMMIT_MESSAGE" value="Formations interface Inscription" />
+    <MESSAGE value="new branch yassine" />
+    <option name="LAST_COMMIT_MESSAGE" value="new branch yassine" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

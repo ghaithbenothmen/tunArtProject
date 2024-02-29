@@ -20,7 +20,7 @@
         </Text>
         <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="400.0" layoutY="108.0">
             <image>
-                <Image url="/images/admin.png" />
+                <Image url="/assets/admin.png" />
             </image>
         </ImageView>
     </children>
