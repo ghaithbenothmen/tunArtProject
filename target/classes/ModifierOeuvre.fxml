@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ModifierOeuvreControler">
+    <children>
+        <Text layoutX="89.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modifier une oeuvre" textAlignment="CENTER" wrappingWidth="421.70703125">
+            <font>
+                <Font size="30.0" />
+            </font>
+        </Text>
+        <Text layoutX="70.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom de l'oeuvre" />
+        <Text layoutX="70.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lien de l'image" />
+        <TextField fx:id="txtnom" layoutX="70.0" layoutY="101.0" prefHeight="26.0" prefWidth="182.0" promptText="Ajouter nom" />
+        <TextField fx:id="img" layoutX="71.0" layoutY="165.0" prefHeight="26.0" prefWidth="182.0" promptText="URL" />
+        <Text layoutX="71.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" wrappingWidth="98.6519775390625" />
+        <TextArea fx:id="desc" layoutX="67.0" layoutY="258.0" prefHeight="78.0" prefWidth="181.0" />
+        <Text layoutX="335.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type de l'oeuvre" wrappingWidth="181.5999999999999" />
+        <DatePicker fx:id="date" layoutX="334.0" layoutY="165.0" prefHeight="26.0" prefWidth="182.0" promptText="dd/mm/yyyy" />
+        <Text layoutX="335.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date de publication" wrappingWidth="181.5999999999999" />
+        <Button fx:id="Update" layoutX="464.0" layoutY="354.0" mnemonicParsing="false" onAction="#ModifierOeuvre" prefHeight="26.0" prefWidth="88.0" style="-fx-background-color: F3B562;" text="Modifier" />
+        <Button fx:id="reset" layoutX="370.0" layoutY="355.0" mnemonicParsing="false" onAction="#annuler" prefHeight="26.0" prefWidth="88.0" style="-fx-background-color: ffffff;" text="Réinitialiser" textFill="#5c4d51" />
+        <Button fx:id="Importer" layoutX="334.0" layoutY="200.0" mnemonicParsing="false" onAction="#importer_image" text="Importer" />
+        <ComboBox fx:id="selectType" layoutX="334.0" layoutY="102.0" prefHeight="26.0" prefWidth="182.0" promptText="Séléctionner le type de l'oeuvre" />
+      <ImageView fx:id="imageView" fitHeight="117.0" fitWidth="182.0" layoutX="335.0" layoutY="226.0" pickOnBounds="true" preserveRatio="true" />
+      <Button layoutX="14.0" layoutY="21.0" mnemonicParsing="false" onAction="#Retour" text="Button" />
+    </children>
+</AnchorPane>

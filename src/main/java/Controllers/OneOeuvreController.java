@@ -27,9 +27,12 @@ import java.sql.SQLException;
 import java.time.ZoneId;
 import java.util.Calendar;
 
+import static Controllers.LoginController.UserConnected;
 import static javafx.scene.control.Alert.AlertType.CONFIRMATION;
 
 public class OneOeuvreController {
+
+    int artisteId = UserConnected.getId();
 
     @FXML
     private Label Type;
@@ -85,6 +88,7 @@ public class OneOeuvreController {
         }
     }
 
+
 //    public void getCard(Oeuvre oeuvre){
 //        oeuvre=oeuvre;
 //        nom_Oeuvre.setText(oeuvre.getNom_Ouvre());
@@ -113,6 +117,8 @@ public class OneOeuvreController {
             stage.setTitle("Afficher Oeuvre");
             stage.setScene(new Scene(root));
             stage.show();
+
+            afficherController.refreshScrollPane(artisteId);
             
         }catch (SQLException e){
             System.out.println(e);
@@ -124,6 +130,7 @@ public class OneOeuvreController {
 
     private Image image;
     public void setData(Oeuvre oeuvre){
+
         nom_Oeuvre.setText(oeuvre.getNom_Ouvre());
         Type.setText(oeuvre.getTypeOeuvre().toString());
         desc.setText(oeuvre.getDescription());

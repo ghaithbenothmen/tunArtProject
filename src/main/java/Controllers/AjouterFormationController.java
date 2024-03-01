@@ -4,8 +4,10 @@ package Controllers;
 import Entites.Categorie;
 import Entites.Formation;
 import Entites.Niveau;
+import Entites.User;
 import Services.CategorieService;
 import Services.FormationService;
+import Services.UserService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -26,6 +28,8 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
 import java.util.Locale;
+
+import static Controllers.LoginController.UserConnected;
 
 public class AjouterFormationController {
 
@@ -58,6 +62,8 @@ public class AjouterFormationController {
     @FXML
     private AnchorPane main_form;
 
+
+    public UserService userService=new UserService();
     public CategorieService categorieService = new CategorieService();
     public void initialize() {
 
@@ -119,7 +125,7 @@ public class AjouterFormationController {
         this.parentController = parentController;
     }
     @FXML
-    void ajouterFormation(ActionEvent event) {
+    void ajouterFormation(ActionEvent event) throws SQLException {
         String nom = txtnom.getText();
         String desc = txtdesc.getText();
 
@@ -144,9 +150,12 @@ public class AjouterFormationController {
         LocalDate dateFin = dateF.getValue();
         java.sql.Date sqlDateFin= java.sql.Date.valueOf(dateFin);
 
+        int artisteId = UserConnected.getId();
+        System.out.println(artisteId);
+        User artiste = userService.findById(artisteId);
+        System.out.println(artiste);
 
-
-        Formation f = new Formation(nom, /*artisteId,*/ sqlDateDebut, sqlDateFin, niveau, desc, selectedCategorieIns,imagePath);
+        Formation f = new Formation(nom, artiste, sqlDateDebut, sqlDateFin, niveau, desc, selectedCategorieIns,imagePath);
 
         try {
             service.add(f);
@@ -157,7 +166,7 @@ public class AjouterFormationController {
             stage.close();
 
             //refreshi tab
-            parentController.refreshTable();
+            parentController.initData(artisteId);
         } catch (SQLException e) {
             showAlert(Alert.AlertType.ERROR, "Erreur", "Erreur de mise à jour", "Une erreur s'est produite lors de la mise à jour de la formation : " + e.getMessage());
             System.out.println(e.getMessage());

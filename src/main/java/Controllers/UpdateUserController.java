@@ -15,6 +15,8 @@ import javafx.stage.Stage;
 
 import java.sql.SQLException;
 
+import static Controllers.LoginController.UserConnected;
+
 public class UpdateUserController {
 
     @FXML
@@ -49,7 +51,7 @@ public class UpdateUserController {
     AfficherUserController afficherUserController = new AfficherUserController();
 
     @FXML
-    void updateUser(ActionEvent event) {
+    void updateUser(ActionEvent event) throws SQLException {
 
         String nom = txtnom.getText();
         String prenom = txtprenom.getText();

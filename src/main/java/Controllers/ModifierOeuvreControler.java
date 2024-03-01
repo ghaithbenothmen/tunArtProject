@@ -2,6 +2,7 @@ package Controllers;
 
 import Entites.*;
 import Services.OeuvreService;
+import Services.UserService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -27,8 +28,15 @@ import java.time.ZoneId;
 import java.util.Calendar;
 import java.util.Date;
 
+import static Controllers.LoginController.UserConnected;
+
 public class ModifierOeuvreControler {
 
+    private AfficherController parentController;
+
+    public void setParentController(AfficherController parentController) {
+        this.parentController = parentController;
+    }
 
 
     @FXML
@@ -62,6 +70,8 @@ public class ModifierOeuvreControler {
     private Image image;
     OeuvreService oeuvreService=new OeuvreService();
     private Scene previousScene;
+
+    public UserService userService = new UserService();
 
     public void setPreviousScene(Scene scene) {
         this.previousScene = scene;}
@@ -103,7 +113,7 @@ public class ModifierOeuvreControler {
     }
 
     @FXML
-    void ModifierOeuvre(ActionEvent event){
+    void ModifierOeuvre(ActionEvent event) throws SQLException {
         String nom=txtnom.getText();
         String image=img.getText();
         String description=desc.getText();
@@ -125,6 +135,10 @@ public class ModifierOeuvreControler {
         updatedOeuvre.setImg(image);
         System.out.println(updatedOeuvre);
 
+        int artisteId = UserConnected.getId();
+        User artiste = userService.findById(artisteId);
+        updatedOeuvre.setArtiste_id(artiste);
+
 
         try {
             oeuvreService.update(updatedOeuvre);
@@ -137,11 +151,14 @@ public class ModifierOeuvreControler {
 
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../AfficherOeuvre.fxml"));
             Parent root = loader.load();
-             afficherController = loader.getController();
+            afficherController = loader.getController();
             Stage stage = new Stage();
             stage.setTitle("Afficher Oeuvre");
             stage.setScene(new Scene(root));
             stage.show();
+            System.out.println("Bonjour"+artisteId);
+            afficherController.refreshScrollPane(artisteId);
+
 
             System.out.println(updatedOeuvre);
         } catch (SQLException e) {

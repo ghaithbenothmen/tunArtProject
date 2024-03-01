@@ -4,27 +4,47 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21315bfc-118e-44e1-a34f-1ed61d3c161c" name="Changes" comment="third_commit">
+    <list default="true" id="21315bfc-118e-44e1-a34f-1ed61d3c161c" name="Changes" comment="fourth-commit">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/logo png.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/loginDesign.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/AfficherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/AfficherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/AjouterFormationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/AjouterFormationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/AjouterOeuvreControler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/AjouterOeuvreControler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/GestionFormationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/GestionFormationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/MainContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/MainContainer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/ModifierOeuvreControler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ModifierOeuvreControler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/OneOeuvreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/OneOeuvreController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Entites/Inscription.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entites/Inscription.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/UpdateFormationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/UpdateFormationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/UpdateUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/UpdateUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entites/Formation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entites/Formation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entites/Oeuvre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entites/Oeuvre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entites/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entites/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Services/FormationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/FormationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Services/OeuvreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/OeuvreService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Test/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Test/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/AfficherOeuvre.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AfficherOeuvre.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/AjouterOeuvre.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AjouterOeuvre.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ModifierOeuvre.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ModifierOeuvre.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/OneOeuvre.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/OneOeuvre.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/LandingAdmin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/LandingAdmin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dashboardDesign.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dashboardDesign.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Controllers/AjouterFormationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/AjouterFormationController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/FormationCardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/FormationCardController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/GestionFormationController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/GestionFormationController$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Controllers/GestionFormationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/GestionFormationController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/InscriptionFormationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/InscriptionFormationController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Controllers/SideBarController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/SideBarController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Controllers/UpdateFormationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/UpdateFormationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entites/Actualité.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entites/Actualité.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entites/Concours.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entites/Concours.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entites/Evenement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entites/Evenement.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Entites/Formation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entites/Formation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entites/Inscription.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entites/Inscription.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entites/Oeuvre.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entites/Oeuvre.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entites/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entites/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Services/FormationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Services/FormationService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Test/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Test/Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/SideBar.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/SideBar.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Test/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Test/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dashboardDesign.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dashboardDesign.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,8 +86,8 @@
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
-        <option name="accountId" value="313ce8c8-ad2f-43a5-b93c-50a12bf5c4f6" />
-        <option name="url" value="https://github.com/ghaithbenothmen/TunArt-pidev.git" />
+        <option name="accountId" value="d14d970b-9d91-4585-87f8-1932a8941ab9" />
+        <option name="url" value="https://github.com/ghaithbenothmen/tunArtProject" />
       </UrlAndAccount>
     </option>
   </component>
@@ -83,29 +103,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Taha-branch",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_directory_selection": "C:/Users/user/IdeaProjects/tunArtProject/src/main/java",
-    "last_opened_file_path": "C:/Program Files/Java/javafx-sdk-21.0.2/lib/fontawesomefx-8.2.jar",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/user/IdeaProjects/tunArtProject/src/main/java/org/example/Main.java",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.5601266",
-    "settings.editor.selected.configurable": "vcs.Git",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Merging Taha-branch&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Users/user/IdeaProjects/tunArtProject/src/main/java&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/tahab/IdeaProjects/tunArtProject&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/user/IdeaProjects/tunArtProject/src/main/java/org/example/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.5601266&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\user\IdeaProjects\tunArtProject\src\main\resources\assets" />
@@ -213,6 +233,10 @@
       <workItem from="1709128272838" duration="11363000" />
       <workItem from="1709162704589" duration="4665000" />
       <workItem from="1709196842576" duration="5649000" />
+      <workItem from="1709234018184" duration="33000" />
+      <workItem from="1709234090318" duration="829000" />
+      <workItem from="1709234944492" duration="2975000" />
+      <workItem from="1709299420012" duration="8292000" />
     </task>
     <task id="LOCAL-00001" summary="first-commit &quot;Formation&quot;">
       <option name="closed" value="true" />
@@ -359,6 +383,22 @@
   <component name="Vcs.Log.Tabs.Properties">
     <option name="RECENT_FILTERS">
       <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="Taha-branch" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="HEAD" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
         <entry key="User">
           <value>
             <list>
@@ -382,7 +422,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="master" />
+                        <option value="Taha-branch" />
                       </list>
                     </value>
                   </entry>
@@ -405,9 +445,11 @@
     <MESSAGE value="rebase" />
     <MESSAGE value="Gestion Catégorie+Formation(Compléte)" />
     <MESSAGE value="Formations interface" />
-    <MESSAGE value="Formations interface Inscription" />
     <MESSAGE value="third_commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="third_commit" />
+    <MESSAGE value="Formations interface Inscription" />
+    <MESSAGE value="oeuvre gestion" />
+    <MESSAGE value="fourth-commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="fourth-commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

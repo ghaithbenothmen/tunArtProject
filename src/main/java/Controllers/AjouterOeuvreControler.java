@@ -4,7 +4,9 @@ import Entites.Oeuvre;
 import Entites.TypeOeuvre;
 import java.io.File;
 
+import Entites.User;
 import Services.OeuvreService;
+import Services.UserService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -24,7 +26,11 @@ import java.time.LocalDate;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+import static Controllers.LoginController.UserConnected;
+
 public class AjouterOeuvreControler {
+
+    private UserService userService = new UserService();
 
     private  final OeuvreService oeuvre=new OeuvreService();
     @FXML
@@ -107,7 +113,7 @@ public class AjouterOeuvreControler {
     }
     // Event handler for adding Oeuvre
     @FXML
-    void AjouterOeuvre(ActionEvent event) {
+    void AjouterOeuvre(ActionEvent event) throws SQLException {
 
         String nom = txtnom.getText();
 //        String image = imagePreview.getImage().getUrl();
@@ -119,7 +125,12 @@ public class AjouterOeuvreControler {
         LocalDate datedb = date.getValue();
         java.sql.Date sqlDatePublication = java.sql.Date.valueOf(datedb);
 
-        Oeuvre o = new Oeuvre(nom, imagePath, description, type, sqlDatePublication);
+        int artisteId = UserConnected.getId();
+        System.out.println(artisteId);
+        User artiste = userService.findById(artisteId);
+        System.out.println(artiste);
+
+        Oeuvre o = new Oeuvre(nom, imagePath, description, type, sqlDatePublication,artiste);
         try {
             oeuvre.add(o);
             showAlert(Alert.AlertType.CONFIRMATION, "Succès", "Oeuvre Ajouté", "L'Oeuvre a été ajouté avec succès.");
@@ -128,19 +139,17 @@ public class AjouterOeuvreControler {
             Stage stage = (Stage) txtnom.getScene().getWindow();
 
             stage.close();
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("../AfficherOeuvre.fxml"));
-            Parent root = loader.load();
-            afficherController = loader.getController();
-            Stage Rstage = new Stage();
-            Rstage.setTitle("Afficher Oeuvre");
-            Rstage.setScene(new Scene(root));
-            Rstage.show();
-//            parentController.refreshScrollPane();
+           // FXMLLoader loader = new FXMLLoader(getClass().getResource("../AfficherOeuvre.fxml"));
+//            Parent root = loader.load();
+//            afficherController = loader.getController();
+//            Stage Rstage = new Stage();
+//            Rstage.setTitle("Afficher Oeuvre");
+//            Rstage.setScene(new Scene(root));
+//            Rstage.show();
+            parentController.refreshScrollPane(artisteId);
 
         } catch (SQLException e) {
             showAlert(Alert.AlertType.ERROR, "Erreur", "Erreur de mise à jour", " " + e.getMessage());
-        } catch (IOException e) {
-            throw new RuntimeException(e);
         }
     }
     @FXML

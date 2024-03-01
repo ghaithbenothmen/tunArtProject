@@ -3,7 +3,7 @@ import java.util.*;
 
 public class Oeuvre {
     private int Ref;
-    private int Artiste_id;
+    private User Artiste_id;
     private String Nom_Ouvre;
     private String Img;
     private Date Date_Publication;
@@ -14,8 +14,8 @@ public class Oeuvre {
     public Oeuvre() {
     }
 
-    public Oeuvre(int Ref, String nom_Ouvre, String img, Date date_Publication, String description, Boolean note, TypeOeuvre TypeOeuvre) {
-//        this.Artiste_id = artiste_id;
+    public Oeuvre(int Ref, String nom_Ouvre, String img, Date date_Publication, String description, Boolean note, TypeOeuvre TypeOeuvre, User artiste_id) {
+        this.Artiste_id = artiste_id;
         this.Ref = Ref;
         this.Nom_Ouvre = nom_Ouvre;
         this.Img = img;
@@ -25,12 +25,13 @@ public class Oeuvre {
         this.TypeOeuvre=TypeOeuvre;
     }
 
-    public Oeuvre(String nom, String image, String description, TypeOeuvre TypeOeuvre, Date date) {
+    public Oeuvre(String nom, String image, String description, TypeOeuvre TypeOeuvre, Date date,User artiste_id) {
         this.Nom_Ouvre = nom;
         this.Img = image;
         this.Date_Publication = date;
         this.Description = description;
         this.TypeOeuvre = TypeOeuvre;
+        this.Artiste_id = artiste_id;
     }
 
     public int getRef() {
@@ -41,11 +42,11 @@ public class Oeuvre {
         this.Ref = Ref;
     }
 
-    public int getArtiste_id() {
+    public  User getArtiste_id() {
         return Artiste_id;
     }
 
-    public void setArtiste_id(int artiste_id) {
+    public void setArtiste_id(User artiste_id) {
         Artiste_id = artiste_id;
     }
 

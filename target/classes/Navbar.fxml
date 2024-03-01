@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="76.0" prefWidth="1057.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.NavbarController">
+    <children>
+        <ImageView fx:id="profileIcon" fitHeight="52.0" fitWidth="53.0" layoutX="971.0" layoutY="12.0" onMouseClicked="#openProfile">
+            <image>
+                <Image url="/assets/profile-removebg-preview.png" />
+            </image>
+        </ImageView>
+
+        <Text fx:id="welcomeText" fill="#787a80" layoutX="79.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome, name!">
+            <font>
+                <Font name="Leelawadee UI Semilight" size="18.0" />
+            </font>
+        </Text>
+
+    </children>
+</AnchorPane>

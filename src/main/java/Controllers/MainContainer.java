@@ -43,7 +43,7 @@ public class MainContainer implements Initializable {
                 FXMLLoader sidebarLoader = new FXMLLoader(getClass().getResource("/Sidebar.fxml"));
                 AnchorPane sbar = sidebarLoader.load();
                 sidebarPane.getChildren().setAll(sbar);
-                SidebarController controller = sidebarLoader.getController();
+                //SidebarController controller = sidebarLoader.getController();
                 //Load content
                 FXMLLoader contentLoader = new FXMLLoader(getClass().getResource("/LandingPage.fxml"));
                 AnchorPane content = contentLoader.load();

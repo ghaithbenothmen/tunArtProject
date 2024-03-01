@@ -2,6 +2,7 @@ package Services;
 
 import Entites.Oeuvre;
 import Entites.TypeOeuvre;
+import Entites.User;
 import Utils.ConnexionDB;
 
 import java.sql.Connection;
@@ -40,14 +41,10 @@ public class OeuvreService implements IOeuvre<Oeuvre>{
         Boolean noteValue = o.getNote() != null ? o.getNote() : false;
         String uri = o.getImg().replace("\\", "/");
 
-        String req = "INSERT INTO `Oeuvre` (`Ref`, `nom_Oeuvre`, `img`, `date_Publication`, `description`, `note`, `TypeOeuvre`) " +
-                "VALUES (NULL, '"
-                +o.getNom_Ouvre() + "', '"
-                +uri+ "', '"
-                + formattedDate + "', '"
-                +o.getDescription() + "', "
-                + noteValue + ", '"
-                +o.getTypeOeuvre() + "');";
+        String req = "INSERT INTO Oeuvre (nom_Oeuvre, img, date_Publication, description, note, TypeOeuvre, artiste_id) " +
+                "VALUES ('" + o.getNom_Ouvre() + "', '" + uri + "', '" + formattedDate + "', '" +
+                o.getDescription() + "', " + noteValue + ", '" + o.getTypeOeuvre() + "', " + o.getArtiste_id().getId() + ")";
+
         ste.executeUpdate(req);
     }
 
@@ -61,6 +58,7 @@ public class OeuvreService implements IOeuvre<Oeuvre>{
                 + "', `description`='" +o.getDescription()
                 + "', `note`='" + 33
                 + "', `TypeOeuvre`='" + o.getTypeOeuvre()
+                + "', `artiste_id`='" + o.getArtiste_id().getId()
                 + "' WHERE Ref='" + o.getRef() + "';";
 
         int rowsUpdated = ste.executeUpdate(req);
@@ -94,8 +92,11 @@ public class OeuvreService implements IOeuvre<Oeuvre>{
             Boolean note = res.getBoolean("note");
             TypeOeuvre TypeOeuvre = Entites.TypeOeuvre.valueOf(res.getString("TypeOeuvre"));
 
+            UserService userService = new UserService();
+            User artiste = userService.findById(artiste_id);
 
-            return new Oeuvre(ref,nom_oeuvre,img,date_publication,description,note,TypeOeuvre);
+
+            return new Oeuvre(ref,nom_oeuvre,img,date_publication,description,note,TypeOeuvre,artiste);
         }
 
         return null;
@@ -109,19 +110,53 @@ public class OeuvreService implements IOeuvre<Oeuvre>{
         while (res.next()) {
             int ref = res.getInt("Ref");
 
-//            int artiste_id = res.getInt(2);
+            int artiste_id = res.getInt("artiste_id");
             String nom_Oeuvre = res.getString("nom_Oeuvre");
             String img = res.getString("img");
             java.util.Date date_Publication = res.getDate("date_Publication");
             String description = res.getString("description");
             Boolean note = res.getBoolean("note");
             TypeOeuvre typeOeuvre = TypeOeuvre.valueOf(res.getString("TypeOeuvre"));
-            Oeuvre o=new Oeuvre(ref,nom_Oeuvre,img,date_Publication,description,note,typeOeuvre);
+
+            UserService userService = new UserService();
+            User artiste = userService.findById(artiste_id);
+
+
+            Oeuvre o=new Oeuvre(ref,nom_Oeuvre,img,date_Publication,description,note,typeOeuvre,artiste);
 //            System.out.println(o);
             lO.add(o);
 
         }
 //        System.out.println(lO);
         return lO;
+    }
+
+    public List<Oeuvre> findByUserId(int userId) throws SQLException {
+        List<Oeuvre> oeuvre = new ArrayList<>();
+        String query = "SELECT * FROM oeuvre WHERE artiste_id = " + userId;
+        ResultSet resultSet = ste.executeQuery(query);
+
+        while (resultSet.next()) {
+            int ref = resultSet.getInt("Ref");
+            String nom_Oeuvre = resultSet.getString("nom_Oeuvre");
+            int artiste_id = resultSet.getInt("artiste_id");
+            Date date_Publication = resultSet.getDate("date_Publication");
+            String description = resultSet.getString("description");
+            Boolean note = resultSet.getBoolean("note");
+            TypeOeuvre typeOeuvre = TypeOeuvre.valueOf(resultSet.getString("TypeOeuvre"));
+
+
+            String img = resultSet.getString("img");
+
+
+
+            UserService userService = new UserService();
+            User artiste = userService.findById(artiste_id);
+
+            Oeuvre o = new Oeuvre(ref,nom_Oeuvre,img,date_Publication,description,note,typeOeuvre,artiste);
+            oeuvre.add(o);
+        }
+
+        return oeuvre;
     }
 }
