@@ -2,6 +2,7 @@ package Controllers;
 
 import Entites.Role;
 import Entites.User;
+import Entites.*;
 import Services.UserService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -66,6 +67,9 @@ public class InscriptionControllers implements Initializable {
     @FXML
     private AnchorPane main_form;
 
+    public AESCrypt CryptVar;
+    public String key = "ThisIsASecretKey";
+
 
 
     @Override
@@ -100,7 +104,7 @@ public class InscriptionControllers implements Initializable {
         String tel= txttel.getText();
 
 
-        Role role = Role.valueOf((String) choices.getSelectionModel().getSelectedItem());
+        Role role = (Role) choices.getSelectionModel().getSelectedItem();
 
 
         if (!email.matches("[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}")) {
@@ -146,17 +150,21 @@ public class InscriptionControllers implements Initializable {
 
 
                 User p = new User();
+              //  String encrypted = encrypt(plaintext, key);
+                String encrypted = CryptVar.encrypt(txtmdp.getText(), key);
                 p.setNom(txtnom.getText());
                 p.setPrenom(txtprenom.getText());
                 p.setTel(Integer.parseInt(txttel.getText()));
                 p.setRole(role);
                 p.setEmail(txtemail.getText());
-                p.setMdp(txtmdp.getText());
+                p.setMdp(encrypted);
                 p.setImage(imageData);
                 us.add(p);
+                // Récupérer le numéro de téléphone de TelField
+                String tel1 = txttel.getText();
 
-
-
+                // Appeler la méthode SMSSender de SmsSender avec le numéro de téléphone récupéré
+                SMSsender.sendSMS(tel1, "Bienvenue ! Votre inscription est réussie.");
                 Alert alert = new Alert(AlertType.INFORMATION);
                 alert.setTitle("Information Dialog");
                 alert.setHeaderText(null);
@@ -166,6 +174,8 @@ public class InscriptionControllers implements Initializable {
 
             catch (SQLException ex) {
                 System.out.println("error" + ex.getMessage());
+            } catch (Exception e) {
+                throw new RuntimeException(e);
             }
 
         }

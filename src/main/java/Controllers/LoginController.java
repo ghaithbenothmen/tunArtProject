@@ -4,6 +4,7 @@
  */
 package Controllers;
 
+import Entites.AESCrypt;
 import Entites.User;
 import Services.UserService;
 import javafx.event.ActionEvent;
@@ -27,6 +28,9 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.ResourceBundle;
+import javax.crypto.Cipher;
+import javax.crypto.spec.SecretKeySpec;
+import java.util.Base64;
 
 
 public class LoginController implements Initializable {
@@ -52,7 +56,8 @@ public class LoginController implements Initializable {
     private Text slogan;
     @FXML
     private Text bien;
-
+    public AESCrypt CryptVar;
+    public String key = "ThisIsASecretKey";
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -61,8 +66,8 @@ public class LoginController implements Initializable {
     }
 
     @FXML
-    private void connect(ActionEvent event) throws SQLException, IOException {
-
+    private void connect(ActionEvent event) throws Exception {
+        System.out.println("TEST---") ;
         if (email.getText().isEmpty()||mdp.getText().isEmpty()){
 
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -87,8 +92,9 @@ public class LoginController implements Initializable {
 
             for (int i = 0; i < users.size(); i++){
 
-                if (users.get(i).getEmail().equals(email.getText()) && users.get(i).getMdp().equals(mdp.getText()))
+                if (users.get(i).getEmail().equals(email.getText()) && users.get(i).getMdp().equals(CryptVar.encrypt(mdp.getText(),key)))
                 {
+
                     UserConnected=users.get(i);
                     verif=true;
                     break;
@@ -97,6 +103,7 @@ public class LoginController implements Initializable {
 
 
             if (verif==true){
+
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
 
                 alert.setHeaderText(null);

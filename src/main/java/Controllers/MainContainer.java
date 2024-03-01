@@ -1,5 +1,6 @@
 package Controllers;
 
+import Entites.Role;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -29,7 +30,7 @@ public class MainContainer implements Initializable {
             AnchorPane nbar = navbarLoader.load();
             navbarPane.getChildren().setAll(nbar);
             //Load sidebar & Landing Page
-            if (LoginController.UserConnected.getRole().equals("ADMIN")) {
+            if (LoginController.UserConnected.getRole().equals(Role.ADMIN)) {
                 FXMLLoader sidebarLoader = new FXMLLoader(getClass().getResource("/SidebarAdmin.fxml"));
                 AnchorPane sbar = sidebarLoader.load();
                 sidebarPane.getChildren().setAll(sbar);

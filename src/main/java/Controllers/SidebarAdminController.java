@@ -10,6 +10,8 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 public class SidebarAdminController {
 
@@ -24,6 +26,8 @@ public class SidebarAdminController {
 
     @FXML
     private Button collab;
+
+
 
     @FXML
     void connect(ActionEvent event) throws IOException {
