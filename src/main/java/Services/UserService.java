@@ -109,7 +109,7 @@ public class UserService implements IService<User> {
         return users;
     }
 
-    public void modificationMdp(String email, String mdp) throws SQLException {
+    public void ModifMDP(String email, String mdp) throws SQLException {
         String req="UPDATE user set mdp=? WHERE email=?";
         PreparedStatement ste = Con.prepareStatement(req);
         ste.setString(1, mdp);

@@ -181,10 +181,19 @@ public class LoginController implements Initializable {
     }
 
     @FXML
-    private void mdp_ob(MouseEvent event) {
+    private void mdp_ob(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/EmailCheck.fxml"));
+        Parent root = loader.load();
+
+
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("");
+        stage.setScene(scene);
+        stage.show();
     }
 
-    @FXML
+    /*@FXML
     private void passwrd(ActionEvent event) throws IOException {
 
 
@@ -200,7 +209,7 @@ public class LoginController implements Initializable {
         stage.show();
 
 
-    }
+    }*/
 
 
 
