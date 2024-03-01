@@ -4,19 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21315bfc-118e-44e1-a34f-1ed61d3c161c" name="Changes" comment="lyoum">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/ChangementMdpController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/CodeMdp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/EmailCheckContoller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Entites/mail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ChangementMdp.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/CodeMdp.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/EmailCheck.fxml" afterDir="false" />
+    <list default="true" id="21315bfc-118e-44e1-a34f-1ed61d3c161c" name="Changes" comment="bel email">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/MainContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/MainContainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/SidebarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/SidebarController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Sidebar.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Sidebar.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -216,7 +209,7 @@
       <workItem from="1709162704589" duration="4665000" />
       <workItem from="1709196842576" duration="5649000" />
       <workItem from="1709206127731" duration="16045000" />
-      <workItem from="1709225583320" duration="30483000" />
+      <workItem from="1709225583320" duration="32911000" />
     </task>
     <task id="LOCAL-00001" summary="first-commit &quot;Formation&quot;">
       <option name="closed" value="true" />
@@ -394,7 +387,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709308740038</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="bel email">
+      <option name="closed" value="true" />
+      <created>1709320463748</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1709320463748</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -455,7 +456,8 @@
     <MESSAGE value="updated" />
     <MESSAGE value="commit" />
     <MESSAGE value="lyoum" />
-    <option name="LAST_COMMIT_MESSAGE" value="lyoum" />
+    <MESSAGE value="bel email" />
+    <option name="LAST_COMMIT_MESSAGE" value="bel email" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

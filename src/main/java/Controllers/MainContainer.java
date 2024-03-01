@@ -11,6 +11,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import static Controllers.LoginController.UserConnected;
+
 
 public class MainContainer implements Initializable {
 
@@ -30,11 +32,11 @@ public class MainContainer implements Initializable {
             AnchorPane nbar = navbarLoader.load();
             navbarPane.getChildren().setAll(nbar);
             //Load sidebar & Landing Page
-            if (LoginController.UserConnected.getRole().equals(Role.ADMIN)) {
+            if (UserConnected.getRole().toString().equals("ADMIN")) {
                 FXMLLoader sidebarLoader = new FXMLLoader(getClass().getResource("/SidebarAdmin.fxml"));
                 AnchorPane sbar = sidebarLoader.load();
                 sidebarPane.getChildren().setAll(sbar);
-                SidebarAdminController controller = sidebarLoader.getController();
+               // SidebarAdminController controller = sidebarLoader.getController();
                 //Load content
                 FXMLLoader contentLoader = new FXMLLoader(getClass().getResource("/LandingAdmin.fxml"));
                 AnchorPane content = contentLoader.load();

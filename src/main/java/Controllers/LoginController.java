@@ -67,7 +67,6 @@ public class LoginController implements Initializable {
 
     @FXML
     private void connect(ActionEvent event) throws Exception {
-        System.out.println("TEST---") ;
         if (email.getText().isEmpty()||mdp.getText().isEmpty()){
 
             Alert alert = new Alert(Alert.AlertType.ERROR);
