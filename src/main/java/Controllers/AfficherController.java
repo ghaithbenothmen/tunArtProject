@@ -145,7 +145,7 @@ public class AfficherController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
 
-            if (LoginController.UserConnected.getRole().equals("ARTISTE")){
+            if (UserConnected.getRole().toString().equals("ARTISTE")){
                 add.setVisible(true);
             }else {
                 add.setVisible(false);

@@ -15,13 +15,13 @@
    <children>
       <AnchorPane prefHeight="687.0" prefWidth="922.0" stylesheets="@../../../../../../../tunArtProject-Ghaith-branch/src/main/resources/dashboardDesign.css">
          <children>
-            <AnchorPane layoutY="157.0" prefHeight="478.0" prefWidth="895.0" stylesheets="@../../../../../../../tunArtProject-Ghaith-branch/src/main/resources/dashboardDesign.css">
+            <AnchorPane layoutY="165.0" prefHeight="470.0" prefWidth="922.0" stylesheets="@../../../../../../../tunArtProject-Ghaith-branch/src/main/resources/dashboardDesign.css">
                <styleClass>
                   <String fx:value="shadow" />
                   <String fx:value="white-bg" />
                </styleClass>
                <children>
-                  <ScrollPane layoutX="-2.0" layoutY="40.0" prefHeight="438.0" prefWidth="922.0">
+                  <ScrollPane layoutX="-2.0" prefHeight="478.0" prefWidth="922.0">
                      <content>
                         <AnchorPane>
                            <children>
@@ -37,19 +37,19 @@
                         </AnchorPane>
                      </content>
                   </ScrollPane>
-                  <TextField fx:id="searchOeuvre" layoutY="14.0" promptText="    Rechercher" />
                </children>
             </AnchorPane>
-            <Button fx:id="add" layoutX="834.0" layoutY="635.0" mnemonicParsing="false" onAction="#ajouterOeuvre" prefHeight="35.0" prefWidth="88.0" styleClass="add-btn" text="Ajouter" />
-            <AnchorPane layoutX="6.0" layoutY="26.0" prefHeight="126.0" prefWidth="926.0" styleClass="update-btn" stylesheets="@loginDesign.css">
+            <Button fx:id="add" layoutX="834.0" layoutY="643.0" mnemonicParsing="false" onAction="#ajouterOeuvre" prefHeight="35.0" prefWidth="88.0" styleClass="add-btn" text="Ajouter" />
+            <AnchorPane layoutX="-1.0" layoutY="26.0" prefHeight="138.0" prefWidth="933.0" styleClass="Anchor" stylesheets="@loginDesign.css">
                <children>
                   <Label layoutX="283.0" layoutY="83.0" prefHeight="46.0" prefWidth="150.0" text="Categorie :" />
                   <Label layoutX="283.0" layoutY="37.0" prefHeight="46.0" prefWidth="171.0" text="Contact :" />
                   <Label layoutX="283.0" layoutY="-9.0" prefHeight="45.0" prefWidth="171.0" text="Nom de l'artiste :" />
-                  <ImageView fx:id="imgArtiste" fitHeight="134.0" fitWidth="233.0" layoutX="6.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="imgArtiste" fitHeight="136.0" fitWidth="238.0" layoutX="4.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />
                   <Label fx:id="nomArtiste" layoutX="454.0" layoutY="-9.0" prefHeight="45.0" prefWidth="171.0" text="Nom de l'artiste " />
                   <Label fx:id="contactArtiste" layoutX="454.0" layoutY="37.0" prefHeight="45.0" prefWidth="171.0" text="Contact" />
                   <Label fx:id="Categorie" layoutX="454.0" layoutY="83.0" prefHeight="45.0" prefWidth="171.0" text="Categorie" />
+                  <TextField fx:id="searchOeuvre" layoutY="109.0" promptText="    Rechercher" />
                </children>
             </AnchorPane>
          </children>

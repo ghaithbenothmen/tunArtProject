@@ -101,7 +101,7 @@ public class OneOeuvreController {
 //    }
 
     @FXML
-    void delete(ActionEvent event) throws SQLException {
+    void delete(ActionEvent event)  {
 
         try{
             oeuvreService.delete(this.oeuvre);
@@ -130,6 +130,9 @@ public class OneOeuvreController {
 
     private Image image;
     public void setData(Oeuvre oeuvre){
+        delete.setVisible(UserConnected.equals(oeuvre.getArtiste_id()));
+        update.setVisible(UserConnected.equals(oeuvre.getArtiste_id()));
+
 
         nom_Oeuvre.setText(oeuvre.getNom_Ouvre());
         Type.setText(oeuvre.getTypeOeuvre().toString());
