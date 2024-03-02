@@ -105,12 +105,12 @@ public class LoginController implements Initializable {
                 alert.setContentText("Welcome"+" "+UserConnected.getNom()+" "+UserConnected.getPrenom());
                 alert.show();
 
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/AfficherOeuvre.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/AfficherArtistes.fxml"));
                 Parent root = loader.load();
 
-                AfficherController afficherController = loader.getController();
-                afficherController.refreshScrollPane(UserConnected.getId()); // Pass the user_id to the controller
-                afficherController.serData(UserConnected);
+//                AfficherController afficherController = loader.getController();
+//                afficherController.refreshScrollPane(UserConnected.getId()); // Pass the user_id to the controller
+//                afficherController.serData(UserConnected);
                 Scene scene = new Scene(root);
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 stage.setTitle("Gestion Formation");

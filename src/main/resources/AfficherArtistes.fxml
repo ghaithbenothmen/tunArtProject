@@ -1,16 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AfficherArtistesController">
+<AnchorPane prefHeight="649.0" prefWidth="892.0" stylesheets="@../../../../../../../tunArtProject-Ghaith-branch/src/main/resources/dashboardDesign.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AfficherArtistesController">
    <children>
-      <TextField layoutX="190.0" layoutY="14.0" prefHeight="52.0" prefWidth="220.0" text="Listes des artistes">
-         <font>
-            <Font size="25.0" />
-         </font>
-      </TextField>
+      <AnchorPane prefHeight="500.0" prefWidth="922.0" stylesheets="@../../../../../../../tunArtProject-Ghaith-branch/src/main/resources/dashboardDesign.css">
+         <children>
+            <AnchorPane layoutY="84.0" prefHeight="470.0" prefWidth="922.0" stylesheets="@../../../../../../../tunArtProject-Ghaith-branch/src/main/resources/dashboardDesign.css">
+               <styleClass>
+                  <String fx:value="shadow" />
+                  <String fx:value="white-bg" />
+               </styleClass>
+               <children>
+                  <ScrollPane layoutY="-15.0" prefHeight="548.0" prefWidth="922.0">
+                     <content>
+                        <AnchorPane>
+                           <children>
+                              <GridPane fx:id="gridart" layoutX="14.0" layoutY="14.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                              </GridPane>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </AnchorPane>
+            <TextField fx:id="searchart" layoutX="758.0" layoutY="42.0" promptText="    Rechercher" />
+            <Label layoutX="417.0" layoutY="14.0" text="Liste des artistes" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

@@ -15,9 +15,12 @@ import java.sql.*;
 
 public class OeuvreService implements IOeuvre<Oeuvre>{
 
+    Connection con;
+
     private Statement ste;
 
     private static OeuvreService ser;
+
 
     public OeuvreService() {
         try {
@@ -38,12 +41,12 @@ public class OeuvreService implements IOeuvre<Oeuvre>{
         String formattedDate = sdf.format(o.getDate_Publication());
 
         // Handle null value for the note field
-        Boolean noteValue = o.getNote() != null ? o.getNote() : false;
+
         String uri = o.getImg().replace("\\", "/");
 
         String req = "INSERT INTO Oeuvre (nom_Oeuvre, img, date_Publication, description, note, TypeOeuvre, artiste_id) " +
                 "VALUES ('" + o.getNom_Ouvre() + "', '" + uri + "', '" + formattedDate + "', '" +
-                o.getDescription() + "', " + noteValue + ", '" + o.getTypeOeuvre() + "', " + o.getArtiste_id().getId() + ")";
+                o.getDescription() + "', " + o.getNote() + ", '" + o.getTypeOeuvre() + "', " + o.getArtiste_id().getId() + ")";
 
         ste.executeUpdate(req);
     }
@@ -56,7 +59,7 @@ public class OeuvreService implements IOeuvre<Oeuvre>{
                 + "', `img`='" +uri
                 + "', `date_Publication`='" + o.getDate_Publication()
                 + "', `description`='" +o.getDescription()
-                + "', `note`='" + 33
+                + "', `note`='" + o.getNote()
                 + "', `TypeOeuvre`='" + o.getTypeOeuvre()
                 + "', `artiste_id`='" + o.getArtiste_id().getId()
                 + "' WHERE Ref='" + o.getRef() + "';";
@@ -89,7 +92,7 @@ public class OeuvreService implements IOeuvre<Oeuvre>{
             String img = res.getString("img");
             java.util.Date date_publication = res.getDate("date_publication");
             String description = res.getString("description");
-            Boolean note = res.getBoolean("note");
+            int note = res.getInt("note");
             TypeOeuvre TypeOeuvre = Entites.TypeOeuvre.valueOf(res.getString("TypeOeuvre"));
 
             UserService userService = new UserService();
@@ -115,7 +118,7 @@ public class OeuvreService implements IOeuvre<Oeuvre>{
             String img = res.getString("img");
             java.util.Date date_Publication = res.getDate("date_Publication");
             String description = res.getString("description");
-            Boolean note = res.getBoolean("note");
+            int note = res.getInt("note");
             TypeOeuvre typeOeuvre = TypeOeuvre.valueOf(res.getString("TypeOeuvre"));
 
             UserService userService = new UserService();
@@ -142,7 +145,7 @@ public class OeuvreService implements IOeuvre<Oeuvre>{
             int artiste_id = resultSet.getInt("artiste_id");
             Date date_Publication = resultSet.getDate("date_Publication");
             String description = resultSet.getString("description");
-            Boolean note = resultSet.getBoolean("note");
+            int note = resultSet.getInt("note");
             TypeOeuvre typeOeuvre = TypeOeuvre.valueOf(resultSet.getString("TypeOeuvre"));
 
 
@@ -158,5 +161,18 @@ public class OeuvreService implements IOeuvre<Oeuvre>{
         }
 
         return oeuvre;
+    }
+
+    public int nbrlike(Oeuvre o) throws SQLException{
+        con = ConnexionDB.getInstance().getCon();
+        int i = 0;
+        String req = "SELECT note FROM `oeuvre` WHERE Ref=?";
+        PreparedStatement ps = con.prepareStatement(req);
+        ps.setInt(1, o.getRef());
+        ResultSet rs = ps.executeQuery();
+        while(rs.next()) {
+            i = rs.getInt("note");
+        }
+        return i;
     }
 }

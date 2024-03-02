@@ -4,21 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21315bfc-118e-44e1-a34f-1ed61d3c161c" name="Changes" comment="fourth-commit">
+    <list default="true" id="21315bfc-118e-44e1-a34f-1ed61d3c161c" name="Changes" comment="fifth-commit">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/ArtisteCardController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Entites/Like.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Services/LikeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/ArtisteCard.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/dislike.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/like.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/AfficherArtistesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/AfficherArtistesController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/AfficherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/AfficherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/ModifierOeuvreControler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ModifierOeuvreControler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/OeuvreCardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/OeuvreCardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/OneOeuvreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/OneOeuvreController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/AfficherOeuvre.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AfficherOeuvre.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entites/Oeuvre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entites/Oeuvre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Services/OeuvreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/OeuvreService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/AfficherArtistes.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AfficherArtistes.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/OeuvreCard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/OeuvreCard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/OneOeuvre.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/OneOeuvre.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/loginDesign.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/loginDesign.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/AfficherOeuvre.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AfficherOeuvre.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AfficherArtistes.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AfficherArtistes.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/AfficherArtistesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/AfficherArtistesController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Controllers/AfficherController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/AfficherController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/ModifierOeuvreControler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/ModifierOeuvreControler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/OeuvreCardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/OeuvreCardController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Controllers/OneOeuvreController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/OneOeuvreController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entites/Oeuvre.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entites/Oeuvre.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/OeuvreCard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/OeuvreCard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/OneOeuvre.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/OneOeuvre.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/loginDesign.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/loginDesign.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Services/OeuvreService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Services/OeuvreService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Services/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Services/UserService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +49,19 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="Taha-branch" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="master" />
@@ -68,6 +95,9 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/main/resources/SideBar.fxml" root0="SKIP_HIGHLIGHTING" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
@@ -86,7 +116,7 @@
     "git-widget-placeholder": "Taha-branch",
     "ignore.virus.scanning.warn.message": "true",
     "last_directory_selection": "C:/Users/user/IdeaProjects/tunArtProject/src/main/java",
-    "last_opened_file_path": "C:/Users/tahab/IdeaProjects/tunArtProject",
+    "last_opened_file_path": "C:/Program Files/Java/PiDev_Desktop-main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -102,6 +132,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\tahab\IdeaProjects\tunArtProject\src\main\resources\assets" />
+      <recent name="C:\Users\tahab\IdeaProjects\tunArtProject\src\main\resources" />
       <recent name="C:\Users\user\IdeaProjects\tunArtProject\src\main\resources\assets" />
       <recent name="C:\Users\user\IdeaProjects\tunArtProject\src\main\resources" />
     </key>
@@ -210,7 +242,9 @@
       <workItem from="1709234018184" duration="33000" />
       <workItem from="1709234090318" duration="829000" />
       <workItem from="1709234944492" duration="2975000" />
-      <workItem from="1709299420012" duration="11480000" />
+      <workItem from="1709299420012" duration="23568000" />
+      <workItem from="1709375866855" duration="2338000" />
+      <workItem from="1709378245819" duration="33302000" />
     </task>
     <task id="LOCAL-00001" summary="first-commit &quot;Formation&quot;">
       <option name="closed" value="true" />
@@ -348,7 +382,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709126914867</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="fifth-commit">
+      <option name="closed" value="true" />
+      <created>1709314967182</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1709314967182</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -423,7 +465,8 @@
     <MESSAGE value="Formations interface Inscription" />
     <MESSAGE value="oeuvre gestion" />
     <MESSAGE value="fourth-commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="fourth-commit" />
+    <MESSAGE value="fifth-commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="fifth-commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

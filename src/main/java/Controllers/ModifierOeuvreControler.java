@@ -122,6 +122,7 @@ public class ModifierOeuvreControler {
 
 
 
+
         java.sql.Date sqlDateDebut = java.sql.Date.valueOf(datedb);
 
         Oeuvre updatedOeuvre = new Oeuvre();
@@ -131,7 +132,6 @@ public class ModifierOeuvreControler {
         //updatedOeuvre.setImg(imagePath);
         updatedOeuvre.setDescription(description);
         updatedOeuvre.setTypeOeuvre(type);
-        updatedOeuvre.setNote(null);
         updatedOeuvre.setImg(image);
         System.out.println(updatedOeuvre);
 

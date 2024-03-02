@@ -8,13 +8,13 @@ public class Oeuvre {
     private String Img;
     private Date Date_Publication;
     private String Description;
-    private Boolean note;
+    private int note;
     private TypeOeuvre TypeOeuvre;
 
     public Oeuvre() {
     }
 
-    public Oeuvre(int Ref, String nom_Ouvre, String img, Date date_Publication, String description, Boolean note, TypeOeuvre TypeOeuvre, User artiste_id) {
+    public Oeuvre(int Ref, String nom_Ouvre, String img, Date date_Publication, String description, int note, TypeOeuvre TypeOeuvre, User artiste_id) {
         this.Artiste_id = artiste_id;
         this.Ref = Ref;
         this.Nom_Ouvre = nom_Ouvre;
@@ -82,11 +82,11 @@ public class Oeuvre {
         this.Description = description;
     }
 
-    public Boolean getNote() {
+    public int getNote() {
         return note;
     }
 
-    public void setNote(Boolean note) {
+    public void setNote(int note) {
         this.note = note;
     }
 

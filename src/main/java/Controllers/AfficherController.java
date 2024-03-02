@@ -30,6 +30,7 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.stream.Collectors;
 
 import static Controllers.LoginController.UserConnected;
 
@@ -53,8 +54,7 @@ public class AfficherController implements Initializable {
     @FXML
     private Button add;
 
-//    @FXML
-//    private Button delete;
+
 
     @FXML
     private GridPane grid;
@@ -62,8 +62,7 @@ public class AfficherController implements Initializable {
     @FXML
     private TextField searchOeuvre;
 
-//    @FXML
-//    private Button update;
+
 
 
 
@@ -89,12 +88,7 @@ public class AfficherController implements Initializable {
         }
 
     }
-//    public void refreshScrollPane() throws SQLException {
-//        grid.getChildren().clear();
-//        getAllOeuvreCard();
-////       oeuvreList.addAll(oeuvreService.findAll());
-//
-//    }
+
     public void refreshScrollPane(int id) throws SQLException {
         grid.getChildren().clear();
         List<Oeuvre> oeuvre = oeuvreService.findByUserId(id);
@@ -103,8 +97,10 @@ public class AfficherController implements Initializable {
 
     private final OeuvreService oeuvreService = new OeuvreService();
     private ObservableList<Oeuvre> oeuvreList = FXCollections.observableArrayList();
+    private List<Oeuvre> NewoeuvreList = FXCollections.observableArrayList();
 
     public ObservableList<Oeuvre> getAllOeuvreCard() throws SQLException {
+
         oeuvreList.addAll(oeuvreService.findAll());
         return oeuvreList;
     }
@@ -114,7 +110,7 @@ public class AfficherController implements Initializable {
     public void displayAllOeuvreCard(List<Oeuvre> oeuvreList) {
 //        oeuvreList.clear();
 //        oeuvreList.addAll(oeuvreService.findAll());
-
+        System.out.println("hello new0"+oeuvreList);
         grid.getRowConstraints().clear();
         grid.getColumnConstraints().clear();
         int row = 0;
@@ -145,18 +141,15 @@ public class AfficherController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
 
-            if (UserConnected.getRole().toString().equals("ARTISTE")){
-                add.setVisible(true);
-            }else {
-                add.setVisible(false);
-            }
+
             getAllOeuvreCard();
+
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
 
-        displayAllOeuvreCard(oeuvreList);
+        displayAllOeuvreCard(NewoeuvreList);
         searchOeuvre.textProperty().addListener((observable, oldValue, newValue) -> {
             filterData(newValue);
 
@@ -183,6 +176,12 @@ public class AfficherController implements Initializable {
         contactArtiste.setText(user.getEmail());
         Categorie.setText(user.getRole().toString());
 
+        //oeuvreList bch thot fiha le oeuvres mta3 user.id
+        NewoeuvreList = oeuvreList.stream().filter(oeuvre -> oeuvre.getArtiste_id().getId()==user.getId()).collect(Collectors.toList());
+        add.setVisible(UserConnected.getRole().toString().equals("ARTISTE")&& (UserConnected.getId()==user.getId()));
+        System.out.println(NewoeuvreList);
+
+        displayAllOeuvreCard(NewoeuvreList);
 //        String path = user.getImage();
 //        System.out.println(path) ;
 //        try {
