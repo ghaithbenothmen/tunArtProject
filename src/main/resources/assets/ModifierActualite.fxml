@@ -10,12 +10,12 @@
 
 <AnchorPane prefHeight="754.0" prefWidth="1017.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AjouterActualiteController">
     <children>
-        <Button fx:id="BtnAjouter" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" layoutX="261.0" layoutY="578.0" mnemonicParsing="false" onAction="#ajouterAct" prefHeight="18.0" prefWidth="179.0" text="Ajouter" textAlignment="CENTER">
+        <Button fx:id="BtnModifier" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" layoutX="261.0" layoutY="578.0" mnemonicParsing="false" onAction="#ajouterAct" prefHeight="18.0" prefWidth="179.0" text="Modifier" textAlignment="CENTER">
             <font>
                 <Font name="System Bold" size="17.0" />
             </font>
         </Button>
-        <Label alignment="CENTER" layoutX="235.0" layoutY="32.0" prefHeight="81.0" prefWidth="564.0" text="Interface Actualite" textFill="#f5be07">
+        <Label alignment="CENTER" layoutX="235.0" layoutY="32.0" prefHeight="81.0" prefWidth="564.0" text="Modifier Actualite" textFill="#f5be07">
             <font>
                 <Font name="Berlin Sans FB Bold" size="50.0" />
             </font>
@@ -29,7 +29,7 @@
             <font>
                 <Font name="System Bold Italic" size="15.0" />
             </font></Label>
-        <Button fx:id="BtnAfficher" alignment="CENTER" defaultButton="true" layoutX="613.0" layoutY="578.0" mnemonicParsing="false" onAction="#naviguezVersAffichage" prefHeight="31.0" prefWidth="179.0" text="Afficher">
+        <Button fx:id="btncancel" alignment="CENTER" defaultButton="true" layoutX="613.0" layoutY="578.0" mnemonicParsing="false" onAction="#naviguezVersAffichage" prefHeight="31.0" prefWidth="179.0" text="Cancel">
             <font>
                 <Font name="System Bold" size="17.0" />
             </font>

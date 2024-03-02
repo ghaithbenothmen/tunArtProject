@@ -35,7 +35,6 @@ public class Actualite {
     }
 
 
-
     public int getId() {
         return id;
     }

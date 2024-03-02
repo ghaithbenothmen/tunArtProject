@@ -1,5 +1,6 @@
-package Controller;
+package Controllers;
 
+import Controllers.AjouterComController;
 import Entites.Actualite;
 import Entites.Commentaire;
 import Services.ActualiteService;

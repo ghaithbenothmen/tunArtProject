@@ -5,21 +5,17 @@ import Entites.Actualite;
 import Services.ActualiteService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 
-import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class ActualiteU implements Initializable {
+public class ActualiteAdmin implements Initializable {
 
     @FXML
     private GridPane gridFor;
@@ -47,9 +43,9 @@ public class ActualiteU implements Initializable {
         for (int q = 0; q < actualites.size(); q++) {
             AnchorPane anchorpane = new AnchorPane();
             try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("../ActualiteCardUser.fxml")); // Set the location of the FXML file
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("../ActualiteCardAdmin.fxml")); // Set the location of the FXML file
                 AnchorPane pane = loader.load();
-                Controllers.ActualiteCardController forCard = loader.getController();
+                ActualiteCardController forCard = loader.getController();
                 forCard.setData(actualites.get(q));
 
 
