@@ -89,7 +89,7 @@
                <children>
                       <HBox alignment="CENTER" prefHeight="50.0" prefWidth="170.0">
                           <children>
-                              <Button fx:id="ModifierBtn" mnemonicParsing="false" onAction="#commentaire" prefHeight="35.0" prefWidth="91.0" styleClass="add-btn" stylesheets="@dashboardDesign.css" text="Modifier">
+                              <Button fx:id="ModifierBtn" mnemonicParsing="false" onAction="#ModifierAct" prefHeight="35.0" prefWidth="91.0" styleClass="add-btn" stylesheets="@dashboardDesign.css" text="Modifier">
                                   <font>
                                       <Font name="System Bold" size="15.0" />
                                   </font>
@@ -97,7 +97,7 @@
                               <Insets right="5.0" />
                            </HBox.margin>
                         </Button>
-                        <Button fx:id="SuppBtn" alignment="CENTER" mnemonicParsing="false" onAction="#commentaire" prefHeight="35.0" prefWidth="91.0" styleClass="add-btn" stylesheets="@dashboardDesign.css" text="Supprimer">
+                        <Button fx:id="SuppBtn" alignment="CENTER" mnemonicParsing="false" onAction="#handleDeletion" prefHeight="35.0" prefWidth="91.0" styleClass="add-btn" stylesheets="@dashboardDesign.css" text="Supprimer">
                            <HBox.margin>
                               <Insets left="5.0" />
                            </HBox.margin>

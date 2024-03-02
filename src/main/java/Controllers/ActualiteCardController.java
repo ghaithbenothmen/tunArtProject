@@ -81,6 +81,36 @@ public class ActualiteCardController {
             System.err.println(e.getMessage());
         }
     }
+/*    @FXML
+    private void handleUpdateButton(ActionEvent event) {
+        Utilisateur selectedUser = tableview.getSelectionModel().getSelectedItem();
+        if (selectedUser != null) {
+            openUpdatePage(selectedUser);
+            System.out.println(selectedUser);
+        }else {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Attention");
+            alert.setContentText("Séléctionner l'utilisateur a modifier !");
+            alert.showAndWait();
+        }
+    }
+
+    void openUpdatePage(Utilisateur utilisateur) {
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/modifierUtilisateur.fxml"));
+                Parent root = loader.load();
+                ModifierUtilisateurController modifierUtilisateurController = loader.getController();
+                modifierUtilisateurController.setUtilisateur(utilisateur);
+                Stage updateStage = new Stage();
+                updateStage.setTitle("Modifier utilisateur");
+                updateStage.setScene(new Scene(root));
+                updateStage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+    }
+ */
+
     @FXML
     void handleDeletion(ActionEvent event) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -94,6 +124,8 @@ public class ActualiteCardController {
                 // Call the service method to delete the product from the database
                 Actualite actualiteToDelete = new Actualite();
                 actualiteService.supprimer(actualite);//(actualite.getId())
+                //actualiteService.supprimer.setActualite(this.actualite.getId());
+
                 // Notify the user that the deletion was successful
                 Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
                 successAlert.setTitle("Deletion Successful");
