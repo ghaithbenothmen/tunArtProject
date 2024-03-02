@@ -1,69 +1,89 @@
 package Entites;
 
+/*import okhttp3.*;
+import org.json.JSONException;
+import org.json.JSONObject;*/
+
+import java.io.IOException;
+import java.sql.Time;
+import java.util.Date;
 import java.util.Objects;
 
 public class Actualite {
     private int id;
+    private String titre;
     private String text;
-    private String date;
+    private Date date;
+    private String image;
 
-
-
-    public Actualite() {}
-    public Actualite(int id ,String text, String date) {
+    public Actualite( String titre, String text, Date date, String image) {
+        this.titre = titre;
+        this.text = text;
+        this.date = date;
+        this.image = image;
+    }
+    public Actualite( int id ,String titre, String text, Date date, String image) {
         this.id=id;
+        this.titre = titre;
         this.text = text;
         this.date = date;
+        this.image = image;
     }
-    public Actualite(String text, String date) {
-        this.text = text;
-        this.date = date;
+
+
+    public Actualite() {
     }
+
+
 
     public int getId() {
         return id;
-    }
-
-    public String getText() {
-        return text;
-    }
-
-    public String getDate() {
-        return date;
     }
 
     public void setId(int id) {
         this.id = id;
     }
 
+    public String getTitre() {
+        return titre;
+    }
+
+    public void setTitre(String titre) {
+        this.titre = titre;
+    }
+
+    public String getText() {
+        return text;
+    }
+
     public void setText(String text) {
         this.text = text;
     }
 
-    public void setDate(String date) {
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
         this.date = date;
     }
 
-    public Actualite(String text) {
-        this.text = text;
+    public String getImage() {
+        return image;
     }
 
+    public void setImage(String image) {
+        this.image = image;
+    }
     @Override
     public String toString() {
-        return "Actualite{" + "id=" + id + ", text=" + text + ", date=" + date + '}';
+        return "Actualite{" +
+                "id=" + id +
+                ", titre='" + titre + '\'' +
+                ", text='" + text + '\'' +
+                ", date=" + date +
+                ", image='" + image + '\'' +
+                '}';
     }
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Actualite actualite = (Actualite) o;
-        return id == actualite.id && Objects.equals(text, actualite.text) && Objects.equals(date, actualite.date);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id,text,date);
-    }
-
 }
 

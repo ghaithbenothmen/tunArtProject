@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21315bfc-118e-44e1-a34f-1ed61d3c161c" name="Changes" comment="Helmi-Branch: ajouter AffActualiteAdmin.fxml">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/AffActualiteUser.fxml" afterDir="false" />
+    <list default="true" id="21315bfc-118e-44e1-a34f-1ed61d3c161c" name="Changes" comment="Helmi-Branch: ajouter ActualiteCardController.java">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entites/Actualite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entites/Actualite.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,6 +101,7 @@
       <recent name="C:\Users\user\IdeaProjects\tunArtProject\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Controllers" />
       <recent name="Services" />
       <recent name="Test" />
     </key>
@@ -373,7 +374,31 @@
       <option name="project" value="LOCAL" />
       <updated>1709341815552</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Helmi-Branch: ajouter AffActualiteUser.fxml.fxml">
+      <option name="closed" value="true" />
+      <created>1709341894551</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1709341894551</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Helmi-Branch: ajouter ActualiteU.java">
+      <option name="closed" value="true" />
+      <created>1709342075148</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1709342075148</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Helmi-Branch: ajouter ActualiteCardController.java">
+      <option name="closed" value="true" />
+      <created>1709342142353</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1709342142353</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -433,7 +458,10 @@
     <MESSAGE value="Helmi-Branch: ajouter ActualiteCardAdmin.fxml" />
     <MESSAGE value="Helmi-Branch: ajouter ActualiteCardUser.fxml" />
     <MESSAGE value="Helmi-Branch: ajouter AffActualiteAdmin.fxml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Helmi-Branch: ajouter AffActualiteAdmin.fxml" />
+    <MESSAGE value="Helmi-Branch: ajouter AffActualiteUser.fxml.fxml" />
+    <MESSAGE value="Helmi-Branch: ajouter ActualiteU.java" />
+    <MESSAGE value="Helmi-Branch: ajouter ActualiteCardController.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="Helmi-Branch: ajouter ActualiteCardController.java" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
