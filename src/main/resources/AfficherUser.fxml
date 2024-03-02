@@ -29,20 +29,14 @@
                                           <TableColumn fx:id="nomuser" prefWidth="76.80001831054688" text="Nom" />
                                           <TableColumn fx:id="prenomuser" prefWidth="94.39995574951172" text="Prenom" />
                                           <TableColumn fx:id="emailuser" prefWidth="107.20001220703125" text="Email" />
-                                          <TableColumn fx:id="teluser" prefWidth="77.5999755859375" text="Telephone" />
-                                          <TableColumn fx:id="roleuser" prefWidth="84.79998779296875" text="Role" />
-                                          <TableColumn fx:id="mdp" prefWidth="109.60006713867188" text="mdp" />
+                                          <TableColumn fx:id="teluser" prefWidth="137.5999755859375" text="Telephone" />
+                                          <TableColumn fx:id="roleuser" prefWidth="128.80007934570312" text="Role" />
                                        </columns>
                                     </TableView>
                                     <TextField fx:id="cher" layoutX="14.0" layoutY="14.0" promptText="    Rechercher" />
                                  </children>
                               </AnchorPane>
-                              <Button layoutX="235.0" layoutY="325.0" mnemonicParsing="false" onAction="#deleteUser" prefHeight="35.0" prefWidth="88.0" styleClass="delete-btn" text="Supprimer" />
-                              <Button layoutX="338.0" layoutY="325.0" mnemonicParsing="false" onAction="#updateUser" prefHeight="35.0" prefWidth="106.0" styleClass="update-btn" text="Mettre à jour">
-                                 <font>
-                                    <Font name="Futura Book BT" size="12.0" />
-                                 </font>
-                              </Button>
+                              <Button layoutX="351.0" layoutY="325.0" mnemonicParsing="false" onAction="#deleteUser" prefHeight="35.0" prefWidth="88.0" styleClass="delete-btn" text="Supprimer" />
                               <Button layoutX="463.0" layoutY="325.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="35.0" prefWidth="88.0" styleClass="add-btn" text="Ajouter">
                                  <font>
                                     <Font name="Futura Light BT" size="12.0" />

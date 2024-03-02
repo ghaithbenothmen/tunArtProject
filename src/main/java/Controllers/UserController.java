@@ -33,7 +33,7 @@ public class UserController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+
 
         Circle clip = new Circle();
         clip.setCenterX(pdp.getFitWidth() / 2);
@@ -61,18 +61,6 @@ public class UserController implements Initializable {
     public void setUser(User p){
         nom.setText(p.getPrenom()+" "+p.getNom());
         email.setText(p.getEmail());
-
-//  ByteArrayInputStream inputStream = new ByteArrayInputStream(p.getImage());
-//       Image image = new Image(inputStream);
-//       pdp.setImage(image);
-        //File imageFile = new File(p.getImage());
-        //Image image = new Image(imageFile.toURI().toString());
-        //pdp.setImage(image);
-
-
-
-
-
         u=p;
     }
 
@@ -94,13 +82,4 @@ public class UserController implements Initializable {
         controller.senduser(u);
 
     }
-
-
-
-
-
-
-
-
-
 }

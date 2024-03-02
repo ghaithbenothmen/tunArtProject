@@ -26,9 +26,7 @@ public class SidebarController  {
     private Button reclamationsBtn;
     @FXML
     private Button locauxBtn;
-    /**
-     * Initializes the controller class.
-     */
+
 
 
 //    @Override

@@ -24,26 +24,23 @@ public class NavbarController implements Initializable {
     private Text welcomeText;
     @FXML
     private ImageView profileIcon;
-    @FXML
-    private ImageView panierIcon;
 
-    /**
-     * Initializes the controller class.
-     */
+
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         String name = UserConnected.getNom();
         welcomeText.setText("Bienvenue, "+name+"!");
         if(UserConnected.getRole().equals("Artiste")){
             profileIcon.setVisible(false);
-            panierIcon.setVisible(false);
+
         }
     }
 
     @FXML
     private void openProfile(MouseEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AfficherUser.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Edit.fxml"));
             Parent root = loader.load();
             EditController controller = loader.getController();
             controller.senduser(UserConnected);

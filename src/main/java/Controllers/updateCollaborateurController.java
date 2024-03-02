@@ -9,11 +9,16 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.sql.SQLException;
 
 public class updateCollaborateurController {
@@ -45,17 +50,12 @@ public class updateCollaborateurController {
 
     @FXML
     void updatecol(ActionEvent event) {
-        String nom = nomcomp.getText();
+        String nomComp = nomcomp.getText();
         String email = mailcol.getText();
-
-
-
-
-
 
         Collaborateur updatecol = new Collaborateur();
         updatecol.setId(collaborateur.getId());
-        updatecol.setNomComplet(nom);
+        updatecol.setNomComplet(nomComp);
         updatecol.setEmail(email);
 
 
@@ -92,6 +92,19 @@ public class updateCollaborateurController {
         this.collaborateur = collaborateur;
         nomcomp.setText(collaborateur.getNomComplet());
         mailcol.setText(collaborateur.getEmail());
+    }
+
+    @FXML
+    private void retour(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/AfficherCollaborateur.fxml"));
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("");
+        stage.setScene(scene);
+        stage.show();
+
+
 
     }
 

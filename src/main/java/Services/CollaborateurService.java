@@ -78,15 +78,17 @@ public class CollaborateurService implements IService<Collaborateur>{
 
     @Override
     public boolean update(Collaborateur c) throws SQLException {
-        String req = "UPDATE collaborateur set nomComplet=?, email=? WHERE id=?";
+        String req = "UPDATE collaborateur set NomComplet=?, Email=? WHERE ID=?";
         PreparedStatement ste = Con.prepareStatement(req);
         ste.setString(1, c.getNomComplet());
         ste.setString(2, c.getEmail());
+        ste.setInt(3, c.getId()); // Assuming ID is an integer
 
-        int rowsUpdated = ste.executeUpdate(req);
+        int rowsUpdated = ste.executeUpdate(); // Remove the parameter from executeUpdate
 
         return rowsUpdated > 0;
     }
+
 
     @Override
     public Collaborateur findById(int id) throws SQLException {

@@ -24,12 +24,12 @@ public class AESCrypt {
     }
 
     // Decrypt ciphertext using AES with the given key
-    /*public static String decrypt(String ciphertext, String password) throws Exception {
+    public static String decrypt(String ciphertext, String password) throws Exception {
         SecretKeySpec secretKeySpec = new SecretKeySpec(password.getBytes(StandardCharsets.UTF_8), ALGORITHM);
         Cipher cipher = Cipher.getInstance(TRANSFORMATION);
         cipher.init(Cipher.DECRYPT_MODE, secretKeySpec);
         byte[] decryptedBytes = cipher.doFinal(Base64.getDecoder().decode(ciphertext));
         return new String(decryptedBytes, StandardCharsets.UTF_8);
-    }*/
+    }
 
 }

@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
+
 package Controllers;
 
 import Entites.AESCrypt;
@@ -127,12 +124,7 @@ public class LoginController implements Initializable {
 
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/MainContainer.fxml"));
                 Parent root = loader.load();
-
-
                 Scene scene = new Scene(root);
-                //Load CSS
-
-
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 stage.setTitle("TunArt");
                 stage.setScene(scene);

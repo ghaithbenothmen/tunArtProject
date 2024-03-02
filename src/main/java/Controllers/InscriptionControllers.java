@@ -97,7 +97,7 @@ public class InscriptionControllers implements Initializable {
     }
 
     @FXML
-    private void ajouter(ActionEvent event) throws SQLException {
+    private void ajouter(ActionEvent event) throws SQLException, IOException {
 
 
         String email=txtemail.getText();
@@ -150,7 +150,6 @@ public class InscriptionControllers implements Initializable {
 
 
                 User p = new User();
-              //  String encrypted = encrypt(plaintext, key);
                 String encrypted = CryptVar.encrypt(txtmdp.getText(), key);
                 p.setNom(txtnom.getText());
                 p.setPrenom(txtprenom.getText());
@@ -178,7 +177,19 @@ public class InscriptionControllers implements Initializable {
                 throw new RuntimeException(e);
             }
 
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Login.fxml"));
+            Parent root = loader.load();
+//
+//
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setTitle("");
+            stage.setScene(scene);
+            stage.show();
+
         }
+
+
     }
 
 
@@ -211,22 +222,7 @@ public class InscriptionControllers implements Initializable {
         }
     }
 
-    @FXML
-    void importImage(ActionEvent event) {
 
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.getExtensionFilters().addAll(
-                new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif")
-        );
-        File file = fileChooser.showOpenDialog(main_form.getScene().getWindow());
-
-        if (file != null) {
-
-            imageData = file.getAbsolutePath();
-            image = new Image(file.toURI().toString(), 147, 89, false, true);
-            imageFor.setImage(image);
-        }
-    }
 
     @FXML
     private void retour(ActionEvent event) throws IOException {
@@ -238,7 +234,7 @@ public class InscriptionControllers implements Initializable {
 //
         Scene scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setTitle("Se connecter");
+        stage.setTitle("");
         stage.setScene(scene);
         stage.show();
 //
@@ -261,7 +257,6 @@ public class InscriptionControllers implements Initializable {
         stage.setScene(scene);
         stage.show();
 //
-//       }
 
 
     }

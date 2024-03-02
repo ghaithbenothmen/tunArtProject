@@ -25,11 +25,9 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- * FXML Controller class
- *
- * @author Mohamed
- */
+import static Controllers.LoginController.UserConnected;
+
+
 public class EditController implements Initializable {
 
     @FXML
@@ -61,9 +59,7 @@ public class EditController implements Initializable {
     @FXML
     private AnchorPane ticketListPane;
 
-    /**
-     * Initializes the controller class.
-     */
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
@@ -161,15 +157,21 @@ public class EditController implements Initializable {
 
     @FXML
     private void modifier(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Update.fxml"));
-        Parent root = loader.load();
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/UpdateUser.fxml"));
+            Parent root = loader.load();
+            UpdateUserController controller = loader.getController();
+            controller.initData(UserConnected);
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
 
-
-        Scene scene = new Scene(root);
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setTitle("Profile");
-        stage.setScene(scene);
-        stage.show();
 
         //UpdateController controller = loader.getController();
         //controller.senduser(user);
@@ -182,13 +184,13 @@ public class EditController implements Initializable {
     private void back(MouseEvent event) throws IOException {
 
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Login.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/MainContainer.fxml"));
         Parent root = loader.load();
 
 
         Scene scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setTitle("Affiche Users");
+        stage.setTitle("");
         stage.setScene(scene);
         stage.show();
 
@@ -205,7 +207,7 @@ public class EditController implements Initializable {
     @FXML
     private void goBackHandler(MouseEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Login.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/MainContainer.fxml"));
             Parent root = loader.load();
             Scene scene = new Scene(root);
             //Load CSS

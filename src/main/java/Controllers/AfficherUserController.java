@@ -56,9 +56,7 @@ public class AfficherUserController {
     @FXML
     private TableColumn<User,String> mdp;
 
-    /**
-     * Initializes the controller class.
-     */
+
 
 
 private  final UserService userService = new UserService();
@@ -72,7 +70,7 @@ private  final UserService userService = new UserService();
         emailuser.setCellValueFactory(new PropertyValueFactory<>("Email"));
         teluser.setCellValueFactory(new PropertyValueFactory<>("Tel"));
         roleuser.setCellValueFactory(new PropertyValueFactory<>("Role"));
-        mdp.setCellValueFactory(new PropertyValueFactory<>("Mdp"));
+
 
 
         userTable.setItems(userList);

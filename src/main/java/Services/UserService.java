@@ -29,6 +29,7 @@ public class UserService implements IService<User> {
 
     @Override
     public void add(User u) throws SQLException {
+        String uri = u.getImage().replace("\\", "/");
         String req = "INSERT INTO user (nom, prenom, email, mdp, tel, role,image) VALUES (?,?,?,?,?,?,?)";
         PreparedStatement ste = Con.prepareStatement(req);
         ste.setString(1, u.getNom());
@@ -41,7 +42,7 @@ public class UserService implements IService<User> {
         // Convert the enum value to a string
         String roleString = u.getRole().name();
         ste.setString(6, roleString);
-        ste.setString(7, u.getImage());
+        ste.setString(7, uri);
 
         int result = ste.executeUpdate();
 

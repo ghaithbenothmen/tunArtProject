@@ -98,33 +98,14 @@ public class CollaborateurController implements Initializable {
 
     @FXML
     private void retour(ActionEvent event) throws IOException {
-//       if (LoginController.UserConnected.getRole().equals("Admin")){
-//
-//       FXMLLoader loader = new FXMLLoader(getClass().getResource("AfficherUser.fxml"));
-//            Parent root = loader.load();
-//
-//
-//        Scene scene = new Scene(root);
-//        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-//        stage.setTitle("Afficher Users");
-//        stage.setScene(scene);
-//        stage.show();
-//
-//       }
-//
-//       else if(LoginController.UserConnected==null){
-//
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Login.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/AfficherCollaborateur.fxml"));
         Parent root = loader.load();
-//
-//
         Scene scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setTitle("");
         stage.setScene(scene);
         stage.show();
-//
-//       }
+
 
 
     }
