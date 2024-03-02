@@ -4,10 +4,42 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7bb59e3-46d1-454e-ae11-af60aee04d34" name="Changes" comment="helmi_branch:add CommentaireService.java">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/AjouterCommentaireController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/AjouterCommenatire.fxml" afterDir="false" />
+    <list default="true" id="21315bfc-118e-44e1-a34f-1ed61d3c161c" name="Changes" comment="new branch yassine">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/logo png.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/loginDesign.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/AjouterFormationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/AjouterFormationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/GestionFormationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/GestionFormationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/MainContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/MainContainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/UpdateFormationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/UpdateFormationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/UpdateUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/UpdateUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entites/Formation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entites/Formation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entites/Inscription.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entites/Inscription.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entites/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entites/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Services/FormationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/FormationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Test/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Test/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/ConnexionDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utils/ConnexionDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/LandingAdmin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/LandingAdmin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dashboardDesign.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dashboardDesign.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/AjouterFormationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/AjouterFormationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/GestionFormationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/GestionFormationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/UpdateFormationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/UpdateFormationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entites/Actualité.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entites/Concours.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entites/Evenement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entites/Formation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entites/Formation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entites/Inscription.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entites/Inscription.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entites/Oeuvre.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entites/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entites/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Services/FormationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Services/FormationService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/SideBar.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/SideBar.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Test/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Test/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Utils/ConnexionDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Utils/ConnexionDB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dashboardDesign.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dashboardDesign.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,25 +62,37 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
+  &quot;history&quot;: [
+    {
+      &quot;assignee&quot;: &quot;ghaithbenothmen&quot;,
+      &quot;author&quot;: &quot;ghaithbenothmen&quot;
+    },
+    {
+      &quot;assignee&quot;: &quot;ghaithbenothmen&quot;
+    }
+  ],
   &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;Helmi-Gargouri&quot;
+    &quot;assignee&quot;: &quot;ghaithbenothmen&quot;
   }
 }</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
-        <option name="accountId" value="46800acc-e3a5-4444-9670-884ec8382f59" />
-        <option name="url" value="https://github.com/ghaithbenothmen/tunArtProject.git" />
+        <option name="accountId" value="313ce8c8-ad2f-43a5-b93c-50a12bf5c4f6" />
+        <option name="url" value="https://github.com/ghaithbenothmen/TunArt-pidev.git" />
       </UrlAndAccount>
     </option>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/resources/SideBar.fxml" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 5
+  &quot;associatedIndex&quot;: 1
 }</component>
-  <component name="ProjectId" id="2cg0mVcq0sn1DO3Kb1NJwLlxqBw" />
+  <component name="ProjectId" id="2cGjbn8RVtbkqMq56bvAfU1USjQ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -58,120 +102,363 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Helmi-branch&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Ghaith-branch&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Users/user/IdeaProjects/tunArtProject/src/main/java&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/IdeaProjects/tunArtProject/src/main/resources&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/user/IdeaProjects/tunArtProject/src/main/java/org/example/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.5601266&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\user\IdeaProjects\tunArtProject\src\main\resources" />
+      <recent name="C:\Users\user\IdeaProjects\tunArtProject\src\main\resources\assets" />
+      <recent name="C:\Users\essid\IdeaProjects\tunArtProject\src\main\resources" />
+      <recent name="C:\Users\essid\IdeaProjects\tunArtProject\src\main\resources\assets" />
+      <recent name="C:\Users\essid\IdeaProjects\tunArtProject\src\main\java\Services" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\user\IdeaProjects\tunArtProject\src\main\resources\assets" />
+      <recent name="C:\Users\user\IdeaProjects\tunArtProject\src\main\resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Services" />
+      <recent name="Test" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Test.Main" />
+      <module name="Testconnection" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files\Java\javafx-sdk-21.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml " />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Test.*" />
+          <option name="ENABLED" value="false" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Test.Test" />
+      <module name="Testconnection" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestSingleton" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Test.TestSingleton" />
+      <module name="tunArtProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.Test" />
+      <item itemvalue="Application.TestSingleton" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Test" />
+        <item itemvalue="Application.TestSingleton" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a7bb59e3-46d1-454e-ae11-af60aee04d34" name="Changes" comment="" />
-      <created>1708518073662</created>
+      <changelist id="21315bfc-118e-44e1-a34f-1ed61d3c161c" name="Changes" comment="" />
+      <created>1707744885236</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1708518073662</updated>
-      <workItem from="1708518074768" duration="844000" />
-      <workItem from="1708519726617" duration="1914000" />
-      <workItem from="1708541028686" duration="3638000" />
-      <workItem from="1708556824466" duration="10000" />
-      <workItem from="1708629573333" duration="2621000" />
-      <workItem from="1708682765278" duration="4030000" />
+      <updated>1707744885236</updated>
+      <workItem from="1707744886308" duration="824000" />
+      <workItem from="1707745745207" duration="1313000" />
+      <workItem from="1707829598179" duration="6055000" />
+      <workItem from="1707916934493" duration="5555000" />
+      <workItem from="1708076512731" duration="2877000" />
+      <workItem from="1708089528945" duration="653000" />
+      <workItem from="1708171083061" duration="220000" />
+      <workItem from="1708171312044" duration="344000" />
+      <workItem from="1708171666463" duration="2968000" />
+      <workItem from="1708263831512" duration="1779000" />
+      <workItem from="1708265737990" duration="7893000" />
+      <workItem from="1708275033739" duration="1651000" />
+      <workItem from="1708276700160" duration="900000" />
+      <workItem from="1708277614546" duration="851000" />
+      <workItem from="1708278477598" duration="2395000" />
+      <workItem from="1708296759768" duration="3029000" />
+      <workItem from="1708331941262" duration="53000" />
+      <workItem from="1708332902479" duration="14000" />
+      <workItem from="1708332978064" duration="277000" />
+      <workItem from="1708334881893" duration="993000" />
+      <workItem from="1708348846113" duration="7714000" />
+      <workItem from="1708362423656" duration="8723000" />
+      <workItem from="1708430318002" duration="8676000" />
+      <workItem from="1708452264506" duration="370000" />
+      <workItem from="1708452646586" duration="1796000" />
+      <workItem from="1708454462570" duration="1055000" />
+      <workItem from="1708516973455" duration="10661000" />
+      <workItem from="1708605447710" duration="3706000" />
+      <workItem from="1708857290614" duration="7632000" />
+      <workItem from="1708887908290" duration="443000" />
+      <workItem from="1708906173211" duration="2077000" />
+      <workItem from="1709046164503" duration="7660000" />
+      <workItem from="1709117288263" duration="9387000" />
+      <workItem from="1709128272838" duration="11363000" />
+      <workItem from="1709162704589" duration="4665000" />
+      <workItem from="1709196842576" duration="5649000" />
+      <workItem from="1709206127731" duration="1138000" />
     </task>
-    <task id="LOCAL-00001" summary="helmi_branch:add_entite_Actualite.java">
+    <task id="LOCAL-00001" summary="first-commit &quot;Formation&quot;">
       <option name="closed" value="true" />
-      <created>1708630128563</created>
+      <created>1707836703242</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1708630128563</updated>
+      <updated>1707836703242</updated>
     </task>
-    <task id="LOCAL-00002" summary="helmi_branch:add_ActualiteService.java">
+    <task id="LOCAL-00002" summary="Crud Formation">
       <option name="closed" value="true" />
-      <created>1708683931084</created>
+      <created>1707926078963</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1708683931084</updated>
+      <updated>1707926078963</updated>
     </task>
-    <task id="LOCAL-00003" summary="helmi_branch:add_AjouterActualiteController.java">
+    <task id="LOCAL-00003" summary="Crud Formation INTERFACE">
       <option name="closed" value="true" />
-      <created>1708684656767</created>
+      <created>1708264149412</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1708684656767</updated>
+      <updated>1708264149412</updated>
     </task>
-    <task id="LOCAL-00004" summary="helmi_branch:add_AjouterActualite.fxml">
+    <task id="LOCAL-00004" summary="Crud Formation INTERFACE">
       <option name="closed" value="true" />
-      <created>1708685064971</created>
+      <created>1708264534612</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1708685064971</updated>
+      <updated>1708264534612</updated>
     </task>
-    <task id="LOCAL-00005" summary="helmi_branch:add AfficherActualite.fxml and AfficherActualiteController.java">
+    <task id="LOCAL-00005" summary="Crud Formation INTERFACE">
       <option name="closed" value="true" />
-      <created>1708685632333</created>
+      <created>1708264887882</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1708685632333</updated>
+      <updated>1708264887882</updated>
     </task>
-    <task id="LOCAL-00006" summary="helmi_branch:update AfficherActualiteController.java/ondelete">
+    <task id="LOCAL-00006" summary="Crud Formation INTERFACE ajout">
       <option name="closed" value="true" />
-      <created>1708685753122</created>
+      <created>1708265385353</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1708685753122</updated>
+      <updated>1708265385353</updated>
     </task>
-    <task id="LOCAL-00007" summary="helmi_branch:add Commentaire.java">
+    <task id="LOCAL-00007" summary="Gestion categorie">
       <option name="closed" value="true" />
-      <created>1708685830340</created>
+      <created>1708451526539</created>
       <option name="number" value="00007" />
       <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
-      <updated>1708685830340</updated>
+      <updated>1708451526539</updated>
     </task>
-    <task id="LOCAL-00008" summary="helmi_branch:add CommentaireService.java">
+    <task id="LOCAL-00008" summary="Gestion categorie">
       <option name="closed" value="true" />
-      <created>1708686409115</created>
+      <created>1708451992108</created>
       <option name="number" value="00008" />
       <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
-      <updated>1708686409115</updated>
+      <updated>1708451992108</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Gestion categorie">
+      <option name="closed" value="true" />
+      <created>1708454206941</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1708454206941</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Gestion categorie.">
+      <option name="closed" value="true" />
+      <created>1708454412736</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1708454412736</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Relation Formation et Catégorie">
+      <option name="closed" value="true" />
+      <created>1708519120990</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1708519120990</updated>
+    </task>
+    <task id="LOCAL-00012" summary="rebase">
+      <option name="closed" value="true" />
+      <created>1708521572832</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1708521572832</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Gestion Catégorie+Formation(Compléte)">
+      <option name="closed" value="true" />
+      <created>1708527307681</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1708527307681</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Formations interface">
+      <option name="closed" value="true" />
+      <created>1708888314394</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1708888314394</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Formations interface Inscription">
+      <option name="closed" value="true" />
+      <created>1709126773893</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1709126773893</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Formations interface Inscription">
+      <option name="closed" value="true" />
+      <created>1709126887584</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1709126887584</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Formations interface Inscription">
+      <option name="closed" value="true" />
+      <created>1709126914867</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1709126914867</updated>
+    </task>
+    <task id="LOCAL-00018" summary="new branch yassine">
+      <option name="closed" value="true" />
+      <created>1709206498690</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1709206498690</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="User">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="*" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="helmi_branch:add_entite_Actualite.java" />
-    <MESSAGE value="helmi_branch:add_ActualiteService.java" />
-    <MESSAGE value="helmi_branch:add_AjouterActualiteController.java" />
-    <MESSAGE value="helmi_branch:add_AjouterActualite.fxml" />
-    <MESSAGE value="helmi_branch:add AfficherActualite.fxml and AfficherActualiteController.java" />
-    <MESSAGE value="helmi_branch:update AfficherActualiteController.java/ondelete" />
-    <MESSAGE value="helmi_branch:add Commentaire.java" />
-    <MESSAGE value="helmi_branch:add CommentaireService.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="helmi_branch:add CommentaireService.java" />
+    <MESSAGE value="first-commit &quot;Formation&quot;" />
+    <MESSAGE value="Crud Formation" />
+    <MESSAGE value="Crud Formation INTERFACE" />
+    <MESSAGE value="Crud Formation INTERFACE ajout" />
+    <MESSAGE value="Gestion categorie" />
+    <MESSAGE value="Gestion categorie." />
+    <MESSAGE value="Relation Formation et Catégorie" />
+    <MESSAGE value="rebase" />
+    <MESSAGE value="Gestion Catégorie+Formation(Compléte)" />
+    <MESSAGE value="Formations interface" />
+    <MESSAGE value="Formations interface Inscription" />
+    <MESSAGE value="new branch yassine" />
+    <option name="LAST_COMMIT_MESSAGE" value="new branch yassine" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/tunArtProject$Main.ic" NAME="Main Coverage Results" MODIFIED="1708280057125" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Test.*</FILTER>
+    </SUITE>
   </component>
 </project>
