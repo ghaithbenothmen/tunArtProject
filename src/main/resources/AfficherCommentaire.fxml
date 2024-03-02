@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="620.0" prefWidth="708.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AfficherCommentaireController">
+    <children>
+        <TableView fx:id="TableView" layoutX="99.0" layoutY="134.0" prefHeight="380.0" prefWidth="510.0">
+            <columns>
+            <TableColumn fx:id="id_userCol" prefWidth="122.0" text="id_user" />
+            <TableColumn fx:id="id_actCol" prefWidth="102.0" text="id_act" />
+            <TableColumn fx:id="contenuCol" prefWidth="158.0" text="contenuC" />
+            <TableColumn fx:id="dateCol" prefWidth="127.0" text="dateC" />
+            </columns>
+        </TableView>
+        <Label layoutX="99.0" layoutY="69.0" text="Les Commentaries :" textFill="#f5be07">
+            <font>
+                <Font name="System Bold" size="30.0" />
+            </font>
+        </Label>
+        <Button fx:id="delete" alignment="CENTER" layoutX="389.0" layoutY="523.0" mnemonicParsing="false" onAction="#ondelete" prefHeight="32.0" prefWidth="124.0" styleClass="add-btn" stylesheets="@dashboardDesign.css" text="Supprimer">
+            <font>
+                <Font name="System Bold" size="17.0" />
+            </font></Button>
+      <Button fx:id="retour" layoutX="544.0" layoutY="523.0" mnemonicParsing="false" styleClass="add-btn" stylesheets="@dashboardDesign.css" text="Retour" />
+    </children>
+</AnchorPane>
