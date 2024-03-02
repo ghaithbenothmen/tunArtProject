@@ -182,3 +182,13 @@ and open the template in the editor.
     -fx-border-radius:4px;
     -fx-padding:0px 0px 0px 8px;
 }
+.titre{
+    -fx-font-family:"Futura Hv BT";
+    -fx-text-fill:#5c4b51;
+    -fx-font-size:17px;
+}
+.titre-grand{
+    -fx-font-family:"Futura Hv BT";
+    -fx-text-fill:#5c4b51;
+    -fx-font-size:28px;
+}

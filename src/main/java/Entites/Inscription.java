@@ -3,7 +3,7 @@ package Entites;
 public class Inscription {
     private int code_inscription;
     private Formation formation;
-    private User user;
+    //private User user;
 
     public int getCode_inscription() {
         return code_inscription;
@@ -21,11 +21,11 @@ public class Inscription {
         this.formation = formation;
     }
 
-    public User getUser() {
+    /*public User getUser() {
         return user;
     }
 
     public void setUser(User user) {
         this.user = user;
-    }
+    }*/
 }

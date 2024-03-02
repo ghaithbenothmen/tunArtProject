@@ -53,7 +53,7 @@ public class GestionFormationController {
     private ObservableList<Formation> formationList = FXCollections.observableArrayList();
     @FXML
     public void initialize() throws SQLException {
-        formationList.addAll(formationService.findAll());
+        //formationList.addAll(formationService.findAll());
         idfor.setCellValueFactory(new PropertyValueFactory<>("id"));
         nomfor.setCellValueFactory(new PropertyValueFactory<>("nom"));
         datedeb.setCellValueFactory(new PropertyValueFactory<>("dateDebut"));
@@ -75,7 +75,7 @@ public class GestionFormationController {
                 }
             };
         });
-        FormationTable.setItems(formationList);
+       // FormationTable.setItems(formationList);
 
         refreshTable();
         //search
@@ -111,6 +111,7 @@ public class GestionFormationController {
             Parent root = loader.load();
             UpdateFormationController controller = loader.getController();
             controller.initData(formation);
+
             controller.setGestionFormationController(this); // Pass a reference to GestionFormationController
             Stage stage = new Stage();
             stage.setTitle("Update Formation");
@@ -165,6 +166,7 @@ public class GestionFormationController {
     void updateFor(ActionEvent event) {
         Formation selectedFormation = FormationTable.getSelectionModel().getSelectedItem();
         if (selectedFormation != null) {
+
             openUpdateFormationPage(selectedFormation);
         }
     }
@@ -172,5 +174,13 @@ public class GestionFormationController {
     public void refreshTable() throws SQLException {
         FormationTable.getItems().clear();
         FormationTable.getItems().addAll(formationService.findAll());
+    }
+
+    public void initData(int userId) throws SQLException {
+        FormationTable.getItems().clear();
+        // Retrieve formations for the given user_id
+        formationList.addAll(formationService.findByUserId(userId));
+        // Populate the table with the formations
+        FormationTable.setItems(formationList);
     }
 }

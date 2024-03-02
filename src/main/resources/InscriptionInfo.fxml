@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="825.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.InscriptionInfoController">
+   <children>
+      <AnchorPane layoutX="6.0" layoutY="4.0" prefHeight="591.0" prefWidth="814.0">
+         <children>
+            <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="568.0" prefWidth="789.0">
+               <children>
+                  <ScrollPane prefHeight="568.0" prefWidth="790.0" stylesheets="@dashboardDesign.css">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="566.0" prefWidth="787.0" stylesheets="@dashboardDesign.css">
+                           <children>
+                              <ImageView fx:id="imageFor" fitHeight="366.0" fitWidth="366.0" layoutX="24.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true" />
+                              <Label fx:id="nomFor" layoutX="472.0" layoutY="20.0" prefHeight="69.0" prefWidth="270.0" text="NomFormation" textFill="#f3b562">
+                                 <font>
+                                    <Font name="Futura Heavy BT" size="36.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="444.0" layoutY="138.0" styleClass="titre" text="Nom de l'artiste :" />
+                              <Label layoutX="444.0" layoutY="187.0" styleClass="titre" text="Date Début de la formation :" />
+                              <Label layoutX="442.0" layoutY="240.0" styleClass="titre" text="Date Fin de la formation :" />
+                              <Label layoutX="442.0" layoutY="297.0" styleClass="titre" text="Catégorie de la formation :" />
+                              <Label layoutX="444.0" layoutY="354.0" styleClass="titre" text="Niveau de la formation :" />
+                              <Label layoutX="442.0" layoutY="409.0" styleClass="titre" text="Description :" />
+                              <Label layoutX="593.0" layoutY="138.0" text="Artist" />
+                              <Label fx:id="dateD" layoutX="654.0" layoutY="187.0" text="Date D" />
+                              <Label fx:id="dateF" layoutX="655.0" layoutY="240.0" text="Date F" />
+                              <Label fx:id="nomCat" layoutX="654.0" layoutY="297.0" text="Cat F" />
+                              <Label fx:id="niveau" layoutX="643.0" layoutY="354.0" text="Niveau" />
+                              <Label fx:id="desc" layoutX="442.0" layoutY="436.0" text="Label" />
+                              <Button layoutX="65.0" layoutY="475.0" mnemonicParsing="false" onAction="#confirmerInsc" prefHeight="59.0" prefWidth="283.0" styleClass="add-btn" text="Confirmer l'inscription">
+                                 <font>
+                                    <Font name="Futura Light BT" size="41.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                     <styleClass>
+                        <String fx:value="white-bg" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                  </ScrollPane>
+               </children>
+            </AnchorPane>
+         </children></AnchorPane>
+   </children>
+</AnchorPane>

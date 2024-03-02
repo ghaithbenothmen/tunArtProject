@@ -22,7 +22,7 @@ public class Test {
        // Categorie c2=new Categorie("cat1");
 
         Categorie catFind=serCat.findById(2);
-        Formation f1=new Formation("bbb", dd,  df, Niveau.DIFFICILE,"hello",catFind);
+        //Formation f1=new Formation("bbb", dd,  df, Niveau.DIFFICILE,"hello",catFind);
 
         Categorie c1=new Categorie("cat");
 
@@ -35,13 +35,13 @@ public class Test {
         }*/
 
         //add
-       try {
+       /*try {
             ser.add(f1);
             System.out.println("added");
         }catch (SQLException e)
         {
             System.out.println(e);
-        }
+        }*/
 
        //show all
         try {
