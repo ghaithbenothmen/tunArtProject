@@ -113,7 +113,7 @@ public class ActualiteCardController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/AjouterCom.fxml"));
             Parent root = loader.load();
             AjouterComController ajouterComController = loader.getController();
-            ajouterComController.setActualite(7896,1003);
+            ajouterComController.setActualite(this.actualite.getId(),LoginController.UserConnected.getId());
             ComBtn.getScene().setRoot(root);
 
         } catch (IOException e) {
@@ -127,6 +127,7 @@ public class ActualiteCardController {
 
     private Image image;
     public void setData(Actualite actualite){
+        this.actualite = actualite;
         TitreA.setText(actualite.getTitre());
         TextA.setText(actualite.getText());
         DateA.setText(actualite.getDate().toString());
