@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21315bfc-118e-44e1-a34f-1ed61d3c161c" name="Changes" comment="Helmi-Branch: ajouter AfficherCommentaire.fxml et AfficherCommentaireController">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/ModifierActualiteController.java" afterDir="false" />
+    <list default="true" id="21315bfc-118e-44e1-a34f-1ed61d3c161c" name="Changes" comment="Helmi-Branch: supprimer Actualite done">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/ChatBotController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/ChatBot.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/ActualiteCardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ActualiteCardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/ActualiteU.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ActualiteU.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Test/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Test/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ActualiteCardAdmin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ActualiteCardAdmin.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ActualiteCardUser.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ActualiteCardUser.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/AffActualiteUser.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AffActualiteUser.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Test/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Test/Main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,9 +21,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -212,7 +212,7 @@
       <workItem from="1709162704589" duration="4665000" />
       <workItem from="1709196842576" duration="5649000" />
       <workItem from="1709206127731" duration="1138000" />
-      <workItem from="1709404131137" duration="9218000" />
+      <workItem from="1709404131137" duration="11762000" />
     </task>
     <task id="LOCAL-00001" summary="first-commit &quot;Formation&quot;">
       <option name="closed" value="true" />
@@ -438,7 +438,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709411796548</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Helmi-Branch: supprimer Actualite done">
+      <option name="closed" value="true" />
+      <created>1709413918715</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1709413918715</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -505,7 +513,8 @@
     <MESSAGE value="Helmi-Branch: ajouter mon travail" />
     <MESSAGE value="Helmi-Branch: update code iterface user ajouter commentaire done" />
     <MESSAGE value="Helmi-Branch: ajouter AfficherCommentaire.fxml et AfficherCommentaireController" />
-    <option name="LAST_COMMIT_MESSAGE" value="Helmi-Branch: ajouter AfficherCommentaire.fxml et AfficherCommentaireController" />
+    <MESSAGE value="Helmi-Branch: supprimer Actualite done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Helmi-Branch: supprimer Actualite done" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

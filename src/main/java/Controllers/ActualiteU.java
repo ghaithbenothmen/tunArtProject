@@ -5,11 +5,13 @@ import Entites.Actualite;
 import Services.ActualiteService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
@@ -23,6 +25,8 @@ public class ActualiteU implements Initializable {
 
     @FXML
     private GridPane gridFor;
+    @FXML
+    private Button BtnChat;
 
     private final ActualiteService actualiteService = new ActualiteService();
     private ObservableList<Actualite> actualites = FXCollections.observableArrayList();
@@ -65,6 +69,15 @@ public class ActualiteU implements Initializable {
             } catch (Exception e) {
                 System.out.println(e);
             }
+        }
+    }
+    @FXML
+    void naviguezVersChat(ActionEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/ChatBot.fxml"));
+            BtnChat.getScene().setRoot(root);
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
         }
     }
 
