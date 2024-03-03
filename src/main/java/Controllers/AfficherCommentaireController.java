@@ -31,6 +31,10 @@ public class AfficherCommentaireController {
 
     @FXML
     private TableView<Commentaire> TableView;
+    @FXML
+    private TableColumn PrenomCol ;
+    @FXML
+    private TableColumn TitreCol ;
 
     @FXML
     private TableColumn<Commentaire, Date> dateCol;
@@ -51,15 +55,14 @@ public class AfficherCommentaireController {
 
     @FXML
     void initialize() throws SQLException {
-
         List<Commentaire> commentaire = cs.afficher();
         ObservableList<Commentaire> observableList = FXCollections.observableList(commentaire);
         TableView.setItems(observableList);
-        id_userCol.setCellValueFactory(new PropertyValueFactory<>("id_user"));
-        id_actCol.setCellValueFactory(new PropertyValueFactory<>("id_act"));
-        contenuCol.setCellValueFactory(new PropertyValueFactory<>("contenuC"));
-        //dateCol.setCellValueFactory(new PropertyValueFactory<>("dateC"));
 
+        // Set cell value factories for each column
+        PrenomCol.setCellValueFactory(new PropertyValueFactory<>("prenom"));
+        TitreCol.setCellValueFactory(new PropertyValueFactory<>("titre"));
+        contenuCol.setCellValueFactory(new PropertyValueFactory<>("contenuC"));
     }
     @FXML
     void naviguezVersPagePrecedent(ActionEvent event) {

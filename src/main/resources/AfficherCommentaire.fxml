@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import java.net.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="620.0" prefWidth="708.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AfficherCommentaireController">
+<AnchorPane prefHeight="620.0" prefWidth="708.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AfficherCommentaireController">
     <children>
         <TableView fx:id="TableView" layoutX="99.0" layoutY="134.0" prefHeight="380.0" prefWidth="510.0">
             <columns>
-            <TableColumn fx:id="id_userCol" prefWidth="94.0" text="id_user" />
-            <TableColumn fx:id="id_actCol" prefWidth="114.0" text="id_act" />
-            <TableColumn fx:id="contenuCol" prefWidth="301.0" text="contenuC" />
+                <TableColumn fx:id="PrenomCol" prefWidth="122.0" text="Prenom" />
+                <TableColumn fx:id="TitreCol" prefWidth="102.0" text="Titre" />
+                <TableColumn fx:id="contenuCol" prefWidth="285.0" text="contenuC" />
             </columns>
         </TableView>
         <Label layoutX="99.0" layoutY="69.0" text="Les Commentaries :" textFill="#f5be07">
@@ -21,10 +19,14 @@
                 <Font name="System Bold" size="30.0" />
             </font>
         </Label>
-        <Button fx:id="delete" alignment="CENTER" layoutX="389.0" layoutY="523.0" mnemonicParsing="false" onAction="#ondelete" prefHeight="32.0" prefWidth="124.0" styleClass="add-btn" stylesheets="@dashboardDesign.css" text="Supprimer">
+        <Button fx:id="delete" alignment="CENTER" layoutX="409.0" layoutY="523.0" mnemonicParsing="false" onAction="#ondelete" prefHeight="32.0" prefWidth="104.0" styleClass="delete-btn" stylesheets="@dashboardDesign.css" text="Supprimer">
             <font>
                 <Font name="System Bold" size="17.0" />
             </font></Button>
-      <Button fx:id="retour" layoutX="544.0" layoutY="523.0" mnemonicParsing="false" onAction="#naviguezVersPagePrecedent" styleClass="add-btn" stylesheets="@dashboardDesign.css" text="Retour" />
+      <Button fx:id="retour" layoutX="517.0" layoutY="523.0" mnemonicParsing="false" onAction="#naviguezVersPagePrecedent" prefHeight="32.0" prefWidth="89.0" styleClass="update-btn" stylesheets="@dashboardDesign.css" text="Retour" />
     </children>
+    <stylesheets>
+        <URL value="@dashboardDesign.css" />
+        <URL value="@loginDesign.css" />
+    </stylesheets>
 </AnchorPane>

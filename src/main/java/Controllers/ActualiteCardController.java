@@ -135,10 +135,6 @@ public class ActualiteCardController {
                 successAlert.setHeaderText(null);
                 successAlert.setContentText("Product deleted successfully.");
                 successAlert.showAndWait();
-
-                // Close the current stage or window
-                //Stage stage = (Stage) Modifier.getScene().getWindow();
-                //stage.close();
             }
         });
     }
@@ -212,8 +208,11 @@ public class ActualiteCardController {
     private void translateText(ActionEvent event) {
         try {
             String translatedText = translate(TextA.getText(), "ar");
+            String translatedTitre = translate(TitreA.getText(), "ar");
             // Assuming you want to set the translated text back to TextA label
             TextA.setText(translatedText);
+            TitreA.setText(translatedTitre);
+
         } catch (IOException | JSONException e) {
             e.printStackTrace();
         }

@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="feed" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="253.0" stylesheets="@dashboardDesign.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ActualiteCardController">
+<AnchorPane fx:id="feed" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="253.0" stylesheets="@dashboardDesign.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ActualiteCardController">
     <children>
         <VBox layoutX="75.0" layoutY="25.0" prefHeight="250.0" prefWidth="250.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
@@ -79,11 +78,17 @@
                 </AnchorPane>
                 <HBox alignment="CENTER" prefHeight="47.0" prefWidth="258.0">
                     <children>
-                        <Button fx:id="ComBtn" mnemonicParsing="false" onAction="#commentaire" prefHeight="14.0" prefWidth="116.0" styleClass="add-btn" stylesheets="@dashboardDesign.css" text="Commentaire">
+                        <Button fx:id="ComBtn" mnemonicParsing="false" onAction="#commentaire" prefHeight="30.0" prefWidth="110.0" styleClass="add-btn" stylesheets="@dashboardDesign.css" text="Commentaire">
                      <font>
                         <Font name="System Bold" size="15.0" />
-                     </font></Button>
-                  <Button fx:id="BtnTranslate" mnemonicParsing="false" onAction="#translateText" styleClass="add-btn"  stylesheets="@dashboardDesign.css" text="translate" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin></Button>
+                  <Button fx:id="BtnTranslate" mnemonicParsing="false" onAction="#translateText" prefHeight="30.0" prefWidth="110.0" styleClass="update-btn" stylesheets="@dashboardDesign.css" text="Translate">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin></Button>
                     </children>
                 </HBox>
             </children>

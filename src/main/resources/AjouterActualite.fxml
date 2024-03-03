@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
@@ -8,48 +9,56 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="754.0" prefWidth="1017.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AjouterActualiteController">
-    <children>
-        <Button fx:id="BtnAjouter" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" layoutX="261.0" layoutY="578.0" mnemonicParsing="false" onAction="#ajouterAct" prefHeight="18.0" prefWidth="179.0" text="Ajouter" textAlignment="CENTER">
-            <font>
-                <Font name="System Bold" size="17.0" />
-            </font>
-        </Button>
-        <Label alignment="CENTER" layoutX="235.0" layoutY="32.0" prefHeight="81.0" prefWidth="564.0" text="Interface Actualite" textFill="#f5be07">
-            <font>
-                <Font name="Berlin Sans FB Bold" size="50.0" />
-            </font>
-        </Label>
-        <TextArea fx:id="ActualiteTA" layoutX="398.0" layoutY="338.0" prefHeight="118.0" prefWidth="243.0" />
-        <Label layoutX="292.0" layoutY="387.0" text="Actualite :">
-            <font>
-                <Font name="System Bold Italic" size="15.0" />
-            </font></Label>
-        <Label layoutX="305.0" layoutY="521.0" text="Date :">
-            <font>
-                <Font name="System Bold Italic" size="15.0" />
-            </font></Label>
-        <Button fx:id="BtnAfficher" alignment="CENTER" defaultButton="true" layoutX="613.0" layoutY="578.0" mnemonicParsing="false" onAction="#naviguezVersAffichage" prefHeight="31.0" prefWidth="179.0" text="Afficher">
-            <font>
-                <Font name="System Bold" size="17.0" />
-            </font>
-        </Button>
-        <DatePicker fx:id="DateDP" layoutX="398.0" layoutY="516.0" prefHeight="31.0" prefWidth="243.0" />
-        <Label fx:id="inputcontrol" layoutX="395.0" layoutY="401.0" />
-        <Label layoutX="395.0" layoutY="391.0" prefHeight="38.0" prefWidth="29.0" textFill="#ff0d0d" />
-        <Label layoutX="306.0" layoutY="192.0" text="Image :">
-            <font>
-                <Font name="System Bold Italic" size="15.0" />
-            </font></Label>
-        <Button fx:id="btnUpload" layoutX="398.0" layoutY="187.0" mnemonicParsing="false" onAction="#choisirImage" prefHeight="31.0" prefWidth="99.0" text="Upload">
-            <font>
-                <Font name="System Italic" size="15.0" />
-            </font></Button>
-        <Label layoutX="309.0" layoutY="276.0" text="Titre :">
-            <font>
-                <Font name="System Bold Italic" size="15.0" />
-            </font>
-        </Label>
-        <TextField fx:id="TitreTF" layoutX="398.0" layoutY="271.0" />
-    </children>
+<AnchorPane prefHeight="637.0" prefWidth="790.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AjouterActualiteController">
+   <children>
+      <Button fx:id="BtnAjouter" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" layoutX="216.0" layoutY="581.0" mnemonicParsing="false" onAction="#ajouterAct" prefHeight="18.0" prefWidth="179.0" styleClass="update-btn" text="Ajouter" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Button>
+      <Label alignment="CENTER" layoutX="162.0" layoutY="34.0" prefHeight="81.0" prefWidth="529.0" text="Ajouter Actualite" textFill="#f5be07">
+         <font>
+            <Font name="Berlin Sans FB Bold" size="50.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="ActualiteTA" layoutX="327.0" layoutY="304.0" prefHeight="118.0" prefWidth="243.0" />
+      <Label layoutX="221.0" layoutY="353.0" text="Actualite :">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="235.0" layoutY="465.0" text="Date :">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Label>
+      <Button fx:id="BtnAfficher" alignment="CENTER" defaultButton="true" layoutX="449.0" layoutY="580.0" mnemonicParsing="false" onAction="#naviguezVersAffichage" prefHeight="31.0" prefWidth="179.0" styleClass="delete-btn" text="Afficher">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Button>
+      <DatePicker fx:id="DateDP" layoutX="328.0" layoutY="460.0" prefHeight="31.0" prefWidth="243.0" />
+      <Label fx:id="inputcontrol" layoutX="327.0" layoutY="430.0" prefHeight="30.0" prefWidth="5.0" />
+      <Label layoutX="327.0" layoutY="266.0" prefHeight="30.0" prefWidth="16.0" textFill="#ff0d0d" />
+      <Label layoutX="235.0" layoutY="158.0" text="Image :">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnUpload" layoutX="327.0" layoutY="153.0" mnemonicParsing="false" onAction="#choisirImage" prefHeight="31.0" prefWidth="243.0" styleClass="add-btn" text="Upload">
+         <font>
+            <Font name="System Italic" size="15.0" />
+         </font>
+      </Button>
+      <Label layoutX="238.0" layoutY="242.0" text="Titre :">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="TitreTF" layoutX="327.0" layoutY="237.0" prefHeight="31.0" prefWidth="243.0" />
+   </children>
+   <stylesheets>
+      <URL value="@dashboardDesign.css" />
+      <URL value="@loginDesign.css" />
+   </stylesheets>
 </AnchorPane>
