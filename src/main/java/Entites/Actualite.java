@@ -29,6 +29,11 @@ public class Actualite {
         this.date = date;
         this.image = image;
     }
+    public Actualite( int id ,String titre) {
+        this.id=id;
+        this.titre = titre;
+    }
+
 
 
     public Actualite() {

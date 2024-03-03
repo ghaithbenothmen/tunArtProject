@@ -2,6 +2,7 @@ package Services;
 
 import Entites.Actualite;
 import Entites.Commentaire;
+import Entites.User;
 import Utils.ConnexionDB;
 
 import java.sql.*;
@@ -84,10 +85,12 @@ public class CommentaireService implements IServiceCommentaire<Commentaire>{
             String contenuC = res.getString(4);
             Date dateC = res.getDate(5);
 
-/*            ActualiteService actualiteService = new ActualiteService();
-            Actualite actualite = actualiteService.findById(id_act);*/
+            ActualiteService actualiteService = new ActualiteService();
+            Actualite actualite = actualiteService.findById(id_act);
+            UserService userService = new UserService();
+            User user = userService.findById(id_user);
 
-            return new Commentaire(id_c, id_act, id_user, contenuC);
+            Commentaire c1 =new Commentaire (id_c,actualite,user,contenuC);
         }
         return null;
     }
@@ -95,25 +98,35 @@ public class CommentaireService implements IServiceCommentaire<Commentaire>{
     @Override
     //done
     public List<Commentaire> afficher() throws SQLException {
+        List<Commentaire> list = new ArrayList<>();
+        try {
+            ResultSet res = ste.executeQuery("SELECT user.ID,actualite.id,  user.Prenom, actualite.titre, contenuC FROM commentaire " +
+                    "JOIN user ON commentaire.id_user = user.ID " +
+                    "JOIN actualite ON commentaire.id_act = actualite.id;");
 
-        List<Commentaire> list=new ArrayList<>();
-        ResultSet res=ste.executeQuery("select * from commentaire");
-        while (res.next()) {
+            while (res.next()) {
+                System.out.println(res);
+                System.out.println("resresresres");
+                int id_user = res.getInt(1);
+                int id_act = res.getInt(2);
+                String contenuC = res.getString("contenuC");
 
-            int id_c = res.getInt(1);
-            int id_act = res.getInt(2);
-            int id_user = res.getInt(3);
-            String contenuC = res.getString("contenuC");
-/*
-            ActualiteService actualiteService = new ActualiteService();
-            Actualite actualite = actualiteService.findById(id_act);*/
+                UserService userService = new UserService();
+                User user = userService.findById(id_user);
 
-            Commentaire c1 =new Commentaire (id_c,id_act,id_user,contenuC);
-            list.add(c1);
+                ActualiteService actualiteService = new ActualiteService();
+                Actualite actualite = actualiteService.findById(id_act);
+                System.out.println(actualite);
+
+                Commentaire c1 = new Commentaire(actualite.getTitre() , contenuC , user.getPrenom());
+                list.add(c1);
+            }
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
-
         return list;
+
+
     }
-
-
 }

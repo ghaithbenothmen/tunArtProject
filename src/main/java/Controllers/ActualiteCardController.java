@@ -19,6 +19,9 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import okhttp3.*;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.File;
 import java.io.IOException;
@@ -171,5 +174,50 @@ public class ActualiteCardController {
             e.printStackTrace();
         }
     }
+
+
+
+    public String translate (String s, String targetLanguage) throws IOException, JSONException {
+        OkHttpClient client = new OkHttpClient();
+
+        RequestBody body = new FormBody.Builder()
+                .add("q", s)
+                .add("target", targetLanguage)
+                .build();
+
+        Request request = new Request.Builder()
+                .url("https://google-translate1.p.rapidapi.com/language/translate/v2")
+                .post(body)
+                .addHeader("content-type", "application/x-www-form-urlencoded")
+                .addHeader("X-RapidAPI-Key", "836b7b9ce5msh58443bd6437c4a8p1013efjsn7302caca48d4")
+                .addHeader("X-RapidAPI-Host", "google-translate1.p.rapidapi.com")
+                .build();
+
+        Response response = client.newCall(request).execute();
+        if (response.isSuccessful()) {
+            String responseBody = response.body().string();
+            JSONObject json = new JSONObject(responseBody);
+            String translatedText = json.getJSONObject("data")
+                    .getJSONArray("translations")
+                    .getJSONObject(0)
+                    .getString("translatedText");
+
+            return translatedText;
+        } else {
+            System.out.println("Request failed");
+        }
+        return null;
+    }
+    @FXML
+    private void translateText(ActionEvent event) {
+        try {
+            String translatedText = translate(TextA.getText(), "ar");
+            // Assuming you want to set the translated text back to TextA label
+            TextA.setText(translatedText);
+        } catch (IOException | JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 }

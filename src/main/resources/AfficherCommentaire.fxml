@@ -11,10 +11,9 @@
     <children>
         <TableView fx:id="TableView" layoutX="99.0" layoutY="134.0" prefHeight="380.0" prefWidth="510.0">
             <columns>
-            <TableColumn fx:id="id_userCol" prefWidth="122.0" text="id_user" />
-            <TableColumn fx:id="id_actCol" prefWidth="102.0" text="id_act" />
-            <TableColumn fx:id="contenuCol" prefWidth="158.0" text="contenuC" />
-            <TableColumn fx:id="dateCol" prefWidth="127.0" text="dateC" />
+            <TableColumn fx:id="id_userCol" prefWidth="94.0" text="id_user" />
+            <TableColumn fx:id="id_actCol" prefWidth="114.0" text="id_act" />
+            <TableColumn fx:id="contenuCol" prefWidth="301.0" text="contenuC" />
             </columns>
         </TableView>
         <Label layoutX="99.0" layoutY="69.0" text="Les Commentaries :" textFill="#f5be07">
@@ -26,6 +25,6 @@
             <font>
                 <Font name="System Bold" size="17.0" />
             </font></Button>
-      <Button fx:id="retour" layoutX="544.0" layoutY="523.0" mnemonicParsing="false" styleClass="add-btn" stylesheets="@dashboardDesign.css" text="Retour" />
+      <Button fx:id="retour" layoutX="544.0" layoutY="523.0" mnemonicParsing="false" onAction="#naviguezVersPagePrecedent" styleClass="add-btn" stylesheets="@dashboardDesign.css" text="Retour" />
     </children>
 </AnchorPane>

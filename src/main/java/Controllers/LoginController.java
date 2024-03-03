@@ -105,10 +105,10 @@ public class LoginController implements Initializable {
                 alert.setContentText("Welcome"+" "+UserConnected.getNom()+" "+UserConnected.getPrenom());
                 alert.show();
 
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/AffActualiteAdmin.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/AffActualiteUser.fxml"));
                 Parent root = loader.load();
 
-                ActualiteAdmin actualiteAdmin = loader.getController();
+                ActualiteU actualiteU = loader.getController();
                 Scene scene = new Scene(root);
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 stage.setTitle("Gestion Formation");

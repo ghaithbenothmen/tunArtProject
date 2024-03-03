@@ -12,9 +12,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import okhttp3.*;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
 import java.net.URL;
@@ -27,6 +31,12 @@ public class ActualiteU implements Initializable {
     private GridPane gridFor;
     @FXML
     private Button BtnChat;
+
+    @FXML
+    private ComboBox<String> languageComboBox;
+
+/*    public static final String ACCOUNT_SID = "ACbe7739e913f726ee5ea8caca45b7843a";
+    public static final String AUTH_TOKEN = "4d3f09669e1c0de3cc5f98a5cceead10";*/
 
     private final ActualiteService actualiteService = new ActualiteService();
     private ObservableList<Actualite> actualites = FXCollections.observableArrayList();
@@ -43,13 +53,16 @@ public class ActualiteU implements Initializable {
     int column = 0;
 
     public void displayAllActualiteCard() throws SQLException {
+        //translate:
+        languageComboBox.getItems().addAll("fr", "en", "ar");
+        languageComboBox.getSelectionModel().selectFirst();
+        //end
         actualites.clear();
         actualites.addAll(actualiteService.afficher());
 
         gridFor.getRowConstraints().clear();
         gridFor.getColumnConstraints().clear();
         for (int q = 0; q < actualites.size(); q++) {
-            AnchorPane anchorpane = new AnchorPane();
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("../ActualiteCardUser.fxml")); // Set the location of the FXML file
                 AnchorPane pane = loader.load();
@@ -80,6 +93,8 @@ public class ActualiteU implements Initializable {
             System.err.println(e.getMessage());
         }
     }
+
+
 
 
     @Override

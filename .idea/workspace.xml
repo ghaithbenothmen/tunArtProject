@@ -4,13 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21315bfc-118e-44e1-a34f-1ed61d3c161c" name="Changes" comment="Helmi-Branch: supprimer Actualite done">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/ChatBotController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ChatBot.fxml" afterDir="false" />
+    <list default="true" id="21315bfc-118e-44e1-a34f-1ed61d3c161c" name="Changes" comment="Helmi-Branch: Ajouter ApiChatBot">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/ModifierActualite.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/ActualiteCardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ActualiteCardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/ActualiteU.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ActualiteU.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/AjouterComController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/AjouterComController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/ChatBotController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ChatBotController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entites/Actualite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entites/Actualite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entites/Commentaire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entites/Commentaire.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Services/ActualiteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/ActualiteService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Services/CommentaireService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/CommentaireService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Test/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Test/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ActualiteCardUser.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ActualiteCardUser.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/AffActualiteUser.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AffActualiteUser.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/AfficherCommentaire.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AfficherCommentaire.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/AjouterCom.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AjouterCom.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Test/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Test/Main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,29 +82,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Helmi-branch",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_directory_selection": "C:/Users/user/IdeaProjects/tunArtProject/src/main/java",
-    "last_opened_file_path": "C:/Users/helmi/IdeaProjects/tunArtProject/src/main/resources",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/user/IdeaProjects/tunArtProject/src/main/java/org/example/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.5601266",
-    "settings.editor.selected.configurable": "preferences.keymap",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Helmi-branch&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Users/user/IdeaProjects/tunArtProject/src/main/java&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/helmi/IdeaProjects/tunArtProject/src/main/resources&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/user/IdeaProjects/tunArtProject/src/main/java/org/example/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.5601266&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\helmi\IdeaProjects\tunArtProject\src\main\resources" />
@@ -212,7 +224,10 @@
       <workItem from="1709162704589" duration="4665000" />
       <workItem from="1709196842576" duration="5649000" />
       <workItem from="1709206127731" duration="1138000" />
-      <workItem from="1709404131137" duration="11762000" />
+      <workItem from="1709404131137" duration="21854000" />
+      <workItem from="1709468422041" duration="1298000" />
+      <workItem from="1709470903709" duration="599000" />
+      <workItem from="1709475410299" duration="11914000" />
     </task>
     <task id="LOCAL-00001" summary="first-commit &quot;Formation&quot;">
       <option name="closed" value="true" />
@@ -446,7 +461,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709413918715</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Helmi-Branch: Ajouter ApiChatBot">
+      <option name="closed" value="true" />
+      <created>1709416939337</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1709416939337</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -514,7 +537,8 @@
     <MESSAGE value="Helmi-Branch: update code iterface user ajouter commentaire done" />
     <MESSAGE value="Helmi-Branch: ajouter AfficherCommentaire.fxml et AfficherCommentaireController" />
     <MESSAGE value="Helmi-Branch: supprimer Actualite done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Helmi-Branch: supprimer Actualite done" />
+    <MESSAGE value="Helmi-Branch: Ajouter ApiChatBot" />
+    <option name="LAST_COMMIT_MESSAGE" value="Helmi-Branch: Ajouter ApiChatBot" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -526,7 +550,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Controllers/ActualiteCardController.java</url>
-          <line>83</line>
+          <line>86</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>

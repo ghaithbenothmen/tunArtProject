@@ -13,7 +13,12 @@ public class ActualiteService implements IServiceCommentaire<Actualite> {
 
 
     public ActualiteService() {
-        connection = ConnexionDB.getInstance().getCon();
+        try {
+            connection = ConnexionDB.getInstance().getCon();
+            ste = connection.createStatement();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
     }
     @Override
     //done
@@ -84,14 +89,20 @@ public void supprimer(int id) throws SQLException {
 
     @Override
     public Actualite findById(int idd) throws SQLException {
- /*       String req = "SELECT * FROM actualite WHERE id_c = " + idd + ";";
-        ResultSet res = ste.executeQuery(req);
-        if (res.next()) {
-            int id = res.getInt(1);
-            String text = res.getString(2);
-            String date = res.getString(3);
-            return new Actualite (id, text, date);
-        }*/
+        try {
+            String req = "SELECT * FROM actualite WHERE id = " + idd;
+            ResultSet res = ste.executeQuery(req);
+            if (res.next()) {
+                int id = res.getInt("id");
+                String titre = res.getString("titre");
+                Actualite actualite = new Actualite(id,titre);
+                System.out.println(actualite);
+                return actualite ;
+            }
+        } catch (SQLException e) {
+            System.out.println("Error retrieving actuality: " + e.getMessage());
+            throw e; // Throw the exception to be handled by the calling code
+        }
         return null;
     }
 
