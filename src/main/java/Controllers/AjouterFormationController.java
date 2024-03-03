@@ -126,24 +126,30 @@ public class AjouterFormationController {
     }
     @FXML
     void ajouterFormation(ActionEvent event) throws SQLException {
+        if (txtnom.getText().isEmpty() || txtdesc.getText().isEmpty() || dateD.getValue() == null || dateF.getValue() == null) {
+            showAlert(Alert.AlertType.ERROR, "Erreur", "Champs obligatoires non remplis", "Veuillez remplir tous les champs obligatoires.");
+            return;
+        }
+
         String nom = txtnom.getText();
         String desc = txtdesc.getText();
 
+        if (selectcat.getSelectionModel().isEmpty()) {
+            showAlert(Alert.AlertType.ERROR, "Erreur", "Catégorie non sélectionnée", "Veuillez sélectionner une catégorie.");
+            return;
+        }
 
         Niveau niveau = Niveau.valueOf((String) selectniveau.getSelectionModel().getSelectedItem());
 
         String selectedCategorie = (String) selectcat.getSelectionModel().getSelectedItem();
         Categorie selectedCategorieIns = categorieService.findByName(selectedCategorie);
 
-/* nestanew yassine ykml user
-        int artisteId;
-        try {
-            artisteId = (int) idartiste.getSelectionModel().getSelectedItem();
-        } catch (ClassCastException | NullPointerException e) {
-            showAlert(Alert.AlertType.ERROR, "Erreur", "Artiste invalide", "Veuillez sélectionner un artiste valide.");
-            return;
-        }*/
 
+
+        if (dateD.getValue().isAfter(dateF.getValue())) {
+            showAlert(Alert.AlertType.ERROR, "Erreur", "Dates invalides", "La date de début ne peut pas être après la date de fin.");
+            return;
+        }
         LocalDate dateDebut = dateD.getValue();
         java.sql.Date sqlDateDebut = java.sql.Date.valueOf(dateDebut);
 

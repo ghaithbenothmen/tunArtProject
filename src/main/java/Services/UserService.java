@@ -212,5 +212,39 @@ public class UserService implements IService<User> {
         return users;
     }*/
 
+    public boolean inscrire(int userId, int formationId) throws SQLException {
+        // Vérifie si l'utilisateur est déjà inscrit à la formation
+        if (isInscrit(userId, formationId)) {
+            System.out.println("L'utilisateur est déjà inscrit à cette formation.");
+            return false;
+        }
+
+        // Ajoute l'inscription à la base de données
+        String req = "INSERT INTO inscription (user_id, formation_id) VALUES (?, ?)";
+        try (PreparedStatement pst = Con.prepareStatement(req)) {
+            pst.setInt(1, userId);
+            pst.setInt(2, formationId);
+            pst.executeUpdate();
+            System.out.println("Inscription réussie pour l'utilisateur avec l'ID " + userId + " à la formation avec l'ID " + formationId);
+            return true;
+        } catch (SQLException e) {
+            System.out.println("Erreur lors de l'inscription de l'utilisateur avec l'ID " + userId + " à la formation avec l'ID " + formationId + ": " + e.getMessage());
+            throw e;
+        }
+    }
+    public boolean isInscrit(int userId, int formationId) throws SQLException {
+        String query = "SELECT COUNT(*) FROM inscription WHERE user_id = ? AND formation_id = ?";
+        try (PreparedStatement statement = Con.prepareStatement(query)) {
+            statement.setInt(1, userId);
+            statement.setInt(2, formationId);
+            try (ResultSet resultSet = statement.executeQuery()) {
+                if (resultSet.next()) {
+                    int count = resultSet.getInt(1);
+                    return count > 0;
+                }
+            }
+        }
+        return false;
+    }
 
 }

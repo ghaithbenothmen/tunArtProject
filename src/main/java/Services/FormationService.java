@@ -67,19 +67,20 @@ public class FormationService implements IService<Formation> {
 
     @Override
     public Formation findById(int idd) throws SQLException {
-        String req = "SELECT * FROM `formation` WHERE id='" +idd + "';";
+        String req = "SELECT * FROM `formation` WHERE id='" + idd + "';";
         ResultSet res = ste.executeQuery(req);
 
         if (res.next()) {
-            int id = res.getInt(1);
-            String nom = res.getString(2);
-            int artiste_id = res.getInt(3);
+            int id = res.getInt("id");
+            String nom = res.getString("nom");
+            int artiste_id = res.getInt("artiste_id");
             Date dateDebut = res.getDate("dateDebut");
             Date dateFin = res.getDate("dateFin");
-            Niveau niveau = Niveau.valueOf(res.getString("niveau"));
+            String niveauStr = res.getString("niveau"); // Récupérer le niveau en tant que String
+            Niveau niveau = Niveau.valueOf(niveauStr); // Convertir le String en enum Niveau
             String description = res.getString("description");
             int cat_id = res.getInt("cat_id");
-            String image=res.getString("image");
+            String image = res.getString("image");
 
             CategorieService categorieService = new CategorieService();
             Categorie categorie = categorieService.findById(cat_id);
@@ -87,9 +88,7 @@ public class FormationService implements IService<Formation> {
             UserService userService = new UserService();
             User artiste = userService.findById(artiste_id);
 
-
-
-            return new Formation(id, nom,artiste, dateDebut,dateFin,niveau,description,categorie,image);
+            return new Formation(id, nom, artiste, dateDebut, dateFin, niveau, description, categorie, image);
         }
 
         return null;

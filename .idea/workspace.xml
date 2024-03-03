@@ -4,42 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21315bfc-118e-44e1-a34f-1ed61d3c161c" name="Changes" comment="new branch yassine">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/logo png.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/loginDesign.css" afterDir="false" />
+    <list default="true" id="21315bfc-118e-44e1-a34f-1ed61d3c161c" name="Changes" comment="navigate">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/ImageConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/InscriptionConfirmer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/Payement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/PayementController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/QRCodeGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Services/RaitingService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/InscriptionConfirmer.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/PayementFormation.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/image.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/AjouterFormationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/AjouterFormationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/FormationCardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/FormationCardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/GestionFormationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/GestionFormationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/InscriptionInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/InscriptionInfoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/MainContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/MainContainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/UpdateFormationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/UpdateFormationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/UpdateUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/UpdateUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Entites/Formation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entites/Formation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Entites/Inscription.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entites/Inscription.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Entites/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entites/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Services/FormationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/FormationService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Test/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Test/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/ConnexionDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utils/ConnexionDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/LandingAdmin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/LandingAdmin.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/dashboardDesign.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dashboardDesign.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/InscriptionInfo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/InscriptionInfo.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Controllers/AjouterFormationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/AjouterFormationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/FormationCardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/FormationCardController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/GestionFormationController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/GestionFormationController$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Controllers/GestionFormationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/GestionFormationController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/UpdateFormationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/UpdateFormationController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Entites/Actualité.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Entites/Concours.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Entites/Evenement.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Entites/Formation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entites/Formation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Entites/Inscription.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entites/Inscription.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Entites/Oeuvre.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Entites/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entites/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Services/FormationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Services/FormationService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SideBar.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/SideBar.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Test/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Test/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Utils/ConnexionDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Utils/ConnexionDB.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dashboardDesign.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dashboardDesign.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,6 +92,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -142,7 +138,7 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Test.Main" />
       <module name="Testconnection" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files\Java\javafx-sdk-21.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml " />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files\Java\javafx-sdk-21.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.swing" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Test.*" />
@@ -237,6 +233,7 @@
       <workItem from="1709162704589" duration="4665000" />
       <workItem from="1709196842576" duration="5649000" />
       <workItem from="1709206127731" duration="1138000" />
+      <workItem from="1709379372488" duration="41356000" />
     </task>
     <task id="LOCAL-00001" summary="first-commit &quot;Formation&quot;">
       <option name="closed" value="true" />
@@ -382,7 +379,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709206498690</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="navigate">
+      <option name="closed" value="true" />
+      <created>1709228702039</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1709228702039</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -439,7 +444,8 @@
     <MESSAGE value="Formations interface" />
     <MESSAGE value="Formations interface Inscription" />
     <MESSAGE value="new branch yassine" />
-    <option name="LAST_COMMIT_MESSAGE" value="new branch yassine" />
+    <MESSAGE value="navigate" />
+    <option name="LAST_COMMIT_MESSAGE" value="navigate" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

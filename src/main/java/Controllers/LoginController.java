@@ -4,7 +4,10 @@
  */
 package Controllers;
 
+import Entites.Formation;
+import Entites.Role;
 import Entites.User;
+import Services.FormationService;
 import Services.UserService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -55,7 +58,16 @@ public class LoginController implements Initializable {
     @FXML
     private Text bien;
 
+private int selectedFormationId;
+    FormationService formationService =new FormationService();
 
+    public  Formation formation=null;
+
+    private boolean loginSuccessful = false;
+
+    public boolean isLoginSuccessful() {
+        return loginSuccessful;
+    }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
@@ -65,88 +77,98 @@ public class LoginController implements Initializable {
     @FXML
     private void connect(ActionEvent event) throws SQLException, IOException {
 
-        if (email.getText().isEmpty()||mdp.getText().isEmpty()){
+        if (email.getText().isEmpty() || mdp.getText().isEmpty()) {
 
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("champ vide");
+            alert.setTitle("Champs vides");
             alert.setHeaderText(null);
-            alert.setContentText("remplir les champs vides!");
+            alert.setContentText("Veuillez remplir tous les champs!");
             alert.show();
-        }
-
-
-
-        else if (!email.getText().matches("[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}")) {
+        } else if (!email.getText().matches("[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}")) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Email non valide");
             alert.setHeaderText(null);
-            alert.setContentText("format email non valide!");
-            alert.show();  }
-
-        else {
-            Boolean verif =false;
+            alert.setContentText("Format d'email non valide!");
+            alert.show();
+        } else {
+            Boolean verif = false;
             List<User> users = us.findAll();
 
-            for (int i = 0; i < users.size(); i++){
-
-                if (users.get(i).getEmail().equals(email.getText()) && users.get(i).getMdp().equals(mdp.getText()))
-                {
-                    UserConnected=users.get(i);
-                    verif=true;
+            for (int i = 0; i < users.size(); i++) {
+                if (users.get(i).getEmail().equals(email.getText()) && users.get(i).getMdp().equals(mdp.getText())) {
+                    UserConnected = users.get(i);
+                    verif = true;
                     break;
                 }
             }
 
-
-            if (verif==true){
+            if (verif) {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
-
                 alert.setHeaderText(null);
-                alert.setContentText("Welcome"+" "+UserConnected.getNom()+" "+UserConnected.getPrenom());
-                alert.show();
+                alert.setContentText("Bienvenue " + UserConnected.getNom() + " " + UserConnected.getPrenom());
+                alert.showAndWait();
 
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/GestionFormation.fxml"));
-                Parent root = loader.load();
+                if (UserConnected.getRole().equals(Role.ARTISTE)) {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/GestionFormation.fxml"));
+                    Parent root = loader.load();
 
-                GestionFormationController gestionFormationController = loader.getController();
-                gestionFormationController.initData(UserConnected.getId()); // Pass the user_id to the controller
+                    GestionFormationController gestionFormationController = loader.getController();
+                    gestionFormationController.initData(UserConnected.getId());
 
-                Scene scene = new Scene(root);
-                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                stage.setTitle("Gestion Formation");
-                stage.setScene(scene);
-                stage.show();
+                    Scene scene = new Scene(root);
+                    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    stage.setTitle("Gestion Formation");
+                    stage.setScene(scene);
+                    stage.show();
 
-            }
-            else{
+                } else if (UserConnected.getRole().equals(Role.CLIENT)) {
 
+                    if (selectedFormationId != 0) {
+                        System.out.println(selectedFormationId);
+
+                        this.formation= formationService.findById(selectedFormationId);
+                        System.out.println("this is for"+this.formation+"thissss id"+selectedFormationId);
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("../InscriptionInfo.fxml"));
+                        Parent root = loader.load();
+                        InscriptionInfoController inscriptionInfoController = loader.getController();
+                        inscriptionInfoController.setData(this.formation);
+
+                        Scene scene = new Scene(root);
+                        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                        stage.setTitle("Afficher For");
+                        stage.setScene(scene);
+                        stage.show();
+
+                    }else {
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("../InscriptionFormation.fxml"));
+                        Parent root = loader.load();
+
+                        Scene scene = new Scene(root);
+                        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                        stage.setTitle("Afficher");
+                        stage.setScene(scene);
+                        stage.show();
+
+                    }
+                } else {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("../AfficherUser.fxml"));
+                    Parent root = loader.load();
+
+                    Scene scene = new Scene(root);
+                    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    stage.setTitle("Afficher User");
+                    stage.setScene(scene);
+                    stage.show();
+                }
+
+            } else {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
-
                 alert.setHeaderText(null);
                 alert.setContentText("Utilisateur inexistant!");
                 alert.show();
-
             }
-
-
-            
         }
-
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     @FXML
@@ -160,12 +182,6 @@ public class LoginController implements Initializable {
         stage.setTitle("Inscription");
         stage.setScene(scene);
         stage.show();
-
-
-
-
-
-
 
     }
 
@@ -191,14 +207,9 @@ public class LoginController implements Initializable {
 
     }
 
-
-
-
-
-
-
-
-
+    public void setRequestedFormationId(int formationId) {
+        this.selectedFormationId = formationId;
+    }
 
 
 }

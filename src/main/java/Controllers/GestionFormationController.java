@@ -19,6 +19,8 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Date;
 
+import static Controllers.LoginController.UserConnected;
+
 public class GestionFormationController {
 
     private final FormationService formationService = new FormationService();
@@ -50,6 +52,7 @@ public class GestionFormationController {
     @FXML
     private TextField searchFor;
 
+    int artisteId = UserConnected.getId();
     private ObservableList<Formation> formationList = FXCollections.observableArrayList();
     @FXML
     public void initialize() throws SQLException {
@@ -147,7 +150,7 @@ public class GestionFormationController {
             try {
                 formationService.delete(selectedFormation);
 
-                refreshTable();
+                initData(artisteId);
             } catch (SQLException e) {
                 e.printStackTrace();
 
