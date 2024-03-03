@@ -48,6 +48,8 @@ public class GestionFormationController {
 
     @FXML
     private TableColumn<Formation, String> nomfor;
+    @FXML
+    private TableColumn<Formation, Integer> prix;
 
     @FXML
     private TextField searchFor;
@@ -57,12 +59,13 @@ public class GestionFormationController {
     @FXML
     public void initialize() throws SQLException {
         //formationList.addAll(formationService.findAll());
-        idfor.setCellValueFactory(new PropertyValueFactory<>("id"));
+
         nomfor.setCellValueFactory(new PropertyValueFactory<>("nom"));
         datedeb.setCellValueFactory(new PropertyValueFactory<>("dateDebut"));
         datefin.setCellValueFactory(new PropertyValueFactory<>("dateFin"));
         niveau.setCellValueFactory(new PropertyValueFactory<>("niveau"));
         desc.setCellValueFactory(new PropertyValueFactory<>("description"));
+        prix.setCellValueFactory(new PropertyValueFactory<>("prix"));
 
         cat.setCellValueFactory(new PropertyValueFactory<>("cat_id")); //naamlo get l nom mtaa objet brk moch objet kemel
         cat.setCellFactory(column -> {

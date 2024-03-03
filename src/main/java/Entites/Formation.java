@@ -12,10 +12,11 @@ public class Formation {
     private String description;
     private Categorie cat_id;
     private String image;
+    private int prix;
     public Formation() {
     }
 
-    public Formation(int id, String nom,User artiste_id, Date dateDebut, Date dateFin, Niveau niveau, String description, Categorie cat_id,String image) {
+    public Formation(int id, String nom,User artiste_id, Date dateDebut, Date dateFin, Niveau niveau, String description, Categorie cat_id,String image,int prix) {
         this.id=id;
         this.nom=nom;
        this.artiste_id = artiste_id;
@@ -25,6 +26,7 @@ public class Formation {
         this.description = description;
         this.cat_id = cat_id;
         this.image=image;
+        this.prix=prix;
     }
 
     public String getImage() {
@@ -99,7 +101,15 @@ public class Formation {
         this.cat_id = cat_id;
     }
 
-    public Formation(String nom, User artiste_id, Date dateDebut, Date dateFin, Niveau niveau, String description,Categorie cat_id,String image) {
+    public int getPrix() {
+        return prix;
+    }
+
+    public void setPrix(int prix) {
+        this.prix = prix;
+    }
+
+    public Formation(String nom, User artiste_id, Date dateDebut, Date dateFin, Niveau niveau, String description, Categorie cat_id, String image,int prix) {
         this.nom=nom;
         this.artiste_id = artiste_id;
         this.dateDebut = dateDebut;
@@ -108,6 +118,7 @@ public class Formation {
         this.description = description;
         this.cat_id = cat_id;
         this.image=image;
+        this.prix=prix;
     }
 
     @Override
@@ -122,6 +133,7 @@ public class Formation {
                 ", description='" + description + '\'' +
                 ", categorie=" + cat_id +
                 ", image=" + image +
+                ", prix=" + prix +
                 '}';
     }
 
@@ -135,7 +147,7 @@ public class Formation {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, nom, artiste_id,dateDebut, dateFin, niveau, description, cat_id,image);
+        return Objects.hash(id, nom, artiste_id,dateDebut, dateFin, niveau, description, cat_id,image,prix);
     }
 
 }

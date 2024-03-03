@@ -35,13 +35,17 @@ public class FormationService implements IService<Formation> {
         String uri = formation.getImage().replace("\\", "/");
         System.out.println("tahe :"+formation.getId());
         System.out.println("ghaith"+formation.getArtiste_id());
-        String req = "INSERT INTO `formation` (`id`, `nom`, `dateDebut`, `dateFin`, `niveau`, `description`, `cat_id`, `image`, `artiste_id`) " +
+        String req = "INSERT INTO `formation` (`id`, `nom`, `dateDebut`, `dateFin`, `niveau`, `description`, `cat_id`, `image`, `artiste_id`, `prix`) " +
                 "VALUES (NULL, '" + formation.getNom() + "', '" +
                 formation.getDateDebut() + "', '" + formation.getDateFin() + "', '" +
                 formation.getNiveau() + "', '" + formation.getDescription() + "', '" +
-                formation.getCat_id().getId() + "', '" + uri + "', " + formation.getArtiste_id().getId() + ");";
+                formation.getCat_id().getId() + "', '" +
+                uri + "', '" +
+                formation.getArtiste_id().getId() +"', '" +
+                formation.getPrix() + "');";  // Correction: enlever la virgule ici
         ste.executeUpdate(req);
     }
+
 
     @Override
     public boolean delete(Formation formation) throws SQLException {
@@ -58,7 +62,7 @@ public class FormationService implements IService<Formation> {
 
         String req = "UPDATE `formation` SET `nom`='" + formation.getNom() + "', `artiste_id`='" + formation.getArtiste_id().getId() + "', `dateDebut`='" + formation.getDateDebut()
                 +  "', `dateFin`='" + formation.getDateFin() +  "', `niveau`='" + formation.getNiveau() +  "', `description`='" + formation.getDescription() +  "', `cat_id`='" + formation.getCat_id().getId()
-                +  "', `image`='" + uri+ "' WHERE id='" + formation.getId() + "';";
+                +  "', `image`='" + uri+"', `prix`='" + formation.getPrix()+ "' WHERE id='" + formation.getId() + "';";
 
         int rowsUpdated = ste.executeUpdate(req);
 
@@ -81,6 +85,7 @@ public class FormationService implements IService<Formation> {
             String description = res.getString("description");
             int cat_id = res.getInt("cat_id");
             String image = res.getString("image");
+            int prix = res.getInt("prix");
 
             CategorieService categorieService = new CategorieService();
             Categorie categorie = categorieService.findById(cat_id);
@@ -88,7 +93,7 @@ public class FormationService implements IService<Formation> {
             UserService userService = new UserService();
             User artiste = userService.findById(artiste_id);
 
-            return new Formation(id, nom, artiste, dateDebut, dateFin, niveau, description, categorie, image);
+            return new Formation(id, nom, artiste, dateDebut, dateFin, niveau, description, categorie, image,prix);
         }
 
         return null;
@@ -118,8 +123,9 @@ public class FormationService implements IService<Formation> {
                 User artiste = userService.findById(artiste_id);
 
                 String image=res.getString("image");
+                int prix = res.getInt("prix");
 
-                Formation f = new Formation(id, nom,artiste, dateDebut,dateFin,niveau,description,categorie,image);
+                Formation f = new Formation(id, nom,artiste, dateDebut,dateFin,niveau,description,categorie,image,prix);
                 //System.out.println(f);
                 l1.add(f);
 
@@ -142,6 +148,7 @@ public class FormationService implements IService<Formation> {
                 String description = resultSet.getString("description");
                 int cat_id = resultSet.getInt("cat_id");
                 String image = resultSet.getString("image");
+                int prix = resultSet.getInt("prix");
 
                 CategorieService categorieService = new CategorieService();
                 Categorie categorie = categorieService.findById(cat_id);
@@ -149,7 +156,7 @@ public class FormationService implements IService<Formation> {
                 UserService userService = new UserService();
                 User artiste = userService.findById(artiste_id);
 
-                Formation formation = new Formation(id, nom, artiste, dateDebut, dateFin, niveau, description, categorie, image);
+                Formation formation = new Formation(id, nom, artiste, dateDebut, dateFin, niveau, description, categorie, image,prix);
                 formations.add(formation);
             }
 

@@ -35,6 +35,8 @@ import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
 
 import javax.imageio.ImageIO;
 
+import static Controllers.LoginController.UserConnected;
+
 public class InscriptionConfirmer implements Initializable {
 
     @FXML
@@ -51,6 +53,7 @@ public class InscriptionConfirmer implements Initializable {
     @FXML
     private Button imprimerButton;
     private Formation formation;
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -105,9 +108,13 @@ public class InscriptionConfirmer implements Initializable {
                 contentStream.beginText();
 
 // Positionner le premier élément de texte
-                contentStream.newLineAtOffset(x, y);
-                contentStream.showText("Nom de la formation : " + formation.getNom());
 
+                contentStream.newLineAtOffset(x, y);
+                contentStream.showText("Payement effectué par : " + UserConnected.getNom());
+// Passer à la ligne suivante
+                y -= 20; // Ajuster cette valeur en fonction de l'espacement souhaité
+                contentStream.newLineAtOffset(0, 20);
+                contentStream.showText("Nom de la formation : " + formation.getNom());
 // Passer à la ligne suivante
                 y -= 20; // Ajuster cette valeur en fonction de l'espacement souhaité
                 contentStream.newLineAtOffset(0, 20);
@@ -118,6 +125,7 @@ public class InscriptionConfirmer implements Initializable {
                 contentStream.newLineAtOffset(0, 20);
                 contentStream.showText("Date de fin : " + formation.getDateFin());
 
+                contentStream.newLineAtOffset(0, 20);
 // Terminer l'ajout de texte
                 contentStream.endText();
 

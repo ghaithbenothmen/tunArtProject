@@ -57,6 +57,9 @@ public class UpdateFormationController {
 
     @FXML
     private TextField txtnom;
+    @FXML
+    private TextField txtprix;
+
 
     private Formation formation;
 
@@ -80,6 +83,7 @@ public class UpdateFormationController {
 
         String nom = txtnom.getText();
         String desc = txtdesc.getText();
+        int prix = Integer.parseInt(txtprix.getText());
         Niveau niveau = (Niveau) selectniveau.getSelectionModel().getSelectedItem();
         //String img=image.toString();
 
@@ -101,6 +105,7 @@ public class UpdateFormationController {
         updatedFormation.setDateFin(sqlDateFin);
         updatedFormation.setNiveau(niveau);
         updatedFormation.setDescription(desc);
+        updatedFormation.setPrix(prix);
         updatedFormation.setCat_id(selectedCategorieIns);
 
         int artisteId = UserConnected.getId();
@@ -146,6 +151,7 @@ public class UpdateFormationController {
         this.formation = formation;
         txtnom.setText(formation.getNom());
         txtdesc.setText(formation.getDescription());
+        txtprix.setText(String.valueOf(formation.getPrix()));
         this.img= formation.getImage();
        // String img=formation.getImage();
 

@@ -61,7 +61,8 @@ public class AjouterFormationController {
     private  String imagePath;
     @FXML
     private AnchorPane main_form;
-
+    @FXML
+    private TextField txtprix;
 
     public UserService userService=new UserService();
     public CategorieService categorieService = new CategorieService();
@@ -133,6 +134,7 @@ public class AjouterFormationController {
 
         String nom = txtnom.getText();
         String desc = txtdesc.getText();
+        int prix = Integer.parseInt(txtprix.getText());
 
         if (selectcat.getSelectionModel().isEmpty()) {
             showAlert(Alert.AlertType.ERROR, "Erreur", "Catégorie non sélectionnée", "Veuillez sélectionner une catégorie.");
@@ -161,7 +163,7 @@ public class AjouterFormationController {
         User artiste = userService.findById(artisteId);
         System.out.println(artiste);
 
-        Formation f = new Formation(nom, artiste, sqlDateDebut, sqlDateFin, niveau, desc, selectedCategorieIns,imagePath);
+        Formation f = new Formation(nom, artiste, sqlDateDebut, sqlDateFin, niveau, desc, selectedCategorieIns,imagePath,prix);
 
         try {
             service.add(f);

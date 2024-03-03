@@ -77,35 +77,19 @@ public class InscriptionInfoController {
             try {
                 // Vérifie si l'utilisateur est déjà inscrit à cette formation
                 if (!userService.isInscrit(UserConnected.getId(), formation.getId())) {
-                    // Si l'utilisateur n'est pas déjà inscrit, l'inscrire
-
-                    userService.inscrire(UserConnected.getId(), formation.getId());
-
-
-                    int width = 300;
-                    int height = 300;
-                   // BufferedImage qrCodeBufferedImage = QRCodeGenerator.generateQRCodeImage(text, width, height);
-
-
-                    String qrCodeText = "User ID: " + UserConnected.getId() + ", Formation ID: " + formation.getId();
-                    BufferedImage qrCodeBufferedImage = QRCodeGenerator.generateQRCodeImage(qrCodeText, width, height);
-                    Image qrCodeImage = SwingFXUtils.toFXImage(qrCodeBufferedImage, null);
-
-                    System.out.println("heloo qr"+qrCodeImage);
-
-
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("../InscriptionConfirmer.fxml"));
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("../PayementFormation.fxml"));
                     Parent root = loader.load();
-                    InscriptionConfirmer controller = loader.getController();
+                    PayementController controller = loader.getController();
+                    controller.setData(UserConnected, formation,formation.getPrix());
+
                     Scene scene = new Scene(root);
                     Stage stage = new Stage();
                     stage.setScene(scene);
                     stage.show();
-                    // Passer les informations nécessaires au contrôleur de la page InscriptionConfirmer
-                    controller.setData(formation, qrCodeImage);
 
-                    // Afficher un message de succès
-                    showAlert(Alert.AlertType.INFORMATION, "Succès", "Inscription réussie", "Vous êtes maintenant inscrit à cette formation.");
+                    // Fermer la fenêtre actuelle (InscriptionInfo)
+                    Stage currentStage = (Stage) dateD.getScene().getWindow();
+                    currentStage.close();
                 } else {
                     // Afficher un message d'erreur si l'utilisateur est déjà inscrit
                     showAlert(Alert.AlertType.ERROR, "Erreur", "Inscription impossible", "Vous êtes déjà inscrit à cette formation.");
@@ -114,8 +98,6 @@ public class InscriptionInfoController {
                 // Afficher un message d'erreur s'il y a eu une erreur lors de l'inscription
                 showAlert(Alert.AlertType.ERROR, "Erreur", "Erreur d'inscription", "Une erreur s'est produite lors de l'inscription à la formation : " + e.getMessage());
             } catch (IOException e) {
-                throw new RuntimeException(e);
-            } catch (WriterException e) {
                 throw new RuntimeException(e);
             }
         } else {
