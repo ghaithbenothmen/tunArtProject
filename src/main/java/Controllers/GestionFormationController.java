@@ -19,6 +19,8 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Date;
 
+import static Controllers.LoginController.UserConnected;
+
 public class GestionFormationController {
 
     private final FormationService formationService = new FormationService();
@@ -46,20 +48,24 @@ public class GestionFormationController {
 
     @FXML
     private TableColumn<Formation, String> nomfor;
+    @FXML
+    private TableColumn<Formation, Integer> prix;
 
     @FXML
     private TextField searchFor;
 
+    int artisteId = UserConnected.getId();
     private ObservableList<Formation> formationList = FXCollections.observableArrayList();
     @FXML
     public void initialize() throws SQLException {
-        formationList.addAll(formationService.findAll());
-        idfor.setCellValueFactory(new PropertyValueFactory<>("id"));
+        //formationList.addAll(formationService.findAll());
+
         nomfor.setCellValueFactory(new PropertyValueFactory<>("nom"));
         datedeb.setCellValueFactory(new PropertyValueFactory<>("dateDebut"));
         datefin.setCellValueFactory(new PropertyValueFactory<>("dateFin"));
         niveau.setCellValueFactory(new PropertyValueFactory<>("niveau"));
         desc.setCellValueFactory(new PropertyValueFactory<>("description"));
+        prix.setCellValueFactory(new PropertyValueFactory<>("prix"));
 
         cat.setCellValueFactory(new PropertyValueFactory<>("cat_id")); //naamlo get l nom mtaa objet brk moch objet kemel
         cat.setCellFactory(column -> {
@@ -75,7 +81,7 @@ public class GestionFormationController {
                 }
             };
         });
-        FormationTable.setItems(formationList);
+       // FormationTable.setItems(formationList);
 
         refreshTable();
         //search
@@ -111,6 +117,7 @@ public class GestionFormationController {
             Parent root = loader.load();
             UpdateFormationController controller = loader.getController();
             controller.initData(formation);
+
             controller.setGestionFormationController(this); // Pass a reference to GestionFormationController
             Stage stage = new Stage();
             stage.setTitle("Update Formation");
@@ -146,7 +153,7 @@ public class GestionFormationController {
             try {
                 formationService.delete(selectedFormation);
 
-                refreshTable();
+                initData(artisteId);
             } catch (SQLException e) {
                 e.printStackTrace();
 
@@ -165,6 +172,7 @@ public class GestionFormationController {
     void updateFor(ActionEvent event) {
         Formation selectedFormation = FormationTable.getSelectionModel().getSelectedItem();
         if (selectedFormation != null) {
+
             openUpdateFormationPage(selectedFormation);
         }
     }
@@ -172,5 +180,13 @@ public class GestionFormationController {
     public void refreshTable() throws SQLException {
         FormationTable.getItems().clear();
         FormationTable.getItems().addAll(formationService.findAll());
+    }
+
+    public void initData(int userId) throws SQLException {
+        FormationTable.getItems().clear();
+        // Retrieve formations for the given user_id
+        formationList.addAll(formationService.findByUserId(userId));
+        // Populate the table with the formations
+        FormationTable.setItems(formationList);
     }
 }

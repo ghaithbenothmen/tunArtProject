@@ -16,43 +16,43 @@
       <AnchorPane layoutX="5.0" layoutY="5.0" prefHeight="400.0" prefWidth="600.0">
          <children>
             <Button layoutX="406.0" layoutY="350.0" mnemonicParsing="false" onAction="#updateFormation" prefHeight="35.0" prefWidth="122.0" style="-fx-background-color: F3B562;" text="Modifier" textFill="WHITE" />
-            <TextField fx:id="txtdesc" accessibleRole="TEXT_AREA" layoutX="354.0" layoutY="170.0" prefHeight="35.0" prefWidth="171.0" />
-            <TextField fx:id="txtnom" layoutX="84.0" layoutY="104.0" prefHeight="26.0" prefWidth="171.0" promptText="Donnez le nom" />
-            <Label layoutX="84.0" layoutY="77.0" text="Nom de la formation" textFill="#5c4d51">
+            <TextField fx:id="txtdesc" accessibleRole="TEXT_AREA" layoutX="354.0" layoutY="145.0" prefHeight="60.0" prefWidth="171.0" />
+            <TextField fx:id="txtnom" layoutX="86.0" layoutY="81.0" prefHeight="26.0" prefWidth="171.0" promptText="Donnez le nom" />
+            <Label layoutX="86.0" layoutY="59.0" text="Nom de la formation" textFill="#5c4d51">
                <font>
                   <Font name="Futura Heavy BT" size="12.0" />
                </font>
             </Label>
-            <Label layoutX="84.0" layoutY="141.0" text="Date début de la formation" textFill="#5c4d51">
+            <Label layoutX="84.0" layoutY="172.0" text="Date début de la formation" textFill="#5c4d51">
                <font>
                   <Font name="Futura Heavy BT" size="12.0" />
                </font>
             </Label>
-            <Label layoutX="84.0" layoutY="206.0" text="Date fin de la formation" textFill="#5c4d51">
+            <Label layoutX="84.0" layoutY="228.0" text="Date fin de la formation" textFill="#5c4d51">
                <font>
                   <Font name="Futura Heavy BT" size="12.0" />
                </font>
             </Label>
-            <Label layoutX="354.0" layoutY="77.0" text="Niveau de la formation" textFill="#5c4d51" />
-            <Label layoutX="354.0" layoutY="143.0" text="Description" textFill="#5c4d51">
+            <Label layoutX="354.0" layoutY="60.0" text="Niveau de la formation" textFill="#5c4d51" />
+            <Label layoutX="354.0" layoutY="121.0" text="Description" textFill="#5c4d51">
                <font>
                   <Font name="Futura Heavy BT" size="12.0" />
                </font>
             </Label>
-            <Label layoutX="86.0" layoutY="273.0" text="Catégorie" textFill="#5c4d51">
+            <Label layoutX="86.0" layoutY="282.0" text="Catégorie" textFill="#5c4d51">
                <font>
                   <Font name="Futura Heavy BT" size="12.0" />
                </font>
             </Label>
-            <Text fill="#5c4d51" layoutX="34.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modifier formation">
+            <Text fill="#5c4d51" layoutX="34.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modifier formation">
                <font>
                   <Font name="Futura Heavy BT" size="26.0" />
                </font>
             </Text>
-            <DatePicker fx:id="dateD" layoutX="84.0" layoutY="172.0" promptText="jj/mm/aaaa" />
-            <DatePicker fx:id="dateF" layoutX="84.0" layoutY="232.0" promptText="jj/mm/aaaa" />
+            <DatePicker fx:id="dateD" layoutX="84.0" layoutY="194.0" promptText="jj/mm/aaaa" />
+            <DatePicker fx:id="dateF" layoutX="84.0" layoutY="248.0" promptText="jj/mm/aaaa" />
             <Button layoutX="309.0" layoutY="350.0" mnemonicParsing="false" onAction="#resetForm" prefHeight="35.0" prefWidth="85.0" style="-fx-background-color: ffffff;" text="Reset" textFill="#5c4d51" />
-            <ComboBox fx:id="selectniveau" layoutX="354.0" layoutY="105.0" prefHeight="26.0" prefWidth="171.0" promptText="Séléctionner le niveau" />
+            <ComboBox fx:id="selectniveau" layoutX="354.0" layoutY="83.0" prefHeight="26.0" prefWidth="171.0" promptText="Séléctionner le niveau" />
             <ComboBox fx:id="selectcat" layoutX="87.0" layoutY="304.0" prefHeight="26.0" prefWidth="175.0" promptText="Séléctionner la catégorie" />
             <AnchorPane fx:id="main_form" layoutX="361.0" layoutY="220.0" prefHeight="115.0" prefWidth="138.0" stylesheets="@dashboardDesign.css">
                <styleClass>
@@ -64,6 +64,12 @@
                   <Button layoutX="1.0" layoutY="88.0" mnemonicParsing="false" onAction="#importImage" prefHeight="26.0" prefWidth="147.0" text="Importer" />
                </children>
             </AnchorPane>
+            <TextField fx:id="txtprix" layoutX="86.0" layoutY="141.0" prefHeight="26.0" prefWidth="171.0" promptText="Donnez le prix" />
+            <Label layoutX="86.0" layoutY="119.0" text="Prix de la formation" textFill="#5c4d51">
+               <font>
+                  <Font name="Futura Heavy BT" size="12.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </children>

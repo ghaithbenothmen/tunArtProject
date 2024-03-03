@@ -40,12 +40,12 @@
                         <Image url="@assets/Capture_d_écran_2024-02-25_195559-removebg-preview.png" />
                     </image>
                 </ImageView>
-                <Text fx:id="mdpoub" fill="#5c4b51" layoutX="64.0" layoutY="425.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="titre" text="mot de passe oublié?" underline="true" wrappingWidth="180.0">
+                <Text fx:id="mdpoub" fill="#5c4b51" layoutX="110.0" layoutY="427.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="titre" text="mot de passe oublié?" wrappingWidth="180.0">
                     <font>
                         <Font name="System Bold Italic" size="12.0" />
                     </font>
                 </Text>
-                <Button fx:id="icibt" layoutX="210.0" layoutY="408.0" mnemonicParsing="false" onAction="#mdp_ob" style="-fx-background-color: gris;" text="cliquez ici" underline="true" />
+                <Button fx:id="icibt" layoutX="166.0" layoutY="431.0" mnemonicParsing="false" onAction="#mdp_ob" style="-fx-background-color: gris;" text="cliquez ici" underline="true" />
             </children>
             <stylesheets>
                 <URL value="@dashboardDesign.css" />

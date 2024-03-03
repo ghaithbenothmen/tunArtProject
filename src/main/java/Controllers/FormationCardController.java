@@ -64,13 +64,18 @@ public class FormationCardController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../InscriptionInfo.fxml"));
             AnchorPane pane = loader.load();
             InscriptionInfoController infoController = loader.getController();
+            infoController.setFormation(formation);
             infoController.setData(formation);
+
+
 
             Stage stage = new Stage();
             stage.setScene(new Scene(pane));
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
     }
 

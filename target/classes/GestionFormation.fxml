@@ -26,13 +26,13 @@
                            <children>
                               <TableView fx:id="FormationTable" layoutX="12.0" layoutY="53.0" prefHeight="232.0" prefWidth="546.0">
                                  <columns>
-                                    <TableColumn fx:id="idfor" prefWidth="50.399967193603516" text="ID" />
                                     <TableColumn fx:id="nomfor" prefWidth="56.800048828125" text="Nom" />
                                     <TableColumn fx:id="datedeb" prefWidth="70.39996337890625" text="Date début" />
                                     <TableColumn fx:id="datefin" prefWidth="70.39996337890625" text="Date fin" />
                                     <TableColumn fx:id="niveau" prefWidth="70.39996337890625" text="Niveau" />
                                     <TableColumn fx:id="cat" prefWidth="70.39996337890625" text="Catégorie" />
-                                    <TableColumn fx:id="desc" prefWidth="156.00003662109373" text="Description" />
+                                    <TableColumn fx:id="desc" prefWidth="113.60003662109375" text="Description" />
+                                    <TableColumn fx:id="prix" minWidth="0.0" prefWidth="92.00003662109373" text="Prix" />
                                  </columns>
                               </TableView>
                               <TextField fx:id="searchFor" layoutX="14.0" layoutY="14.0" promptText=" Rechercher" />

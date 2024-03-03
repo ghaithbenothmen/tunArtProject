@@ -192,5 +192,10 @@ and open the template in the editor.
 .titre{
     -fx-font-family:"Futura Hv BT";
     -fx-text-fill:#5c4b51;
-    -fx-font-size:14px;
+    -fx-font-size:17px;
+}
+.titre-grand{
+    -fx-font-family:"Futura Hv BT";
+    -fx-text-fill:#5c4b51;
+    -fx-font-size:28px;
 }
