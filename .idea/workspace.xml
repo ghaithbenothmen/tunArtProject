@@ -4,35 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21315bfc-118e-44e1-a34f-1ed61d3c161c" name="Changes" comment="fifth-commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/ArtisteCardController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Entites/Like.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Services/LikeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ArtisteCard.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/dislike.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/like.png" afterDir="false" />
+    <list default="true" id="21315bfc-118e-44e1-a34f-1ed61d3c161c" name="Changes" comment="like-commit">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/AjouterReclamationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/GestionReclamation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/ModifierReclamationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Entites/Reclamation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Services/ReclamationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/AjouterReclamation.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/GestionReclamation.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/ModifierReclamation.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/AfficherArtistesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/AfficherArtistesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/AfficherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/AfficherController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/ModifierOeuvreControler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ModifierOeuvreControler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/OeuvreCardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/OeuvreCardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Entites/Oeuvre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entites/Oeuvre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Services/OeuvreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/OeuvreService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/AfficherArtistes.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AfficherArtistes.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/OeuvreCard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/OeuvreCard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/AfficherArtistes.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AfficherArtistes.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/AfficherArtistesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/AfficherArtistesController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/AfficherController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/AfficherController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/GestionCategorie.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/GestionCategorie.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Controllers/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/ModifierOeuvreControler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/ModifierOeuvreControler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/OeuvreCardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/OeuvreCardController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/OneOeuvreController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/OneOeuvreController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Entites/Oeuvre.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entites/Oeuvre.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/OeuvreCard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/OeuvreCard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Services/OeuvreService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Services/OeuvreService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Services/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Services/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestionCategorie.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestionCategorie.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,29 +92,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Taha-branch",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_directory_selection": "C:/Users/user/IdeaProjects/tunArtProject/src/main/java",
-    "last_opened_file_path": "C:/Program Files/Java/PiDev_Desktop-main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/user/IdeaProjects/tunArtProject/src/main/java/org/example/Main.java",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.5601266",
-    "settings.editor.selected.configurable": "vcs.Git",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Taha-branch&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Users/user/IdeaProjects/tunArtProject/src/main/java&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Program Files/Java/PiDev_Desktop-main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/user/IdeaProjects/tunArtProject/src/main/java/org/example/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.5601266&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\tahab\IdeaProjects\tunArtProject\src\main\resources\assets" />
@@ -244,7 +229,8 @@
       <workItem from="1709234944492" duration="2975000" />
       <workItem from="1709299420012" duration="23568000" />
       <workItem from="1709375866855" duration="2338000" />
-      <workItem from="1709378245819" duration="33302000" />
+      <workItem from="1709378245819" duration="37473000" />
+      <workItem from="1709465155838" duration="26018000" />
     </task>
     <task id="LOCAL-00001" summary="first-commit &quot;Formation&quot;">
       <option name="closed" value="true" />
@@ -390,7 +376,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709314967182</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="like-commit">
+      <option name="closed" value="true" />
+      <created>1709414035411</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1709414035411</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -466,7 +460,8 @@
     <MESSAGE value="oeuvre gestion" />
     <MESSAGE value="fourth-commit" />
     <MESSAGE value="fifth-commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="fifth-commit" />
+    <MESSAGE value="like-commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="like-commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

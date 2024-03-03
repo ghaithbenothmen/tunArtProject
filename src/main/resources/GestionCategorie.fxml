@@ -51,7 +51,7 @@
                      </font>
                   </Button>
                   <Button layoutX="135.0" layoutY="325.0" mnemonicParsing="false" onAction="#resetForm" prefHeight="35.0" prefWidth="88.0" styleClass="clear-btn" text="Reset" />
-               </children>
+               </children>re
             </AnchorPane>
          </children>
       </AnchorPane>
