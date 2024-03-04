@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21315bfc-118e-44e1-a34f-1ed61d3c161c" name="Changes" comment="Helmi-Branch: add Button Retour">
+    <list default="true" id="21315bfc-118e-44e1-a34f-1ed61d3c161c" name="Changes" comment="Helmi-Branch: ajouter refresh sur page admin">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/ActualiteCardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ActualiteCardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/AjouterComController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/AjouterComController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ChatBot.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ChatBot.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -215,7 +214,7 @@
       <workItem from="1709503873135" duration="603000" />
       <workItem from="1709506260585" duration="5718000" />
       <workItem from="1709512009617" duration="17000" />
-      <workItem from="1709512037878" duration="3480000" />
+      <workItem from="1709512037878" duration="4294000" />
     </task>
     <task id="LOCAL-00001" summary="first-commit &quot;Formation&quot;">
       <option name="closed" value="true" />
@@ -489,7 +488,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709514060954</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Helmi-Branch: ajouter refresh sur page admin">
+      <option name="closed" value="true" />
+      <created>1709515664753</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1709515664753</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -534,7 +541,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Crud Formation INTERFACE ajout" />
     <MESSAGE value="Gestion categorie" />
     <MESSAGE value="Gestion categorie." />
     <MESSAGE value="Relation Formation et Catégorie" />
@@ -559,7 +565,8 @@
     <MESSAGE value="Helmi-Branch: zinaaa" />
     <MESSAGE value="Helmi-Branch: controle saisie" />
     <MESSAGE value="Helmi-Branch: add Button Retour" />
-    <option name="LAST_COMMIT_MESSAGE" value="Helmi-Branch: add Button Retour" />
+    <MESSAGE value="Helmi-Branch: ajouter refresh sur page admin" />
+    <option name="LAST_COMMIT_MESSAGE" value="Helmi-Branch: ajouter refresh sur page admin" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
