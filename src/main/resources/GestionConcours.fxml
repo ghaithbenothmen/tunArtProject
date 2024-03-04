@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #f2EBBF;" stylesheets="@dashboardDesign.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.GestionConcoursController">
+   <children>
+      <Button fx:id="Concours" layoutX="97.0" layoutY="113.0" mnemonicParsing="false" onAction="#ConcoursACTION" prefHeight="25.0" prefWidth="130.0" text="Concours" />
+      <Button fx:id="Vote" layoutX="255.0" layoutY="113.0" mnemonicParsing="false" onAction="#VoteACTION" prefHeight="25.0" prefWidth="130.0" text="Vote" />
+      <Button fx:id="Participate" layoutX="408.0" layoutY="113.0" mnemonicParsing="false" onAction="#ParticipateACTION" prefHeight="25.0" prefWidth="130.0" text="Participate" />
+      <Button fx:id="QR" layoutX="235.0" layoutY="188.0" mnemonicParsing="false" onAction="#QRACTION" prefHeight="25.0" prefWidth="130.0" text="QR" />
+      <Button fx:id="best" layoutX="136.0" layoutY="188.0" mnemonicParsing="false" onAction="#BestACTION" text="Best" />
+   </children>
+</AnchorPane>
