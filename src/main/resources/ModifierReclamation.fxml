@@ -14,7 +14,7 @@
          </font>
       </Text>
       <TextField fx:id="textrec" layoutX="27.0" layoutY="159.0" prefHeight="79.0" prefWidth="358.0" promptText="Ajouter votre reclamation ici" />
-      <Button fx:id="Modifier" layoutX="150.0" layoutY="246.0" mnemonicParsing="false" onAction="#ModifierReclamation" prefHeight="26.0" prefWidth="99.0" styleClass="update-btn" stylesheets="@dashboardDesign.css" text="Modifier" />
+      <Button fx:id="add" layoutX="150.0" layoutY="246.0" mnemonicParsing="false" onAction="#ModifierReclamation" prefHeight="26.0" prefWidth="99.0" styleClass="update-btn" stylesheets="@dashboardDesign.css" text="Modifier" />
       <TextField fx:id="typerec" layoutX="169.0" layoutY="116.0" prefHeight="27.0" prefWidth="214.0" promptText="Ajouter votre reclamation ici" />
       <Text layoutX="27.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type de reclamation : " wrappingWidth="142.13672256469727">
          <font>

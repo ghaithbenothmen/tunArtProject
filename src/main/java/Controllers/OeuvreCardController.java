@@ -19,6 +19,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import org.controlsfx.control.Notifications;
 
 import javax.xml.xpath.XPath;
 import java.awt.event.MouseEvent;
@@ -34,6 +35,8 @@ import java.util.ResourceBundle;
 import static Controllers.LoginController.UserConnected;
 
 public class OeuvreCardController  {
+
+    boolean liked;
 //    private Commentaire c2=new Commentaire();
 //    CommentaireService cs = new CommentaireService();
 
@@ -164,13 +167,15 @@ Oeuvre oeuvre;
         System.out.println(likes);
             if (likes.size() == 0) {
                 ls.ajouter(like);
+
                 likenbr = ls.nbrlike(o);
                 o.setNote(likenbr + 1);
 
                 ls.ModifLike(like);
                 jaimebtn.setDisable(true);
                 dislikebtn.setDisable(false);
-                nbr.setText(String.valueOf(os.nbrlike(o)));
+//                nbr.setText(String.valueOf(os.nbrlike(o)));
+
             } else {
 
                 ls.ModifLike(like);
@@ -180,8 +185,15 @@ Oeuvre oeuvre;
                 ls.ModifLike(like);
                 jaimebtn.setDisable(true);
                 dislikebtn.setDisable(false);
-                nbr.setText(String.valueOf(os.nbrlike(o)));
+//                nbr.setText(String.valueOf(os.nbrlike(o)));
             }
+        liked=true;
+        if (liked) {
+            Notifications.create()
+                    .title("Notification Title")
+                    .text(UserConnected.getNom()+" "+"a aimée l'oeuvre"+" "+this.oeuvre.getNom_Ouvre()+" "+"de l'artiste"+" "+this.oeuvre.getArtiste_id().getNom())
+                    .showInformation();
+        }
 
 
 
@@ -223,12 +235,19 @@ Oeuvre oeuvre;
             os.update(o);
             dislikebtn.setDisable(true);
             jaimebtn.setDisable(false);
-            nbr.setText(String.valueOf(os.nbrlike(o)));
+//            nbr.setText(String.valueOf(os.nbrlike(o)));
 
 
 
 
 
+        }
+        liked=true;
+        if (liked) {
+            Notifications.create()
+                    .title("Notification Title")
+                    .text(UserConnected.getNom()+" a détestée l'oeuvre"+" "+this.oeuvre.getNom_Ouvre()+" "+"de l'artiste"+" "+this.oeuvre.getArtiste_id().getNom())
+                    .showInformation();
         }
 
     }

@@ -25,11 +25,12 @@ import java.time.LocalDate;
 
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import org.controlsfx.control.Notifications;
 
 import static Controllers.LoginController.UserConnected;
 
 public class AjouterOeuvreControler {
-
+    Boolean oeuvreAdded;
     private UserService userService = new UserService();
 
     private  final OeuvreService oeuvre=new OeuvreService();
@@ -84,6 +85,8 @@ public class AjouterOeuvreControler {
                 alert.setContentText("An error occurred while loading the selected image file.");
                 alert.showAndWait();
             }
+        }else {
+            showAlert(Alert.AlertType.ERROR,"Erreur","Aucune image ajoutée ","Veuiller importer une image");
         }
     }
     public void initialize() {
@@ -104,6 +107,7 @@ public class AjouterOeuvreControler {
         });
     }
 
+
     private AfficherController parentController;
 
 
@@ -115,6 +119,10 @@ public class AjouterOeuvreControler {
     @FXML
     void AjouterOeuvre(ActionEvent event) throws SQLException {
 
+
+
+
+
         String nom = txtnom.getText();
 //        String image = imagePreview.getImage().getUrl();
         String description = desc.getText();
@@ -123,6 +131,7 @@ public class AjouterOeuvreControler {
         TypeOeuvre type = TypeOeuvre.valueOf((String) selectType.getSelectionModel().getSelectedItem());
 
         LocalDate datedb = date.getValue();
+
         java.sql.Date sqlDatePublication = java.sql.Date.valueOf(datedb);
 
         int artisteId = UserConnected.getId();
@@ -132,21 +141,37 @@ public class AjouterOeuvreControler {
 
         Oeuvre o = new Oeuvre(nom, imagePath, description, type, sqlDatePublication,artiste);
         try {
-            oeuvre.add(o);
-            showAlert(Alert.AlertType.CONFIRMATION, "Succès", "Oeuvre Ajouté", "L'Oeuvre a été ajouté avec succès.");
+            if (nom.isEmpty()){
+                showAlert(Alert.AlertType.ERROR,"Erreur","Le champ nom est vide ","Veuiller saisir le nom de l'oeuvre");
+            }else if (description.isEmpty()) {
+                showAlert(Alert.AlertType.ERROR, "Erreur", "Le champ description est vide ", "Veuiller saisir la description de l'oeuvre");
+            }else
+                {oeuvreAdded=true;
+
+                    oeuvre.add(o);
+
+                    if (oeuvreAdded) {
+                        Notifications.create()
+                                .title("Notification Title")
+                                .text(UserConnected.getNom()+"a ajouté une nouvelle oeuvre")
+                                .showInformation();
+                    }
+
+                    showAlert(Alert.AlertType.CONFIRMATION, "Succès", "Oeuvre Ajouté", "L'Oeuvre a été ajouté avec succès.");
 
 
-            Stage stage = (Stage) txtnom.getScene().getWindow();
+                    Stage stage = (Stage) txtnom.getScene().getWindow();
 
-            stage.close();
-           // FXMLLoader loader = new FXMLLoader(getClass().getResource("../AfficherOeuvre.fxml"));
+                    stage.close();
+                    // FXMLLoader loader = new FXMLLoader(getClass().getResource("../AfficherOeuvre.fxml"));
 //            Parent root = loader.load();
 //            afficherController = loader.getController();
 //            Stage Rstage = new Stage();
 //            Rstage.setTitle("Afficher Oeuvre");
 //            Rstage.setScene(new Scene(root));
 //            Rstage.show();
-            parentController.refreshScrollPane(artisteId);
+                    parentController.refreshScrollPane(artisteId);
+                }
 
         } catch (SQLException e) {
             showAlert(Alert.AlertType.ERROR, "Erreur", "Erreur de mise à jour", " " + e.getMessage());
@@ -155,7 +180,7 @@ public class AjouterOeuvreControler {
     @FXML
     private void annuler(ActionEvent event) {
 
-
+        imagePreview.setImage(null);
         txtnom.setText("");
         img.setText("");
         desc.setText("");
@@ -168,6 +193,8 @@ public class AjouterOeuvreControler {
         alert.setContentText(content);
         alert.showAndWait();
     }
+
+
     @FXML
     private void Retour(ActionEvent event) throws IOException {
 

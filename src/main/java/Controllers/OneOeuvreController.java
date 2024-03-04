@@ -18,6 +18,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import org.controlsfx.control.Notifications;
 
 import javax.security.auth.callback.ConfirmationCallback;
 import java.io.File;
@@ -32,6 +33,8 @@ import static javafx.scene.control.Alert.AlertType.CONFIRMATION;
 
 public class OneOeuvreController {
 
+    boolean deleted;
+
     int artisteId = UserConnected.getId();
 
     @FXML
@@ -45,6 +48,8 @@ public class OneOeuvreController {
 
     @FXML
     private Label desc;
+    @FXML
+    private Label nom_Artiste;
 
     @FXML
     private Label nom_Oeuvre;
@@ -125,6 +130,13 @@ public class OneOeuvreController {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        deleted=true;
+        if (deleted) {
+            Notifications.create()
+                    .title("Notification Title")
+                    .text(UserConnected.getNom()+" "+"a supprimée l'oeuvre"+" "+this.oeuvre.getNom_Ouvre())
+                    .showInformation();
+        }
 
     }
 
@@ -133,10 +145,11 @@ public class OneOeuvreController {
         delete.setVisible(UserConnected.equals(oeuvre.getArtiste_id()));
         update.setVisible(UserConnected.equals(oeuvre.getArtiste_id()));
 
-
+        nom_Artiste.setText(oeuvre.getArtiste_id().getNom()+" "+oeuvre.getArtiste_id().getPrenom());
         nom_Oeuvre.setText(oeuvre.getNom_Ouvre());
         Type.setText(oeuvre.getTypeOeuvre().toString());
         desc.setText(oeuvre.getDescription());
+
 
         String path = oeuvre.getImg();
         try {
@@ -158,14 +171,22 @@ public class OneOeuvreController {
     @FXML
     void Retour(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AfficherOeuvre.fxml"));
+            Stage Currentstage = (Stage) nom_Oeuvre.getScene().getWindow();
+            Currentstage.close();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../AfficherOeuvre.fxml"));
             Parent root = loader.load();
-            Scene scene = new Scene(root);
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(scene);
+            afficherController = loader.getController();
+            Stage stage = new Stage();
+            stage.setTitle("Afficher Oeuvre");
+            stage.setScene(new Scene(root));
             stage.show();
+            System.out.println("Bonjour"+artisteId);
+            afficherController.refreshScrollPane(oeuvre.getArtiste_id().getId());
+            afficherController.serData(oeuvre.getArtiste_id());
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
     }
 

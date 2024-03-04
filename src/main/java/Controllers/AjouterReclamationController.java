@@ -13,6 +13,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import org.controlsfx.control.Notifications;
 
 import static Controllers.LoginController.UserConnected;
 
@@ -20,6 +21,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 public class AjouterReclamationController {
+    boolean addrec;
     private UserService userService = new UserService();
 
     @FXML
@@ -74,6 +76,14 @@ public class AjouterReclamationController {
             }
         } else {
             showAlert(Alert.AlertType.WARNING, "Warning", "Please enter a reclamation.");
+        }
+        addrec=true;
+        addrec=true;
+        if (addrec) {
+            Notifications.create()
+                    .title("Notification Title")
+                    .text(UserConnected.getNom()+" "+"a ajouter une reclamation de type"+" "+this.typerec.getText())
+                    .showInformation();
         }
     }
 

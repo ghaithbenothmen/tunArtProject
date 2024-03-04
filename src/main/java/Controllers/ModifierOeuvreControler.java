@@ -16,6 +16,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import org.controlsfx.control.Notifications;
 
 import javax.swing.*;
 import java.awt.event.MouseEvent;
@@ -31,6 +32,7 @@ import java.util.Date;
 import static Controllers.LoginController.UserConnected;
 
 public class ModifierOeuvreControler {
+    boolean updated;
 
     private AfficherController parentController;
 
@@ -76,6 +78,7 @@ public class ModifierOeuvreControler {
     public void setPreviousScene(Scene scene) {
         this.previousScene = scene;}
     private  AfficherController afficherController;
+
     private Date convertToDate(LocalDate localDate) {
         return Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
     }
@@ -166,8 +169,17 @@ public class ModifierOeuvreControler {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
+        updated=true;
+        if (updated) {
+            Notifications.create()
+                    .title("Notification Title")
+                    .text(UserConnected.getNom()+" "+"a modifier l'oeuvre"+" "+this.oeuvre.getNom_Ouvre())
+                    .showInformation();
+        }
     }
     private OneOeuvreController oneOeuvreController;
+    private OneOeuvreController oneController;
 
     public void setAfficherController(OneOeuvreController oneOeuvreController) {
         this.oneOeuvreController = oneOeuvreController;
@@ -226,14 +238,21 @@ public class ModifierOeuvreControler {
 
 
     @FXML
-    void Retour(ActionEvent event) {
+    void Retour(ActionEvent event) throws IOException {
+
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AfficherOeuvre.fxml"));
+            Stage Currentstage = (Stage) txtnom.getScene().getWindow();
+            Currentstage.close();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../OneOeuvre.fxml"));
             Parent root = loader.load();
-            Scene scene = new Scene(root);
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(scene);
+            oneController = loader.getController();
+            Stage stage = new Stage();
+            stage.setTitle("One Oeuvre");
+            stage.setScene(new Scene(root));
             stage.show();
+            System.out.println("Bonjour"+oeuvre.getArtiste_id().getId());
+            oneController.setData(this.oeuvre);
+
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }

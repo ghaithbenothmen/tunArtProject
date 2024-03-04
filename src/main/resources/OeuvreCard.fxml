@@ -97,6 +97,5 @@
             </HBox>
          </children>
       </VBox>
-      <Label fx:id="nbr" layoutX="450.0" layoutY="105.0" prefHeight="5.0" prefWidth="28.0" text="Label" />
    </children>
 </AnchorPane>

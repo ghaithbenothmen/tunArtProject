@@ -13,6 +13,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import org.controlsfx.control.Notifications;
 
 import java.io.File;
 import java.io.IOException;
@@ -25,6 +26,7 @@ import java.util.Calendar;
 import static Controllers.LoginController.UserConnected;
 
 public class ModifierReclamationController {
+    boolean updated;
 
     @FXML
     private Button add;
@@ -83,6 +85,14 @@ public class ModifierReclamationController {
         } catch (SQLException e) {
             showAlert(Alert.AlertType.ERROR, "Erreur", "Erreur de mise à jour",
                     "Une erreur s'est produite lors de la mise à jour de la formation : " + e.getMessage());
+        }
+
+        updated=true;
+        if (updated) {
+            Notifications.create()
+                    .title("Notification Title")
+                    .text(UserConnected.getNom()+"a modifier une oeuvre")
+                    .showInformation();
         }
 
     }

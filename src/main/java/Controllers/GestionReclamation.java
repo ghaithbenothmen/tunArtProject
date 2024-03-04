@@ -2,6 +2,7 @@ package Controllers;
 
 import Entites.*;
 import Services.ReclamationService;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -11,20 +12,23 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import org.controlsfx.control.Notifications;
 
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static Controllers.LoginController.UserConnected;
 
 public class GestionReclamation {
+    boolean deleted;
     @FXML
     private TextField cher;
     @FXML
     private TableView<Reclamation> reclamationTable;
     @FXML
-    private TableColumn<Reclamation, Integer> userColumn;
+    private TableColumn<Reclamation, String> userColumn;
     @FXML
     private TableColumn<Reclamation, String> typeColumn;
     @FXML
@@ -39,14 +43,30 @@ public class GestionReclamation {
     private final ReclamationService reclamationService = ReclamationService.getInstance();
 
     private ObservableList<Reclamation> reclamationList = FXCollections.observableArrayList();
+    private List<Reclamation> reclamationUserList = FXCollections.observableArrayList();
+
+    public List<Reclamation> getAllReclamation() throws SQLException {
+        reclamationList.addAll(reclamationService.findAll());
+        reclamationUserList = reclamationList.stream().filter(reclamation -> reclamation.getId_user().equals(UserConnected)).collect(Collectors.toList());
+        System.out.println(reclamationUserList);
+        return reclamationUserList;
+    }
 
 
 
     public void initialize() throws SQLException {
         // Set up table columns
-        userColumn.setCellValueFactory(new PropertyValueFactory<>("id_user")); // Assuming you have a getter for user name
-        typeColumn.setCellValueFactory(new PropertyValueFactory<>("type"));
-        textColumn.setCellValueFactory(new PropertyValueFactory<>("text"));
+        userColumn.setCellValueFactory(cellData -> {
+            Reclamation reclamation = cellData.getValue();
+            User user = reclamation.getId_user();
+            if (user != null) {
+                return new SimpleStringProperty(user.getNom());
+            } else {
+                return new SimpleStringProperty(""); // Return empty string if user is null
+            }
+        }); // Assuming you have a getter for user name
+        typeColumn.setCellValueFactory(new PropertyValueFactory<>("text"));
+        textColumn.setCellValueFactory(new PropertyValueFactory<>("type"));
 
         // Check user role
         boolean isAdmin = UserConnected.getRole()== Role.ADMIN;
@@ -56,7 +76,7 @@ public class GestionReclamation {
             showAllReclamations();
         } else {
             // Assuming you have a variable currentUserRole to determine user role
-            showUserReclamations(UserConnected.getId() );
+            getAllReclamation();
         }
 
         // Set button visibility based on user role
@@ -67,12 +87,12 @@ public class GestionReclamation {
         addButton.setOnAction(event -> ajouter());
         updateButton.setOnAction(event -> updateRec());
         deleteButton.setOnAction(event -> deleteRec());
-//        refreshScrollPane(UserConnected.getId());
-//        reclamationTable.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
-//            if (newSelection != null) {
-//                textColumn.setText(newSelection.getText());
-//            }
-//        });
+        refreshScrollPane(UserConnected.getId());
+        reclamationTable.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
+            if (newSelection != null) {
+                textColumn.setText(newSelection.getText());
+            }
+        });
 
         cher.textProperty().addListener((observable, oldValue, newValue) -> {
             filterData(newValue);
@@ -183,6 +203,13 @@ public class GestionReclamation {
             alert.setContentText("Please select a reclamation to delete.");
             alert.showAndWait();
         }
+        deleted=true;
+        if (deleted) {
+            Notifications.create()
+                    .title("Notification Title")
+                    .text(UserConnected.getNom()+" "+"a supprimer une reclamation ")
+                    .showInformation();
+        }
     }
     public void initData(int userId) throws SQLException {
         reclamationTable.getItems().clear();
@@ -199,14 +226,15 @@ public class GestionReclamation {
 
 
     private void filterData(String searchText) {
-        if (searchText == null || searchText.isEmpty()) {
-            reclamationTable.setItems(reclamationList);
-        } else {
-            ObservableList<Reclamation> filteredList = reclamationList.filtered(
-                    reclamation -> reclamation.getText().toLowerCase().contains(searchText.toLowerCase())
-            );
-            reclamationTable.setItems(filteredList);
+        int userId = UserConnected.getId();
+        ObservableList<Reclamation> filteredList = FXCollections.observableArrayList();
+        for (Reclamation reclamation : reclamationList) {
+            if (reclamation.getText().toLowerCase().contains(searchText.toLowerCase())&&(reclamation.getId_user().getId()==userId)) {
+                filteredList.add(reclamation);
+            }
         }
+        reclamationTable.getItems().clear();
+        reclamationTable.getItems().addAll(filteredList);
     }
 }
 

@@ -80,6 +80,7 @@ public class AfficherArtistesController implements Initializable{
             throw new RuntimeException(e);
         }
         displayAllUserCard(userListArtiste);
+
         searchart.textProperty().addListener((observable, oldValue, newValue) -> {
             filterData(newValue);
 
@@ -87,14 +88,16 @@ public class AfficherArtistesController implements Initializable{
     }
     private void filterData(String searchText)  {
 
+
         ObservableList<User> filteredList = FXCollections.observableArrayList();
-        for (User user : userList) {
+        for (User user : userListArtiste) {
             if (user.getNom().toLowerCase().contains(searchText.toLowerCase())) {
                 filteredList.add(user);
             }
         }
         gridart.getChildren().clear();
         displayAllUserCard(filteredList);
+
     }
 }
 

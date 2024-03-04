@@ -105,7 +105,7 @@ public class LoginController implements Initializable {
                 alert.setContentText("Welcome"+" "+UserConnected.getNom()+" "+UserConnected.getPrenom());
                 alert.show();
 
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("../AfficherArtistes.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("../GestionReclamation.fxml"));
                 Parent root = loader.load();
 
 //                AfficherController afficherController = loader.getController();
