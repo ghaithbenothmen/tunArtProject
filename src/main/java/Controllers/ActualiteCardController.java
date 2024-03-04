@@ -11,6 +11,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
@@ -135,6 +136,19 @@ public class ActualiteCardController {
                 successAlert.setHeaderText(null);
                 successAlert.setContentText("Product deleted successfully.");
                 successAlert.showAndWait();
+                // Refresh the page by reloading the same FXML file
+                try {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/AffActualiteAdmin.fxml"));
+                    Parent root = loader.load();
+                    ActualiteAdmin controller = loader.getController();
+                    // Pass any necessary data to the controller if needed
+                    // Set the new scene
+                    Stage stage = (Stage) SuppBtn.getScene().getWindow(); // Get the current stage
+                    stage.setScene(new Scene(root));
+                    stage.show();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         });
     }

@@ -57,6 +57,7 @@ public class AjouterComController {
             alert1.setContentText("Commentaire ajouté avec succès");
             alert1.showAndWait();
             ser.ajouter(c);
+            initialize();
 
         } catch (NumberFormatException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
