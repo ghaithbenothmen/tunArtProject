@@ -7,12 +7,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.updateCollaborateurController">
    <children>
-      <AnchorPane layoutX="2.0" layoutY="2.0" prefHeight="400.0" prefWidth="600.0">
+      <AnchorPane layoutY="1.0" prefHeight="400.0" prefWidth="600.0">
          <children>
-            <Button fx:id="modcol" layoutX="419.0" layoutY="339.0" mnemonicParsing="false" onAction="#updatecol" prefHeight="35.0" prefWidth="122.0" style="-fx-background-color: rgb(140,190,178);" text="Modifier" textFill="WHITE" />
+            <Button fx:id="modcol" layoutX="419.0" layoutY="339.0" mnemonicParsing="false" onAction="#updatecol" prefHeight="35.0" prefWidth="122.0" style="-fx-background-color: rgb(140,190,178);" styleClass="add-btn" stylesheets="@dashboardDesign.css" text="Modifier" textFill="WHITE" />
             <TextField fx:id="nomcomp" layoutX="85.0" layoutY="140.0" prefHeight="26.0" prefWidth="171.0" promptText="Donnez le nom complet" />
             <Label layoutX="84.0" layoutY="108.0" text="Nom complet" textFill="#5c4d51">
                <font>
@@ -24,13 +23,14 @@
                   <Font name="Futura Heavy BT" size="12.0" />
                </font>
             </Label>
-            <Text fill="#5c4d51" layoutX="34.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modifier collaborateur">
+            <Text fill="#5c4d51" layoutX="160.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modifier collaborateur">
                <font>
                   <Font name="Futura Heavy BT" size="26.0" />
                </font>
             </Text>
-            <Button fx:id="annulercol" layoutX="322.0" layoutY="339.0" mnemonicParsing="false" onAction="#annulerform" prefHeight="35.0" prefWidth="85.0" style="-fx-background-color: f06060;" text="Annuler" textFill="WHITE" />
+            <Button fx:id="annulercol" layoutX="322.0" layoutY="339.0" mnemonicParsing="false" onAction="#annulerform" prefHeight="35.0" prefWidth="85.0" style="-fx-background-color: f06060;" styleClass="delete-btn" stylesheets="@dashboardDesign.css" text="Annuler" textFill="WHITE" />
             <TextField fx:id="mailcol" layoutX="86.0" layoutY="233.0" prefHeight="26.0" prefWidth="171.0" promptText="Donner l'email" />
+            <Button layoutX="34.0" layoutY="33.0" mnemonicParsing="false" onAction="#retour" styleClass="update-btn" stylesheets="@dashboardDesign.css" text="Retour" />
          </children>
       </AnchorPane>
    </children>

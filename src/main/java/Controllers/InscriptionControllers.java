@@ -83,11 +83,11 @@ public class InscriptionControllers implements Initializable {
 
         choices.valueProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue != null) {
-                Role role = Role.valueOf((String) newValue);
+                Role role = (Role) newValue;
                 System.out.println("Selected role: " + role);
-
             }
         });
+
 
 
         //if (LoginController.UserConnected.getRole().equals("Admin")){

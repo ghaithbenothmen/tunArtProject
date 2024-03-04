@@ -7,7 +7,7 @@ public class ConnexionDB {
     private Connection con;
 
     private static ConnexionDB data;
-    private String url = "jdbc:mysql://localhost:3306/tunart";
+    private String url = "jdbc:mysql://localhost:3306/pidev";
     private String user = "root";
     private String pwd = "";
 

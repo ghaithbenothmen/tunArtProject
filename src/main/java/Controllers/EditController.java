@@ -12,12 +12,14 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -62,41 +64,6 @@ public class EditController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
-
-
-        try {
-
-            Circle clip = new Circle();
-            clip.setCenterX(pdp.getFitWidth() / 2);
-            clip.setCenterY(pdp.getFitHeight() / 2);
-            clip.setRadius(Math.min(pdp.getFitWidth(), pdp.getFitHeight()) / 2);
-
-            pdp.setClip(clip);
-
-
-            pdp.fitWidthProperty().bind(clip.radiusProperty().multiply(2));
-            pdp.fitHeightProperty().bind(clip.radiusProperty().multiply(2));
-
-            if (LoginController.UserConnected.getRole().equals("Admin")){
-
-                backbtn.setVisible(true);
-
-            }
-            if (LoginController.UserConnected.getRole().equals("Admin")){
-
-                goBackBtn.setVisible(false);
-
-            }
-
-
-            //Show ticket list
-            FXMLLoader contentLoader = new FXMLLoader(getClass().getResource("/Login.fxml"));
-            AnchorPane content = contentLoader.load();
-            ticketListPane.getChildren().setAll(content);
-        } catch (IOException ex) {
-            Logger.getLogger(EditController.class.getName()).log(Level.SEVERE, null, ex);
-        }
     }
 
 
@@ -108,14 +75,11 @@ public class EditController implements Initializable {
         email.setText(user.getEmail());
         tel.setText(Integer.toString(user.getTel()));
 
+
+
         mdp.setText(user.getMdp().replaceAll(".", "*"));
         role.setText(String.valueOf(user.getRole()));
-        //ByteArrayInputStream inputStream = new ByteArrayInputStream(user.getImage());
-        //File imageFile = new File(user.getImage());
-        //Image image = new Image(imageFile.toURI().toString());
-        // Image image = new Image(inputStream);
-        // pdp.setImage(image);
-        //pdp.setImage(image);
+
 
     }
 
@@ -161,6 +125,7 @@ public class EditController implements Initializable {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/UpdateUser.fxml"));
             Parent root = loader.load();
             UpdateUserController controller = loader.getController();
+            System.out.println("hello word"+UserConnected);
             controller.initData(UserConnected);
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -183,11 +148,8 @@ public class EditController implements Initializable {
     @FXML
     private void back(MouseEvent event) throws IOException {
 
-
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/MainContainer.fxml"));
         Parent root = loader.load();
-
-
         Scene scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setTitle("");
@@ -219,6 +181,8 @@ public class EditController implements Initializable {
             System.out.println(ex.getMessage());
         }
     }
+
+
 
 
 

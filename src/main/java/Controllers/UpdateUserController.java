@@ -30,6 +30,8 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
+import static Controllers.LoginController.UserConnected;
+
 public class UpdateUserController implements Initializable {
 
     @FXML
@@ -56,22 +58,17 @@ public class UpdateUserController implements Initializable {
     @FXML
     private Button upload;
 
-    @FXML
-    private ImageView image;
 
     @FXML
-    private AnchorPane main_form;
+    private ImageView pdp;
 
-
+    private Image image;
 
 
     private User user;
-
-    private  String imagePath;
-    private Image imageGet;
-    private Image imageU;
     private String img;
-
+    private String password;
+    private Image imageGet;
 
     UserService userService = new UserService();
 
@@ -95,38 +92,35 @@ public class UpdateUserController implements Initializable {
 
     @FXML
     void updateUser(ActionEvent event) {
-
         String nom = txtnom.getText();
         String prenom = txtprenom.getText();
         String email = txtemail.getText();
         int tel = Integer.parseInt(txttel.getText());
-        Role role = ((Role) txtrole.getSelectionModel().getSelectedItem());
-        String image = upload.getText();
+        String selectedRoleName = (String) txtrole.getSelectionModel().getSelectedItem();
+        Role role = Role.valueOf(selectedRoleName.toUpperCase());
 
 
 
+        // Vérifier si une nouvelle image a été sélectionnée
+        if (img == null || img.isEmpty()) {
+            img = user.getImage(); // Utiliser l'image existante si aucune nouvelle image n'est sélectionnée
+        }
 
-
-        User updatedUser = new User();
-        updatedUser.setId(user.getId());
-        updatedUser.setNom(nom);
-        updatedUser.setPrenom(prenom);
-        updatedUser.setEmail(email);
-        updatedUser.setTel(tel);
-        updatedUser.setRole(role);
-        updatedUser.setImage(img);
-
+        user.setId(user.getId());
+        user.setNom(nom);
+        user.setPrenom(prenom);
+        user.setEmail(email);
+        user.setTel(tel);
+        user.setRole(role);
+        user.setImage(img);
+        user.setMdp(password);
 
         try {
-            userService.update(updatedUser);
-            showAlert(Alert.AlertType.CONFIRMATION, "Succès", "User mise à jour", "L'utilisateur' a été mise à jour avec succès.");
-
+            userService.update(user);
+            showAlert(Alert.AlertType.CONFIRMATION, "Succès", "User mise à jour", "L'utilisateur a été mise à jour avec succès.");
 
             Stage stage = (Stage) txtnom.getScene().getWindow();
-            stage.close();
-
-            //refreshi tab
-            afficherUserController.refreshTable();
+            stage.show();
         } catch (SQLException e) {
             showAlert(Alert.AlertType.ERROR, "Erreur", "Erreur de mise à jour", "Une erreur s'est produite lors de la mise à jour : " + e.getMessage());
         }
@@ -156,31 +150,36 @@ public class UpdateUserController implements Initializable {
         alert.showAndWait();
     }
 
-    public void initData(User user) throws SQLException {
+    public void initData(User user) throws SQLException, MalformedURLException {
         this.user = user;
         txtnom.setText(user.getNom());
         txtprenom.setText(user.getPrenom());
         txtemail.setText(user.getEmail());
         txttel.setText(String.valueOf(user.getTel()));
-        this.img = user.getImage();
+
+        this.password = user.getMdp();
 
         // Configuration des rôles ARTISTE et CLIENT uniquement
         ObservableList<String> roleNames = FXCollections.observableArrayList("ARTISTE", "CLIENT");
         txtrole.setItems(roleNames);
         txtrole.setValue(user.getRole());
 
-        String path = user.getImage();
-        if (path != null && !path.isEmpty()) { // Check if the image path is not null and not empty
-            try {
-                imageGet = new Image(new File(path).toURI().toURL().toString(), 207, 138, false, true);
-                image.setImage(imageGet);
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-            }
+
+        this.img = user.getImage();
+
+        String path = UserConnected.getImage();
+        System.out.println(path+"heeellllllllll");
+        if (path != null) {
+            //File imageFile = new File(path);
+            imageGet = new Image(new File(path).toURI().toURL().toString());
+            pdp.setImage(imageGet);
+        } else {
+            // Handle the case where user.getImage() returns null
+            // Maybe set a default image or display an error message
         }
 
-        // Affichage du chemin de l'image de l'utilisateur
-        upload.setText(user.getImage());
+
+
     }
 
 
@@ -191,12 +190,14 @@ public class UpdateUserController implements Initializable {
         fileChooser.getExtensionFilters().addAll(
                 new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif")
         );
-        File file = fileChooser.showOpenDialog(upload.getScene().getWindow());
+        File file = fileChooser.showOpenDialog(pdp.getScene().getWindow());
 
         if (file != null) {
 
-            img = file.getAbsolutePath();
-
+            this.img = file.getAbsolutePath();
+            image  = new Image(file.toURI().toString(), 147, 89, false, true);
+            pdp.setImage(image);
+            System.out.println(image);
         }
     }
 
@@ -205,13 +206,13 @@ public class UpdateUserController implements Initializable {
 
 
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Edit.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/MainContainer.fxml"));
         Parent root = loader.load();
 
 
         Scene scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setTitle("Login");
+        stage.setTitle("");
         stage.setScene(scene);
         stage.show();
 
@@ -223,6 +224,3 @@ public class UpdateUserController implements Initializable {
     }
 
 }
-
-
-

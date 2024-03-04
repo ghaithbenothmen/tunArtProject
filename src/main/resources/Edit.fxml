@@ -10,14 +10,14 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.EditController">
+<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.EditController">
     <children>
         <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@assets/Capture_d_écran_2024-02-25_195559-removebg-preview.png" />
             </image>
         </ImageView>
-        <AnchorPane id="AnchorPane" layoutX="25.0" layoutY="25.0" prefHeight="550.0" prefWidth="750.0" style="-fx-background-color: WHITE;">
+        <AnchorPane id="AnchorPane" layoutX="8.0" layoutY="7.0" prefHeight="584.0" prefWidth="776.0" style="-fx-background-color: WHITE;">
             <children>
                 <VBox layoutX="496.0" layoutY="37.0" prefHeight="200.0" prefWidth="163.0" style="-fx-spacing: 13;">
                     <children>
@@ -55,58 +55,49 @@
                 </VBox>
                 <VBox layoutX="244.0" layoutY="37.0" prefHeight="265.0" prefWidth="206.0" style="-fx-spacing: 10;">
                     <children>
-                        <Label lineSpacing="20.0" text="Nom :" textFill="#ee586e">
+                        <Label lineSpacing="20.0" styleClass="filter" stylesheets="@dashboardDesign.css" text="Nom :" textFill="#ee586e">
                             <font>
                                 <Font name="Verdana Bold" size="18.0" />
                             </font>
                         </Label>
-                        <Label lineSpacing="20.0" text="Prenom :" textFill="#ee586e">
+                        <Label lineSpacing="20.0" styleClass="filter" stylesheets="@dashboardDesign.css" text="Prenom :" textFill="#ee586e">
                             <font>
                                 <Font name="Verdana Bold" size="18.0" />
                             </font>
                         </Label>
-                        <Label lineSpacing="20.0" text="Email :" textFill="#ee586e">
+                        <Label lineSpacing="20.0" styleClass="filter" stylesheets="@dashboardDesign.css" text="Email :" textFill="#ee586e">
                             <font>
                                 <Font name="Verdana Bold" size="18.0" />
                             </font>
                         </Label>
-                        <Label lineSpacing="20.0" text="Tel :" textFill="#ee586e">
+                        <Label lineSpacing="20.0" styleClass="filter" stylesheets="@dashboardDesign.css" text="Tel :" textFill="#ee586e">
                             <font>
                                 <Font name="Verdana Bold" size="18.0" />
                             </font>
                         </Label>
-                        <Label lineSpacing="20.0" text="Mot de passe :" textFill="#ee586e">
+                        <Label lineSpacing="20.0" styleClass="filter" stylesheets="@dashboardDesign.css" text="Mot de passe :" textFill="#ee586e">
                             <font>
                                 <Font name="Verdana Bold" size="18.0" />
                             </font>
                         </Label>
-                        <Label lineSpacing="20.0" text="Role :" textFill="#ee586e">
+                        <Label lineSpacing="20.0" styleClass="filter" stylesheets="@dashboardDesign.css" text="Role :" textFill="#ee586e">
                             <font>
                                 <Font name="Verdana Bold" size="18.0" />
                             </font>
                         </Label>
                     </children>
                 </VBox>
-                <ImageView fx:id="pdp" fitHeight="98.0" fitWidth="104.0" layoutX="61.0" layoutY="85.0">
-                    <image>
-                        <Image url="@assets/Capture_d_écran_2024-02-25_195559-removebg-preview.png" />
-                    </image>
-                </ImageView>
-                <Button fx:id="delb" layoutX="25.0" layoutY="494.0" mnemonicParsing="false" onAction="#delete" prefHeight="25.0" prefWidth="300.0" style="-fx-background-color: #ee586e; -fx-background-radius: 10;" stylesheets="" text="Supprimer" textFill="WHITE">
+                <Button fx:id="delb" layoutX="54.0" layoutY="494.0" mnemonicParsing="false" onAction="#delete" prefHeight="46.0" prefWidth="300.0" styleClass="delete-btn" stylesheets="@dashboardDesign.css" text="Supprimer" textFill="WHITE">
                     <font>
                         <Font name="Verdana Bold" size="24.0" />
                     </font></Button>
-                <Button fx:id="modb" layoutX="426.0" layoutY="494.0" mnemonicParsing="false" onAction="#modifier" prefHeight="25.0" prefWidth="300.0" style="-fx-background-color: #ee586e; -fx-background-radius: 10;" stylesheets="" text="Modifier" textFill="WHITE">
+                <Button fx:id="modb" layoutX="377.0" layoutY="494.0" mnemonicParsing="false" onAction="#modifier" prefHeight="46.0" prefWidth="300.0" styleClass="add-btn" stylesheets="@dashboardDesign.css" text="Modifier" textFill="WHITE">
                     <font>
                         <Font name="Verdana Bold" size="24.0" />
                     </font></Button>
-                <Line endX="598.0" layoutX="126.0" layoutY="259.0" startX="-100.0" stroke="#ee586e" strokeWidth="3.0" />
-                <ImageView fx:id="backbtn" fitHeight="51.0" fitWidth="58.0" layoutX="25.0" layoutY="12.0" onMouseClicked="#back" visible="false">
-                    <image>
-                        <Image url="@assets/back-removebg-preview.png" />
-                    </image>
-                </ImageView>
-                <ImageView fx:id="goBackBtn" fitHeight="45.0" fitWidth="44.0" layoutX="14.0" layoutY="12.0" onMouseClicked="#goBackHandler" pickOnBounds="true" preserveRatio="true">
+                <Line endX="598.0" layoutX="126.0" layoutY="259.0" startX="-100.0" strokeWidth="3.0" />
+
+                <ImageView fx:id="goBackBtn" fitHeight="45.0" fitWidth="44.0" layoutX="14.0" layoutY="12.0" onMouseClicked="#back" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@assets/back-removebg-preview.png" />
                     </image>

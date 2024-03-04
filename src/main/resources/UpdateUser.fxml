@@ -4,12 +4,12 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.image.Image?>
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.UpdateUserController">
    <children>
       <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="400.0" prefWidth="600.0">
@@ -63,7 +63,8 @@
                         <Font name="Futura Heavy BT" size="12.0" />
                      </font>
                   </Label>
-                  <Button fx:id="upload" layoutX="352.0" layoutY="170.0" mnemonicParsing="false" onAction="#importImage" prefHeight="26.0" prefWidth="171.0" text="Upload" />
+                  <Button fx:id="upload" layoutX="350.0" layoutY="170.0" mnemonicParsing="false" onAction="#importImage" prefHeight="26.0" prefWidth="174.0" text="Upload" />
+                  <ImageView fx:id="pdp" fitHeight="132.0" fitWidth="174.0" layoutX="351.0" layoutY="207.0" pickOnBounds="true" preserveRatio="true" />
                </children>
             </AnchorPane>
          </children>

@@ -27,10 +27,31 @@ public class UserService implements IService<User> {
 
 
 
-    @Override
+    public void add(User t) throws SQLException {
+
+        String uri = t.getImage().replace("\\", "/");
+        String req = "INSERT INTO user (Nom,Prenom,Email,Mdp,Tel,Role,image) VALUES(?,?,?,?,?,?,?)";
+
+        PreparedStatement stmt = Con.prepareStatement(req);
+        stmt.setString(1, t.getNom());
+        stmt.setString(2, t.getPrenom());
+        stmt.setString(3, t.getEmail());
+        stmt.setString(4, t.getMdp());
+        stmt.setInt(5, t.getTel());
+        String roleString = t.getRole().name();
+        stmt.setString(6, roleString);
+        stmt.setString(7, uri);
+        int result = stmt.executeUpdate();
+
+
+        System.out.println(result + " enregistrement ajouté.");
+
+
+    }
+    /*@Override
     public void add(User u) throws SQLException {
         String uri = u.getImage().replace("\\", "/");
-        String req = "INSERT INTO user (nom, prenom, email, mdp, tel, role,image) VALUES (?,?,?,?,?,?,?)";
+        String req = "INSERT INTO user (Nom, Prenom, Email, Mdp, Tel, Role,image) VALUES (?,?,?,?,?,?,?)";
         PreparedStatement ste = Con.prepareStatement(req);
         ste.setString(1, u.getNom());
         ste.setString(2, u.getPrenom());
@@ -39,17 +60,19 @@ public class UserService implements IService<User> {
         ste.setInt(5, u.getTel());
 
 
-        // Convert the enum value to a string
+        // convert the enum value to a string
         String roleString = u.getRole().name();
         ste.setString(6, roleString);
         ste.setString(7, uri);
+        System.out.println(u);
+        System.out.println(uri);
 
         int result = ste.executeUpdate();
 
         System.out.println(result + "Ajouté avec succès");
 
 
-    }
+    }*/
 
     public boolean existEmail(String email) throws SQLException {
         boolean exist = false;
@@ -66,16 +89,20 @@ public class UserService implements IService<User> {
 
     @Override
     public boolean update(User u) throws SQLException {
+        String uri = u.getImage();
+        System.out.println(u);
+            uri = uri.replace("\\", "/");
 
-        String uri = u.getImage().replace("\\", "/");
-        String req = "UPDATE `user` SET `Nom`='" + u.getNom() /*+ "', `artiste_id`='" + formation.getArtiste_id() */+ "', `Prenom`='" + u.getPrenom()
-                +  "', `Email`='" + u.getEmail() +  "', `Mdp`='" + u.getMdp() +   "', `Tel`='" + u.getTel() +  "', `Role`='" + u.getRole() +  "', `Image`='" + uri
+
+        String req = "UPDATE `user` SET `Nom`='" + u.getNom() + "', `Prenom`='" + u.getPrenom()
+                +  "', `Email`='" + u.getEmail() +  "', `Mdp`='" + u.getMdp() +   "', `Tel`='" + u.getTel() +  "', `Role`='" + u.getRole() +  "', `image`='" + uri
                 + "' WHERE id='" + u.getId() + "';";
 
         int rowsUpdated = ste.executeUpdate(req);
 
         return rowsUpdated > 0;
     }
+
 
     @Override
     public User findById(int idd) throws SQLException {
@@ -155,10 +182,10 @@ public class UserService implements IService<User> {
 
     @Override
     public List<User> findAll() throws SQLException {
-        List<User> data= new ArrayList<>();
+        List<User> data = new ArrayList<>();
         String req = "SELECT * FROM user";
-        ResultSet res= ste.executeQuery(req);
-        while (res.next()){
+        ResultSet res = ste.executeQuery(req);
+        while (res.next()) {
             User u = new User();
             u.setId(res.getInt("ID"));
             u.setNom(res.getString("Nom"));
@@ -166,13 +193,27 @@ public class UserService implements IService<User> {
             u.setEmail(res.getString("Email"));
             u.setMdp(res.getString("Mdp"));
             u.setTel(res.getInt("Tel"));
-            u.setRole(Role.valueOf(res.getString("Role")));
+            u.setImage(res.getString("image"));
+
+            // Get the role string from the database
+            String roleString = res.getString("Role");
+
+            // Convert the role string to the corresponding enum constant
+            try {
+                Role role = Role.valueOf(roleString);
+                u.setRole(role);
+            } catch (IllegalArgumentException e) {
+                // Handle the case where the role string does not match any enum constant
+                // For example, you can set a default role or log a warning
+                // u.setRole(Role.DEFAULT_ROLE); // Set a default role
+                // logger.warn("Invalid role: " + roleString); // Log a warning
+            }
 
             data.add(u);
-
         }
         return data;
     }
+
 
     public boolean existemail(String email) throws SQLException {
         boolean exist = false;

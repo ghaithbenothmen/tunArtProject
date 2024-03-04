@@ -4,6 +4,7 @@
  */
 package Controllers;
 
+import Entites.AESCrypt;
 import Entites.Formation;
 import Entites.Role;
 import Entites.User;
@@ -58,7 +59,10 @@ public class LoginController implements Initializable {
     @FXML
     private Text bien;
 
-private int selectedFormationId;
+    public AESCrypt CryptVar;
+    public  String key = "ThisIsASecretKey";
+
+    private int selectedFormationId;
     FormationService formationService =new FormationService();
 
     public  Formation formation=null;
@@ -68,6 +72,8 @@ private int selectedFormationId;
     public boolean isLoginSuccessful() {
         return loginSuccessful;
     }
+
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
@@ -75,7 +81,7 @@ private int selectedFormationId;
     }
 
     @FXML
-    private void connect(ActionEvent event) throws SQLException, IOException {
+    private void connect(ActionEvent event) throws Exception {
 
         if (email.getText().isEmpty() || mdp.getText().isEmpty()) {
 
@@ -95,7 +101,7 @@ private int selectedFormationId;
             List<User> users = us.findAll();
 
             for (int i = 0; i < users.size(); i++) {
-                if (users.get(i).getEmail().equals(email.getText()) && users.get(i).getMdp().equals(mdp.getText())) {
+                if (users.get(i).getEmail().equals(email.getText()) && users.get(i).getMdp().equals(CryptVar.encrypt(mdp.getText(),key))) {
                     UserConnected = users.get(i);
                     verif = true;
                     break;
@@ -109,15 +115,15 @@ private int selectedFormationId;
                 alert.showAndWait();
 
                 if (UserConnected.getRole().equals(Role.ARTISTE)) {
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/GestionFormation.fxml"));
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/MainContainer.fxml"));
                     Parent root = loader.load();
 
-                    GestionFormationController gestionFormationController = loader.getController();
-                    gestionFormationController.initData(UserConnected.getId());
+                   // GestionFormationController gestionFormationController = loader.getController();
+                    //gestionFormationController.initData(UserConnected.getId());
 
                     Scene scene = new Scene(root);
                     Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                    stage.setTitle("Gestion Formation");
+                    stage.setTitle("");
                     stage.setScene(scene);
                     stage.show();
 
@@ -128,7 +134,7 @@ private int selectedFormationId;
 
                         this.formation= formationService.findById(selectedFormationId);
                         System.out.println("this is for"+this.formation+"thissss id"+selectedFormationId);
-                        FXMLLoader loader = new FXMLLoader(getClass().getResource("../InscriptionInfo.fxml"));
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("../MainContainer.fxml"));
                         Parent root = loader.load();
                         InscriptionInfoController inscriptionInfoController = loader.getController();
                         inscriptionInfoController.setData(this.formation);
@@ -140,7 +146,7 @@ private int selectedFormationId;
                         stage.show();
 
                     }else {
-                        FXMLLoader loader = new FXMLLoader(getClass().getResource("../InscriptionFormation.fxml"));
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("../MainContainer.fxml"));
                         Parent root = loader.load();
 
                         Scene scene = new Scene(root);
@@ -151,7 +157,7 @@ private int selectedFormationId;
 
                     }
                 } else {
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("../AfficherUser.fxml"));
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("../MainContainer.fxml"));
                     Parent root = loader.load();
 
                     Scene scene = new Scene(root);

@@ -9,8 +9,5 @@
         <module name="Testconnection" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="tunArtProject" target="17" />
-    </bytecodeTargetLevel>
   </component>
 </project>
