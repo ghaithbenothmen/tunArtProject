@@ -35,6 +35,27 @@ public class SidebarController  {
 //    }
 
 
+    @FXML
+    void collab(ActionEvent event) {
+
+    }
+
+    @FXML
+    void connect(ActionEvent event) {
+
+    }
+
+    @FXML
+    void listut(ActionEvent event) {
+
+    }
+
+    @FXML
+    void stats(ActionEvent event) {
+
+    }
+
+
 
 
 

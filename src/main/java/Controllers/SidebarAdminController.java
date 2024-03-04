@@ -3,12 +3,15 @@ package Controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
+import javafx.scene.input.MouseEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -16,65 +19,48 @@ import java.util.ResourceBundle;
 public class SidebarAdminController {
 
     @FXML
-    private Button connect;
+    private StackPane contentArea;
 
-    @FXML
-    private Button stats;
+    private MainContainer mainContainer;
 
-    @FXML
-    private Button listut;
-
-    @FXML
-    private Button collab;
-
-
-
-    @FXML
-    void connect(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Login.fxml"));
-        Parent root = loader.load();
-        Scene scene = new Scene(root);
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
-
+    public SidebarAdminController(MainContainer mainContainer) {
+        this.mainContainer = mainContainer;
+        System.out.println("new"+this.mainContainer);
     }
-
-
-
+    public SidebarAdminController() {
+        // Constructeur sans arguments
+    }
     @FXML
-    void stats(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/StatUser.fxml"));
-        Parent root = loader.load();
-        Scene scene = new Scene(root);
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
-
+    void connect(ActionEvent event) {
+        loadPage("/Login.fxml");
     }
 
     @FXML
-    void listut(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/AfficherUser.fxml"));
-        Parent root = loader.load();
-        Scene scene = new Scene(root);
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
-
+    void stats(MouseEvent event) {
+        loadPage("../AfficherUser.fxml");
     }
 
     @FXML
-    void collab(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Collaborateur.fxml"));
-        Parent root = loader.load();
-        Scene scene = new Scene(root);
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
-
+    void listut(ActionEvent event) {
+        loadPage("../AfficherUser.fxml");
     }
 
+    @FXML
+    void collab(ActionEvent event) {
+        loadPage("/Collaborateurs.fxml");
+    }
 
+    void loadPage(String fxmlPath) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
+
+            Parent root = loader.load();
+            System.out.println("Page loaded: " + fxmlPath);
+            System.out.println("ffffffff"+this.mainContainer);
+            mainContainer.loadContent(root);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 }

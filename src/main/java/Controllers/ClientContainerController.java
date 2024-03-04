@@ -1,59 +1,68 @@
 package Controllers;
 
-import Entites.Role;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import static Controllers.LoginController.UserConnected;
-
-
-public class MainContainer implements Initializable {
-    //SidebarAdminController sidebar = new SidebarAdminController(this);
+public class ClientContainerController implements Initializable{
     @FXML
     private StackPane contentArea;
+
     @FXML
-    void connect(ActionEvent event) {
-       // loadPage("/Login.fxml");
+    void accueil(ActionEvent event) {
+
     }
 
     @FXML
-    void stats(MouseEvent event) {
-        loadPage("../StatUser.fxml");
+    void artistes(ActionEvent event) {
+
     }
 
     @FXML
-    void listut(ActionEvent event) {
+    void evenements(ActionEvent event) {
 
-        loadPage("../AfficherUser.fxml");
     }
 
     @FXML
-    void collab(ActionEvent event) {
-        loadPage("/AfficherCollaborateur.fxml");
+    void formations(ActionEvent event) {
+        loadPage("../InscriptionFormation.fxml");
+    }
+    @FXML
+    void categorie(ActionEvent event) {
+        //loadPage("../GestionCategorie.fxml");
+    }
+    @FXML
+    void logout(ActionEvent event) {
+
     }
 
+    @FXML
+    void reclamation(ActionEvent event) {
 
+    }
+
+    @FXML
+    void profil(ActionEvent event) {
+
+    }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         //SidebarAdminController sidebar = new SidebarAdminController(this);
-        this.loadPage("/StatUser.fxml");
+        this.loadPage("../InscriptionFormation.fxml");
     }
 
     public void loadContent(Node node) {
         contentArea.getChildren().clear();
         contentArea.getChildren().add(node);
-       // System.out.println("Content loaded in MainContainer."+this);
+        // System.out.println("Content loaded in MainContainer."+this);
     }
     void loadPage(String fxmlPath) {
         try {
@@ -66,5 +75,4 @@ public class MainContainer implements Initializable {
             e.printStackTrace();
         }
     }
-
 }

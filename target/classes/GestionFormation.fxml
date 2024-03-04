@@ -9,22 +9,22 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.GestionFormationController">
+<AnchorPane prefHeight="670.0" prefWidth="610.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.GestionFormationController">
 
    <children>
-      <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="400.0" prefWidth="600.0" stylesheets="@dashboardDesign.css">
+      <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="466.0" prefWidth="600.0" stylesheets="@dashboardDesign.css">
          <children>
-            <AnchorPane layoutX="134.0" layoutY="66.0" prefHeight="400.0" prefWidth="600.0" stylesheets="@dashboardDesign.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <AnchorPane layoutX="134.0" layoutY="66.0" prefHeight="648.0" prefWidth="600.0" stylesheets="@dashboardDesign.css" AnchorPane.bottomAnchor="-182.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <AnchorPane layoutX="14.0" layoutY="15.0" prefHeight="371.0" prefWidth="571.0" stylesheets="@dashboardDesign.css">
+                  <AnchorPane layoutX="14.0" layoutY="15.0" prefHeight="559.0" prefWidth="571.0" stylesheets="@dashboardDesign.css">
                      <children>
-                        <AnchorPane layoutY="14.0" prefHeight="295.0" prefWidth="571.0" stylesheets="@dashboardDesign.css">
+                        <AnchorPane layoutY="14.0" prefHeight="425.0" prefWidth="571.0" stylesheets="@dashboardDesign.css">
                            <styleClass>
                               <String fx:value="white-bg" />
                               <String fx:value="shadow" />
                            </styleClass>
                            <children>
-                              <TableView fx:id="FormationTable" layoutX="12.0" layoutY="53.0" prefHeight="232.0" prefWidth="546.0">
+                              <TableView fx:id="FormationTable" layoutX="12.0" layoutY="53.0" prefHeight="350.0" prefWidth="554.0">
                                  <columns>
                                     <TableColumn fx:id="nomfor" prefWidth="56.800048828125" text="Nom" />
                                     <TableColumn fx:id="datedeb" prefWidth="70.39996337890625" text="Date début" />
@@ -32,20 +32,20 @@
                                     <TableColumn fx:id="niveau" prefWidth="70.39996337890625" text="Niveau" />
                                     <TableColumn fx:id="cat" prefWidth="70.39996337890625" text="Catégorie" />
                                     <TableColumn fx:id="desc" prefWidth="113.60003662109375" text="Description" />
-                                    <TableColumn fx:id="prix" minWidth="0.0" prefWidth="92.00003662109373" text="Prix" />
+                                    <TableColumn fx:id="prix" minWidth="0.0" prefWidth="99.19998168945312" text="Prix" />
                                  </columns>
                               </TableView>
                               <TextField fx:id="searchFor" layoutX="14.0" layoutY="14.0" promptText=" Rechercher" />
                               <FontAwesomeIcon fill="#dcdcdc" glyphName="SEARCH" layoutX="147.0" layoutY="30.0" />
                            </children>
                         </AnchorPane>
-                        <Button layoutX="235.0" layoutY="325.0" mnemonicParsing="false" onAction="#deleteFor" prefHeight="35.0" prefWidth="88.0" styleClass="delete-btn" text="Supprimer" />
-                        <Button layoutX="347.0" layoutY="325.0" mnemonicParsing="false" onAction="#updateFor" prefHeight="35.0" prefWidth="106.0" styleClass="update-btn" text="Mettre à jour">
+                        <Button layoutX="227.0" layoutY="487.0" mnemonicParsing="false" onAction="#deleteFor" prefHeight="35.0" prefWidth="88.0" styleClass="delete-btn" text="Supprimer" />
+                        <Button layoutX="339.0" layoutY="487.0" mnemonicParsing="false" onAction="#updateFor" prefHeight="35.0" prefWidth="106.0" styleClass="update-btn" text="Mettre à jour">
                            <font>
                               <Font name="Futura Book BT" size="12.0" />
                            </font>
                         </Button>
-                        <Button layoutX="463.0" layoutY="325.0" mnemonicParsing="false" onAction="#ajouterFor" prefHeight="35.0" prefWidth="88.0" styleClass="add-btn" text="Ajouter">
+                        <Button layoutX="455.0" layoutY="487.0" mnemonicParsing="false" onAction="#ajouterFor" prefHeight="35.0" prefWidth="88.0" styleClass="add-btn" text="Ajouter">
                            <font>
                               <Font name="Futura Light BT" size="12.0" />
                            </font>

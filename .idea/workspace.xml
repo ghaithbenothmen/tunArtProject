@@ -4,29 +4,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a5f78d19-35f0-47a6-97b8-33e8e500b968" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/fontawesomefx_8_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="a5f78d19-35f0-47a6-97b8-33e8e500b968" name="Changes" comment="Payement">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/AccueilPageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/ArtisteContainerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/ClientContainerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/MainAccueilController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/AccueilPage.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/ArtisteContainer.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/ClientContainer.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/MainAccueil.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/EditController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/EditController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/InscriptionControllers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/InscriptionControllers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/GestionCategorieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/GestionCategorieController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/NavbarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/NavbarController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/UpdateUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/UpdateUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/updateCollaborateurController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/updateCollaborateurController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/MainContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/MainContainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/SidebarAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/SidebarAdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/SidebarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/SidebarController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Test/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Test/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Utils/ConnexionDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utils/ConnexionDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Edit.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Edit.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/EmailCheck.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/EmailCheck.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/UpdateUser.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/UpdateUser.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/updateCollaborateur.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/updateCollaborateur.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/GestionCategorie.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/GestionCategorie.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/GestionFormation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/GestionFormation.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MainContainer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/MainContainer.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Sidebar.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Sidebar.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/SidebarAdmin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/SidebarAdmin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/StatUser.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/StatUser.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/GestionCategorieController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/GestionCategorieController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/SideBarController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/SideBarController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestionCategorie.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestionCategorie.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestionFormation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestionFormation.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/SideBar.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/SideBar.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Test/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Test/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Utils/ConnexionDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Utils/ConnexionDB.class" afterDir="false" />
@@ -36,13 +40,22 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2dCTsUiHvtwAf99P0jBdXZky2l1" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -52,7 +65,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Yassine-branch",
+    "git-widget-placeholder": "Ghaith-branch",
     "last_opened_file_path": "C:/Users/essid/IdeaProjects/9iri9iri/tunArtProject/tunArtProject",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -96,5 +109,14 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Payement" />
+    <option name="LAST_COMMIT_MESSAGE" value="Payement" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/tunArtProject$Main.ic" NAME="Main Coverage Results" MODIFIED="1708280057125" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Test.*</FILTER>
+    </SUITE>
   </component>
 </project>

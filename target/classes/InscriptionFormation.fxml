@@ -10,9 +10,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600.0" prefWidth="825.0" stylesheets="@dashboardDesign.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.InscriptionFormationController">
+<AnchorPane prefHeight="832.0" prefWidth="839.0" stylesheets="@dashboardDesign.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.InscriptionFormationController">
    <children>
-      <AnchorPane layoutX="9.0" layoutY="13.0" prefHeight="578.0" prefWidth="830.0" stylesheets="@dashboardDesign.css">
+      <AnchorPane layoutX="9.0" layoutY="13.0" prefHeight="817.0" prefWidth="830.0" stylesheets="@dashboardDesign.css">
          <children>
             <AnchorPane layoutX="-2.0" layoutY="43.0" prefHeight="527.0" prefWidth="830.0" stylesheets="@dashboardDesign.css">
                <styleClass>
@@ -20,7 +20,7 @@
                   <String fx:value="white-bg" />
                </styleClass>
                <children>
-                   <ScrollPane layoutX="8.0" layoutY="8.0" prefHeight="514.0" prefWidth="814.0">
+                   <ScrollPane layoutX="8.0" layoutY="8.0" prefHeight="761.0" prefWidth="814.0">
                        <content>
                            <AnchorPane>
                                <children>

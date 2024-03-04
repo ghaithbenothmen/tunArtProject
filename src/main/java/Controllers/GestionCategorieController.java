@@ -6,6 +6,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TableView;
@@ -66,6 +67,16 @@ public class GestionCategorieController {
     @FXML
     void ajouterCat(ActionEvent event) {
         String nom = txtcat.getText();
+        if (nom.isEmpty()) {
+            showAlert("Erreur", "Veuillez saisir un nom de catégorie.");
+            return;
+        }
+
+        if (nom.length() > 255) {
+            showAlert("Erreur", "Le nom de la catégorie ne peut pas dépasser 255 caractères.");
+            return;
+        }
+
         if (!nom.isEmpty()) {
             Categorie categorie = new Categorie(nom);
             try {
@@ -132,5 +143,11 @@ public class GestionCategorieController {
         categorieTable.getItems().clear();
         categorieTable.getItems().addAll(categorieService.findAll());
     }
-
+    private void showAlert(String title, String content) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Erreur");
+        alert.setHeaderText(title);
+        alert.setContentText(content);
+        alert.showAndWait();
+    }
 }

@@ -1,11 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #eaedee;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.MainContainer">
-    <children>
-        <AnchorPane fx:id="navbarPane" layoutX="223.0" prefHeight="76.0" prefWidth="1057.0" style="-fx-background-color: FFFFFF;" />
-        <AnchorPane fx:id="sidebarPane" prefHeight="800.0" prefWidth="223.0" />
-        <AnchorPane fx:id="contentPane" layoutX="252.0" layoutY="86.0" prefHeight="700.0" prefWidth="1000.0" />
-    </children>
-</AnchorPane>
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.MainContainer">
+    <left>
+        <!-- Include your sidebar FXML file here -->
+
+        <AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="223.0" style="-fx-background-color: #8cbeb2;" styleClass="nav-form" stylesheets="@dashboardDesign.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+            <children>
+                <Button fx:id="stats" layoutY="240.0" mnemonicParsing="false" onMouseClicked="#stats" prefHeight="40.0" prefWidth="223.0" styleClass="nav-btn" stylesheets="@loginDesign.css" text="Dashboard" textFill="WHITE">
+                    <font>
+                        <Font name="Leelawadee UI" size="17.0" />
+                    </font></Button>
+                <AnchorPane prefHeight="220.0" prefWidth="223.0" style="-fx-background-color: #8cbeb2;">
+                    <children>
+                        <ImageView fitHeight="184.0" fitWidth="200.0" layoutX="12.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../../../Desktop/PiDev/logo%20png.png" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </AnchorPane>
+                <Button fx:id="listut" alignment="CENTER" layoutY="280.0" mnemonicParsing="false" onAction="#listut" prefHeight="40.0" prefWidth="223.0" styleClass="nav-btn" stylesheets="@loginDesign.css" text="Liste utilisateurs" textFill="WHITE">
+                    <font>
+                        <Font size="17.0" />
+                    </font></Button>
+                <Button alignment="CENTER" layoutY="360.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="223.0" styleClass="nav-btn" stylesheets="@loginDesign.css" text="Liste artistes" textFill="WHITE">
+                    <font>
+                        <Font name="Leelawadee UI" size="17.0" />
+                    </font>
+                </Button>
+                <Button alignment="CENTER" layoutY="400.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="223.0" styleClass="nav-btn" stylesheets="@loginDesign.css" text="Concours" textFill="WHITE">
+                    <font>
+                        <Font name="Leelawadee UI" size="17.0" />
+                    </font>
+                </Button>
+                <Button fx:id="collab" alignment="CENTER" layoutY="440.0" mnemonicParsing="false" onAction="#collab" prefHeight="40.0" prefWidth="223.0" styleClass="nav-btn" stylesheets="@loginDesign.css" text="Collaborateurs" textFill="WHITE">
+                    <font>
+                        <Font name="Leelawadee UI" size="17.0" />
+                    </font>
+                </Button>
+                <Button alignment="CENTER" layoutY="480.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="223.0" styleClass="nav-btn" stylesheets="@loginDesign.css" text="Réclamations" textFill="WHITE">
+                    <font>
+                        <Font name="Leelawadee UI" size="17.0" />
+                    </font>
+                </Button>
+                <Button fx:id="connect" layoutX="26.0" layoutY="599.0" mnemonicParsing="false" onAction="#connect" prefHeight="40.0" prefWidth="170.0" styleClass="login-btn" stylesheets="@loginDesign.css" text="Se déconnecter" textFill="WHITE">
+                    <font>
+                        <Font name="Futura Light BT" size="17.0" />
+                    </font>
+                </Button>
+                <Button alignment="CENTER" layoutY="320.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="223.0" styleClass="nav-btn" stylesheets="@loginDesign.css" text="Liste évenments" textFill="WHITE">
+                    <font>
+                        <Font size="17.0" />
+                    </font>
+                </Button>
+                <FontAwesomeIcon fill="WHITE" glyphName="DASHBOARD" layoutX="45.0" layoutY="265.0" size="1.5em" />
+                <FontAwesomeIcon fill="WHITE" glyphName="USER" layoutX="46.0" layoutY="387.0" size="1.5em" text="" wrappingWidth="18.228559494018555" />
+                <FontAwesomeIcon fill="WHITE" glyphName="USER" layoutX="44.0" layoutY="347.0" size="1.5em" text="" wrappingWidth="18.228559494018555" />
+                <FontAwesomeIcon fill="WHITE" glyphName="USERS" layoutX="41.0" layoutY="306.0" size="1.5em" />
+                <FontAwesomeIcon fill="WHITE" glyphName="AREA_CHART" layoutX="45.0" layoutY="426.0" size="1.5em" />
+                <FontAwesomeIcon fill="WHITE" glyphName="USERS" layoutX="41.0" layoutY="466.0" size="1.5em" />
+            <FontAwesomeIcon fill="WHITE" glyphName="SEND" layoutX="36.0" layoutY="506.0" size="1.5em" />
+            </children>
+        </AnchorPane>
+
+    </left>
+    <center>
+        <!-- StackPane to load content -->
+        <StackPane fx:id="contentArea" />
+    </center>
+</BorderPane>

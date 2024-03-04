@@ -115,7 +115,7 @@ public class LoginController implements Initializable {
                 alert.showAndWait();
 
                 if (UserConnected.getRole().equals(Role.ARTISTE)) {
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/MainContainer.fxml"));
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("../ArtisteContainer.fxml"));
                     Parent root = loader.load();
 
                    // GestionFormationController gestionFormationController = loader.getController();
@@ -127,14 +127,14 @@ public class LoginController implements Initializable {
                     stage.setScene(scene);
                     stage.show();
 
-                } else if (UserConnected.getRole().equals(Role.CLIENT)) {
+                }if (UserConnected.getRole().equals(Role.CLIENT)) {
 
                     if (selectedFormationId != 0) {
                         System.out.println(selectedFormationId);
 
                         this.formation= formationService.findById(selectedFormationId);
                         System.out.println("this is for"+this.formation+"thissss id"+selectedFormationId);
-                        FXMLLoader loader = new FXMLLoader(getClass().getResource("../MainContainer.fxml"));
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("../ClientContainer.fxml"));
                         Parent root = loader.load();
                         InscriptionInfoController inscriptionInfoController = loader.getController();
                         inscriptionInfoController.setData(this.formation);
@@ -146,7 +146,7 @@ public class LoginController implements Initializable {
                         stage.show();
 
                     }else {
-                        FXMLLoader loader = new FXMLLoader(getClass().getResource("../MainContainer.fxml"));
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("../ClientContainer.fxml"));
                         Parent root = loader.load();
 
                         Scene scene = new Scene(root);
@@ -156,7 +156,7 @@ public class LoginController implements Initializable {
                         stage.show();
 
                     }
-                } else {
+                }  if (UserConnected.getRole().equals(Role.ADMIN)){
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("../MainContainer.fxml"));
                     Parent root = loader.load();
 
