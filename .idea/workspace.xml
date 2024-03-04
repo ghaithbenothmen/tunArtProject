@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21315bfc-118e-44e1-a34f-1ed61d3c161c" name="Changes" comment="Helmi-Branch: ajouter refresh sur page admin">
+    <list default="true" id="21315bfc-118e-44e1-a34f-1ed61d3c161c" name="Changes" comment="Helmi-Branch: update in ChatBot.fxml">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ChatBot.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ChatBot.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/AjouterCom.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AjouterCom.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -214,7 +214,8 @@
       <workItem from="1709503873135" duration="603000" />
       <workItem from="1709506260585" duration="5718000" />
       <workItem from="1709512009617" duration="17000" />
-      <workItem from="1709512037878" duration="4294000" />
+      <workItem from="1709512037878" duration="4613000" />
+      <workItem from="1709517226594" duration="43000" />
     </task>
     <task id="LOCAL-00001" summary="first-commit &quot;Formation&quot;">
       <option name="closed" value="true" />
@@ -496,7 +497,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709515664753</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Helmi-Branch: update in ChatBot.fxml">
+      <option name="closed" value="true" />
+      <created>1709516479273</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1709516479273</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -541,7 +550,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Gestion categorie" />
     <MESSAGE value="Gestion categorie." />
     <MESSAGE value="Relation Formation et Catégorie" />
     <MESSAGE value="rebase" />
@@ -566,7 +574,8 @@
     <MESSAGE value="Helmi-Branch: controle saisie" />
     <MESSAGE value="Helmi-Branch: add Button Retour" />
     <MESSAGE value="Helmi-Branch: ajouter refresh sur page admin" />
-    <option name="LAST_COMMIT_MESSAGE" value="Helmi-Branch: ajouter refresh sur page admin" />
+    <MESSAGE value="Helmi-Branch: update in ChatBot.fxml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Helmi-Branch: update in ChatBot.fxml" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
