@@ -4,29 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21315bfc-118e-44e1-a34f-1ed61d3c161c" name="Changes" comment="gestionReclamation-commit">
+    <list default="true" id="21315bfc-118e-44e1-a34f-1ed61d3c161c" name="Changes" comment="api notification">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/AfficherArtistesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/AfficherArtistesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/AjouterOeuvreControler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/AjouterOeuvreControler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/AjouterReclamationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/AjouterReclamationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/GestionReclamation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/GestionReclamation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/ModifierOeuvreControler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ModifierOeuvreControler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/ModifierReclamationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ModifierReclamationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/OeuvreCardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/OeuvreCardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/OneOeuvreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/OneOeuvreController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Services/OeuvreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/OeuvreService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ModifierReclamation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ModifierReclamation.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/OeuvreCard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/OeuvreCard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/AfficherArtistesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/AfficherArtistesController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/AjouterOeuvreControler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/AjouterOeuvreControler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/ModifierOeuvreControler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/ModifierOeuvreControler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/OeuvreCardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/OeuvreCardController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/OneOeuvreController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/OneOeuvreController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/OeuvreCard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/OeuvreCard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Services/OeuvreService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Services/OeuvreService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -240,7 +220,7 @@
       <workItem from="1709375866855" duration="2338000" />
       <workItem from="1709378245819" duration="37473000" />
       <workItem from="1709465155838" duration="36034000" />
-      <workItem from="1709506311349" duration="12543000" />
+      <workItem from="1709506311349" duration="15949000" />
     </task>
     <task id="LOCAL-00001" summary="first-commit &quot;Formation&quot;">
       <option name="closed" value="true" />
@@ -402,7 +382,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709491443160</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="api notification">
+      <option name="closed" value="true" />
+      <created>1709522059411</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1709522059411</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -480,7 +468,8 @@
     <MESSAGE value="fifth-commit" />
     <MESSAGE value="like-commit" />
     <MESSAGE value="gestionReclamation-commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="gestionReclamation-commit" />
+    <MESSAGE value="api notification" />
+    <option name="LAST_COMMIT_MESSAGE" value="api notification" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

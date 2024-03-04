@@ -19,6 +19,9 @@ import static Controllers.LoginController.UserConnected;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class AjouterReclamationController {
     boolean addrec;
@@ -48,44 +51,52 @@ public class AjouterReclamationController {
     private void AjouterReclamation(ActionEvent event) throws SQLException {
         String type = typerec.getText();
         String text = textrec.getText();
-        if (!text.isEmpty()) {
-            if (UserConnected != null) { // Check if UserConnected is not null
-                int userId = UserConnected.getId();
-                System.out.println(userId);
-                User user = userService.findById(userId);
-                System.out.println(user);
-                if (user != null) { // Check if user is not null
-                    Reclamation r = new Reclamation(user,text , type);
-                    System.out.println(r);
-                    try {
 
-                        reclamationService.add(r);
-                        showAlert(Alert.AlertType.INFORMATION, "Success", "Reclamation added successfully.");
-                        Stage stage = (Stage) textrec.getScene().getWindow();
-                        stage.close();
-                        parentController.refreshScrollPane(userId);
-                    } catch (SQLException e) {
-                        showAlert(Alert.AlertType.ERROR, "Error", "Failed to add reclamation: " + e.getMessage());
-                        System.out.println(e.getMessage());
-                    }
-                } else {
-                    showAlert(Alert.AlertType.ERROR, "Error", "User not found.");
+        // Check for bad words in the text
+        String sanitizedText = bad_words(text);
+
+        // Proceed with adding the reclamation
+        if (UserConnected != null) {
+            int userId = UserConnected.getId();
+            User user = userService.findById(userId);
+            if (user != null) {
+                Reclamation r = new Reclamation(user, sanitizedText, type);
+                try {
+                    reclamationService.add(r);
+                    showAlert(Alert.AlertType.INFORMATION, "Success", "Reclamation added successfully.");
+                    Stage stage = (Stage) textrec.getScene().getWindow();
+                    stage.close();
+                    parentController.refreshScrollPane(userId);
+                    addrec = true;
+
+                } catch (SQLException e) {
+                    showAlert(Alert.AlertType.ERROR, "Error", "Failed to add reclamation: " + e.getMessage());
                 }
+
             } else {
-                showAlert(Alert.AlertType.ERROR, "Error", "User not logged in.");
+                showAlert(Alert.AlertType.ERROR, "Error", "User not found.");
             }
         } else {
-            showAlert(Alert.AlertType.WARNING, "Warning", "Please enter a reclamation.");
+            showAlert(Alert.AlertType.ERROR, "Error", "User not logged in.");
         }
-        addrec=true;
-        addrec=true;
+
+
+        // Show alert about bad words
+        if (!sanitizedText.equals(text)) {
+            showAlert(Alert.AlertType.WARNING, "Warning", "ATTENTION !! Vous avez écrit un gros mot.");
+        }
         if (addrec) {
             Notifications.create()
                     .title("Notification Title")
-                    .text(UserConnected.getNom()+" "+"a ajouter une reclamation de type"+" "+this.typerec.getText())
+                    .text(UserConnected.getNom() + " " + "a ajouter une reclamation de type" + " " + this.typerec.getText())
                     .showInformation();
+
         }
+
+
     }
+
+
 
 
 
@@ -102,4 +113,21 @@ public class AjouterReclamationController {
     public void setParentController(GestionReclamation parentController) {
         this.parentController = parentController;
     }
+    public String bad_words(String inputText) {
+        List<String> badWordsList = Arrays.asList("fuck", "fucked", "nigga", "putin", "merde", "pute", "schlampe", "fuck you", "arse", "arsehole", "ass", "asses", "assface", "assfaces", "asshole", "assholes", "bastard", "bastards", "beaner", "bellend", "bint", "bitch", "bitches", "bitchy", "blowjob", "blump", "blumpkin", "bollocks");
+
+        String sanitizedText = inputText;
+
+        for (String badWord : badWordsList) {
+            if (sanitizedText.toLowerCase().contains(badWord.toLowerCase())) {
+                // Replace bad word with **
+                sanitizedText = sanitizedText.replaceAll("\\b" + badWord + "\\b", "**");
+            }
+        }
+
+        return sanitizedText;
+    }
+
+
 }
+
