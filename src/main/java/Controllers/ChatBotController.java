@@ -1,9 +1,13 @@
 package Controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -13,6 +17,9 @@ public class ChatBotController {
 
     @FXML
     private TextField textFieldChat;
+    @FXML
+    private Button RetourBtn;
+
     private Map<String, String> questionsReponses = new HashMap<>();
 
     // Méthode d'initialisation du contrôleur
@@ -25,6 +32,7 @@ public class ChatBotController {
         questionsReponses.put(" Activités prévues ce week-end ?", "Concert, expo d'art, foire alimentaire.");
         questionsReponses.put("Quels sont les horaires des transports en commun ?", " Les horaires sont disponibles sur notre application.");
     }
+
     @FXML
     void envoyerChat(ActionEvent event) {
         // Récupérer la question saisie dans le TextField
@@ -39,5 +47,14 @@ public class ChatBotController {
 
         // Effacer le contenu du TextField
         textFieldChat.clear();
+    }
+    @FXML
+    void NavigezVersListActU(ActionEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/AffActualiteUser.fxml"));
+            RetourBtn.getScene().setRoot(root);
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
+        }
     }
 }

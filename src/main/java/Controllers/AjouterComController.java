@@ -10,9 +10,12 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -23,6 +26,8 @@ public class AjouterComController {
     private TableColumn PrenomCol ;
     @FXML
     private TableColumn TitreCol ;
+    @FXML
+    private Button RetourBtn;
     @FXML
     private TableColumn<Commentaire, String> contenuCol;
     @FXML
@@ -68,6 +73,17 @@ public class AjouterComController {
         this.idAct = idAct;
         this.idUser = idUser;
     }
+
+    @FXML
+    void NavigezVersListActU(ActionEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/AffActualiteUser.fxml"));
+            RetourBtn.getScene().setRoot(root);
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
+        }
+    }
+
     @FXML
     void initialize() throws SQLException {
         List<Commentaire> commentaire = ser.afficher();
