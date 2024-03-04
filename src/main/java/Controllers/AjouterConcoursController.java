@@ -1,22 +1,19 @@
-package controllers;
+package Controllers;
 
 import Entites.Type;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import Entites.Concours;
-import Service.ServiceConcours;
+import Services.ServiceConcours;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.control.Alert;
 
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 public class AjouterConcoursController implements Initializable {
@@ -40,6 +37,9 @@ public class AjouterConcoursController implements Initializable {
     @FXML
     private TextField txtnom;
 
+    @FXML
+    private DatePicker dateinput;
+
 
     @FXML
     private ChoiceBox<Type> ChoiceType;
@@ -60,6 +60,19 @@ public class AjouterConcoursController implements Initializable {
         Type type = ChoiceType.getValue();
         String lien = txtlien.getText();
         String nom = txtnom.getText();
+
+        //date initialize
+        dateinput.valueProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue != null) {
+                // Date is picked, do something
+                System.out.println("DateF value: " + newValue);
+            } else {
+                // Date is not picked
+                System.out.println("DateF not picked");
+            }
+        });
+
+        /*
         java.sql.Date date;
         try {
             date = java.sql.Date.valueOf((txtdate.getText()));
@@ -69,22 +82,34 @@ public class AjouterConcoursController implements Initializable {
             alert1.setContentText("Date incorrecte");
             alert1.showAndWait();
             return;
+        }*/
+
+        LocalDate today = LocalDate.now();
+        LocalDate dateFin = dateinput.getValue();
+        java.sql.Date sqlDateFin= java.sql.Date.valueOf(dateFin);
+        if(dateFin.isBefore(today))
+        {
+            Alert alert1 = new Alert(Alert.AlertType.ERROR);
+            alert1.setTitle("ERROR");
+            alert1.setContentText("Date incorrecte");
+            alert1.showAndWait();
+            return;
         }
 
-        if (prix <= 0 || type.describeConstable().isEmpty() || lien.isEmpty() || nom.isEmpty()) {
+        if (prix <= 0 || type.describeConstable().isEmpty() || lien.isEmpty() || nom.isEmpty() ) {
             Alert alert1 = new Alert(Alert.AlertType.ERROR);
             alert1.setTitle("ERROR");
             alert1.setContentText("Erreur de saisie");
             alert1.showAndWait();
             return;
         } else {
-            Concours p1 = new Concours(prix, date, type, lien, nom);
+            Concours p1 = new Concours(prix, sqlDateFin, type, lien, nom);
             Alert alert1 = new Alert(Alert.AlertType.CONFIRMATION);
             alert1.setTitle("Confirmation");
             alert1.setContentText("Concour ajouté avec succés");
             alert1.showAndWait();
             try {
-                ser.ajouter(p1);
+                ser.add(p1);
             } catch (SQLException e) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error");
@@ -117,7 +142,6 @@ public class AjouterConcoursController implements Initializable {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
     }
 
 

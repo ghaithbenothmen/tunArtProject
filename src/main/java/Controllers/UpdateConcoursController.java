@@ -1,4 +1,4 @@
-package controllers;
+package Controllers;
 
 import Entites.Type;
 import javafx.event.ActionEvent;
@@ -6,13 +6,15 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import Entites.Concours;
-import Service.ServiceConcours;
+import Services.ServiceConcours;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 public class UpdateConcoursController implements Initializable {
@@ -26,14 +28,8 @@ public class UpdateConcoursController implements Initializable {
     @FXML
     private Label concoursID;
 
-    public Label getLbname() {
-        return concoursID;
-    }
-
-    public void setLbname(String lbname) {
-        this.concoursID.setText(lbname);
-    }
-
+    @FXML
+    private DatePicker dateinput;
 
     @FXML
     private Button confirm;
@@ -42,15 +38,35 @@ public class UpdateConcoursController implements Initializable {
     private TextField txtnom;
 
     @FXML
-    private TextField txtdate;
-
-    @FXML
     private TextField txtlien;
 
     @FXML
     private TextField txtprix;
 
     private final ServiceConcours ser=new ServiceConcours();
+
+    public Label getLbname() {
+        return concoursID;
+    }
+    public void setLbname(String lbname) {
+        this.concoursID.setText(lbname);
+    }
+
+    public void setTxtnom(String lbname) {
+        this.txtnom.setText(lbname);
+    }
+    public void setTxtprix(Integer lbname) {
+        this.txtprix.setText(String.valueOf(lbname));
+    }
+    public void setTxtlien(String lbname) {
+        this.txtlien.setText(lbname);
+    }
+    public void setChoiceType(Type lbname) {
+        this.ChoiceType.setValue(lbname);
+    }
+    public void setDateinput(String lbname) {
+        this.dateinput.setValue(LocalDate.parse(lbname));
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -61,6 +77,35 @@ public class UpdateConcoursController implements Initializable {
     void UpdateConcours(ActionEvent event) {
 
         //DATE
+
+        //date initialize
+        dateinput.valueProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue != null) {
+                // Date is picked, do something
+                System.out.println("DateF value: " + newValue);
+            } else {
+                // Date is not picked
+                System.out.println("DateF not picked");
+            }
+        });
+
+
+        //date input control
+        LocalDate today = LocalDate.now();
+        LocalDate dateFin = dateinput.getValue();
+        java.sql.Date sqlDateFin= java.sql.Date.valueOf(dateFin);
+        if(dateFin.isBefore(today))
+        {
+            Alert alert1 = new Alert(Alert.AlertType.ERROR);
+            alert1.setTitle("ERROR");
+            alert1.setContentText("Date incorrecte");
+            alert1.showAndWait();
+            return;
+        }
+
+
+
+        /* old date form with string
         java.sql.Date date;
         try {
             date = java.sql.Date.valueOf((txtdate.getText()));
@@ -70,16 +115,16 @@ public class UpdateConcoursController implements Initializable {
             alert1.setContentText("Date incorrecte");
             alert1.showAndWait();
             return;
-        }
-
-
+        }*/
+        
+        
         int prix=Integer.parseInt(txtprix.getText());
         Type type= (Type) ChoiceType.getValue();
         String lien=txtlien.getText();
         String nom=txtnom.getText();
         int ref= Integer.parseInt(concoursID.getText());
 
-        Concours p1=new Concours(ref,prix,date,type,lien,nom);
+        Concours p1=new Concours(ref,prix,sqlDateFin,type,lien,nom);
         if (prix<=0||type.describeConstable().isEmpty()||lien.isEmpty()||nom.isEmpty()) {
             Alert alert1 = new Alert(Alert.AlertType.ERROR);
             alert1.setTitle("ERROR");
@@ -92,8 +137,17 @@ public class UpdateConcoursController implements Initializable {
             alert1.setContentText("Concour modifié avec succés");
             alert1.showAndWait();
 
+            ser.updatea(p1);
 
-            ser.update(p1);
+            try {
+                FXMLLoader loader=new FXMLLoader(getClass().getResource("/AfficherConcours.fxml"));
+                Parent root=loader.load();
+
+                confirm.getScene().setRoot(root);
+
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #f2EBBF;" stylesheets="@dashboardDesign.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.QRcodeController">
+   <children>
+      <Button fx:id="generateButton" layoutX="329.0" layoutY="356.0" mnemonicParsing="false" onAction="#generateQRCode" prefHeight="30.0" prefWidth="131.0" styleClass="update-btn" text="GENERATE" />
+      <ImageView fx:id="qrCodeImageView" fitHeight="287.0" fitWidth="319.0" layoutX="141.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true" />
+      <ComboBox fx:id="tf_combobox" layoutX="141.0" layoutY="320.0" opacity="0.56" prefHeight="25.0" prefWidth="319.0" stylesheets="@dashboardDesign.css" />
+      <Button fx:id="RETURN" layoutX="141.0" layoutY="356.0" mnemonicParsing="false" onAction="#RETURNbtn" prefHeight="30.0" prefWidth="131.0" styleClass="delete-btn" text="RETURN" />
+   </children>
+</AnchorPane>

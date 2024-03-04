@@ -1,16 +1,18 @@
-package Service;
+package Services;
 import Entites.Concours;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.sql.Date;
 
 import Entites.Type;
-import Utils.DataSource;
-public class ServiceConcours implements IService<Concours>{
+import Utils.ConnexionDB;
+public class ServiceConcours implements IServiceA<Concours>{
 
-    private Connection con=DataSource.getInstance().getCon();
+    private Connection con=ConnexionDB.getInstance().getCon();
 
     private Statement ste;
 
@@ -22,10 +24,9 @@ public class ServiceConcours implements IService<Concours>{
         {
             System.out.println(e);
         }
-
     }
     @Override
-    public void ajouter(Concours concours) throws SQLException {
+    public void add(Concours concours) throws SQLException {
 
         java.util.Date utilDate = concours.getDate();
         java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
@@ -45,13 +46,13 @@ public class ServiceConcours implements IService<Concours>{
         pre.setString(2,concours.getType().toString());
         pre.setInt(3,concours.getPrix());
         pre.setString(4,concours.getLien());
-        pre.setString(5,concours.getNom());
+        pre.setString(4,concours.getNom());
 
         pre.executeUpdate();
     }
 
     @Override
-    public void delete(Concours concours) {
+    public void deletea(Concours concours) {
         String query = "DELETE FROM `concours` WHERE refrence="+concours.getReference()+"";
 
         try {
@@ -65,7 +66,7 @@ public class ServiceConcours implements IService<Concours>{
     }
 
     @Override
-    public void update(Concours concours)  {
+    public void updatea(Concours concours)  {
 
         java.util.Date utilDate = concours.getDate();
         java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
@@ -104,7 +105,7 @@ public class ServiceConcours implements IService<Concours>{
     }
 
     @Override
-    public List<Concours> readAll() throws SQLException {
+    public List<Concours> findAll() throws SQLException {
 
         List<Concours> list=new ArrayList<>();
         ResultSet res=ste.executeQuery("select * from concours");
@@ -148,6 +149,16 @@ public class ServiceConcours implements IService<Concours>{
         return null;
     }
 
+    public List<Concours> diplayListsortedbyMontant() throws SQLException {
+        List<Concours> sortedUsers = this.findAll();
+        Collections.sort(sortedUsers, Comparator.comparing(Concours::getPrix));
+        return sortedUsers;
+    }
+    public List<Concours> diplayListsortedbyDate() throws SQLException {
+        List<Concours> sortedUsers = this.findAll();
+        Collections.sort(sortedUsers, Comparator.comparing(Concours::getDate));
+        return sortedUsers;
+    }
 
 }
 
