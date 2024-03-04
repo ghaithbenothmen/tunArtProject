@@ -10,9 +10,9 @@
 <?import javafx.scene.layout.*?>
 <?import java.net.URL?>
 
-<AnchorPane prefHeight="637.0" prefWidth="790.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AjouterActualiteController">
+<AnchorPane prefHeight="637.0" prefWidth="790.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ModifierActualiteController">
     <children>
-        <Button fx:id="BtnModifier" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" layoutX="216.0" layoutY="581.0" mnemonicParsing="false" onAction="#ajouterAct" prefHeight="18.0" prefWidth="179.0" styleClass="update-btn" text="Modifier" textAlignment="CENTER">
+        <Button fx:id="BtnModifier" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" layoutX="216.0" layoutY="581.0" mnemonicParsing="false" onAction="#modifierCompetition" prefHeight="18.0" prefWidth="179.0" styleClass="update-btn" text="Modifier" textAlignment="CENTER">
             <font>
                 <Font name="System Bold" size="17.0" />
             </font>

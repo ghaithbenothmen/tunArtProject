@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21315bfc-118e-44e1-a34f-1ed61d3c161c" name="Changes" comment="Helmi-Branch: update in ChatBot.fxml">
+    <list default="true" id="21315bfc-118e-44e1-a34f-1ed61d3c161c" name="Changes" comment="Helmi-Branch: Ajouter ModifierActualiteController.java">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/AjouterCom.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AjouterCom.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/ActualiteCardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ActualiteCardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/ModifierActualiteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ModifierActualiteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ModifierActualite.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ModifierActualite.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -215,7 +217,8 @@
       <workItem from="1709506260585" duration="5718000" />
       <workItem from="1709512009617" duration="17000" />
       <workItem from="1709512037878" duration="4613000" />
-      <workItem from="1709517226594" duration="43000" />
+      <workItem from="1709517226594" duration="79000" />
+      <workItem from="1709542710295" duration="6076000" />
     </task>
     <task id="LOCAL-00001" summary="first-commit &quot;Formation&quot;">
       <option name="closed" value="true" />
@@ -505,7 +508,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709516479273</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Helmi-Branch: espacee">
+      <option name="closed" value="true" />
+      <created>1709517289331</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1709517289331</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -550,8 +561,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Gestion categorie." />
-    <MESSAGE value="Relation Formation et Catégorie" />
     <MESSAGE value="rebase" />
     <MESSAGE value="Gestion Catégorie+Formation(Compléte)" />
     <MESSAGE value="Formations interface" />
@@ -575,7 +584,9 @@
     <MESSAGE value="Helmi-Branch: add Button Retour" />
     <MESSAGE value="Helmi-Branch: ajouter refresh sur page admin" />
     <MESSAGE value="Helmi-Branch: update in ChatBot.fxml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Helmi-Branch: update in ChatBot.fxml" />
+    <MESSAGE value="Helmi-Branch: espacee" />
+    <MESSAGE value="Helmi-Branch: Ajouter ModifierActualiteController.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="Helmi-Branch: Ajouter ModifierActualiteController.java" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

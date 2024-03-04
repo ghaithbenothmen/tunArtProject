@@ -1,10 +1,8 @@
 package Controllers;
 
-import Controllers.AjouterComController;
 import Entites.Actualite;
-import Entites.Commentaire;
 import Services.ActualiteService;
-import com.google.protobuf.Service;
+import Services.IService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -27,10 +25,12 @@ import org.json.JSONObject;
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
-import java.sql.SQLException;
 
 public class ActualiteCardController {
     private final ActualiteService actualiteService = new ActualiteService();
+    private IService service ;
+
+    Actualite a ;
 
     @FXML
     private Label TitreA;
@@ -85,6 +85,7 @@ public class ActualiteCardController {
             System.err.println(e.getMessage());
         }
     }
+
 /*    @FXML
     private void handleUpdateButton(ActionEvent event) {
         Utilisateur selectedUser = tableview.getSelectionModel().getSelectedItem();
@@ -232,5 +233,17 @@ public class ActualiteCardController {
         }
     }
 
+    public void remplireData(Actualite a){
+        this.a=a;
+        TitreA.setText(a.getTitre());
+        DateA.setText(a.getDate().toString());
+        TextA.setText(a.getText());
+        File file=new File("C:/Users/helmi/IdeaProjects/tunArtProject/src/main/resources/assets"+a.getImage());
+        Image image=new Image(file.toURI().toString());
+        imageFor.setImage(image);
+    }
+    public void setOnChangeListener(IService service) {
+        this.service = service;
+    }
 
 }
