@@ -4,20 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21315bfc-118e-44e1-a34f-1ed61d3c161c" name="Changes" comment="Helmi-Branch: update branch">
+    <list default="true" id="21315bfc-118e-44e1-a34f-1ed61d3c161c" name="Changes" comment="Helmi-Branch: zinaaa">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/ActualiteCardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ActualiteCardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/AfficherCommentaireController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/AfficherCommentaireController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ActualiteCardAdmin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ActualiteCardAdmin.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ActualiteCardUser.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ActualiteCardUser.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/ActualiteAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ActualiteAdmin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/ActualiteU.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ActualiteU.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/AjouterActualiteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/AjouterActualiteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/ModifierActualiteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ModifierActualiteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Services/CommentaireService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/CommentaireService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/AffActualiteAdmin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AffActualiteAdmin.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/AffActualiteUser.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AffActualiteUser.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/AfficherArtistes.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/AfficherCommentaire.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AfficherCommentaire.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/AjouterActualite.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AjouterActualite.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ChatBot.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ChatBot.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ModifierActualite.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ModifierActualite.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -221,7 +216,9 @@
       <workItem from="1709404131137" duration="21854000" />
       <workItem from="1709468422041" duration="1298000" />
       <workItem from="1709470903709" duration="599000" />
-      <workItem from="1709475410299" duration="15947000" />
+      <workItem from="1709475410299" duration="19079000" />
+      <workItem from="1709503873135" duration="603000" />
+      <workItem from="1709506260585" duration="5185000" />
     </task>
     <task id="LOCAL-00001" summary="first-commit &quot;Formation&quot;">
       <option name="closed" value="true" />
@@ -471,7 +468,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709495516556</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Helmi-Branch: zinaaa">
+      <option name="closed" value="true" />
+      <created>1709499605041</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1709499605041</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -516,7 +521,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="first-commit &quot;Formation&quot;" />
     <MESSAGE value="Crud Formation" />
     <MESSAGE value="Crud Formation INTERFACE" />
     <MESSAGE value="Crud Formation INTERFACE ajout" />
@@ -541,7 +545,8 @@
     <MESSAGE value="Helmi-Branch: supprimer Actualite done" />
     <MESSAGE value="Helmi-Branch: Ajouter ApiChatBot" />
     <MESSAGE value="Helmi-Branch: update branch" />
-    <option name="LAST_COMMIT_MESSAGE" value="Helmi-Branch: update branch" />
+    <MESSAGE value="Helmi-Branch: zinaaa" />
+    <option name="LAST_COMMIT_MESSAGE" value="Helmi-Branch: zinaaa" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -550,11 +555,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
           <line>15</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Controllers/ActualiteCardController.java</url>
-          <line>86</line>
-          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

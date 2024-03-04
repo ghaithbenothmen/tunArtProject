@@ -11,7 +11,7 @@
 
 <AnchorPane prefHeight="637.0" prefWidth="790.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AjouterActualiteController">
    <children>
-      <Button fx:id="BtnAjouter" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" layoutX="216.0" layoutY="581.0" mnemonicParsing="false" onAction="#ajouterAct" prefHeight="18.0" prefWidth="179.0" styleClass="update-btn" text="Ajouter" textAlignment="CENTER">
+      <Button fx:id="BtnAjouter" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" layoutX="221.0" layoutY="548.0" mnemonicParsing="false" onAction="#ajouterAct" prefHeight="18.0" prefWidth="179.0" styleClass="update-btn" text="Ajouter" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
@@ -32,14 +32,14 @@
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
-      <Button fx:id="BtnAfficher" alignment="CENTER" defaultButton="true" layoutX="449.0" layoutY="580.0" mnemonicParsing="false" onAction="#naviguezVersAffichage" prefHeight="31.0" prefWidth="179.0" styleClass="delete-btn" text="Afficher">
+      <Button fx:id="BtnAfficher" alignment="CENTER" defaultButton="true" layoutX="454.0" layoutY="547.0" mnemonicParsing="false" onAction="#naviguezVersAffichage" prefHeight="31.0" prefWidth="179.0" styleClass="delete-btn" text="Afficher">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
       </Button>
       <DatePicker fx:id="DateDP" layoutX="328.0" layoutY="460.0" prefHeight="31.0" prefWidth="243.0" />
-      <Label fx:id="inputcontrol" layoutX="327.0" layoutY="430.0" prefHeight="30.0" prefWidth="5.0" />
-      <Label layoutX="327.0" layoutY="266.0" prefHeight="30.0" prefWidth="16.0" textFill="#ff0d0d" />
+      <Label fx:id="inputcontrolImage" layoutX="328.0" layoutY="194.0" prefHeight="30.0" prefWidth="243.0" />
+      <Label fx:id="inputcontrolTitre" layoutX="327.0" layoutY="266.0" prefHeight="30.0" prefWidth="243.0" textFill="#ff0d0d" />
       <Label layoutX="235.0" layoutY="158.0" text="Image :">
          <font>
             <Font name="System Bold Italic" size="15.0" />
@@ -56,6 +56,7 @@
          </font>
       </Label>
       <TextField fx:id="TitreTF" layoutX="327.0" layoutY="237.0" prefHeight="31.0" prefWidth="243.0" />
+      <Label fx:id="inputcontrolDescp" layoutX="327.0" layoutY="422.0" prefHeight="30.0" prefWidth="243.0" textFill="#ff0d0d" />
    </children>
    <stylesheets>
       <URL value="@dashboardDesign.css" />

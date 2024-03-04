@@ -5,12 +5,16 @@ import Entites.Actualite;
 import Services.ActualiteService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -19,6 +23,8 @@ public class ActualiteAdmin implements Initializable {
 
     @FXML
     private GridPane gridFor;
+    @FXML
+    private Button AjouterAct;
 
     private final ActualiteService actualiteService = new ActualiteService();
     private ObservableList<Actualite> actualites = FXCollections.observableArrayList();
@@ -61,6 +67,15 @@ public class ActualiteAdmin implements Initializable {
             } catch (Exception e) {
                 System.out.println(e);
             }
+        }
+    }
+    @FXML
+    void navigezversAjouterAct(ActionEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/AjouterActualite.fxml"));
+            AjouterAct.getScene().setRoot(root);
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
         }
     }
 

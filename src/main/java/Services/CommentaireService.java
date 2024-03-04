@@ -28,7 +28,7 @@ public class CommentaireService implements IServiceCommentaire<Commentaire>{
         System.out.println(commentaire);
 
         String req = "INSERT INTO `commentaire`( `id_user`, `id_act`, `contenuC`) "
-                +"values ( '" + commentaire.getId_user()+"', '"+commentaire.getId_act()+"','"+commentaire.getContenuC()+"')";
+                +"values ( '" + commentaire.getId_user().getId()+"', '"+commentaire.getId_act().getId()+"','"+commentaire.getContenuC()+"')";
         try {
             Statement st = con.createStatement();
             st.executeUpdate(req);

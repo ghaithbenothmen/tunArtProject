@@ -43,6 +43,7 @@
                         <Font name="System Bold" size="18.0" />
                     </font>
                 </Text>
+            <Button fx:id="AjouterAct" layoutX="738.0" layoutY="11.0" mnemonicParsing="false" onAction="#navigezversAjouterAct" prefHeight="30.0" prefWidth="74.0" styleClass="update-btn" stylesheets="@dashboardDesign.css" text="Ajouter" />
             </children>
         </AnchorPane>
     </children>

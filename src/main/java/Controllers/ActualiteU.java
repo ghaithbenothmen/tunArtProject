@@ -53,10 +53,6 @@ public class ActualiteU implements Initializable {
     int column = 0;
 
     public void displayAllActualiteCard() throws SQLException {
-        //translate:
-        languageComboBox.getItems().addAll("fr", "en", "ar");
-        languageComboBox.getSelectionModel().selectFirst();
-        //end
         actualites.clear();
         actualites.addAll(actualiteService.afficher());
 

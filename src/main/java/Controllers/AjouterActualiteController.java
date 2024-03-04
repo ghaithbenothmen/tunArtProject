@@ -30,9 +30,17 @@ public class AjouterActualiteController {
     @FXML
     void ajouterAct(ActionEvent event) {
         try {
-            if ((ActualiteTA.getText() == null || ActualiteTA.getText().isEmpty())) {
-                inputcontrol.setText("You didn't enter a title!");
-            }else {
+            if  (imagePath == null ) {
+                inputcontrol.setText("You didn't enter an image!");
+
+            }else
+            if ((TitreTF.getText() == null || TitreTF.getText().isEmpty())) {
+                inputcontrol.setText("You didn't choose a Titre!");
+            }
+            else
+                if((ActualiteTA.getText() == null || ActualiteTA.getText().isEmpty())) {
+                inputcontrol.setText("You didn't enter a description!");
+            }else{
                 String titre = TitreTF.getText();
                 String text = ActualiteTA.getText();
                 String image = imagePath;
