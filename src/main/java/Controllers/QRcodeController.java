@@ -9,7 +9,9 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.image.Image;
@@ -18,14 +20,10 @@ import javafx.scene.image.PixelWriter;
 import javafx.scene.image.WritableImage;
 import javafx.scene.paint.Color;
 
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import javax.imageio.ImageIO;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
 
 public class QRcodeController implements Initializable {
@@ -36,6 +34,9 @@ public class QRcodeController implements Initializable {
 
     @FXML
     private ImageView qrCodeImageView;
+
+    @FXML
+    private Button RETURN;
 
     @FXML
     private ComboBox<Concours> tf_combobox; // Assuming you have a ComboBox of Concours objects
@@ -100,5 +101,16 @@ public class QRcodeController implements Initializable {
         }
         ObservableList<Concours> observableList = FXCollections.observableList(list);
         tf_combobox.setItems(observableList);
+    }
+    @FXML
+    void RETURNbtn(ActionEvent event) {
+        try {
+            FXMLLoader loader=new FXMLLoader(getClass().getResource("/GestionConcours.fxml"));
+            Parent root=loader.load();
+            RETURN.getScene().setRoot(root);
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

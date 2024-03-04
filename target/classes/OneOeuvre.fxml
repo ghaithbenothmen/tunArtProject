@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.OneOeuvreController">
+   <children>
+      <ImageView fx:id="img" fitHeight="257.0" fitWidth="228.0" layoutX="14.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="295.0" layoutY="49.0" prefHeight="23.0" prefWidth="131.0" styleClass="label-info" stylesheets="@dashboardDesign.css" text="Nom de l'oeuvre :">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="nom_Oeuvre" layoutX="452.0" layoutY="50.0" text="nom_Oeuvre">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="295.0" layoutY="89.0" prefHeight="23.0" prefWidth="131.0" styleClass="label-info" stylesheets="@dashboardDesign.css" text="Type de l'oeuvre :">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="Type" layoutX="452.0" layoutY="89.0" prefHeight="22.0" prefWidth="85.0" text="Type">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="297.0" layoutY="131.0" prefHeight="23.0" prefWidth="131.0" styleClass="label-info" stylesheets="@dashboardDesign.css" text="Nom de l'artiste :">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="nom_Artiste" layoutX="452.0" layoutY="131.0" prefHeight="22.0" prefWidth="85.0" text="Nom_Artiste">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="297.0" layoutY="170.0" prefHeight="23.0" prefWidth="131.0" styleClass="label-info" stylesheets="@dashboardDesign.css" text="Description :">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Button fx:id="delete" layoutX="468.0" layoutY="341.0" mnemonicParsing="false" onAction="#delete" prefHeight="35.0" prefWidth="88.0" styleClass="delete-btn" stylesheets="@dashboardDesign.css" text="Supprimer" />
+      <Button fx:id="update" layoutX="371.0" layoutY="341.0" mnemonicParsing="false" onAction="#ModifierOeuvre" prefHeight="35.0" prefWidth="88.0" styleClass="update-btn" stylesheets="@dashboardDesign.css" text="Modifier" />
+      <Label fx:id="desc" layoutX="452.0" layoutY="170.0" prefHeight="22.0" prefWidth="85.0" stylesheets="@dashboardDesign.css" text="Description">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Button layoutX="8.0" layoutY="14.0" mnemonicParsing="false" onAction="#Retour" styleClass="import-btn" stylesheets="@dashboardDesign.css" text="Retour" />
+   </children>
+</AnchorPane>

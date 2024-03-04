@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="Controllers.MainAccueilController"
+            prefHeight="400.0" prefWidth="600.0">
+
+        <children>
+            <MenuBar layoutY="1.0" prefHeight="26.0" prefWidth="865.0">
+                <menus>
+                    <Menu fx:id="Accueil" mnemonicParsing="false" text="Accueil">
+                        <items>
+                            <MenuItem fx:id="sac" mnemonicParsing="false" onAction="#Accueil" text="Accueil" />
+                        </items>
+                    </Menu>
+                    <Menu mnemonicParsing="false" text="Formations">
+                        <items>
+                            <MenuItem mnemonicParsing="false" onAction="#Formations" text="Formations disponibles" />
+                        </items>
+                    </Menu>
+                    <Menu fx:id="Concours" mnemonicParsing="false" text="Concours">
+                        <items>
+                            <MenuItem mnemonicParsing="false" onAction="#Concours" text="Concours ouverts" />
+                        </items>
+                    </Menu>
+                    <Menu fx:id="Artistes" mnemonicParsing="false" text="Artistes">
+                        <items>
+                            <MenuItem mnemonicParsing="false" onAction="#artistes" text="Nos artistes" />
+                        </items>
+                    </Menu>
+                    <Menu fx:id="Oeuvres" mnemonicParsing="false" text="Oeuvres">
+                        <items>
+                            <MenuItem mnemonicParsing="false" onAction="#oeuvres" text="Oeuvres " />
+                        </items>
+                    </Menu>
+                    <Menu mnemonicParsing="false" text="Se connecter">
+                        <items>
+                            <MenuItem mnemonicParsing="false" onAction="#connect" text="se connecter" />
+                            <MenuItem mnemonicParsing="false" onAction="#inscrire" text="S'inscrire" />
+                        </items>
+                    </Menu>
+                </menus>
+            </MenuBar>
+
+
+                <!-- StackPane to load content -->
+                <StackPane fx:id="contentArea" />
+
+        </children>
+
+
+</AnchorPane>

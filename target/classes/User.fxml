@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="left-form" stylesheets="@loginDesign.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.USERcontroller">
+   <children>
+      <Button fx:id="PARTICIPER" layoutX="226.0" layoutY="200.0" mnemonicParsing="false" onAction="#PARTICIPERON" prefHeight="36.0" prefWidth="148.0" styleClass="inscrire-btn" text="PARTICIPER" />
+      <Button fx:id="VOTER" layoutX="226.0" layoutY="138.0" mnemonicParsing="false" onAction="#VOTERON" prefHeight="36.0" prefWidth="148.0" styleClass="login-btn" text="VOTER" />
+   </children>
+</AnchorPane>

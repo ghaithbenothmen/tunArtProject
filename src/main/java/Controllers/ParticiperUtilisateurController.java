@@ -2,10 +2,8 @@ package Controllers;
 
 import Entites.Candidatures;
 import Entites.Concours;
-import Entites.Votes;
 import Services.ServiceCandidatures;
 import Services.ServiceConcours;
-import Services.ServiceVotes;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -133,7 +131,7 @@ public class ParticiperUtilisateurController {
             // Handle button click
             alert1.setResultConverter(buttonType -> {
                 if (buttonType == okButton) {
-                    int user=4;
+                    int user=1;
                     LocalDate today = LocalDate.now();
                     java.sql.Date sqlDate= java.sql.Date.valueOf(today);
                     Candidatures v=new Candidatures(sqlDate,c.getReference(),user);

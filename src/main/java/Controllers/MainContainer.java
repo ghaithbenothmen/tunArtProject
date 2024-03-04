@@ -23,8 +23,11 @@ public class MainContainer implements Initializable {
     @FXML
     private StackPane contentArea;
     @FXML
-    void connect(ActionEvent event) {
-       // loadPage("/Login.fxml");
+    void logout(ActionEvent event) {
+        UserConnected = null;
+
+        // Redirect to the login page
+        loadPage("/Login.fxml");
     }
 
     @FXML
@@ -38,6 +41,10 @@ public class MainContainer implements Initializable {
         loadPage("../AfficherUser.fxml");
     }
 
+    @FXML
+    void concours(ActionEvent event) {
+        loadPage("/GestionConcours.fxml");
+    }
     @FXML
     void collab(ActionEvent event) {
         loadPage("/AfficherCollaborateur.fxml");

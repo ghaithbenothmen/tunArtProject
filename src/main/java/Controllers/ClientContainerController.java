@@ -6,11 +6,16 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
+
+import static Controllers.LoginController.UserConnected;
 
 public class ClientContainerController implements Initializable{
     @FXML
@@ -41,7 +46,10 @@ public class ClientContainerController implements Initializable{
     }
     @FXML
     void logout(ActionEvent event) {
+        UserConnected = null;
 
+        // Redirect to the login page
+        loadPage("/Login.fxml");
     }
 
     @FXML
@@ -50,14 +58,31 @@ public class ClientContainerController implements Initializable{
     }
 
     @FXML
-    void profil(ActionEvent event) {
-
+    void profil(ActionEvent event) throws IOException, SQLException {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Edit.fxml"));
+            Parent root = loader.load();
+            EditController controller = loader.getController();
+            controller.senduser(UserConnected);
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
     }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         //SidebarAdminController sidebar = new SidebarAdminController(this);
         this.loadPage("../InscriptionFormation.fxml");
     }
+    @FXML
+    void condidature(ActionEvent event) {
+        this.loadPage("../ParticiperUtilisateur.fxml");
+    }
+
+
 
     public void loadContent(Node node) {
         contentArea.getChildren().clear();

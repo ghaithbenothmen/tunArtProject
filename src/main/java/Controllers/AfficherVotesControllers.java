@@ -1,6 +1,5 @@
 package Controllers;
 
-import Entites.Concours;
 import Entites.Votes;
 import Services.ServiceVotes;
 import javafx.collections.FXCollections;

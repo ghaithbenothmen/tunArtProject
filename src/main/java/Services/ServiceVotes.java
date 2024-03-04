@@ -31,7 +31,7 @@ public class ServiceVotes implements IServiceA<Votes>{
     public void add(Votes votes) throws SQLException {
 
         java.util.Date utilDate = votes.getDate();
-        java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
+        Date sqlDate = new Date(utilDate.getTime());
         String req="INSERT INTO `vote` ( `Date`, `ID_concours`, `ID_user`) VALUES ('"+sqlDate+"', '"+votes.getID_concours()+"', '"+votes.getID_user()+"');";
         ste.executeUpdate(req);
     }
@@ -39,7 +39,7 @@ public class ServiceVotes implements IServiceA<Votes>{
     public void ajouterPST(Votes votes) throws SQLException {
 
         java.util.Date utilDate = votes.getDate();
-        java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
+        Date sqlDate = new Date(utilDate.getTime());
 
         String req="INSERT INTO `vote` ( `Date`, `ID_concours`, `ID_user`) VALUES ( ?,?,?);";
         PreparedStatement pre=con.prepareStatement(req);
@@ -70,7 +70,7 @@ public class ServiceVotes implements IServiceA<Votes>{
     public void updatea(Votes votes)  {
 
         java.util.Date utilDate = votes.getDate();
-        java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
+        Date sqlDate = new Date(utilDate.getTime());
 
         String query = "UPDATE `vote` SET `date`=?,`ID_concours`=?,`ID_user`=?, WHERE ID_vote=?";
         try {

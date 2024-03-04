@@ -42,7 +42,7 @@ public class GestionConcoursController {
     @FXML
     void ParticipateACTION(ActionEvent event) {
         try {
-            FXMLLoader loader=new FXMLLoader(getClass().getResource("/ParticiperUtilisateur.fxml"));
+            FXMLLoader loader=new FXMLLoader(getClass().getResource("/AfficherCandidatures.fxml"));
             Parent root=loader.load();
 
             Participate.getScene().setRoot(root);
@@ -68,7 +68,7 @@ public class GestionConcoursController {
     @FXML
     void VoteACTION(ActionEvent event) {
         try {
-            FXMLLoader loader=new FXMLLoader(getClass().getResource("/VoterUtilisateur.fxml"));
+            FXMLLoader loader=new FXMLLoader(getClass().getResource("/AfficherVotes.fxml"));
             Parent root=loader.load();
 
             Vote.getScene().setRoot(root);
@@ -84,7 +84,7 @@ public class GestionConcoursController {
             FXMLLoader loader=new FXMLLoader(getClass().getResource("/BestConcours.fxml"));
             Parent root=loader.load();
 
-            Vote.getScene().setRoot(root);
+            best.getScene().setRoot(root);
 
         } catch (IOException e) {
             throw new RuntimeException(e);

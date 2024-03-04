@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AfficherUserController">
+   <children>
+      <AnchorPane layoutX="10.0" prefHeight="400.0" prefWidth="610.0">
+         <children>
+            <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="400.0" prefWidth="600.0" stylesheets="@dashboardDesign.css">
+               <children>
+                  <AnchorPane layoutX="134.0" layoutY="66.0" prefHeight="400.0" prefWidth="600.0" stylesheets="@dashboardDesign.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <AnchorPane layoutX="14.0" layoutY="15.0" prefHeight="371.0" prefWidth="571.0" stylesheets="@dashboardDesign.css">
+                           <children>
+                              <AnchorPane layoutY="14.0" prefHeight="295.0" prefWidth="571.0" stylesheets="@dashboardDesign.css">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <TableView fx:id="userTable" layoutX="12.0" layoutY="53.0" prefHeight="232.0" prefWidth="546.0">
+                                       <columns>
+                                          <TableColumn fx:id="nomuser" prefWidth="76.80001831054688" text="Nom" />
+                                          <TableColumn fx:id="prenomuser" prefWidth="94.39995574951172" text="Prenom" />
+                                          <TableColumn fx:id="emailuser" prefWidth="107.20001220703125" text="Email" />
+                                          <TableColumn fx:id="teluser" prefWidth="137.5999755859375" text="Telephone" />
+                                          <TableColumn fx:id="roleuser" prefWidth="128.80007934570312" text="Role" />
+                                       </columns>
+                                    </TableView>
+                                    <TextField fx:id="cher" layoutX="14.0" layoutY="14.0" promptText="    Rechercher" />
+                                 </children>
+                              </AnchorPane>
+                              <Button layoutX="351.0" layoutY="325.0" mnemonicParsing="false" onAction="#deleteUser" prefHeight="35.0" prefWidth="88.0" styleClass="delete-btn" text="Supprimer" />
+                              <Button layoutX="463.0" layoutY="325.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="35.0" prefWidth="88.0" styleClass="add-btn" text="Ajouter">
+                                 <font>
+                                    <Font name="Futura Light BT" size="12.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -24,13 +24,12 @@ public class ServiceConcours implements IServiceA<Concours>{
         {
             System.out.println(e);
         }
-
     }
     @Override
     public void add(Concours concours) throws SQLException {
 
         java.util.Date utilDate = concours.getDate();
-        java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
+        Date sqlDate = new Date(utilDate.getTime());
 
         String req="INSERT INTO `concours` ( `date`, `type`, `prix`, `Lien`, `nom`) VALUES ( '"+sqlDate+"', '"+concours.getType()+"', '"+concours.getPrix()+"', '"+concours.getLien()+"', '"+concours.getNom()+"');";
         ste.executeUpdate(req);
@@ -38,7 +37,7 @@ public class ServiceConcours implements IServiceA<Concours>{
     public void ajouterPST(Concours concours) throws SQLException {
 
         java.util.Date utilDate = concours.getDate();
-        java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
+        Date sqlDate = new Date(utilDate.getTime());
 
         String req="INSERT INTO `concours` ( `date`, `type`, `prix`, `Lien`, `nom`) VALUES ( ?,?,?,?);";
         PreparedStatement pre=con.prepareStatement(req);
@@ -70,7 +69,7 @@ public class ServiceConcours implements IServiceA<Concours>{
     public void updatea(Concours concours)  {
 
         java.util.Date utilDate = concours.getDate();
-        java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
+        Date sqlDate = new Date(utilDate.getTime());
 
         String query = "UPDATE `concours` SET `date`=?,`type`=?,`prix`=?,`lien`=?,`nom`=? WHERE refrence=?";
         try {

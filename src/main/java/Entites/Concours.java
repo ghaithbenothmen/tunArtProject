@@ -106,7 +106,7 @@ public class Concours {
                 ", type=" + SType +
                 ", prix='" + prix + '\'' +
                 ", Lien=" + Lien +
-                ", Lien=" + nom +
+                ", Nom=" + nom +
                 "}";
     }
 

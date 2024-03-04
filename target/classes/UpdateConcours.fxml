@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #f2EBBF;" stylesheets="@dashboardDesign.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.UpdateConcoursController">
+    <children>
+        <TextField fx:id="txtprix" layoutX="90.0" layoutY="200.0" prefHeight="25.0" prefWidth="181.0" />
+        <TextField fx:id="txtlien" layoutX="89.0" layoutY="254.0" prefHeight="25.0" prefWidth="181.0" />
+        <ChoiceBox fx:id="ChoiceType" layoutX="89.0" layoutY="150.0" prefHeight="25.0" prefWidth="181.0" />
+        <Button fx:id="confirm" layoutX="210.0" layoutY="304.0" mnemonicParsing="false" onAction="#UpdateConcours" styleClass="add-btn" text="Confirm" />
+        <Label layoutX="37.0" layoutY="258.0" text="Lien:">
+         <font>
+            <Font name="Cambria Math" size="17.0" />
+         </font></Label>
+        <Label layoutX="39.0" layoutY="204.0" text="Prix:">
+         <font>
+            <Font name="Cambria Math" size="17.0" />
+         </font></Label>
+        <Label layoutX="36.0" layoutY="154.0" text="Type">
+         <font>
+            <Font name="Cambria Math" size="17.0" />
+         </font></Label>
+        <Label layoutX="36.0" layoutY="102.0" text="Date:">
+         <font>
+            <Font name="Cambria Math" size="17.0" />
+         </font></Label>
+        <Button fx:id="afficher" layoutX="89.0" layoutY="304.0" mnemonicParsing="false" onAction="#afficherConcours" styleClass="update-btn" text="Show" />
+      <Label layoutX="96.0" layoutY="17.0" prefHeight="45.0" prefWidth="213.0" text="Concours Name:">
+         <font>
+            <Font name="Cambria Math" size="30.0" />
+         </font>
+      </Label>
+      <Label fx:id="concoursID" layoutX="327.0" layoutY="31.0" prefHeight="26.0" prefWidth="40.0">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font></Label>
+      <TextField fx:id="txtnom" layoutX="367.0" layoutY="98.0" />
+      <Label layoutX="313.0" layoutY="102.0" text="Nom:">
+         <font>
+            <Font name="Cambria Math" size="17.0" />
+         </font></Label>
+      <DatePicker fx:id="dateinput" layoutX="89.0" layoutY="100.0" prefHeight="25.0" prefWidth="181.0" />
+    </children>
+</AnchorPane>

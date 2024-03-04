@@ -49,8 +49,6 @@ public class UpdateUserController implements Initializable {
     @FXML
     private TextField txtprenom;
 
-    @FXML
-    private ComboBox txtrole;
 
     @FXML
     private TextField txttel;
@@ -68,6 +66,8 @@ public class UpdateUserController implements Initializable {
     private User user;
     private String img;
     private String password;
+
+    private Role role;
     private Image imageGet;
 
     UserService userService = new UserService();
@@ -77,16 +77,16 @@ public class UpdateUserController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        ObservableList<String> roleNames = FXCollections.observableArrayList("ARTISTE", "CLIENT");
-        txtrole.setItems(roleNames);
-        txtrole.setValue("ARTISTE"); // Définir la valeur par défaut
+       // ObservableList<String> roleNames = FXCollections.observableArrayList("ARTISTE", "CLIENT");
+        //txtrole.setItems(roleNames);
+        //txtrole.setValue("ARTISTE"); // Définir la valeur par défaut
 
-        txtrole.valueProperty().addListener((observable, oldValue, newValue) -> {
+      /*  txtrole.valueProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue != null) {
                 Role role = Role.valueOf(String.valueOf(newValue));
                 System.out.println("Selected role: " + role);
             }
-        });
+        });*/
     }
 
 
@@ -96,8 +96,8 @@ public class UpdateUserController implements Initializable {
         String prenom = txtprenom.getText();
         String email = txtemail.getText();
         int tel = Integer.parseInt(txttel.getText());
-        String selectedRoleName = (String) txtrole.getSelectionModel().getSelectedItem();
-        Role role = Role.valueOf(selectedRoleName.toUpperCase());
+        //String selectedRoleName = (String) txtrole.getSelectionModel().getSelectedItem();
+       // Role role = Role.valueOf(selectedRoleName.toUpperCase());
 
 
 
@@ -118,11 +118,39 @@ public class UpdateUserController implements Initializable {
         try {
             userService.update(user);
             showAlert(Alert.AlertType.CONFIRMATION, "Succès", "User mise à jour", "L'utilisateur a été mise à jour avec succès.");
+            if (UserConnected.getRole()==Role.ARTISTE) {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/ArtisteContainer.fxml"));
+                Parent root = loader.load();
+                Scene scene = new Scene(root);
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                stage.setTitle("");
+                stage.setScene(scene);
+                stage.show();
+            }
+            if (UserConnected.getRole()==Role.CLIENT) {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/ClientContainer.fxml"));
+                Parent root = loader.load();
+                Scene scene = new Scene(root);
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                stage.setTitle("");
+                stage.setScene(scene);
+                stage.show();
+            }
+            if (UserConnected.getRole()==Role.ADMIN) {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/MainContainer.fxml"));
+                Parent root = loader.load();
+                Scene scene = new Scene(root);
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                stage.setTitle("");
+                stage.setScene(scene);
+                stage.show();
+            }
 
-            Stage stage = (Stage) txtnom.getScene().getWindow();
-            stage.show();
+
         } catch (SQLException e) {
             showAlert(Alert.AlertType.ERROR, "Erreur", "Erreur de mise à jour", "Une erreur s'est produite lors de la mise à jour : " + e.getMessage());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -158,11 +186,11 @@ public class UpdateUserController implements Initializable {
         txttel.setText(String.valueOf(user.getTel()));
 
         this.password = user.getMdp();
-
+        this.role=user.getRole();
         // Configuration des rôles ARTISTE et CLIENT uniquement
-        ObservableList<String> roleNames = FXCollections.observableArrayList("ARTISTE", "CLIENT");
-        txtrole.setItems(roleNames);
-        txtrole.setValue(user.getRole());
+        //ObservableList<String> roleNames = FXCollections.observableArrayList("ARTISTE", "CLIENT");
+        //txtrole.setItems(roleNames);
+        //txtrole.setValue(user.getRole());
 
 
         this.img = user.getImage();
@@ -205,16 +233,35 @@ public class UpdateUserController implements Initializable {
     private void retour_login(MouseEvent event) throws IOException {
 
 
+if (UserConnected.getRole()==Role.ARTISTE) {
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("/ArtisteContainer.fxml"));
+    Parent root = loader.load();
+    Scene scene = new Scene(root);
+    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+    stage.setTitle("");
+    stage.setScene(scene);
+    stage.show();
+}
+        if (UserConnected.getRole()==Role.CLIENT) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/ClientContainer.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setTitle("");
+            stage.setScene(scene);
+            stage.show();
+        }
+        if (UserConnected.getRole()==Role.ADMIN) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/MainContainer.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setTitle("");
+            stage.setScene(scene);
+            stage.show();
+        }
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/MainContainer.fxml"));
-        Parent root = loader.load();
 
-
-        Scene scene = new Scene(root);
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setTitle("");
-        stage.setScene(scene);
-        stage.show();
 
 
 

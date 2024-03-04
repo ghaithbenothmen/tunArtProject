@@ -1,5 +1,6 @@
 package Controllers;
 
+import Entites.Role;
 import Entites.User;
 import Services.UserService;
 import javafx.event.ActionEvent;
@@ -148,13 +149,33 @@ public class EditController implements Initializable {
     @FXML
     private void back(MouseEvent event) throws IOException {
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/MainContainer.fxml"));
-        Parent root = loader.load();
-        Scene scene = new Scene(root);
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setTitle("");
-        stage.setScene(scene);
-        stage.show();
+        if (UserConnected.getRole()== Role.ARTISTE) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/ArtisteContainer.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setTitle("");
+            stage.setScene(scene);
+            stage.show();
+        }
+        if (UserConnected.getRole()==Role.CLIENT) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/ClientContainer.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setTitle("");
+            stage.setScene(scene);
+            stage.show();
+        }
+        if (UserConnected.getRole()==Role.ADMIN) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/MainContainer.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setTitle("");
+            stage.setScene(scene);
+            stage.show();
+        }
 
 
 

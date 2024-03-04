@@ -30,14 +30,14 @@ public class ServiceCandidatures implements IServiceA<Candidatures>{
         public void add(Candidatures votes) throws SQLException {
 
             java.util.Date utilDate = votes.getDate();
-            java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
+            Date sqlDate = new Date(utilDate.getTime());
             String req="INSERT INTO `candidature` ( `Date`, `ID_concours`, `ID_user`) VALUES ('"+sqlDate+"', '"+votes.getID_concours()+"', '"+votes.getID_user()+"');";
             ste.executeUpdate(req);
         }
         public void ajouterPST(Votes votes) throws SQLException {
 
             java.util.Date utilDate = votes.getDate();
-            java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
+            Date sqlDate = new Date(utilDate.getTime());
 
             String req="INSERT INTO `candidature` ( `Date`, `ID_concours`, `ID_user`) VALUES ( ?,?,?);";
             PreparedStatement pre=con.prepareStatement(req);
@@ -68,7 +68,7 @@ public class ServiceCandidatures implements IServiceA<Candidatures>{
         public void updatea(Candidatures votes)  {
 
             java.util.Date utilDate = votes.getDate();
-            java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
+            Date sqlDate = new Date(utilDate.getTime());
 
             String query = "UPDATE `candidature` SET `date`=?,`ID_concours`=?,`ID_user`=?, WHERE ID_vote=?";
             try {
@@ -160,6 +160,26 @@ public class ServiceCandidatures implements IServiceA<Candidatures>{
                 this.deletea(i);
         }
 
+    }
+
+    public int BestConcours(Concours c)
+    {
+
+        int candidature_count = 0;
+        String query = "SELECT COUNT(*) AS candidature_count FROM candidature WHERE ID_concours = "+c.getReference()+"";
+        try {
+
+            PreparedStatement preparedStatement = con.prepareStatement(query);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next()) {
+                candidature_count = resultSet.getInt("candidature_count");
+            }
+        } catch (SQLException exception) {
+            System.out.println(exception.getMessage());
+        }
+        System.out.println(candidature_count);
+        return candidature_count;
     }
 
 }

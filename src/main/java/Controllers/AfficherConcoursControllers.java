@@ -1,9 +1,7 @@
 package Controllers;
 
-import Entites.Candidatures;
 import Entites.Concours;
 import Entites.Type;
-import Entites.Votes;
 import Services.ServiceCandidatures;
 import Services.ServiceConcours;
 import Services.ServiceVotes;
@@ -17,9 +15,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.Date;
-import java.time.LocalDate;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -57,6 +53,8 @@ public class AfficherConcoursControllers {
 
     @FXML
     private Button updateBtn;
+    @FXML
+    private Button RETURN;
 
     @FXML
     private Button print;
@@ -227,6 +225,17 @@ public class AfficherConcoursControllers {
             ExportToExcel.exportToExcel(ser.findAll(), file);
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
+        }
+    }
+    @FXML
+    void RETURNbtn(ActionEvent event) {
+        try {
+            FXMLLoader loader=new FXMLLoader(getClass().getResource("/GestionConcours.fxml"));
+            Parent root=loader.load();
+            RETURN.getScene().setRoot(root);
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 }

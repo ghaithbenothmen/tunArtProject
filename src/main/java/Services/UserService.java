@@ -213,6 +213,31 @@ public class UserService implements IService<User> {
         }
         return data;
     }
+    public List<User> findAll1() throws SQLException {
+        List<User> data= new ArrayList<>();
+        String ch="ARTISTE" ;
+        String req = "SELECT * FROM user where role=?";
+        PreparedStatement ste = Con.prepareStatement(req);
+        ste.setString(1, ch);
+        System.out.println(req);
+        ResultSet res= ste.executeQuery();
+        while (res.next()){
+            User u = new User();
+            u.setId(res.getInt("ID"));
+            u.setNom(res.getString("Nom"));
+            u.setPrenom(res.getString("Prenom"));
+            u.setEmail(res.getString("Email"));
+            u.setMdp(res.getString("Mdp"));
+            u.setTel(res.getInt("Tel"));
+            u.setRole(Role.valueOf(res.getString("Role")));
+
+            data.add(u);
+
+        }
+        return data;
+    }
+
+
 
 
     public boolean existemail(String email) throws SQLException {

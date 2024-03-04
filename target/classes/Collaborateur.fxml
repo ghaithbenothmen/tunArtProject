@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.CollaborateurController">
+   <children>
+      <TextField fx:id="txtnomcomplet" alignment="CENTER" layoutX="162.0" layoutY="158.0" prefHeight="31.0" prefWidth="118.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtmail" alignment="CENTER" layoutX="162.0" layoutY="207.0" prefHeight="31.0" prefWidth="118.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <Text layoutX="57.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom Complet">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="93.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Button fx:id="ajouter" layoutX="174.0" layoutY="309.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="38.0" prefWidth="94.0" style="-fx-background-color: rgb(140,190,178);" text="Ajouter" textFill="WHITE" />
+      <Button fx:id="annuler" layoutX="323.0" layoutY="309.0" mnemonicParsing="false" onAction="#annuler" prefHeight="38.0" prefWidth="94.0" style="-fx-background-color: f06060;" text="Annuler" textFill="WHITE" />
+      <Button layoutX="23.0" layoutY="22.0" mnemonicParsing="false" onAction="#retour" style="-fx-background-color: f3b562;" text="Retour" textFill="WHITE" />
+      <Text layoutX="126.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="AJOUTER UN COLLABORATEUR">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

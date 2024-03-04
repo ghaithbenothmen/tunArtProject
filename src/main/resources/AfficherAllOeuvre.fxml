@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane prefHeight="926.0" prefWidth="1139.0" stylesheets="@dashboardDesign.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AfficherAllOeuvreController">
+    <children>
+        <AnchorPane prefHeight="926.0" prefWidth="1174.0" stylesheets="@dashboardDesign.css">
+            <children>
+                <AnchorPane layoutY="-7.0" prefHeight="1406.0" prefWidth="1246.0" stylesheets="@dashboardDesign.css">
+                    <styleClass>
+                        <String fx:value="shadow" />
+                        <String fx:value="white-bg" />
+                    </styleClass>
+                    <children>
+                        <ScrollPane layoutX="-2.0" prefHeight="670.0" prefWidth="1246.0">
+                            <content>
+                                <AnchorPane>
+                                    <children>
+                                        <GridPane fx:id="grid" layoutX="14.0" layoutY="14.0">
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                        </GridPane>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </ScrollPane>
+                    </children>
+                </AnchorPane>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
