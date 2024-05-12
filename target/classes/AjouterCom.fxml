@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="665.0" prefWidth="856.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AjouterComController">
+   <children>
+      <TableView fx:id="TableView" layoutX="173.0" layoutY="143.0" prefHeight="380.0" prefWidth="510.0">
+         <columns>
+            <TableColumn fx:id="PrenomCol" prefWidth="122.0" text="Prenom" />
+            <TableColumn fx:id="TitreCol" prefWidth="102.0" text="Titre" />
+            <TableColumn fx:id="contenuCol" prefWidth="285.0" text="contenuC" />
+         </columns>
+      </TableView>
+      <Label layoutX="173.0" layoutY="542.0" text="Contenu :">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="ContenuTA" layoutX="285.0" layoutY="539.0" prefHeight="38.0" prefWidth="312.0" />
+      <Button fx:id="BtnAjouter" layoutX="597.0" layoutY="539.0" mnemonicParsing="false" onAction="#AjouterCom" prefHeight="38.0" prefWidth="83.0" styleClass="update-btn" stylesheets="@dashboardDesign.css" text="Ajouter">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font></Button>
+      <Label layoutX="269.0" layoutY="55.0" text="Commentaire" textFill="#f5be07">
+         <font>
+            <Font name="System Bold Italic" size="50.0" />
+         </font>
+      </Label>
+      <Button fx:id="RetourBtn" onAction="#NavigezVersListActU" styleClass="delete-btn" stylesheets="@dashboardDesign.css" layoutX="396.0" layoutY="607.0" mnemonicParsing="false" text="Retour" />
+   </children>
+   <stylesheets>
+      <URL value="@dashboardDesign.css" />
+      <URL value="@loginDesign.css" />
+   </stylesheets>
+</AnchorPane>
