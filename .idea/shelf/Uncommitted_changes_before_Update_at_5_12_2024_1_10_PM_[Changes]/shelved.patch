@@ -1,0 +1,416 @@
+Index: src/main/java/Utils/ConnexionDB.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Utils;\r\n\r\nimport java.sql.*;\r\n\r\npublic class ConnexionDB {\r\n\r\n    private Connection con;\r\n\r\n    private static ConnexionDB data;\r\n    private String url = \"jdbc:mysql://localhost:3306/pidev\";\r\n    private String user = \"root\";\r\n    private String pwd = \"\";\r\n\r\n    private ConnexionDB() {\r\n        try {\r\n            con = DriverManager.getConnection(url, user, pwd);\r\n            System.out.println(\"connexion établie\");\r\n        } catch (SQLException e) {\r\n            System.out.println(e);\r\n        }\r\n    }\r\n\r\n    public Connection getCon() {\r\n        return con;\r\n    }\r\n\r\n    public static ConnexionDB getInstance() {\r\n        if (data == null)\r\n            data = new ConnexionDB();\r\n        return data;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/Utils/ConnexionDB.java b/src/main/java/Utils/ConnexionDB.java
+--- a/src/main/java/Utils/ConnexionDB.java	(revision c8ba8720b44d3ca2384d1e7290818c40de987e62)
++++ b/src/main/java/Utils/ConnexionDB.java	(date 1715514428127)
+@@ -7,7 +7,7 @@
+     private Connection con;
+ 
+     private static ConnexionDB data;
+-    private String url = "jdbc:mysql://localhost:3306/pidev";
++    private String url = "jdbc:mysql://localhost:3306/tunart";
+     private String user = "root";
+     private String pwd = "";
+ 
+Index: src/main/java/Services/OeuvreService.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Services;\r\n\r\nimport Entites.Like;\r\nimport Entites.Oeuvre;\r\nimport Entites.TypeOeuvre;\r\nimport Entites.User;\r\nimport Utils.ConnexionDB;\r\n\r\nimport java.sql.Connection;\r\nimport java.sql.SQLException;\r\nimport java.sql.Statement;\r\nimport java.text.SimpleDateFormat;\r\nimport java.util.ArrayList;\r\nimport java.util.List;\r\nimport java.sql.*;\r\n\r\npublic class OeuvreService implements IOeuvre<Oeuvre>{\r\n\r\n    Connection con;\r\n\r\n    private Statement ste;\r\n\r\n    private static OeuvreService ser;\r\n\r\n\r\n    public OeuvreService() {\r\n        try {\r\n            Connection con1 = ConnexionDB.getInstance().getCon();\r\n            ste = con1.createStatement();\r\n        } catch (SQLException e) {\r\n            System.out.println(e.getMessage());\r\n        }\r\n    }\r\n    public static OeuvreService getInstance() {\r\n        if (ser == null) ser = new OeuvreService();\r\n        return ser;\r\n    }\r\n\r\n    @Override\r\n    public void add(Oeuvre o) throws SQLException {\r\n        SimpleDateFormat sdf = new SimpleDateFormat(\"yyyy-MM-dd\");\r\n        String formattedDate = sdf.format(o.getDate_Publication());\r\n\r\n        // Handle null value for the note field\r\n\r\n        String uri = o.getImg().replace(\"\\\\\", \"/\");\r\n\r\n        String req = \"INSERT INTO Oeuvre (nom_Oeuvre, img, date_Publication, description, note, TypeOeuvre, artiste_id) \" +\r\n                \"VALUES ('\" + o.getNom_Ouvre() + \"', '\" + uri + \"', '\" + formattedDate + \"', '\" +\r\n                o.getDescription() + \"', \" + o.getNote() + \", '\" + o.getTypeOeuvre() + \"', \" + o.getArtiste_id().getId() + \")\";\r\n\r\n        ste.executeUpdate(req);\r\n    }\r\n\r\n    @Override\r\n    public boolean update(Oeuvre o) throws SQLException {\r\n        String uri = o.getImg().replace(\"\\\\\", \"/\");\r\n\r\n        String req = \"UPDATE `Oeuvre` SET `nom_Oeuvre`='\" + o.getNom_Ouvre()\r\n                + \"', `img`='\" +uri\r\n                + \"', `date_Publication`='\" + o.getDate_Publication()\r\n                + \"', `description`='\" +o.getDescription()\r\n                + \"', `note`='\" + o.getNote()\r\n                + \"', `TypeOeuvre`='\" + o.getTypeOeuvre()\r\n                + \"', `artiste_id`='\" + o.getArtiste_id().getId()\r\n                + \"' WHERE Ref='\" + o.getRef() + \"';\";\r\n\r\n        int rowsUpdated = ste.executeUpdate(req);\r\n\r\n        return rowsUpdated > 0;\r\n    }\r\n\r\n\r\n    @Override\r\n    public boolean delete(Oeuvre o) throws SQLException {\r\n        String req2 = \"DELETE FROM `Oeuvre` WHERE ref='\" + o.getRef() + \"';\";\r\n        int rowsDeleted = ste.executeUpdate(req2);\r\n\r\n        return rowsDeleted > 0;\r\n    }\r\n\r\n\r\n\r\n    @Override\r\n    public Oeuvre findByRef(int reff) throws SQLException {\r\n        String req = \"SELECT * FROM `Oeuvre` WHERE ref='\" + reff+ \"';\";\r\n        ResultSet res = ste.executeQuery(req);\r\n\r\n        if (res.next()) {\r\n            int ref = res.getInt(1);\r\n            int artiste_id = res.getInt(2);\r\n            String nom_oeuvre = res.getString(2);\r\n            String img = res.getString(\"img\");\r\n            java.util.Date date_publication = res.getDate(\"date_publication\");\r\n            String description = res.getString(\"description\");\r\n            int note = res.getInt(\"note\");\r\n            TypeOeuvre TypeOeuvre = Entites.TypeOeuvre.valueOf(res.getString(\"TypeOeuvre\"));\r\n\r\n            UserService userService = new UserService();\r\n            User artiste = userService.findById(artiste_id);\r\n\r\n\r\n            return new Oeuvre(ref,nom_oeuvre,img,date_publication,description,note,TypeOeuvre,artiste);\r\n        }\r\n\r\n        return null;\r\n    }\r\n\r\n    public List<Oeuvre> findAll() throws SQLException {\r\n        List<Oeuvre> lO = new ArrayList<>();\r\n\r\n        ResultSet res = ste.executeQuery(\"select * from oeuvre\");\r\n\r\n        while (res.next()) {\r\n            int ref = res.getInt(\"Ref\");\r\n\r\n            int artiste_id = res.getInt(\"artiste_id\");\r\n            String nom_Oeuvre = res.getString(\"nom_Oeuvre\");\r\n            String img = res.getString(\"img\");\r\n            java.util.Date date_Publication = res.getDate(\"date_Publication\");\r\n            String description = res.getString(\"description\");\r\n            int note = res.getInt(\"note\");\r\n            TypeOeuvre typeOeuvre = TypeOeuvre.valueOf(res.getString(\"TypeOeuvre\"));\r\n\r\n            UserService userService = new UserService();\r\n            User artiste = userService.findById(artiste_id);\r\n\r\n\r\n            Oeuvre o=new Oeuvre(ref,nom_Oeuvre,img,date_Publication,description,note,typeOeuvre,artiste);\r\n//            System.out.println(o);\r\n            lO.add(o);\r\n\r\n        }\r\n//        System.out.println(lO);\r\n        return lO;\r\n    }\r\n\r\n    public List<Oeuvre> findByUserId(int userId) throws SQLException {\r\n        List<Oeuvre> oeuvre = new ArrayList<>();\r\n        String query = \"SELECT * FROM oeuvre WHERE artiste_id = \" + userId;\r\n        ResultSet resultSet = ste.executeQuery(query);\r\n\r\n        while (resultSet.next()) {\r\n            int ref = resultSet.getInt(\"Ref\");\r\n            String nom_Oeuvre = resultSet.getString(\"nom_Oeuvre\");\r\n            int artiste_id = resultSet.getInt(\"artiste_id\");\r\n            Date date_Publication = resultSet.getDate(\"date_Publication\");\r\n            String description = resultSet.getString(\"description\");\r\n            int note = resultSet.getInt(\"note\");\r\n            TypeOeuvre typeOeuvre = TypeOeuvre.valueOf(resultSet.getString(\"TypeOeuvre\"));\r\n\r\n\r\n            String img = resultSet.getString(\"img\");\r\n\r\n\r\n\r\n            UserService userService = new UserService();\r\n            User artiste = userService.findById(artiste_id);\r\n\r\n            Oeuvre o = new Oeuvre(ref,nom_Oeuvre,img,date_Publication,description,note,typeOeuvre,artiste);\r\n            oeuvre.add(o);\r\n        }\r\n\r\n        return oeuvre;\r\n    }\r\n\r\n    public int nbrlike(Oeuvre o) throws SQLException{\r\n        con = ConnexionDB.getInstance().getCon();\r\n        int i = 0;\r\n        String req = \"SELECT note FROM `oeuvre` WHERE Ref=?\";\r\n        PreparedStatement ps = con.prepareStatement(req);\r\n        ps.setInt(1, o.getRef());\r\n        ResultSet rs = ps.executeQuery();\r\n        while(rs.next()) {\r\n            i = rs.getInt(\"note\");\r\n        }\r\n        return i;\r\n    }\r\n\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/Services/OeuvreService.java b/src/main/java/Services/OeuvreService.java
+--- a/src/main/java/Services/OeuvreService.java	(revision c8ba8720b44d3ca2384d1e7290818c40de987e62)
++++ b/src/main/java/Services/OeuvreService.java	(date 1714648829208)
+@@ -25,8 +25,8 @@
+ 
+     public OeuvreService() {
+         try {
+-            Connection con1 = ConnexionDB.getInstance().getCon();
+-            ste = con1.createStatement();
++            Connection con = ConnexionDB.getInstance().getCon();
++            ste = con.createStatement();
+         } catch (SQLException e) {
+             System.out.println(e.getMessage());
+         }
+Index: src/main/java/Controllers/AfficherAllOeuvreController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/Controllers/AfficherAllOeuvreController.java b/src/main/java/Controllers/AfficherAllOeuvreController.java
+new file mode 100644
+--- /dev/null	(date 1709544360557)
++++ b/src/main/java/Controllers/AfficherAllOeuvreController.java	(date 1709544360557)
+@@ -0,0 +1,78 @@
++package Controllers;
++
++import Entites.Oeuvre;
++import Services.OeuvreService;
++import javafx.collections.FXCollections;
++import javafx.collections.ObservableList;
++import javafx.event.ActionEvent;
++import javafx.fxml.FXML;
++import javafx.fxml.FXMLLoader;
++import javafx.fxml.Initializable;
++import javafx.scene.Parent;
++import javafx.scene.Scene;
++import javafx.scene.control.Button;
++import javafx.scene.layout.AnchorPane;
++import javafx.scene.layout.GridPane;
++import javafx.stage.Stage;
++
++import java.io.IOException;
++import java.net.URL;
++import java.sql.SQLException;
++import java.util.List;
++import java.util.ResourceBundle;
++
++public class AfficherAllOeuvreController implements Initializable {
++
++    @FXML
++    private Button add;
++
++    @FXML
++    private GridPane grid;
++
++    public void displayAllOeuvreCard(List<Oeuvre> oeuvreList) {
++//        oeuvreList.clear();
++//        oeuvreList.addAll(oeuvreService.findAll());
++        System.out.println("hello new0"+oeuvreList);
++        grid.getRowConstraints().clear();
++        grid.getColumnConstraints().clear();
++        int row = 0;
++        int column = 0;
++
++        for(Oeuvre oeuvre : oeuvreList) {
++            try {
++                FXMLLoader loader = new FXMLLoader(getClass().getResource("../OeuvreCard.fxml"));
++                AnchorPane pane = loader.load();
++                OeuvreCardController OCard = loader.getController();
++                OCard.setData(oeuvre);
++                OCard.setOeuvre(oeuvre);
++                grid.addRow(row);
++                grid.add(pane, column, row);
++
++                column++;
++                if(column == 3){
++                    column = 0;
++                    row +=1;
++                }
++            } catch (Exception e){
++                System.out.println(""+e);
++            }
++        }
++    }
++    private final OeuvreService oeuvreService = new OeuvreService();
++    private ObservableList<Oeuvre> oeuvreList = FXCollections.observableArrayList();
++    public ObservableList<Oeuvre> getAllOeuvreCard() throws SQLException {
++
++        oeuvreList.addAll(oeuvreService.findAll());
++        return oeuvreList;
++    }
++    @Override
++    public void initialize(URL url, ResourceBundle resourceBundle) {
++
++
++        displayAllOeuvreCard(oeuvreList);
++
++
++    }
++
++}
++
+Index: src/main/resources/AfficherAllOeuvre.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/AfficherAllOeuvre.fxml b/src/main/resources/AfficherAllOeuvre.fxml
+new file mode 100644
+--- /dev/null	(date 1709544121144)
++++ b/src/main/resources/AfficherAllOeuvre.fxml	(date 1709544121144)
+@@ -0,0 +1,41 @@
++<?xml version="1.0" encoding="UTF-8"?>
++
++<?import java.lang.String?>
++<?import javafx.scene.control.ScrollPane?>
++<?import javafx.scene.layout.AnchorPane?>
++<?import javafx.scene.layout.ColumnConstraints?>
++<?import javafx.scene.layout.GridPane?>
++<?import javafx.scene.layout.RowConstraints?>
++
++<AnchorPane prefHeight="579.0" prefWidth="823.0" stylesheets="@../../../../../../../tunArtProject-Ghaith-branch/src/main/resources/dashboardDesign.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AfficherAllOeuvreController">
++   <children>
++      <AnchorPane prefHeight="687.0" prefWidth="922.0" stylesheets="@../../../../../../../tunArtProject-Ghaith-branch/src/main/resources/dashboardDesign.css">
++         <children>
++            <AnchorPane layoutY="-7.0" prefHeight="687.0" prefWidth="922.0" stylesheets="@../../../../../../../tunArtProject-Ghaith-branch/src/main/resources/dashboardDesign.css">
++               <styleClass>
++                  <String fx:value="shadow" />
++                  <String fx:value="white-bg" />
++               </styleClass>
++               <children>
++                  <ScrollPane layoutX="-2.0" prefHeight="687.0" prefWidth="922.0">
++                     <content>
++                        <AnchorPane>
++                           <children>
++                              <GridPane fx:id="grid" layoutX="14.0" layoutY="14.0">
++                                 <columnConstraints>
++                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
++                                 </columnConstraints>
++                                 <rowConstraints>
++                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
++                                 </rowConstraints>
++                              </GridPane>
++                           </children>
++                        </AnchorPane>
++                     </content>
++                  </ScrollPane>
++               </children>
++            </AnchorPane>
++         </children>
++      </AnchorPane>
++   </children>
++</AnchorPane>
+Index: src/main/java/Controllers/ModifierReclamationController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Controllers;\r\n\r\nimport Entites.*;\r\nimport Services.ReclamationService;\r\nimport Services.UserService;\r\nimport javafx.collections.FXCollections;\r\nimport javafx.collections.ObservableList;\r\nimport javafx.event.ActionEvent;\r\nimport javafx.fxml.FXML;\r\nimport javafx.fxml.FXMLLoader;\r\nimport javafx.scene.Parent;\r\nimport javafx.scene.Scene;\r\nimport javafx.scene.control.*;\r\nimport javafx.scene.image.Image;\r\nimport javafx.stage.Stage;\r\nimport org.controlsfx.control.Notifications;\r\n\r\nimport java.io.File;\r\nimport java.io.IOException;\r\nimport java.net.MalformedURLException;\r\nimport java.sql.SQLException;\r\nimport java.time.LocalDate;\r\nimport java.time.ZoneId;\r\nimport java.util.Calendar;\r\n\r\nimport static Controllers.LoginController.UserConnected;\r\n\r\npublic class ModifierReclamationController {\r\n    boolean updated;\r\n\r\n    @FXML\r\n    private Button add;\r\n\r\n    @FXML\r\n    private TextField textrec;\r\n\r\n    @FXML\r\n    private TextField typerec;\r\n    private GestionReclamation gestionReclamation;\r\n\r\n    public void setGestionReclamationController(GestionReclamation gestionReclamation) {\r\n        this.gestionReclamation = gestionReclamation;\r\n    }\r\n    Reclamation reclamation;\r\n    public void initData(Reclamation reclamation) throws SQLException {\r\n        this.reclamation = reclamation;\r\n        textrec.setText(reclamation.getText());\r\n        typerec.setText(reclamation.getType());\r\n\r\n    }\r\n    private void showAlert(Alert.AlertType type, String title, String header, String content) {\r\n        Alert alert = new Alert(type);\r\n        alert.setTitle(title);\r\n        alert.setHeaderText(header);\r\n        alert.setContentText(content);\r\n        alert.showAndWait();\r\n    }\r\n    ReclamationService reclamationService = new ReclamationService();\r\n    UserService userService= new UserService();\r\n\r\n    @FXML\r\n    void ModifierReclamation(ActionEvent event) throws SQLException {\r\n\r\n        String type = typerec.getText();\r\n        String text = textrec.getText();\r\n\r\n        Reclamation updatedReclamation = new Reclamation();\r\n        updatedReclamation.setId(reclamation.getId());\r\n        updatedReclamation.setText(type);\r\n        updatedReclamation.setType(text);\r\n\r\n        int userid = UserConnected.getId();\r\n\r\n        User user = userService.findById(userid);\r\n\r\n        updatedReclamation.setId_user(user);\r\n\r\n\r\n        try {\r\n            reclamationService.update(updatedReclamation);\r\n            // Show confirmation alert with OK button handler\r\n            showAlertWithRedirect(Alert.AlertType.CONFIRMATION, \"Succès\", \"Formation mise à jour\",\r\n                    \"La formation a été mise à jour avec succès.\", \"GestionReclamation.fxml\");\r\n\r\n        } catch (SQLException e) {\r\n            showAlert(Alert.AlertType.ERROR, \"Erreur\", \"Erreur de mise à jour\",\r\n                    \"Une erreur s'est produite lors de la mise à jour de la formation : \" + e.getMessage());\r\n        }\r\n\r\n        updated=true;\r\n        if (updated) {\r\n            Notifications.create()\r\n                    .title(\"Notification Title\")\r\n                    .text(UserConnected.getNom()+\"a modifier une oeuvre\")\r\n                    .showInformation();\r\n        }\r\n\r\n    }\r\n\r\n    // Show alert with OK button handler for redirection\r\n    private void showAlertWithRedirect(Alert.AlertType type, String title, String header, String content, String fxmlFile) {\r\n        Alert alert = new Alert(type);\r\n        alert.setTitle(title);\r\n        alert.setHeaderText(header);\r\n        alert.setContentText(content);\r\n\r\n        ButtonType okButton = new ButtonType(\"OK\", ButtonBar.ButtonData.OK_DONE);\r\n        alert.getButtonTypes().setAll(okButton);\r\n\r\n        alert.showAndWait().ifPresent(buttonType -> {\r\n            if (buttonType == okButton) {\r\n                // Redirect to GestionReclamation.fxml page\r\n                try {\r\n                    FXMLLoader loader = new FXMLLoader(getClass().getResource(\"../GestionReclamation.fxml\"));\r\n                    Parent root = loader.load();\r\n                    Scene scene = new Scene(root);\r\n                    Stage stage = (Stage) typerec.getScene().getWindow();\r\n                    stage.setScene(scene);\r\n                    stage.show();\r\n                } catch (IOException e) {\r\n                    e.printStackTrace();\r\n                }\r\n            }\r\n        });\r\n    }\r\n\r\n}\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/Controllers/ModifierReclamationController.java b/src/main/java/Controllers/ModifierReclamationController.java
+--- a/src/main/java/Controllers/ModifierReclamationController.java	(revision c8ba8720b44d3ca2384d1e7290818c40de987e62)
++++ b/src/main/java/Controllers/ModifierReclamationController.java	(date 1709540630042)
+@@ -21,10 +21,13 @@
+ import java.sql.SQLException;
+ import java.time.LocalDate;
+ import java.time.ZoneId;
++import java.util.Arrays;
+ import java.util.Calendar;
++import java.util.List;
+ 
+ import static Controllers.LoginController.UserConnected;
+ 
++
+ public class ModifierReclamationController {
+     boolean updated;
+ 
+@@ -44,8 +47,8 @@
+     Reclamation reclamation;
+     public void initData(Reclamation reclamation) throws SQLException {
+         this.reclamation = reclamation;
+-        textrec.setText(reclamation.getText());
+-        typerec.setText(reclamation.getType());
++        typerec.setText(reclamation.getText());
++        textrec.setText(reclamation.getType());
+ 
+     }
+     private void showAlert(Alert.AlertType type, String title, String header, String content) {
+@@ -60,42 +63,58 @@
+ 
+     @FXML
+     void ModifierReclamation(ActionEvent event) throws SQLException {
+-
++        System.out.println(UserConnected.getRole().equals(Role.ARTISTE));
+         String type = typerec.getText();
+         String text = textrec.getText();
++        System.out.println(textrec.getText());
+ 
++        // Check for bad words in the text
++        String sanitizedText = bad_words(text);
++
++        // Proceed with updating the reclamation
+         Reclamation updatedReclamation = new Reclamation();
++        System.out.println(textrec.getText());
+         updatedReclamation.setId(reclamation.getId());
+-        updatedReclamation.setText(type);
+-        updatedReclamation.setType(text);
++        updatedReclamation.setType(type);
++        System.out.println(textrec.getText());
++        updatedReclamation.setText(text);
++        System.out.println(textrec.getText());
+ 
+-        int userid = UserConnected.getId();
++        // Replace bad words with **
++        if (!sanitizedText.equals(text)) {
++            showAlert(Alert.AlertType.WARNING, "Warning", "Please enter a reclamation without bad words.","Please enter a reclamation without bad words");
++            text = sanitizedText; // Update text with sanitized version
++        }
+ 
+-        User user = userService.findById(userid);
++        // Set the updated text in the reclamation object
++        updatedReclamation.setText(text);
+ 
++        int userId = UserConnected.getId();
++        User user = userService.findById(userId);
+         updatedReclamation.setId_user(user);
+ 
+-
+         try {
+             reclamationService.update(updatedReclamation);
++
+             // Show confirmation alert with OK button handler
+-            showAlertWithRedirect(Alert.AlertType.CONFIRMATION, "Succès", "Formation mise à jour",
+-                    "La formation a été mise à jour avec succès.", "GestionReclamation.fxml");
++            showAlertWithRedirect(Alert.AlertType.CONFIRMATION, "Succès", "Reclamation mise à jour",
++                    "La réclamation a été mise à jour avec succès.", "GestionReclamation.fxml");
+ 
+         } catch (SQLException e) {
+             showAlert(Alert.AlertType.ERROR, "Erreur", "Erreur de mise à jour",
+-                    "Une erreur s'est produite lors de la mise à jour de la formation : " + e.getMessage());
++                    "Une erreur s'est produite lors de la mise à jour de la réclamation : " + e.getMessage());
+         }
+ 
+-        updated=true;
++        // Show alert about bad words
++        updated = true;
+         if (updated) {
+             Notifications.create()
+                     .title("Notification Title")
+-                    .text(UserConnected.getNom()+"a modifier une oeuvre")
++                    .text(UserConnected.getNom() + " a modifié une réclamation")
+                     .showInformation();
+         }
+-
+     }
++
+ 
+     // Show alert with OK button handler for redirection
+     private void showAlertWithRedirect(Alert.AlertType type, String title, String header, String content, String fxmlFile) {
+@@ -122,7 +141,23 @@
+                 }
+             }
+         });
++
+     }
++    public String bad_words(String inputText) {
++        List<String> badWordsList = Arrays.asList("fuck", "fucked", "nigga", "putin", "merde", "pute", "schlampe", "fuck you", "arse", "arsehole", "ass", "asses", "assface", "assfaces", "asshole", "assholes", "bastard", "bastards", "beaner", "bellend", "bint", "bitch", "bitches", "bitchy", "blowjob", "blump", "blumpkin", "bollocks");
++
++        String sanitizedText = inputText;
++
++        for (String badWord : badWordsList) {
++            if (sanitizedText.toLowerCase().contains(badWord.toLowerCase())) {
++                // Replace bad word with **
++                sanitizedText = sanitizedText.replaceAll("\\b" + badWord + "\\b", "**");
++            }
++        }
++
++        return sanitizedText;
++    }
++
+ 
+ }
+ 
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"21315bfc-118e-44e1-a34f-1ed61d3c161c\" name=\"Changes\" comment=\"api notification\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/Controllers/AjouterReclamationController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/Controllers/AjouterReclamationController.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Interface\" />\r\n        <option value=\"FxmlFile\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <favorite-branches>\r\n      <branch-storage>\r\n        <map>\r\n          <entry type=\"LOCAL\">\r\n            <value>\r\n              <list>\r\n                <branch-info repo=\"$PROJECT_DIR$\" source=\"Taha-branch\" />\r\n              </list>\r\n            </value>\r\n          </entry>\r\n        </map>\r\n      </branch-storage>\r\n    </favorite-branches>\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"master\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n    <option name=\"UPDATE_TYPE\" value=\"REBASE\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;history&quot;: [\r\n    {\r\n      &quot;assignee&quot;: &quot;ghaithbenothmen&quot;,\r\n      &quot;author&quot;: &quot;ghaithbenothmen&quot;\r\n    },\r\n    {\r\n      &quot;assignee&quot;: &quot;ghaithbenothmen&quot;\r\n    }\r\n  ],\r\n  &quot;lastFilter&quot;: {\r\n    &quot;assignee&quot;: &quot;ghaithbenothmen&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">\r\n    <option name=\"selectedUrlAndAccountId\">\r\n      <UrlAndAccount>\r\n        <option name=\"accountId\" value=\"d14d970b-9d91-4585-87f8-1932a8941ab9\" />\r\n        <option name=\"url\" value=\"https://github.com/ghaithbenothmen/tunArtProject\" />\r\n      </UrlAndAccount>\r\n    </option>\r\n  </component>\r\n  <component name=\"HighlightingSettingsPerFile\">\r\n    <setting file=\"file://$PROJECT_DIR$/src/main/resources/SideBar.fxml\" root0=\"SKIP_HIGHLIGHTING\" />\r\n  </component>\r\n  <component name=\"ProblemsViewState\">\r\n    <option name=\"selectedTabId\" value=\"CurrentFile\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 1\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2cGjbn8RVtbkqMq56bvAfU1USjQ\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;Taha-branch&quot;,\r\n    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,\r\n    &quot;last_directory_selection&quot;: &quot;C:/Users/user/IdeaProjects/tunArtProject/src/main/java&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Program Files/Java/PiDev_Desktop-main&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/user/IdeaProjects/tunArtProject/src/main/java/org/example/Main.java&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.5601266&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\tahab\\IdeaProjects\\tunArtProject\\src\\main\\resources\\assets\" />\r\n      <recent name=\"C:\\Users\\tahab\\IdeaProjects\\tunArtProject\\src\\main\\resources\" />\r\n      <recent name=\"C:\\Users\\user\\IdeaProjects\\tunArtProject\\src\\main\\resources\\assets\" />\r\n      <recent name=\"C:\\Users\\user\\IdeaProjects\\tunArtProject\\src\\main\\resources\" />\r\n    </key>\r\n    <key name=\"CopyClassDialog.RECENTS_KEY\">\r\n      <recent name=\"Test\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Application.Main\">\r\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"Test.Main\" />\r\n      <module name=\"Testconnection\" />\r\n      <option name=\"VM_PARAMETERS\" value=\"--module-path &quot;C:\\Program Files\\Java\\javafx-sdk-21.0.2\\lib&quot; --add-modules javafx.controls,javafx.fxml \" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"Test.*\" />\r\n          <option name=\"ENABLED\" value=\"false\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"Test\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"Test.Test\" />\r\n      <module name=\"Testconnection\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"Test.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"TestSingleton\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"Test.TestSingleton\" />\r\n      <module name=\"tunArtProject\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"Test.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <list>\r\n      <item itemvalue=\"Application.Main\" />\r\n      <item itemvalue=\"Application.Test\" />\r\n      <item itemvalue=\"Application.TestSingleton\" />\r\n    </list>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.Main\" />\r\n        <item itemvalue=\"Application.Test\" />\r\n        <item itemvalue=\"Application.TestSingleton\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"21315bfc-118e-44e1-a34f-1ed61d3c161c\" name=\"Changes\" comment=\"\" />\r\n      <created>1707744885236</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1707744885236</updated>\r\n      <workItem from=\"1707744886308\" duration=\"824000\" />\r\n      <workItem from=\"1707745745207\" duration=\"1313000\" />\r\n      <workItem from=\"1707829598179\" duration=\"6055000\" />\r\n      <workItem from=\"1707916934493\" duration=\"5555000\" />\r\n      <workItem from=\"1708076512731\" duration=\"2877000\" />\r\n      <workItem from=\"1708089528945\" duration=\"653000\" />\r\n      <workItem from=\"1708171083061\" duration=\"220000\" />\r\n      <workItem from=\"1708171312044\" duration=\"344000\" />\r\n      <workItem from=\"1708171666463\" duration=\"2968000\" />\r\n      <workItem from=\"1708263831512\" duration=\"1779000\" />\r\n      <workItem from=\"1708265737990\" duration=\"7893000\" />\r\n      <workItem from=\"1708275033739\" duration=\"1651000\" />\r\n      <workItem from=\"1708276700160\" duration=\"900000\" />\r\n      <workItem from=\"1708277614546\" duration=\"851000\" />\r\n      <workItem from=\"1708278477598\" duration=\"2395000\" />\r\n      <workItem from=\"1708296759768\" duration=\"3029000\" />\r\n      <workItem from=\"1708331941262\" duration=\"53000\" />\r\n      <workItem from=\"1708332902479\" duration=\"14000\" />\r\n      <workItem from=\"1708332978064\" duration=\"277000\" />\r\n      <workItem from=\"1708334881893\" duration=\"993000\" />\r\n      <workItem from=\"1708348846113\" duration=\"7714000\" />\r\n      <workItem from=\"1708362423656\" duration=\"8723000\" />\r\n      <workItem from=\"1708430318002\" duration=\"8676000\" />\r\n      <workItem from=\"1708452264506\" duration=\"370000\" />\r\n      <workItem from=\"1708452646586\" duration=\"1796000\" />\r\n      <workItem from=\"1708454462570\" duration=\"1055000\" />\r\n      <workItem from=\"1708516973455\" duration=\"10661000\" />\r\n      <workItem from=\"1708605447710\" duration=\"3706000\" />\r\n      <workItem from=\"1708857290614\" duration=\"7632000\" />\r\n      <workItem from=\"1708887908290\" duration=\"443000\" />\r\n      <workItem from=\"1708906173211\" duration=\"2077000\" />\r\n      <workItem from=\"1709046164503\" duration=\"7660000\" />\r\n      <workItem from=\"1709117288263\" duration=\"9387000\" />\r\n      <workItem from=\"1709128272838\" duration=\"11363000\" />\r\n      <workItem from=\"1709162704589\" duration=\"4665000\" />\r\n      <workItem from=\"1709196842576\" duration=\"5649000\" />\r\n      <workItem from=\"1709234018184\" duration=\"33000\" />\r\n      <workItem from=\"1709234090318\" duration=\"829000\" />\r\n      <workItem from=\"1709234944492\" duration=\"2975000\" />\r\n      <workItem from=\"1709299420012\" duration=\"23568000\" />\r\n      <workItem from=\"1709375866855\" duration=\"2338000\" />\r\n      <workItem from=\"1709378245819\" duration=\"37473000\" />\r\n      <workItem from=\"1709465155838\" duration=\"36034000\" />\r\n      <workItem from=\"1709506311349\" duration=\"15949000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"first-commit &quot;Formation&quot;\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1707836703242</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1707836703242</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Crud Formation\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1707926078963</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1707926078963</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"Crud Formation INTERFACE\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1708264149412</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1708264149412</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"Crud Formation INTERFACE\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1708264534612</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1708264534612</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"Crud Formation INTERFACE\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1708264887882</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1708264887882</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"Crud Formation INTERFACE ajout\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1708265385353</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1708265385353</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"Gestion categorie\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1708451526539</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1708451526539</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"Gestion categorie\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1708451992108</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1708451992108</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"Gestion categorie\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1708454206941</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1708454206941</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00010\" summary=\"Gestion categorie.\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1708454412736</created>\r\n      <option name=\"number\" value=\"00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1708454412736</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00011\" summary=\"Relation Formation et Catégorie\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1708519120990</created>\r\n      <option name=\"number\" value=\"00011\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1708519120990</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00012\" summary=\"rebase\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1708521572832</created>\r\n      <option name=\"number\" value=\"00012\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1708521572832</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00013\" summary=\"Gestion Catégorie+Formation(Compléte)\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1708527307681</created>\r\n      <option name=\"number\" value=\"00013\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00013\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1708527307681</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00014\" summary=\"Formations interface\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1708888314394</created>\r\n      <option name=\"number\" value=\"00014\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00014\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1708888314394</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00015\" summary=\"Formations interface Inscription\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1709126773893</created>\r\n      <option name=\"number\" value=\"00015\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00015\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1709126773893</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00016\" summary=\"Formations interface Inscription\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1709126887584</created>\r\n      <option name=\"number\" value=\"00016\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00016\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1709126887584</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00017\" summary=\"Formations interface Inscription\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1709126914867</created>\r\n      <option name=\"number\" value=\"00017\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00017\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1709126914867</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00018\" summary=\"fifth-commit\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1709314967182</created>\r\n      <option name=\"number\" value=\"00018\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00018\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1709314967182</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00019\" summary=\"like-commit\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1709414035411</created>\r\n      <option name=\"number\" value=\"00019\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00019\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1709414035411</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00020\" summary=\"gestionReclamation-commit\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1709491443160</created>\r\n      <option name=\"number\" value=\"00020\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00020\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1709491443160</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00021\" summary=\"api notification\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1709522059411</created>\r\n      <option name=\"number\" value=\"00021\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00021\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1709522059411</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"22\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"RECENT_FILTERS\">\r\n      <map>\r\n        <entry key=\"Branch\">\r\n          <value>\r\n            <list>\r\n              <RecentGroup>\r\n                <option name=\"FILTER_VALUES\">\r\n                  <option value=\"Taha-branch\" />\r\n                </option>\r\n              </RecentGroup>\r\n              <RecentGroup>\r\n                <option name=\"FILTER_VALUES\">\r\n                  <option value=\"HEAD\" />\r\n                </option>\r\n              </RecentGroup>\r\n            </list>\r\n          </value>\r\n        </entry>\r\n        <entry key=\"User\">\r\n          <value>\r\n            <list>\r\n              <RecentGroup>\r\n                <option name=\"FILTER_VALUES\">\r\n                  <option value=\"*\" />\r\n                </option>\r\n              </RecentGroup>\r\n            </list>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"FILTERS\">\r\n                <map>\r\n                  <entry key=\"branch\">\r\n                    <value>\r\n                      <list>\r\n                        <option value=\"Taha-branch\" />\r\n                      </list>\r\n                    </value>\r\n                  </entry>\r\n                </map>\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"first-commit &quot;Formation&quot;\" />\r\n    <MESSAGE value=\"Crud Formation\" />\r\n    <MESSAGE value=\"Crud Formation INTERFACE\" />\r\n    <MESSAGE value=\"Crud Formation INTERFACE ajout\" />\r\n    <MESSAGE value=\"Gestion categorie\" />\r\n    <MESSAGE value=\"Gestion categorie.\" />\r\n    <MESSAGE value=\"Relation Formation et Catégorie\" />\r\n    <MESSAGE value=\"rebase\" />\r\n    <MESSAGE value=\"Gestion Catégorie+Formation(Compléte)\" />\r\n    <MESSAGE value=\"Formations interface\" />\r\n    <MESSAGE value=\"third_commit\" />\r\n    <MESSAGE value=\"Formations interface Inscription\" />\r\n    <MESSAGE value=\"oeuvre gestion\" />\r\n    <MESSAGE value=\"fourth-commit\" />\r\n    <MESSAGE value=\"fifth-commit\" />\r\n    <MESSAGE value=\"like-commit\" />\r\n    <MESSAGE value=\"gestionReclamation-commit\" />\r\n    <MESSAGE value=\"api notification\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"api notification\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>\r\n          <line>15</line>\r\n          <option name=\"timeStamp\" value=\"1\" />\r\n        </line-breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n  <component name=\"XSLT-Support.FileAssociations.UIState\">\r\n    <expand />\r\n    <select />\r\n  </component>\r\n  <component name=\"com.intellij.coverage.CoverageDataManagerImpl\">\r\n    <SUITE FILE_PATH=\"coverage/tunArtProject$Main.ic\" NAME=\"Main Coverage Results\" MODIFIED=\"1708280057125\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"idea\" COVERAGE_BY_TEST_ENABLED=\"false\" COVERAGE_TRACING_ENABLED=\"false\">\r\n      <FILTER>Test.*</FILTER>\r\n    </SUITE>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision c8ba8720b44d3ca2384d1e7290818c40de987e62)
++++ b/.idea/workspace.xml	(date 1715514893083)
+@@ -4,9 +4,16 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="21315bfc-118e-44e1-a34f-1ed61d3c161c" name="Changes" comment="api notification">
++    <list default="true" id="21315bfc-118e-44e1-a34f-1ed61d3c161c" name="Changes" comment="bad words">
++      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/AfficherAllOeuvreController.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/AfficherAllOeuvre.fxml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/AjouterReclamationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/AjouterReclamationController.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/ModifierOeuvreControler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ModifierOeuvreControler.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/ModifierReclamationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ModifierReclamationController.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/Services/OeuvreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/OeuvreService.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/ConnexionDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utils/ConnexionDB.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/Services/OeuvreService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Services/OeuvreService.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/Test/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Test/Main.class" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -158,8 +165,8 @@
+     </configuration>
+     <list>
+       <item itemvalue="Application.Main" />
+-      <item itemvalue="Application.Test" />
+       <item itemvalue="Application.TestSingleton" />
++      <item itemvalue="Application.Test" />
+     </list>
+     <recent_temporary>
+       <list>
+@@ -220,7 +227,11 @@
+       <workItem from="1709375866855" duration="2338000" />
+       <workItem from="1709378245819" duration="37473000" />
+       <workItem from="1709465155838" duration="36034000" />
+-      <workItem from="1709506311349" duration="15949000" />
++      <workItem from="1709506311349" duration="23174000" />
++      <workItem from="1710157189602" duration="1819000" />
++      <workItem from="1710298917334" duration="910000" />
++      <workItem from="1714570263161" duration="2791000" />
++      <workItem from="1715514075936" duration="815000" />
+     </task>
+     <task id="LOCAL-00001" summary="first-commit &quot;Formation&quot;">
+       <option name="closed" value="true" />
+@@ -390,7 +401,15 @@
+       <option name="project" value="LOCAL" />
+       <updated>1709522059411</updated>
+     </task>
+-    <option name="localTasksCounter" value="22" />
++    <task id="LOCAL-00022" summary="bad words">
++      <option name="closed" value="true" />
++      <created>1709525426146</created>
++      <option name="number" value="00022" />
++      <option name="presentableId" value="LOCAL-00022" />
++      <option name="project" value="LOCAL" />
++      <updated>1709525426146</updated>
++    </task>
++    <option name="localTasksCounter" value="23" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -469,18 +488,8 @@
+     <MESSAGE value="like-commit" />
+     <MESSAGE value="gestionReclamation-commit" />
+     <MESSAGE value="api notification" />
+-    <option name="LAST_COMMIT_MESSAGE" value="api notification" />
+-  </component>
+-  <component name="XDebuggerManager">
+-    <breakpoint-manager>
+-      <breakpoints>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
+-          <line>15</line>
+-          <option name="timeStamp" value="1" />
+-        </line-breakpoint>
+-      </breakpoints>
+-    </breakpoint-manager>
++    <MESSAGE value="bad words" />
++    <option name="LAST_COMMIT_MESSAGE" value="bad words" />
+   </component>
+   <component name="XSLT-Support.FileAssociations.UIState">
+     <expand />
+Index: src/main/java/Controllers/ModifierOeuvreControler.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Controllers;\r\n\r\nimport Entites.*;\r\nimport Services.OeuvreService;\r\nimport Services.UserService;\r\nimport javafx.collections.FXCollections;\r\nimport javafx.collections.ObservableList;\r\nimport javafx.event.ActionEvent;\r\nimport javafx.fxml.FXML;\r\nimport javafx.fxml.FXMLLoader;\r\nimport javafx.scene.Node;\r\nimport javafx.scene.Parent;\r\nimport javafx.scene.Scene;\r\nimport javafx.scene.control.*;\r\nimport javafx.scene.image.Image;\r\nimport javafx.scene.image.ImageView;\r\nimport javafx.stage.FileChooser;\r\nimport javafx.stage.Stage;\r\nimport org.controlsfx.control.Notifications;\r\n\r\nimport javax.swing.*;\r\nimport java.awt.event.MouseEvent;\r\nimport java.io.File;\r\nimport java.io.IOException;\r\nimport java.net.MalformedURLException;\r\nimport java.sql.SQLException;\r\nimport java.time.LocalDate;\r\nimport java.time.ZoneId;\r\nimport java.util.Calendar;\r\nimport java.util.Date;\r\n\r\nimport static Controllers.LoginController.UserConnected;\r\n\r\npublic class ModifierOeuvreControler {\r\n    boolean updated;\r\n\r\n    private AfficherController parentController;\r\n\r\n    public void setParentController(AfficherController parentController) {\r\n        this.parentController = parentController;\r\n    }\r\n\r\n\r\n    @FXML\r\n    private Button Importer;\r\n\r\n    @FXML\r\n    private ImageView imageView;\r\n\r\n    @FXML\r\n    private Button add;\r\n\r\n    @FXML\r\n    private DatePicker date;\r\n\r\n    @FXML\r\n    private TextArea desc;\r\n\r\n    @FXML\r\n    private TextField img;\r\n\r\n    @FXML\r\n    private Button reset;\r\n\r\n    @FXML\r\n    private TextField txtnom;\r\n\r\n    @FXML\r\n    private ComboBox selectType;\r\n    private Oeuvre oeuvre;\r\n    private String imagePath;\r\n    private Image image;\r\n    OeuvreService oeuvreService=new OeuvreService();\r\n    private Scene previousScene;\r\n\r\n    public UserService userService = new UserService();\r\n\r\n    public void setPreviousScene(Scene scene) {\r\n        this.previousScene = scene;}\r\n    private  AfficherController afficherController;\r\n\r\n    private Date convertToDate(LocalDate localDate) {\r\n        return Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());\r\n    }\r\n\r\n    @FXML\r\n    void importer_image(ActionEvent event) {\r\n        FileChooser fileChooser = new FileChooser();\r\n        fileChooser.setTitle(\"Open Image File\");\r\n        fileChooser.getExtensionFilters().addAll(\r\n                new FileChooser.ExtensionFilter(\"Image Files\", \"*.png\", \"*.jpg\", \"*.gif\"));\r\n        File selectedFile = fileChooser.showOpenDialog(null);\r\n        if (selectedFile != null) {\r\n            try {\r\n\r\n                // Load the selected image file\r\n                Image image = new Image(selectedFile.toURI().toString());\r\n                // Display the image in the ImageView\r\n                imageView.setImage(image);\r\n\r\n                // Store the path of the selected image file\r\n                imagePath = selectedFile.getAbsolutePath();\r\n                img.setText(imagePath);\r\n            } catch (Exception e) {\r\n                // Handle any errors that may occur during image loading\r\n                e.printStackTrace();\r\n                // Optionally, display an error message to the user\r\n                Alert alert = new Alert(Alert.AlertType.ERROR);\r\n                alert.setTitle(\"Error\");\r\n                alert.setHeaderText(\"Unable to load image\");\r\n                alert.setContentText(\"An error occurred while loading the selected image file.\");\r\n                alert.showAndWait();\r\n            }\r\n        }\r\n\r\n    }\r\n\r\n    @FXML\r\n    void ModifierOeuvre(ActionEvent event) throws SQLException {\r\n        String nom=txtnom.getText();\r\n        String image=img.getText();\r\n        String description=desc.getText();\r\n        TypeOeuvre type = (TypeOeuvre) selectType.getSelectionModel().getSelectedItem();\r\n        LocalDate datedb=date.getValue();\r\n\r\n\r\n\r\n\r\n        java.sql.Date sqlDateDebut = java.sql.Date.valueOf(datedb);\r\n\r\n        Oeuvre updatedOeuvre = new Oeuvre();\r\n        updatedOeuvre.setRef(oeuvre.getRef());\r\n        updatedOeuvre.setNom_Ouvre(nom);\r\n        updatedOeuvre.setDate_Publication(sqlDateDebut);\r\n        //updatedOeuvre.setImg(imagePath);\r\n        updatedOeuvre.setDescription(description);\r\n        updatedOeuvre.setTypeOeuvre(type);\r\n        updatedOeuvre.setImg(image);\r\n        System.out.println(updatedOeuvre);\r\n\r\n        int artisteId = UserConnected.getId();\r\n        User artiste = userService.findById(artisteId);\r\n        updatedOeuvre.setArtiste_id(artiste);\r\n\r\n\r\n        try {\r\n            oeuvreService.update(updatedOeuvre);\r\n            showAlert(Alert.AlertType.CONFIRMATION, \"Succès\", \"Oeuvre mise à jour\", \"L'Oeuvre a été mise à jour avec succès.\");\r\n\r\n\r\n            Stage Currentstage = (Stage) txtnom.getScene().getWindow();\r\n\r\n            Currentstage.close();\r\n\r\n            FXMLLoader loader = new FXMLLoader(getClass().getResource(\"../AfficherOeuvre.fxml\"));\r\n            Parent root = loader.load();\r\n            afficherController = loader.getController();\r\n            Stage stage = new Stage();\r\n            stage.setTitle(\"Afficher Oeuvre\");\r\n            stage.setScene(new Scene(root));\r\n            stage.show();\r\n            System.out.println(\"Bonjour\"+artisteId);\r\n            afficherController.refreshScrollPane(artisteId);\r\n\r\n\r\n            System.out.println(updatedOeuvre);\r\n        } catch (SQLException e) {\r\n            showAlert(Alert.AlertType.ERROR, \"Erreur\", \"Erreur de mise à jour\", \" \" + e.getMessage());\r\n        } catch (IOException e) {\r\n            throw new RuntimeException(e);\r\n        }\r\n\r\n        updated=true;\r\n        if (updated) {\r\n            Notifications.create()\r\n                    .title(\"Notification Title\")\r\n                    .text(UserConnected.getNom()+\" \"+\"a modifier l'oeuvre\"+\" \"+this.oeuvre.getNom_Ouvre())\r\n                    .showInformation();\r\n        }\r\n    }\r\n    private OneOeuvreController oneOeuvreController;\r\n    private OneOeuvreController oneController;\r\n\r\n    public void setAfficherController(OneOeuvreController oneOeuvreController) {\r\n        this.oneOeuvreController = oneOeuvreController;\r\n    }\r\n    @FXML\r\n    private void annuler(ActionEvent event) {\r\n\r\n\r\n        txtnom.setText(\"\");\r\n        img.setText(\"\");\r\n        desc.setText(\"\");\r\n        date.setValue(null);\r\n        selectType.getSelectionModel().clearSelection();\r\n    }\r\n\r\n    public void initData(Oeuvre oeuvre) throws SQLException {\r\n        this.oeuvre = oeuvre;\r\n        txtnom.setText(oeuvre.getNom_Ouvre());\r\n        desc.setText(oeuvre.getDescription());\r\n        img.setText(oeuvre.getImg());\r\n        String path = oeuvre.getImg();\r\n\r\n        try {\r\n            image = new Image(new File(path).toURI().toURL().toString(),207,138,false,true);\r\n            imageView.setImage(image);\r\n\r\n        } catch (MalformedURLException e){\r\n            e.printStackTrace();\r\n        }\r\n\r\n\r\n        ObservableList<TypeOeuvre> TypeList = FXCollections.observableArrayList(TypeOeuvre.values());\r\n        selectType.setItems(TypeList);\r\n        selectType.setValue(oeuvre.getTypeOeuvre());\r\n\r\n\r\n        Calendar calendarPub = Calendar.getInstance();\r\n        calendarPub.setTime(oeuvre.getDate_Publication());\r\n        date.setValue(calendarPub.toInstant().atZone(ZoneId.systemDefault()).toLocalDate());\r\n\r\n\r\n    }\r\n    private void showAlert(Alert.AlertType type, String title, String header, String content) {\r\n        Alert alert = new Alert(type);\r\n        alert.setTitle(title);\r\n        alert.setHeaderText(header);\r\n        alert.setContentText(content);\r\n        alert.showAndWait();\r\n    }\r\n    private ObservableList<Oeuvre> oeuvreListe = FXCollections.observableArrayList();\r\n\r\n//    private void refresh() throws SQLException {\r\n//        oeuvreListe.addAll(oeuvreService.findAll());\r\n//    }\r\n\r\n\r\n\r\n    @FXML\r\n    void Retour(ActionEvent event) throws IOException {\r\n\r\n        try {\r\n            Stage Currentstage = (Stage) txtnom.getScene().getWindow();\r\n            Currentstage.close();\r\n            FXMLLoader loader = new FXMLLoader(getClass().getResource(\"../OneOeuvre.fxml\"));\r\n            Parent root = loader.load();\r\n            oneController = loader.getController();\r\n            Stage stage = new Stage();\r\n            stage.setTitle(\"One Oeuvre\");\r\n            stage.setScene(new Scene(root));\r\n            stage.show();\r\n            System.out.println(\"Bonjour\"+oeuvre.getArtiste_id().getId());\r\n            oneController.setData(this.oeuvre);\r\n\r\n        } catch (IOException ex) {\r\n            System.out.println(ex.getMessage());\r\n        }\r\n    }\r\n\r\n\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/Controllers/ModifierOeuvreControler.java b/src/main/java/Controllers/ModifierOeuvreControler.java
+--- a/src/main/java/Controllers/ModifierOeuvreControler.java	(revision c8ba8720b44d3ca2384d1e7290818c40de987e62)
++++ b/src/main/java/Controllers/ModifierOeuvreControler.java	(date 1709537313472)
+@@ -260,4 +260,5 @@
+ 
+ 
+ 
++
+ }
+\ No newline at end of file
