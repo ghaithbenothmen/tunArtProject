@@ -7,35 +7,35 @@ import java.util.Date;
 public class Commentaire {
     private int id_c;
 
-    private Actualite id_act;
-    private User id_user;
-    private String contenuC;
+    private Actualite actualite_id;
+    private User user_id;
+    private String contenuc;
     private String prenom;
     private String titre;
 
 
 
-    public Commentaire(String titre,String contenuC, String prenom) {
+    public Commentaire(String titre,String contenuc, String prenom) {
         this.prenom = prenom;
         this.titre= titre;
-        this.contenuC=contenuC ;
+        this.contenuc=contenuc ;
     }
 
-    public Commentaire(int id_c, Actualite id_act, User id_user, String contenuC) {
+    public Commentaire(int id_c, Actualite actualite_id, User user_id, String contenuc) {
         this.id_c = id_c;
-        this.id_act= id_act;
-        this.id_user = id_user;
-        this.contenuC=contenuC ;
+        this.actualite_id= actualite_id;
+        this.user_id = user_id;
+        this.contenuc=contenuc ;
     }
 
-    public Commentaire(Actualite id_act, User id_user, String contenuC) {
-        this.id_act = id_act;
-        this.id_user = id_user;
-        this.contenuC = contenuC;
+    public Commentaire(Actualite actualite_id, User user_id, String contenuc) {
+        this.actualite_id = actualite_id;
+        this.user_id = user_id;
+        this.contenuc = contenuc;
     }
 
     public Commentaire(String contenuC) {
-        this.contenuC=contenuC ;
+        this.contenuc=contenuc ;
     }
 
     public String getTitre() {
@@ -63,28 +63,28 @@ public class Commentaire {
     }
 
 
-    public Actualite getId_act() {
-        return id_act;
+    public Actualite getActualite_id() {
+        return actualite_id;
     }
 
-    public void setId_act(Actualite id_act) {
-        this.id_act = id_act;
+    public void setActualite_id(Actualite actualite_id) {
+        this.actualite_id = actualite_id;
     }
 
-    public User getId_user() {
-        return id_user;
+    public User getUser_id() {
+        return user_id;
     }
 
-    public void setId_user(User id_user) {
-        this.id_user = id_user;
+    public void setUser_id(User user_id) {
+        this.user_id = user_id;
     }
 
-    public String getContenuC() {
-        return contenuC;
+    public String getContenuc() {
+        return contenuc;
     }
 
-    public void setContenuC(String contenuC) {
-        this.contenuC = contenuC;
+    public void setContenuc(String contenuc) {
+        this.contenuc = contenuc;
     }
 
 
@@ -94,9 +94,9 @@ public class Commentaire {
     public String toString() {
         return "Commentaire{" +
                 "id_c=" + id_c +
-                ", id_act=" + id_act +
-                ", id_user=" + id_user +
-                ", contenuC='" + contenuC + '\'' +
+                ", actualite_id=" + actualite_id+
+                ", user_id=" + user_id +
+                ", contenuc='" + contenuc + '\'' +
                 '}';
     }
 }

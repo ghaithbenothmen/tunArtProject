@@ -5,10 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="21315bfc-118e-44e1-a34f-1ed61d3c161c" name="Changes" comment="Helmi-Branch: Ajouter ModifierActualiteController.java">
+      <change afterPath="$PROJECT_DIR$/src/assets/imageAct/image1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/imageAct/image2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/imageAct/image3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/imageAct/image4-661c2dc39466c.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/imageAct/image4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/imageAct/image5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/imageAct/image6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/imageAct/image7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/imageAct/image8.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/ActualiteCardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ActualiteCardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/ModifierActualiteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ModifierActualiteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ModifierActualite.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ModifierActualite.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/AfficherCommentaireController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/AfficherCommentaireController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/AjouterComController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/AjouterComController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entites/Commentaire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entites/Commentaire.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Services/CommentaireService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/CommentaireService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,8 +62,8 @@
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
-        <option name="accountId" value="313ce8c8-ad2f-43a5-b93c-50a12bf5c4f6" />
-        <option name="url" value="https://github.com/ghaithbenothmen/TunArt-pidev.git" />
+        <option name="accountId" value="46800acc-e3a5-4444-9670-884ec8382f59" />
+        <option name="url" value="https://github.com/ghaithbenothmen/tunArtProject.git" />
       </UrlAndAccount>
     </option>
   </component>
@@ -151,8 +163,8 @@
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
-      <item itemvalue="Application.Test" />
       <item itemvalue="Application.TestSingleton" />
+      <item itemvalue="Application.Test" />
     </list>
     <recent_temporary>
       <list>
@@ -218,7 +230,23 @@
       <workItem from="1709512009617" duration="17000" />
       <workItem from="1709512037878" duration="4613000" />
       <workItem from="1709517226594" duration="79000" />
-      <workItem from="1709542710295" duration="6076000" />
+      <workItem from="1709542710295" duration="10034000" />
+      <workItem from="1709804929779" duration="9000" />
+      <workItem from="1710081533090" duration="40000" />
+      <workItem from="1711030388906" duration="9000" />
+      <workItem from="1711294072107" duration="2000" />
+      <workItem from="1711375485387" duration="23000" />
+      <workItem from="1711421102585" duration="1000" />
+      <workItem from="1711468829159" duration="3000" />
+      <workItem from="1711848396906" duration="1720000" />
+      <workItem from="1711975486029" duration="626000" />
+      <workItem from="1713112217447" duration="72000" />
+      <workItem from="1713949041267" duration="631000" />
+      <workItem from="1714235525585" duration="836000" />
+      <workItem from="1714246150653" duration="3170000" />
+      <workItem from="1715365985684" duration="328000" />
+      <workItem from="1715446102543" duration="600000" />
+      <workItem from="1715522005453" duration="4636000" />
     </task>
     <task id="LOCAL-00001" summary="first-commit &quot;Formation&quot;">
       <option name="closed" value="true" />
@@ -516,7 +544,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709517289331</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Helmi-Branch: Ajouter ModifierActualiteController.java">
+      <option name="closed" value="true" />
+      <created>1709551108812</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1709551108812</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
