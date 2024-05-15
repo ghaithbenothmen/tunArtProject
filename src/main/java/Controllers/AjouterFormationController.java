@@ -175,6 +175,7 @@ public class AjouterFormationController {
 
             //refreshi tab
             parentController.initData(artisteId);
+            parentController.refreshTable();
         } catch (SQLException e) {
             showAlert(Alert.AlertType.ERROR, "Erreur", "Erreur de mise à jour", "Une erreur s'est produite lors de la mise à jour de la formation : " + e.getMessage());
             System.out.println(e.getMessage());

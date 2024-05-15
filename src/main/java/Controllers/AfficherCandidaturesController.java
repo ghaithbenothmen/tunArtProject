@@ -23,6 +23,8 @@ public class AfficherCandidaturesController implements Initializable {
 
     @FXML
     private Button DeleteBtn;
+    @FXML
+    private Button RETURN;
 
     @FXML
     private ComboBox<String> Sort;
@@ -123,6 +125,17 @@ public class AfficherCandidaturesController implements Initializable {
                     Candidatures -> Candidatures.getDate().toString().toLowerCase().contains(searchText.toLowerCase())
             );
             tableView.setItems(filteredList);
+        }
+    }
+    @FXML
+    void RETURNbtn(ActionEvent event) {
+        try {
+            FXMLLoader loader=new FXMLLoader(getClass().getResource("/MainContainer.fxml"));
+            Parent root=loader.load();
+            RETURN.getScene().setRoot(root);
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 }

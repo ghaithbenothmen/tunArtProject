@@ -7,9 +7,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -26,8 +28,17 @@ public class MainContainer implements Initializable {
     void logout(ActionEvent event) {
         UserConnected = null;
 
-        // Redirect to the login page
-        loadPage("/Login.fxml");
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Login.fxml"));
+            Parent root = loader.load();
+
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
     }
 
     @FXML
@@ -40,6 +51,11 @@ public class MainContainer implements Initializable {
 
         loadPage("../AfficherUser.fxml");
     }
+    @FXML
+    void Listeart(ActionEvent event) {
+
+        loadPage("../AfficherArtistes.fxml");
+    }
 
     @FXML
     void concours(ActionEvent event) {
@@ -49,7 +65,15 @@ public class MainContainer implements Initializable {
     void collab(ActionEvent event) {
         loadPage("/AfficherCollaborateur.fxml");
     }
+    @FXML
+    void actua(ActionEvent event) {
+        loadPage("/AffActualiteAdmin.fxml");
+    }
 
+    @FXML
+    void rec(ActionEvent event) {
+        loadPage("/GestionReclamation.fxml");
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

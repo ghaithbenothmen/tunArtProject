@@ -5,28 +5,19 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="490.0" prefWidth="718.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.GestionConcoursController">
+<AnchorPane prefHeight="223.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.GestionConcoursController">
    <children>
-      <AnchorPane prefHeight="490.0" prefWidth="369.0" styleClass="left-form" stylesheets="@loginDesign.css">
+      <AnchorPane layoutX="6.0" prefHeight="631.0" prefWidth="800.0" styleClass="right-form" stylesheets="@loginDesign.css">
          <children>
-            <ImageView fitHeight="199.0" fitWidth="258.0" layoutX="56.0" layoutY="147.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@assets/Capture_d_écran_2024-02-25_195559-removebg-preview.png" />
-               </image>
-            </ImageView>
-         </children>
-      </AnchorPane>
-      <AnchorPane layoutX="369.0" prefHeight="490.0" prefWidth="349.0" styleClass="right-form" stylesheets="@loginDesign.css">
-         <children>
-            <Button fx:id="Concours" layoutX="74.0" layoutY="173.0" mnemonicParsing="false" onAction="#ConcoursACTION" prefHeight="34.0" prefWidth="187.0" styleClass="clear-btn" stylesheets="@dashboardDesign.css" text="Afficher Concours" />
-            <Button fx:id="Vote" layoutX="73.0" layoutY="227.0" mnemonicParsing="false" onAction="#VoteACTION" prefHeight="34.0" prefWidth="187.0" styleClass="clear-btn" stylesheets="@dashboardDesign.css" text="Afficher Votes" />
-            <Button fx:id="Participate" layoutX="74.0" layoutY="281.0" mnemonicParsing="false" onAction="#ParticipateACTION" prefHeight="34.0" prefWidth="187.0" styleClass="clear-btn" stylesheets="@dashboardDesign.css" text="Afficher Candidatures" />
-            <Button fx:id="best" layoutX="74.0" layoutY="334.0" mnemonicParsing="false" onAction="#BestACTION" prefHeight="34.0" prefWidth="187.0" styleClass="clear-btn" stylesheets="@dashboardDesign.css" text="Meilleur Concour" />
-            <ImageView fitHeight="81.0" fitWidth="150.0" layoutX="126.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true">
+            <Button fx:id="Concours" layoutX="329.0" layoutY="251.0" mnemonicParsing="false" onAction="#ConcoursACTION" prefHeight="34.0" prefWidth="187.0" styleClass="clear-btn" stylesheets="@dashboardDesign.css" text="Afficher Concours" />
+            <Button fx:id="Vote" layoutX="329.0" layoutY="309.0" mnemonicParsing="false" onAction="#VoteACTION" prefHeight="34.0" prefWidth="187.0" styleClass="clear-btn" stylesheets="@dashboardDesign.css" text="Afficher Votes" />
+            <Button fx:id="Participate" layoutX="329.0" layoutY="366.0" mnemonicParsing="false" onAction="#ParticipateACTION" prefHeight="34.0" prefWidth="187.0" styleClass="clear-btn" stylesheets="@dashboardDesign.css" text="Afficher Candidatures" />
+            <Button fx:id="best" layoutX="329.0" layoutY="422.0" mnemonicParsing="false" onAction="#BestACTION" prefHeight="34.0" prefWidth="187.0" styleClass="clear-btn" stylesheets="@dashboardDesign.css" text="Meilleur Concour" />
+            <ImageView fitHeight="81.0" fitWidth="150.0" layoutX="382.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@assets/art.jpg" />
                </image></ImageView>
-            <Button fx:id="QR" layoutX="73.0" layoutY="389.0" mnemonicParsing="false" onAction="#QRACTION" prefHeight="34.0" prefWidth="187.0" styleClass="clear-btn" stylesheets="@dashboardDesign.css" text="QR" />
+            <Button fx:id="QR" layoutX="329.0" layoutY="474.0" mnemonicParsing="false" onAction="#QRACTION" prefHeight="34.0" prefWidth="187.0" styleClass="clear-btn" stylesheets="@dashboardDesign.css" text="QR" />
          </children>
       </AnchorPane>
    </children>

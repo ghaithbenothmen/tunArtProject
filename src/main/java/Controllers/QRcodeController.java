@@ -105,7 +105,7 @@ public class QRcodeController implements Initializable {
     @FXML
     void RETURNbtn(ActionEvent event) {
         try {
-            FXMLLoader loader=new FXMLLoader(getClass().getResource("/GestionConcours.fxml"));
+            FXMLLoader loader=new FXMLLoader(getClass().getResource("/MainContainer.fxml"));
             Parent root=loader.load();
             RETURN.getScene().setRoot(root);
 

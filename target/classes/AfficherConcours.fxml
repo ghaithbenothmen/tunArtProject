@@ -27,8 +27,8 @@
             </columns>
             </TableView>
             <Button fx:id="DeleteBtn" layoutX="420.0" layoutY="352.0" mnemonicParsing="false" onAction="#supprimerConcours" prefHeight="25.0" prefWidth="148.0" styleClass="delete-btn" text="DELETE" />
-            <Button fx:id="updateBtn" layoutX="226.0" layoutY="352.0" mnemonicParsing="false" onAction="#updateConcours" prefHeight="25.0" prefWidth="148.0" styleClass="update-btn" text="UPDATE" />
-            <Button fx:id="addBtn" layoutX="35.0" layoutY="352.0" mnemonicParsing="false" onAction="#ajouterconcours" prefHeight="25.0" prefWidth="148.0" styleClass="add-btn" text="ADD" />
+            <Button fx:id="updateBtn" layoutX="297.0" layoutY="352.0" mnemonicParsing="false" onAction="#updateConcours" prefHeight="28.0" prefWidth="114.0" styleClass="update-btn" text="UPDATE" />
+            <Button fx:id="addBtn" layoutX="173.0" layoutY="352.0" mnemonicParsing="false" onAction="#ajouterconcours" prefHeight="28.0" prefWidth="104.0" styleClass="add-btn" text="ADD" />
                         <TextField fx:id="searchFor" layoutX="91.0" layoutY="15.0" prefHeight="25.0" prefWidth="163.0" />
                         <Label layoutX="35.0" layoutY="17.0" prefHeight="20.0" prefWidth="49.0" text="Name:">
                            <font>
@@ -42,6 +42,7 @@
                            </font>
                         </Label>
                         <Button fx:id="print" layoutX="268.0" layoutY="16.0" mnemonicParsing="false" onAction="#exporttoexcel" prefHeight="25.0" prefWidth="75.0" styleClass="import-btn" stylesheets="@dashboardDesign.css" text="PRINT" />
+                                <Button fx:id="RETURN" layoutX="35.0" layoutY="352.0" mnemonicParsing="false" onAction="#RETURNbtn" prefHeight="30.0" prefWidth="123.0" styleClass="delete-btn" stylesheets="@dashboardDesign.css" text="RETURN" />
            </children>
        </AnchorPane>
                     </children>

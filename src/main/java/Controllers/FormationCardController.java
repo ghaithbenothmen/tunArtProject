@@ -20,6 +20,8 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.sql.SQLException;
 
+import static Controllers.LoginController.UserConnected;
+
 public class FormationCardController {
     private final FormationService formationService = new FormationService();
 
@@ -61,6 +63,9 @@ public class FormationCardController {
     @FXML
     void inscrire(ActionEvent event) {
         try {
+            if (UserConnected!=null){
+
+
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../InscriptionInfo.fxml"));
             AnchorPane pane = loader.load();
             InscriptionInfoController infoController = loader.getController();
@@ -71,7 +76,18 @@ public class FormationCardController {
 
             Stage stage = new Stage();
             stage.setScene(new Scene(pane));
-            stage.show();
+            stage.show();}else {
+
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("../Login.fxml"));
+                AnchorPane pane = loader.load();
+
+
+
+
+                Stage stage = new Stage();
+                stage.setScene(new Scene(pane));
+                stage.show();
+            }
         } catch (IOException e) {
             e.printStackTrace();
         } catch (SQLException e) {

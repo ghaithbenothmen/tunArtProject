@@ -9,12 +9,13 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="696.0" prefWidth="866.0" stylesheets="@dashboardDesign.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AccueilPageController">
+<AnchorPane prefHeight="688.0" prefWidth="866.0" stylesheets="@dashboardDesign.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AccueilPageController">
    <children>
       <MenuBar layoutY="1.0" prefHeight="26.0" prefWidth="865.0">
         <menus>
@@ -51,7 +52,7 @@
             </Menu>
         </menus>
       </MenuBar>
-      <ScrollPane layoutY="27.0" prefHeight="665.0" prefWidth="866.0">
+      <ScrollPane layoutY="27.0" prefHeight="733.0" prefWidth="866.0">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1734.0" prefWidth="866.0">
                <children>
@@ -64,11 +65,41 @@
                   <Button layoutX="47.0" layoutY="222.0" mnemonicParsing="false" styleClass="add-btn" text="Commencez !" />
                   <Text layoutX="47.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label" text="Plongez dans un univers où l'art prend vie et où la créativité est à l'honneur. Découvrez des œuvres inspirantes, apprenez de nouveaux talents, et explorez un monde où l'imagination n'a pas de limites." wrappingWidth="392.35418701171875" />
                   <Label layoutX="327.0" layoutY="291.0" styleClass="titre-grand" text="Nos Formations" />
-                  <AnchorPane fx:id="anchFor" layoutX="36.0" layoutY="334.0" prefHeight="334.0" prefWidth="794.0" />
-                  <Button layoutX="380.0" layoutY="678.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="106.0" styleClass="add-btn" text="Voir plus" />
+                  <AnchorPane fx:id="anchFor" layoutX="36.0" layoutY="334.0" prefHeight="334.0" prefWidth="794.0">
+                     <children>
+                        <ScrollPane layoutX="6.0" layoutY="14.0" prefHeight="297.0" prefWidth="783.0">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <GridPane fx:id="gridFor" layoutX="7.0" layoutY="30.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                    </GridPane>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </ScrollPane>
+                     </children></AnchorPane>
+                  <Button layoutX="380.0" layoutY="678.0" mnemonicParsing="false" onAction="#Formations" prefHeight="28.0" prefWidth="106.0" styleClass="add-btn" text="Voir plus" />
                   <Label layoutX="276.0" layoutY="736.0" styleClass="titre-grand" text="Des oeuvres populaires" />
-                  <AnchorPane fx:id="anchOe" layoutX="28.0" layoutY="796.0" prefHeight="312.0" prefWidth="810.0" />
-                  <Button layoutX="380.0" layoutY="1123.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="106.0" styleClass="add-btn" text="Voir plus" />
+                  <AnchorPane fx:id="anchOe" layoutX="28.0" layoutY="796.0" prefHeight="312.0" prefWidth="810.0">
+                     <children>
+                        <ScrollPane prefHeight="297.0" prefWidth="783.0">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <GridPane fx:id="gridOe">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                    </GridPane>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </ScrollPane>
+                     </children></AnchorPane>
+                  <Button layoutX="380.0" layoutY="1123.0" mnemonicParsing="false" onAction="#plusOev" prefHeight="28.0" prefWidth="106.0" styleClass="add-btn" text="Voir plus" />
                   <Label layoutX="308.0" layoutY="1183.0" styleClass="titre-grand" text="Nos Collaborateurs" />
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" />
                   <AnchorPane fx:id="anchCol" layoutX="26.0" layoutY="1235.0" prefHeight="262.0" prefWidth="800.0" />

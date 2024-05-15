@@ -26,6 +26,9 @@ import java.util.ResourceBundle;
 public class AfficherVotesControllers implements Initializable {
 
     @FXML
+    private Button RETURN;
+
+    @FXML
     private Button DeleteBtn;
 
     @FXML
@@ -127,6 +130,17 @@ public class AfficherVotesControllers implements Initializable {
                     votes -> votes.getDate().toString().toLowerCase().contains(searchText.toLowerCase())
             );
             tableView.setItems(filteredList);
+        }
+    }
+    @FXML
+    void RETURNbtn(ActionEvent event) {
+        try {
+            FXMLLoader loader=new FXMLLoader(getClass().getResource("/MainContainer.fxml"));
+            Parent root=loader.load();
+            RETURN.getScene().setRoot(root);
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 }

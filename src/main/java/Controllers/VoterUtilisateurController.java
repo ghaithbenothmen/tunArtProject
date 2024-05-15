@@ -16,6 +16,8 @@ import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
+import static Controllers.LoginController.UserConnected;
+
 public class VoterUtilisateurController {
     @FXML
     private TableColumn<Concours, Date> viewdate;
@@ -131,7 +133,7 @@ public class VoterUtilisateurController {
             // Handle button click
             alert1.setResultConverter(buttonType -> {
                 if (buttonType == okButton) {
-                    int user=3;
+                    int user=UserConnected.getId();
                     LocalDate today = LocalDate.now();
                     java.sql.Date sqlDate= java.sql.Date.valueOf(today);
                     System.out.println(today);

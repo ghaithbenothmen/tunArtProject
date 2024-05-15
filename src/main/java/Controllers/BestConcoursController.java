@@ -6,10 +6,13 @@ import Services.ServiceConcours;
 import Services.ServiceVotes;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.chart.BarChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +21,8 @@ import static Entites.Type.valueOf;
 
 public class BestConcoursController {
 
-
+    @FXML
+    private Button RETURN;
 
     @FXML
     private BarChart<?, ?> barChart;
@@ -95,5 +99,16 @@ public class BestConcoursController {
             }
             nom1.setText(list.get(highestIndexC).getNom());
             nombre1.setText(String.valueOf(highestNumberC));
+    }
+    @FXML
+    void RETURNbtn(ActionEvent event) {
+        try {
+            FXMLLoader loader=new FXMLLoader(getClass().getResource("/MainContainer.fxml"));
+            Parent root=loader.load();
+            RETURN.getScene().setRoot(root);
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

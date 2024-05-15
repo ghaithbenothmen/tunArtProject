@@ -121,6 +121,7 @@ public class GestionReclamation {
     private void populateTable(List<Reclamation> reclamations) {
         ObservableList<Reclamation> data = FXCollections.observableArrayList(reclamations);
         reclamationTable.setItems(data);
+        System.out.println(data);
     }
 
 

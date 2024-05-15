@@ -63,7 +63,7 @@ public class OeuvreService implements IOeuvre<Oeuvre>{
                 + "', `note`='" + o.getNote()
                 + "', `TypeOeuvre`='" + o.getTypeOeuvre()
                 + "', `artiste_id`='" + o.getArtiste_id().getId()
-                + "' WHERE Ref='" + o.getRef() + "';";
+                + "' WHERE Id='" + o.getRef() + "';";
 
         int rowsUpdated = ste.executeUpdate(req);
 
@@ -73,7 +73,7 @@ public class OeuvreService implements IOeuvre<Oeuvre>{
 
     @Override
     public boolean delete(Oeuvre o) throws SQLException {
-        String req2 = "DELETE FROM `Oeuvre` WHERE ref='" + o.getRef() + "';";
+        String req2 = "DELETE FROM `Oeuvre` WHERE id='" + o.getRef() + "';";
         int rowsDeleted = ste.executeUpdate(req2);
 
         return rowsDeleted > 0;
@@ -83,11 +83,11 @@ public class OeuvreService implements IOeuvre<Oeuvre>{
 
     @Override
     public Oeuvre findByRef(int reff) throws SQLException {
-        String req = "SELECT * FROM `Oeuvre` WHERE ref='" + reff+ "';";
+        String req = "SELECT * FROM `Oeuvre` WHERE id='" + reff+ "';";
         ResultSet res = ste.executeQuery(req);
 
         if (res.next()) {
-            int ref = res.getInt(1);
+            int id = res.getInt(1);
             int artiste_id = res.getInt(2);
             String nom_oeuvre = res.getString(2);
             String img = res.getString("img");
@@ -100,7 +100,7 @@ public class OeuvreService implements IOeuvre<Oeuvre>{
             User artiste = userService.findById(artiste_id);
 
 
-            return new Oeuvre(ref,nom_oeuvre,img,date_publication,description,note,TypeOeuvre,artiste);
+            return new Oeuvre(id,nom_oeuvre,img,date_publication,description,note,TypeOeuvre,artiste);
         }
 
         return null;
@@ -112,7 +112,7 @@ public class OeuvreService implements IOeuvre<Oeuvre>{
         ResultSet res = ste.executeQuery("select * from oeuvre");
 
         while (res.next()) {
-            int ref = res.getInt("Ref");
+            int id = res.getInt("Id");
 
             int artiste_id = res.getInt("artiste_id");
             String nom_Oeuvre = res.getString("nom_Oeuvre");
@@ -126,7 +126,7 @@ public class OeuvreService implements IOeuvre<Oeuvre>{
             User artiste = userService.findById(artiste_id);
 
 
-            Oeuvre o=new Oeuvre(ref,nom_Oeuvre,img,date_Publication,description,note,typeOeuvre,artiste);
+            Oeuvre o=new Oeuvre(id,nom_Oeuvre,img,date_Publication,description,note,typeOeuvre,artiste);
 //            System.out.println(o);
             lO.add(o);
 
@@ -141,7 +141,7 @@ public class OeuvreService implements IOeuvre<Oeuvre>{
         ResultSet resultSet = ste.executeQuery(query);
 
         while (resultSet.next()) {
-            int ref = resultSet.getInt("Ref");
+            int id = resultSet.getInt("Id");
             String nom_Oeuvre = resultSet.getString("nom_Oeuvre");
             int artiste_id = resultSet.getInt("artiste_id");
             Date date_Publication = resultSet.getDate("date_Publication");
@@ -157,7 +157,7 @@ public class OeuvreService implements IOeuvre<Oeuvre>{
             UserService userService = new UserService();
             User artiste = userService.findById(artiste_id);
 
-            Oeuvre o = new Oeuvre(ref,nom_Oeuvre,img,date_Publication,description,note,typeOeuvre,artiste);
+            Oeuvre o = new Oeuvre(id,nom_Oeuvre,img,date_Publication,description,note,typeOeuvre,artiste);
             oeuvre.add(o);
         }
 
@@ -167,7 +167,7 @@ public class OeuvreService implements IOeuvre<Oeuvre>{
     public int nbrlike(Oeuvre o) throws SQLException{
         con = ConnexionDB.getInstance().getCon();
         int i = 0;
-        String req = "SELECT note FROM `oeuvre` WHERE Ref=?";
+        String req = "SELECT note FROM `oeuvre` WHERE Id=?";
         PreparedStatement ps = con.prepareStatement(req);
         ps.setInt(1, o.getRef());
         ResultSet rs = ps.executeQuery();

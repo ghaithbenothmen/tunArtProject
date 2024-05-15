@@ -25,7 +25,7 @@
                               <TableColumn fx:id="viewIDUser" prefWidth="132.0" text="ID USER" />
             </columns>
             </TableView>
-            <Button fx:id="DeleteBtn" layoutX="32.0" layoutY="350.0" mnemonicParsing="false" onAction="#supprimerVotes" prefHeight="30.0" prefWidth="530.0" styleClass="delete-btn" text="DELETE" />
+            <Button fx:id="DeleteBtn" layoutX="354.0" layoutY="350.0" mnemonicParsing="false" onAction="#supprimerVotes" prefHeight="30.0" prefWidth="209.0" styleClass="delete-btn" text="DELETE" />
                         <TextField fx:id="searchFor" layoutX="91.0" layoutY="15.0" prefHeight="25.0" prefWidth="253.0" />
                         <Label layoutX="35.0" layoutY="17.0" prefHeight="20.0" prefWidth="49.0" text="Name:">
                            <font>
@@ -38,6 +38,7 @@
                               <Font name="Cambria Math" size="17.0" />
                            </font>
                         </Label>
+                                <Button fx:id="RETURN" layoutX="33.0" layoutY="350.0" mnemonicParsing="false" onAction="#RETURNbtn" prefHeight="30.0" prefWidth="114.0" styleClass="delete-btn" text="RETOUR" />
            </children>
        </AnchorPane>
                     </children>

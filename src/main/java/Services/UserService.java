@@ -199,15 +199,17 @@ public class UserService implements IService<User> {
             String roleString = res.getString("Role");
 
             // Convert the role string to the corresponding enum constant
-            try {
-                Role role = Role.valueOf(roleString);
-                u.setRole(role);
-            } catch (IllegalArgumentException e) {
-                // Handle the case where the role string does not match any enum constant
-                // For example, you can set a default role or log a warning
-                // u.setRole(Role.DEFAULT_ROLE); // Set a default role
-                // logger.warn("Invalid role: " + roleString); // Log a warning
-            }
+            if (roleString != null) {
+                try {
+                    Role role = Role.valueOf(roleString);
+                    u.setRole(role);
+                } catch (IllegalArgumentException e) {
+                    // Handle the case where the role string does not match any enum constant
+                    // For example, you can set a default role or log a warning
+                    // u.setRole(Role.DEFAULT_ROLE); // Set a default role
+                    // logger.warn("Invalid role: " + roleString); // Log a warning
+                }
+            } else {}
 
             data.add(u);
         }

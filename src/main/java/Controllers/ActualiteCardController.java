@@ -200,7 +200,7 @@ public class ActualiteCardController {
                 .url("https://google-translate1.p.rapidapi.com/language/translate/v2")
                 .post(body)
                 .addHeader("content-type", "application/x-www-form-urlencoded")
-                .addHeader("X-RapidAPI-Key", "836b7b9ce5msh58443bd6437c4a8p1013efjsn7302caca48d4")
+                .addHeader("X-RapidAPI-Key", "98a074271amsh7561f5a201962ddp12b9bdjsn33c8abacbd67")
                 .addHeader("X-RapidAPI-Host", "google-translate1.p.rapidapi.com")
                 .build();
 

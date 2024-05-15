@@ -81,9 +81,9 @@ public class GestionFormationController {
                 }
             };
         });
-       // FormationTable.setItems(formationList);
-
+       FormationTable.setItems(formationList);
         refreshTable();
+
         //search
         searchFor.textProperty().addListener((observable, oldValue, newValue) -> {
             filterData(newValue);

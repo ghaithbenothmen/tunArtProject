@@ -49,7 +49,7 @@ public class ChangementMdpController implements Initializable {
     @FXML
     private void Update_password(ActionEvent event) throws Exception {
         if(mdp1.getText().equals(mdp2.getText())){
-            us.ModifMDP(email2, CryptVar.encrypt(mdp1.getText(),key));
+            us.ModifMDP(email2, mdp1.getText());
 
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);

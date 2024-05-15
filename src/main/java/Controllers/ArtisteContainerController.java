@@ -51,8 +51,17 @@ public class ArtisteContainerController implements Initializable {
     void logout(ActionEvent event) {
         UserConnected = null;
 
-        // Redirect to the login page
-        loadPage("/Login.fxml");
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Login.fxml"));
+            Parent root = loader.load();
+
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
     }
 
     @FXML

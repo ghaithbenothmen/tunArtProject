@@ -101,7 +101,7 @@ public class LoginController implements Initializable {
             List<User> users = us.findAll();
 
             for (int i = 0; i < users.size(); i++) {
-                if (users.get(i).getEmail().equals(email.getText()) && users.get(i).getMdp().equals(CryptVar.encrypt(mdp.getText(),key))) {
+                if (users.get(i).getEmail().equals(email.getText()) && users.get(i).getMdp().equals(mdp.getText())) {
                     UserConnected = users.get(i);
                     verif = true;
                     break;

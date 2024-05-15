@@ -67,8 +67,7 @@ public class InscriptionControllers implements Initializable {
     @FXML
     private AnchorPane main_form;
 
-    public AESCrypt CryptVar;
-    public String key = "ThisIsASecretKey";
+
 
 
 
@@ -150,13 +149,12 @@ public class InscriptionControllers implements Initializable {
 
 
                 User p = new User();
-                String encrypted = CryptVar.encrypt(txtmdp.getText(), key);
                 p.setNom(txtnom.getText());
                 p.setPrenom(txtprenom.getText());
                 p.setTel(Integer.parseInt(txttel.getText()));
                 p.setRole(role);
                 p.setEmail(txtemail.getText());
-                p.setMdp(encrypted);
+                p.setMdp(txtmdp.getText());
                 p.setImage(imageData);
                 us.add(p);
                 // Récupérer le numéro de téléphone de TelField
