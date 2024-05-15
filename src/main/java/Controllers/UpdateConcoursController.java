@@ -41,6 +41,8 @@ public class UpdateConcoursController implements Initializable {
     @FXML
     private TextField txtprix;
 
+    @FXML
+    private TextField txtMaxparticipant;
     private final ServiceConcours ser=new ServiceConcours();
 
     public Label getLbname() {
@@ -55,6 +57,9 @@ public class UpdateConcoursController implements Initializable {
     }
     public void setTxtprix(Integer lbname) {
         this.txtprix.setText(String.valueOf(lbname));
+    }
+    public void setTxtMaxparticipant(Integer lbname) {
+        this.txtMaxparticipant.setText(String.valueOf(lbname));
     }
     public void setTxtlien(String lbname) {
         this.txtlien.setText(lbname);
@@ -120,9 +125,10 @@ public class UpdateConcoursController implements Initializable {
         Type type= (Type) ChoiceType.getValue();
         String lien=txtlien.getText();
         String nom=txtnom.getText();
+        int Maxparticipant = Integer.parseInt(txtMaxparticipant.getText());
         int ref= Integer.parseInt(concoursID.getText());
 
-        Concours p1=new Concours(ref,prix,sqlDateFin,type,lien,nom);
+        Concours p1 = new Concours(prix, sqlDateFin, type, lien, nom,0,0,Maxparticipant);
         if (prix<=0||type.describeConstable().isEmpty()||lien.isEmpty()||nom.isEmpty()) {
             Alert alert1 = new Alert(Alert.AlertType.ERROR);
             alert1.setTitle("ERROR");

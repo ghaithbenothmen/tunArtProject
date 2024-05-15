@@ -4,16 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a5f78d19-35f0-47a6-97b8-33e8e500b968" name="Changes" comment="integration java">
+    <list default="true" id="a5f78d19-35f0-47a6-97b8-33e8e500b968" name="Changes" comment="integration java webb">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/AjouterFormationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/AjouterFormationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/AjouterOeuvreControler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/AjouterOeuvreControler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/ModifierOeuvreControler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ModifierOeuvreControler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/UpdateFormationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/UpdateFormationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Services/FormationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/FormationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Services/OeuvreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/OeuvreService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/AjouterFormationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/AjouterFormationController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Services/OeuvreService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Services/OeuvreService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/AfficherConcoursControllers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/AfficherConcoursControllers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/AjouterConcoursController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/AjouterConcoursController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/UpdateConcoursController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/UpdateConcoursController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entites/Concours.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entites/Concours.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Services/ServiceConcours.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/ServiceConcours.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/AfficherConcours.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AfficherConcours.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/AjouterConcours.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AjouterConcours.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/UpdateConcours.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/UpdateConcours.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +106,7 @@
       <workItem from="1715538715783" duration="663000" />
       <workItem from="1715700929079" duration="98000" />
       <workItem from="1715721817342" duration="395000" />
-      <workItem from="1715773436993" duration="14493000" />
+      <workItem from="1715773436993" duration="17333000" />
     </task>
     <task id="LOCAL-00001" summary="integration java">
       <option name="closed" value="true" />
@@ -124,7 +124,23 @@
       <option name="project" value="LOCAL" />
       <updated>1715781506064</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="integration java web">
+      <option name="closed" value="true" />
+      <created>1715792352043</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1715792352043</updated>
+    </task>
+    <task id="LOCAL-00004" summary="integration java webb">
+      <option name="closed" value="true" />
+      <created>1715792406178</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1715792406178</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -145,7 +161,9 @@
     <MESSAGE value="Payement" />
     <MESSAGE value="integration" />
     <MESSAGE value="integration java" />
-    <option name="LAST_COMMIT_MESSAGE" value="integration java" />
+    <MESSAGE value="integration java web" />
+    <MESSAGE value="integration java webb" />
+    <option name="LAST_COMMIT_MESSAGE" value="integration java webb" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

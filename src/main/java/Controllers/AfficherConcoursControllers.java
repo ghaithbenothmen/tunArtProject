@@ -43,6 +43,15 @@ public class AfficherConcoursControllers {
     private TableColumn<Concours, String> viewnom;
 
     @FXML
+    private TableColumn<?, ?> viewMaxparticipant;
+
+    @FXML
+    private TableColumn<?, ?> viewNparticipant;
+
+    @FXML
+    private TableColumn<?, ?> viewNvote;
+
+    @FXML
     private ComboBox<String> Sort;
 
     @FXML
@@ -83,6 +92,9 @@ public class AfficherConcoursControllers {
             viewprix.setCellValueFactory(new PropertyValueFactory<>("prix"));
             viewlien.setCellValueFactory(new PropertyValueFactory<>("lien"));
             viewnom.setCellValueFactory(new PropertyValueFactory<>("nom"));
+            viewNparticipant.setCellValueFactory(new PropertyValueFactory<>("Nparticipant"));
+            viewMaxparticipant.setCellValueFactory(new PropertyValueFactory<>("Maxparticipant"));
+            viewNvote.setCellValueFactory(new PropertyValueFactory<>("Nvote"));
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -194,6 +206,7 @@ public class AfficherConcoursControllers {
                 dc.setTxtprix(Integer.valueOf(c.getPrix()));
                 dc.setChoiceType(Type.valueOf(c.getSType()));
                 dc.setDateinput(String.valueOf(c.getDate()));
+                dc.setTxtMaxparticipant(Integer.valueOf(c.getMaxparticipant()));
 
 
                 updateBtn.getScene().setRoot(root);

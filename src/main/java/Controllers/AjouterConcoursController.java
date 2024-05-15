@@ -24,6 +24,8 @@ public class AjouterConcoursController implements Initializable {
     @FXML
     private Button confirm;
 
+    @FXML
+    private TextField txtMaxparticipant;
 
     @FXML
     private TextField txtdate;
@@ -60,7 +62,7 @@ public class AjouterConcoursController implements Initializable {
         Type type = ChoiceType.getValue();
         String lien = txtlien.getText();
         String nom = txtnom.getText();
-
+        int Maxparticipant = Integer.parseInt(txtMaxparticipant.getText());
         //date initialize
         dateinput.valueProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue != null) {
@@ -103,7 +105,7 @@ public class AjouterConcoursController implements Initializable {
             alert1.showAndWait();
             return;
         } else {
-            Concours p1 = new Concours(prix, sqlDateFin, type, lien, nom);
+            Concours p1 = new Concours(prix, sqlDateFin, type, lien, nom,0,0,Maxparticipant);
             Alert alert1 = new Alert(Alert.AlertType.CONFIRMATION);
             alert1.setTitle("Confirmation");
             alert1.setContentText("Concour ajouté avec succés");
