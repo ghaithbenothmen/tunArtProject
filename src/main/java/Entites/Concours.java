@@ -11,26 +11,39 @@ public class Concours {
     private String Lien;
     private String SType;
     private String nom;
+    
+    private int Nparticipant;
+    private int Nvote;
+    private int Maxparticipant;
 
     public Concours(int reference,String nom) {
         this.reference = reference;
         this.nom = nom;
     }
-    public Concours(int reference, int prix, Date date, Type type, String lien,String nom) {
+    public Concours(int reference, int prix, Date date, Type type,
+                    String lien,String nom,int Nparticipant,int Nvote,int Maxparticipant) {
         this.reference = reference;
         this.prix = prix;
         this.date = date;
         this.type = type;
         this.Lien = lien;
         this.nom = nom;
+        this.Nparticipant = Nparticipant;
+        this.Nvote = Nvote;
+        this.Maxparticipant = Maxparticipant;
     }
-    public Concours(int reference, int prix, Date date, String SType, String lien,String nom) {
+    public Concours(int reference, int prix, Date date, String SType,
+                    String lien,String nom,int Nparticipant,int Nvote,int Maxparticipant) {
         this.reference = reference;
         this.prix = prix;
         this.date = date;
         this.SType = SType;
         this.Lien = lien;
         this.nom = nom;
+        this.Nparticipant = Nparticipant;
+        this.Nvote = Nvote;
+        this.Maxparticipant = Maxparticipant;
+
     }
 
     public Concours(int reference, int prix, Date date, String lien,String nom) {
@@ -42,12 +55,16 @@ public class Concours {
     }
 
 
-    public Concours(int prix, Date date, Type type, String lien,String nom) {
+    public Concours(int prix, Date date, Type type,
+                    String lien,String nom,int Nparticipant,int Nvote,int Maxparticipant) {
         this.prix = prix;
         this.date = date;
         this.type = type;
         this.Lien = lien;
         this.nom = nom;
+        this.Nparticipant = Nparticipant;
+        this.Nvote = Nvote;
+        this.Maxparticipant = Maxparticipant;
     }
 
 
@@ -121,5 +138,29 @@ public class Concours {
     @Override
     public int hashCode() {
         return Objects.hash(reference, prix, date, type, Lien, SType, nom);
+    }
+
+    public int getNparticipant() {
+        return Nparticipant;
+    }
+
+    public void setNparticipant(int nparticipant) {
+        Nparticipant = nparticipant;
+    }
+
+    public int getNvote() {
+        return Nvote;
+    }
+
+    public void setNvote(int nvote) {
+        Nvote = nvote;
+    }
+
+    public int getMaxparticipant() {
+        return Maxparticipant;
+    }
+
+    public void setMaxparticipant(int maxparticipant) {
+        Maxparticipant = maxparticipant;
     }
 }

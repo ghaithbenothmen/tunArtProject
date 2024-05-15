@@ -30,8 +30,7 @@ public class ServiceConcours implements IServiceA<Concours>{
 
         java.util.Date utilDate = concours.getDate();
         Date sqlDate = new Date(utilDate.getTime());
-
-        String req="INSERT INTO `concours` ( `date`, `type`, `prix`, `Lien`, `nom`) VALUES ( '"+sqlDate+"', '"+concours.getType()+"', '"+concours.getPrix()+"', '"+concours.getLien()+"', '"+concours.getNom()+"');";
+        String req="INSERT INTO `concours` ( `date`, `type`, `prix`, `Lien`, `Nparticipant`, `Nvote`, `Maxparticipant`) VALUES ( '"+sqlDate+"', '"+concours.getType()+"', '"+concours.getPrix()+"', '"+concours.getLien()+"', '"+concours.getNom()+"', '"+0+"', '"+0+"', '"+concours.getMaxparticipant()+"');";
         ste.executeUpdate(req);
     }
     public void ajouterPST(Concours concours) throws SQLException {
@@ -39,14 +38,14 @@ public class ServiceConcours implements IServiceA<Concours>{
         java.util.Date utilDate = concours.getDate();
         Date sqlDate = new Date(utilDate.getTime());
 
-        String req="INSERT INTO `concours` ( `date`, `type`, `prix`, `Lien`, `nom`) VALUES ( ?,?,?,?);";
+        String req="INSERT INTO `concours` ( `date`, `type`, `prix`, `Lien`, `nom`) VALUES ( ?,?,?,?,?);";
         PreparedStatement pre=con.prepareStatement(req);
 
         pre.setDate(1,sqlDate);
         pre.setString(2,concours.getType().toString());
         pre.setInt(3,concours.getPrix());
         pre.setString(4,concours.getLien());
-        pre.setString(4,concours.getNom());
+        pre.setString(5,concours.getNom());
 
         pre.executeUpdate();
     }
@@ -71,7 +70,7 @@ public class ServiceConcours implements IServiceA<Concours>{
         java.util.Date utilDate = concours.getDate();
         Date sqlDate = new Date(utilDate.getTime());
 
-        String query = "UPDATE `concours` SET `date`=?,`type`=?,`prix`=?,`lien`=?,`nom`=? WHERE refrence=?";
+        String query = "UPDATE `concours` SET `date`=?,`type`=?,`prix`=?,`lien`=?,`nom`=?,`Nparticipant`=?,`Nvote`=?,`Maxparticipant`=? WHERE refrence=?";
         try {
             PreparedStatement preparedStatement = con.prepareStatement(query);
 
@@ -80,7 +79,9 @@ public class ServiceConcours implements IServiceA<Concours>{
             preparedStatement.setInt(3, concours.getPrix());
             preparedStatement.setString(4, concours.getLien());
             preparedStatement.setString(5, concours.getNom());
-            preparedStatement.setInt(6, concours.getReference());
+            preparedStatement.setInt(8, concours.getMaxparticipant());
+            preparedStatement.setInt(9, concours.getReference());
+
 
             int rows = preparedStatement.executeUpdate();
             if(rows > 0) {
@@ -117,6 +118,10 @@ public class ServiceConcours implements IServiceA<Concours>{
             int prix = res.getInt("prix");
             String lien = res.getString("lien");
             String nom = res.getString("nom");
+            int Nparticipant = res.getInt("Nparticipant");
+            int Nvote = res.getInt("Nvote");
+            int Maxparticipant = res.getInt("Maxparticipant");
+
 
             Type type = null;
             try {
@@ -125,7 +130,7 @@ public class ServiceConcours implements IServiceA<Concours>{
                 System.out.println("invalid value of type");
             }
 
-            Concours p1 = new Concours(id, prix, date, type, lien, nom);
+            Concours p1 = new Concours(id, prix, date, type, lien, nom, Nparticipant,Nvote,Maxparticipant);
 
             list.add(p1);
         }

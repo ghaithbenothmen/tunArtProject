@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a5f78d19-35f0-47a6-97b8-33e8e500b968" name="Changes" comment="integration java" />
+    <list default="true" id="a5f78d19-35f0-47a6-97b8-33e8e500b968" name="Changes" comment="integration java">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/AjouterConcoursController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/AjouterConcoursController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entites/Concours.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entites/Concours.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Services/ServiceConcours.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/ServiceConcours.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/AjouterConcours.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AjouterConcours.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,6 +27,24 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "history": [
+    {
+      "state": "OPEN"
+    }
+  ],
+  "lastFilter": {
+    "state": "OPEN"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="12cf9979-cf64-4652-aa1c-2323adbc03b3" />
+        <option name="url" value="https://github.com/ghaithbenothmen/tunArtProject.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
@@ -97,6 +122,7 @@
       <workItem from="1715700929079" duration="98000" />
       <workItem from="1715721817342" duration="395000" />
       <workItem from="1715773436993" duration="5606000" />
+      <workItem from="1715783939394" duration="5579000" />
     </task>
     <task id="LOCAL-00001" summary="integration java">
       <option name="closed" value="true" />

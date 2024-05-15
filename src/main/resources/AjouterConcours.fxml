@@ -26,16 +26,22 @@
          <font>
             <Font name="Cambria Math" size="17.0" />
          </font></Label>
-      <Label layoutX="35.0" layoutY="68.0" text="Date:">
+      <Label layoutX="319.0" layoutY="68.0" text="Date:">
          <font>
             <Font name="Cambria Math" size="17.0" />
          </font></Label>
       <Button fx:id="afficher" layoutX="89.0" layoutY="251.0" mnemonicParsing="false" onAction="#afficherConcours" styleClass="update-btn" text="Afficher" />
-      <TextField fx:id="txtnom" layoutX="372.0" layoutY="64.0" />
-      <Label layoutX="324.0" layoutY="67.0" text="Nom:">
+      <TextField fx:id="txtnom" layoutX="90.0" layoutY="65.0" />
+      <Label layoutX="35.0" layoutY="67.0" text="Nom:">
          <font>
             <Font name="Cambria Math" size="17.0" />
          </font></Label>
-      <DatePicker fx:id="dateinput" layoutX="89.0" layoutY="66.0" prefHeight="25.0" prefWidth="150.0" />
+      <DatePicker fx:id="dateinput" layoutX="371.0" layoutY="65.0" prefHeight="25.0" prefWidth="150.0" />
+      <Label layoutX="386.0" layoutY="128.0" text="Max participant:">
+         <font>
+            <Font name="Cambria Math" size="17.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtMaxparticipant" layoutX="372.0" layoutY="164.0" />
    </children>
 </AnchorPane>
