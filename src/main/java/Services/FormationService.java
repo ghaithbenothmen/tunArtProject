@@ -32,14 +32,14 @@ public class FormationService implements IService<Formation> {
 
     @Override
     public void add(Formation formation) throws SQLException {
-        String uri = formation.getImage().replace("\\", "/");
+        String uri = formation.getImage().replace("\\", "/").trim();
         System.out.println("tahe :"+formation.getId());
         System.out.println("ghaith"+formation.getArtiste_id());
         String req = "INSERT INTO `formation` (`id`, `nom`, `dateDebut`, `dateFin`, `niveau`, `description`, `cat_id`, `image`, `artiste_id`, `prix`) " +
                 "VALUES (NULL, '" + formation.getNom() + "', '" +
                 formation.getDateDebut() + "', '" + formation.getDateFin() + "', '" +
                 formation.getNiveau() + "', '" + formation.getDescription() + "', '" +
-                formation.getCat_id().getId() + "', '" +
+                formation.getCat_id().getId() + "','" +
                 uri + "', '" +
                 formation.getArtiste_id().getId() +"', '" +
                 formation.getPrix() + "');";  // Correction: enlever la virgule ici
@@ -58,7 +58,7 @@ public class FormationService implements IService<Formation> {
     @Override
     public boolean update(Formation formation) throws SQLException {
         System.out.println(formation.getImage());
-        String uri = formation.getImage().replace("\\", "/");
+        String uri = formation.getImage().replace("\\", "/").trim();
 
         String req = "UPDATE `formation` SET `nom`='" + formation.getNom() + "', `artiste_id`='" + formation.getArtiste_id().getId() + "', `dateDebut`='" + formation.getDateDebut()
                 +  "', `dateFin`='" + formation.getDateFin() +  "', `niveau`='" + formation.getNiveau() +  "', `description`='" + formation.getDescription() +  "', `cat_id`='" + formation.getCat_id().getId()
@@ -122,9 +122,9 @@ public class FormationService implements IService<Formation> {
                 UserService userService = new UserService();
                 User artiste = userService.findById(artiste_id);
 
-                String image=res.getString("image");
+                String image="C:\\Users\\user\\Desktop\\3A11\\pidev\\PiDevWebProject\\public\\uploads\\"+res.getString("image");
                 int prix = res.getInt("prix");
-
+                System.out.println("hedhi img"+image);
                 Formation f = new Formation(id, nom,artiste, dateDebut,dateFin,niveau,description,categorie,image,prix);
                 //System.out.println(f);
                 l1.add(f);

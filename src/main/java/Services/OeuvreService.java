@@ -43,7 +43,7 @@ public class OeuvreService implements IOeuvre<Oeuvre>{
 
         // Handle null value for the note field
 
-        String uri = o.getImg().replace("\\", "/");
+        String uri = o.getImg().replace("\\", "/").trim();
 
         String req = "INSERT INTO Oeuvre (nom_Oeuvre, img, date_Publication, description, note, TypeOeuvre, artiste_id) " +
                 "VALUES ('" + o.getNom_Ouvre() + "', '" + uri + "', '" + formattedDate + "', '" +
@@ -54,7 +54,7 @@ public class OeuvreService implements IOeuvre<Oeuvre>{
 
     @Override
     public boolean update(Oeuvre o) throws SQLException {
-        String uri = o.getImg().replace("\\", "/");
+        String uri = o.getImg().replace("\\", "/").trim();
 
         String req = "UPDATE `Oeuvre` SET `nom_Oeuvre`='" + o.getNom_Ouvre()
                 + "', `img`='" +uri
@@ -116,7 +116,7 @@ public class OeuvreService implements IOeuvre<Oeuvre>{
 
             int artiste_id = res.getInt("artiste_id");
             String nom_Oeuvre = res.getString("nom_Oeuvre");
-            String img = res.getString("img");
+            String img="C:\\Users\\user\\Desktop\\3A11\\pidev\\PiDevWebProject\\public\\uploads\\"+res.getString("img");
             java.util.Date date_Publication = res.getDate("date_Publication");
             String description = res.getString("description");
             int note = res.getInt("note");

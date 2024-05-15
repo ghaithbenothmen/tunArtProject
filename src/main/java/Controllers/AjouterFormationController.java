@@ -20,8 +20,13 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.scene.image.Image;
 import java.awt.*;
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 import java.nio.file.Files;
 import java.sql.SQLException;
 import java.time.LocalDate;
@@ -199,9 +204,10 @@ public class AjouterFormationController {
         alert.showAndWait();
     }
 
+
+
     @FXML
     void importImage(ActionEvent event) {
-
         FileChooser fileChooser = new FileChooser();
         fileChooser.getExtensionFilters().addAll(
                 new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif")
@@ -209,11 +215,35 @@ public class AjouterFormationController {
         File file = fileChooser.showOpenDialog(main_form.getScene().getWindow());
 
         if (file != null) {
+            try {
+                // Convert file to byte array
+                byte[] fileContent = Files.readAllBytes(file.toPath());
 
-            imagePath = file.getAbsolutePath();
-            image = new Image(file.toURI().toString(), 147, 89, false, true);
-            imageFor.setImage(image);
+                // Send the image data to Symfony backend
+                HttpClient httpClient = HttpClient.newHttpClient();
+                HttpRequest request = HttpRequest.newBuilder()
+                        .uri(URI.create("http://127.0.0.1:8000/upload-image"))
+                        .header("Content-Type", "application/octet-stream")
+                        .POST(HttpRequest.BodyPublishers.ofByteArray(fileContent))
+                        .build();
+
+                HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+                System.out.println(response.body());
+
+                // If the response is successful, set the image to the ImageView
+                if (response.statusCode() == 200) {
+                    Image image = new Image(new ByteArrayInputStream(fileContent));
+                    System.out.println(image);
+                    imageFor.setImage(image);
+                    imagePath=response.body();
+
+                }
+            } catch (IOException | InterruptedException e) {
+                e.printStackTrace();
+            }
+
         }
     }
+
 
 }

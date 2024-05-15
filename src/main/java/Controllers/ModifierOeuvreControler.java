@@ -20,9 +20,15 @@ import org.controlsfx.control.Notifications;
 
 import javax.swing.*;
 import java.awt.event.MouseEvent;
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.nio.file.Files;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.ZoneId;
@@ -86,33 +92,40 @@ public class ModifierOeuvreControler {
     @FXML
     void importer_image(ActionEvent event) {
         FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Open Image File");
         fileChooser.getExtensionFilters().addAll(
-                new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif"));
-        File selectedFile = fileChooser.showOpenDialog(null);
-        if (selectedFile != null) {
+                new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif")
+        );
+        File file = fileChooser.showOpenDialog(imageView.getScene().getWindow());
+
+        if (file != null) {
             try {
+                // Convert file to byte array
+                byte[] fileContent = Files.readAllBytes(file.toPath());
 
-                // Load the selected image file
-                Image image = new Image(selectedFile.toURI().toString());
-                // Display the image in the ImageView
-                imageView.setImage(image);
+                // Send the image data to Symfony backend
+                HttpClient httpClient = HttpClient.newHttpClient();
+                HttpRequest request = HttpRequest.newBuilder()
+                        .uri(URI.create("http://127.0.0.1:8000/upload-image"))
+                        .header("Content-Type", "application/octet-stream")
+                        .POST(HttpRequest.BodyPublishers.ofByteArray(fileContent))
+                        .build();
 
-                // Store the path of the selected image file
-                imagePath = selectedFile.getAbsolutePath();
-                img.setText(imagePath);
-            } catch (Exception e) {
-                // Handle any errors that may occur during image loading
+                HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+                System.out.println(response.body());
+
+                // If the response is successful, set the image to the ImageView
+                if (response.statusCode() == 200) {
+                    Image image = new Image(new ByteArrayInputStream(fileContent));
+                    System.out.println(image);
+                    imageView.setImage(image);
+                    imagePath=response.body();
+
+                }
+            } catch (IOException | InterruptedException e) {
                 e.printStackTrace();
-                // Optionally, display an error message to the user
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Error");
-                alert.setHeaderText("Unable to load image");
-                alert.setContentText("An error occurred while loading the selected image file.");
-                alert.showAndWait();
             }
-        }
 
+        }
     }
 
     @FXML
@@ -135,7 +148,7 @@ public class ModifierOeuvreControler {
         //updatedOeuvre.setImg(imagePath);
         updatedOeuvre.setDescription(description);
         updatedOeuvre.setTypeOeuvre(type);
-        updatedOeuvre.setImg(image);
+        updatedOeuvre.setImg(imagePath);
         System.out.println(updatedOeuvre);
 
         int artisteId = UserConnected.getId();

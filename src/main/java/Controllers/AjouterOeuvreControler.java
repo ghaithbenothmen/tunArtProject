@@ -2,6 +2,8 @@ package Controllers;
 
 import Entites.Oeuvre;
 import Entites.TypeOeuvre;
+
+import java.io.ByteArrayInputStream;
 import java.io.File;
 
 import Entites.User;
@@ -20,6 +22,11 @@ import javafx.stage.Stage;
 import javafx.stage.FileChooser;
 
 import java.io.IOException;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.nio.file.Files;
 import java.sql.SQLException;
 import java.time.LocalDate;
 
@@ -60,33 +67,41 @@ public class AjouterOeuvreControler {
     private AfficherController afficherController ;
 
     @FXML
-    private void onUploadButtonClick(ActionEvent event) {
+    void onUploadButtonClick(ActionEvent event) {
         FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Open Image File");
         fileChooser.getExtensionFilters().addAll(
-                new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif"));
-        File selectedFile = fileChooser.showOpenDialog(null);
-        if (selectedFile != null) {
-            try {
+                new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif")
+        );
+        File file = fileChooser.showOpenDialog(imagePreview.getScene().getWindow());
 
-                // Load the selected image file
-                Image image = new Image(selectedFile.toURI().toString());
-                // Display the image in the ImageView
-                imagePreview.setImage(image);
-                // Store the path of the selected image file
-                imagePath = selectedFile.getAbsolutePath();
-            } catch (Exception e) {
-                // Handle any errors that may occur during image loading
+        if (file != null) {
+            try {
+                // Convert file to byte array
+                byte[] fileContent = Files.readAllBytes(file.toPath());
+
+                // Send the image data to Symfony backend
+                HttpClient httpClient = HttpClient.newHttpClient();
+                HttpRequest request = HttpRequest.newBuilder()
+                        .uri(URI.create("http://127.0.0.1:8000/upload-image"))
+                        .header("Content-Type", "application/octet-stream")
+                        .POST(HttpRequest.BodyPublishers.ofByteArray(fileContent))
+                        .build();
+
+                HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+                System.out.println(response.body());
+
+                // If the response is successful, set the image to the ImageView
+                if (response.statusCode() == 200) {
+                    Image image = new Image(new ByteArrayInputStream(fileContent));
+                    System.out.println(image);
+                    imagePreview.setImage(image);
+                    imagePath=response.body();
+
+                }
+            } catch (IOException | InterruptedException e) {
                 e.printStackTrace();
-                // Optionally, display an error message to the user
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Error");
-                alert.setHeaderText("Unable to load image");
-                alert.setContentText("An error occurred while loading the selected image file.");
-                alert.showAndWait();
             }
-        }else {
-            showAlert(Alert.AlertType.ERROR,"Erreur","Aucune image ajoutée ","Veuiller importer une image");
+
         }
     }
     public void initialize() {

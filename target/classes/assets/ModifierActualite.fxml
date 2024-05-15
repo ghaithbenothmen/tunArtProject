@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="754.0" prefWidth="1017.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AjouterActualiteController">
+    <children>
+        <Button fx:id="BtnModifier" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" layoutX="261.0" layoutY="578.0" mnemonicParsing="false" onAction="#ajouterAct" prefHeight="18.0" prefWidth="179.0" text="Modifier" textAlignment="CENTER">
+            <font>
+                <Font name="System Bold" size="17.0" />
+            </font>
+        </Button>
+        <Label alignment="CENTER" layoutX="235.0" layoutY="32.0" prefHeight="81.0" prefWidth="564.0" text="Modifier Actualite" textFill="#f5be07">
+            <font>
+                <Font name="Berlin Sans FB Bold" size="50.0" />
+            </font>
+        </Label>
+        <TextArea fx:id="ActualiteTA" layoutX="398.0" layoutY="338.0" prefHeight="118.0" prefWidth="243.0" />
+        <Label layoutX="292.0" layoutY="387.0" text="Actualite :">
+            <font>
+                <Font name="System Bold Italic" size="15.0" />
+            </font></Label>
+        <Label layoutX="305.0" layoutY="521.0" text="Date :">
+            <font>
+                <Font name="System Bold Italic" size="15.0" />
+            </font></Label>
+        <Button fx:id="btncancel" alignment="CENTER" defaultButton="true" layoutX="613.0" layoutY="578.0" mnemonicParsing="false" onAction="#naviguezVersAffichage" prefHeight="31.0" prefWidth="179.0" text="Cancel">
+            <font>
+                <Font name="System Bold" size="17.0" />
+            </font>
+        </Button>
+        <DatePicker fx:id="DateDP" layoutX="398.0" layoutY="516.0" prefHeight="31.0" prefWidth="243.0" />
+        <Label fx:id="inputcontrol" layoutX="395.0" layoutY="401.0" />
+        <Label layoutX="395.0" layoutY="391.0" prefHeight="38.0" prefWidth="29.0" textFill="#ff0d0d" />
+        <Label layoutX="306.0" layoutY="192.0" text="Image :">
+            <font>
+                <Font name="System Bold Italic" size="15.0" />
+            </font></Label>
+        <Button fx:id="btnUpload" layoutX="398.0" layoutY="187.0" mnemonicParsing="false" onAction="#choisirImage" prefHeight="31.0" prefWidth="99.0" text="Upload">
+            <font>
+                <Font name="System Italic" size="15.0" />
+            </font></Button>
+        <Label layoutX="309.0" layoutY="276.0" text="Titre :">
+            <font>
+                <Font name="System Bold Italic" size="15.0" />
+            </font>
+        </Label>
+        <TextField fx:id="TitreTF" layoutX="398.0" layoutY="271.0" />
+    </children>
+</AnchorPane>
