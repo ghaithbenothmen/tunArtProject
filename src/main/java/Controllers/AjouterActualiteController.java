@@ -7,14 +7,24 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.stage.FileChooser;
 
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.nio.file.Files;
 import java.time.LocalDate;
-
+import javafx.scene.image.ImageView;
 public class AjouterActualiteController {
     private final ActualiteService cs = new ActualiteService();
+
+    @FXML
+    private ImageView main_form;
 
     @FXML
     private TextField TitreTF;
@@ -64,19 +74,40 @@ public class AjouterActualiteController {
     }
     @FXML
     void choisirImage(ActionEvent event) {
-        try {
-            // Créer un FileChooser
-            FileChooser fileChooser = new FileChooser();
-            fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Images", ".png", ".jpg", "*.jpeg"));
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("Image Files", ".png", ".jpg", "*.gif")
+        );
+        File file = fileChooser.showOpenDialog(main_form.getScene().getWindow());
 
-            // Ouvrir le FileChooser
-            File file = fileChooser.showOpenDialog(null);
-            if (file != null) {
-                // Obtenir le chemin de l'image
-                imagePath = file.getPath().replace("\\", "/");
+        if (file != null) {
+            try {
+                // Convert file to byte array
+                byte[] fileContent = Files.readAllBytes(file.toPath());
+
+                // Send the image data to Symfony backend
+                HttpClient httpClient = HttpClient.newHttpClient();
+                HttpRequest request = HttpRequest.newBuilder()
+                        .uri(URI.create("http://127.0.0.1:8000/upload-image"))
+                        .header("Content-Type", "application/octet-stream")
+                        .POST(HttpRequest.BodyPublishers.ofByteArray(fileContent))
+                        .build();
+
+                HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+                System.out.println(response.body());
+
+                // If the response is successful, set the image to the ImageView
+                if (response.statusCode() == 200) {
+                    Image image = new Image(new ByteArrayInputStream(fileContent));
+                    System.out.println(image);
+                    main_form.setImage(image);
+                    imagePath=response.body();
+
+                }
+            } catch (IOException | InterruptedException e) {
+                e.printStackTrace();
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+
         }
     }
     @FXML

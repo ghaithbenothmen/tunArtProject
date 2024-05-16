@@ -44,13 +44,14 @@ public class AjouterComController {
         try {
             System.out.println("zezzrezrz"+this.idAct);
             System.out.println("sdfsd"+this.idUser);
-            String contenuC = ContenuTA.getText();
+            String contenuc = ContenuTA.getText();
             ActualiteService actualiteService = new ActualiteService();
             Actualite actualite = actualiteService.findById(this.idAct);
             UserService userService = new UserService();
             User user = userService.findById(this.idUser);
 
-            Commentaire c =new Commentaire (actualite,user,contenuC);
+            Commentaire c =new Commentaire (actualite,user,contenuc);
+            System.out.println(c);
             //Commentaire c = new Commentaire(this.idAct,this.idUser,contenuC);
             Alert alert1 = new Alert(Alert.AlertType.CONFIRMATION);
             alert1.setTitle("Confirmation");
@@ -94,7 +95,7 @@ public class AjouterComController {
         // Set cell value factories for each column
         PrenomCol.setCellValueFactory(new PropertyValueFactory<>("prenom"));
         TitreCol.setCellValueFactory(new PropertyValueFactory<>("titre"));
-        contenuCol.setCellValueFactory(new PropertyValueFactory<>("contenuC"));
+        contenuCol.setCellValueFactory(new PropertyValueFactory<>("contenuc"));
     }
 
 

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import java.net.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
@@ -16,18 +17,18 @@
             <Font name="System Bold" size="17.0" />
          </font>
       </Button>
-      <Label alignment="CENTER" layoutX="162.0" layoutY="34.0" prefHeight="81.0" prefWidth="529.0" text="Ajouter Actualite" textFill="#f5be07">
+      <Label alignment="CENTER" layoutX="161.0" layoutY="14.0" prefHeight="81.0" prefWidth="529.0" text="Ajouter Actualite" textFill="#f5be07">
          <font>
             <Font name="Berlin Sans FB Bold" size="50.0" />
          </font>
       </Label>
-      <TextArea fx:id="ActualiteTA" layoutX="327.0" layoutY="304.0" prefHeight="118.0" prefWidth="243.0" />
-      <Label layoutX="221.0" layoutY="353.0" text="Actualite :">
+      <TextArea fx:id="ActualiteTA" layoutX="327.0" layoutY="348.0" prefHeight="118.0" prefWidth="243.0" />
+      <Label layoutX="221.0" layoutY="397.0" text="Actualite :">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="235.0" layoutY="465.0" text="Date :">
+      <Label layoutX="235.0" layoutY="509.0" text="Date :">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
@@ -37,26 +38,27 @@
             <Font name="System Bold" size="17.0" />
          </font>
       </Button>
-      <DatePicker fx:id="DateDP" layoutX="328.0" layoutY="460.0" prefHeight="31.0" prefWidth="243.0" />
+      <DatePicker fx:id="DateDP" layoutX="328.0" layoutY="504.0" prefHeight="31.0" prefWidth="243.0" />
       <Label fx:id="inputcontrolImage" layoutX="328.0" layoutY="194.0" prefHeight="30.0" prefWidth="243.0" />
       <Label fx:id="inputcontrolTitre" layoutX="327.0" layoutY="266.0" prefHeight="30.0" prefWidth="243.0" textFill="#ff0d0d" />
-      <Label layoutX="235.0" layoutY="158.0" text="Image :">
+      <Label layoutX="232.0" layoutY="109.0" text="Image :">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
-      <Button fx:id="btnUpload" layoutX="327.0" layoutY="153.0" mnemonicParsing="false" onAction="#choisirImage" prefHeight="31.0" prefWidth="243.0" styleClass="add-btn" text="Upload">
+      <Button fx:id="btnUpload" layoutX="324.0" layoutY="104.0" mnemonicParsing="false" onAction="#choisirImage" prefHeight="31.0" prefWidth="243.0" styleClass="add-btn" text="Upload">
          <font>
             <Font name="System Italic" size="15.0" />
          </font>
       </Button>
-      <Label layoutX="238.0" layoutY="242.0" text="Titre :">
+      <Label layoutX="238.0" layoutY="286.0" text="Titre :">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
-      <TextField fx:id="TitreTF" layoutX="327.0" layoutY="237.0" prefHeight="31.0" prefWidth="243.0" />
+      <TextField fx:id="TitreTF" layoutX="327.0" layoutY="281.0" prefHeight="31.0" prefWidth="243.0" />
       <Label fx:id="inputcontrolDescp" layoutX="327.0" layoutY="422.0" prefHeight="30.0" prefWidth="243.0" textFill="#ff0d0d" />
+      <ImageView fx:id="main_form" fitHeight="110.0" fitWidth="149.0" layoutX="371.0" layoutY="154.0" pickOnBounds="true" preserveRatio="true" />
    </children>
    <stylesheets>
       <URL value="@dashboardDesign.css" />

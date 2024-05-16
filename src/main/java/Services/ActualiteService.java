@@ -23,7 +23,8 @@ public class ActualiteService implements IServiceCommentaire<Actualite> {
     @Override
     //done
     public void ajouter(Actualite actualite) {
-        String req = "INSERT into actualite(titre,text,date,image) values ('" + actualite.getTitre() + "','" + actualite.getText() + "', '" + actualite.getDate() + "', '" + actualite.getImage() + "');";
+        String uri = actualite.getImage().replace("\\", "/").trim();
+        String req = "INSERT into actualite(titre,text,date,image) values ('" + actualite.getTitre() + "','" + actualite.getText() + "', '" + actualite.getDate() + "', '" + uri + "');";
         try {
             Statement st = connection.createStatement();
             st.executeUpdate(req);
@@ -77,8 +78,10 @@ public void supprimer(int id) throws SQLException {
             ResultSet rs = st.executeQuery(req);
             System.out.println("_____3___");
             while (rs.next()) {
+                String image="C:\\Users\\user\\Desktop\\3A11\\pidev\\PiDevWebProject\\public\\uploads\\"+rs.getString("image");
+
                 System.out.println(rs.getInt("id"));
-                actualite.add(new Actualite(rs.getInt("id"), rs.getString("titre"),rs.getString("text"), rs.getDate("date") ,rs.getString("image") ));
+                actualite.add(new Actualite(rs.getInt("id"), rs.getString("titre"),rs.getString("text"), rs.getDate("date") ,image ));
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());

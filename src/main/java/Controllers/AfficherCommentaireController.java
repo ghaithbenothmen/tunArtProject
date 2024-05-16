@@ -62,7 +62,7 @@ public class AfficherCommentaireController {
         // Set cell value factories for each column
         PrenomCol.setCellValueFactory(new PropertyValueFactory<>("prenom"));
         TitreCol.setCellValueFactory(new PropertyValueFactory<>("titre"));
-        contenuCol.setCellValueFactory(new PropertyValueFactory<>("contenuC"));
+        contenuCol.setCellValueFactory(new PropertyValueFactory<>("contenuc"));
     }
     @FXML
     void naviguezVersPagePrecedent(ActionEvent event) {

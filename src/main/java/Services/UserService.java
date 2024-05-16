@@ -29,7 +29,7 @@ public class UserService implements IService<User> {
 
     public void add(User t) throws SQLException {
 
-        String uri = t.getImage().replace("\\", "/");
+        String uri = t.getImage().replace("\\", "/").trim();
         String req = "INSERT INTO user (Nom,Prenom,Email,Mdp,Tel,Role,image) VALUES(?,?,?,?,?,?,?)";
 
         PreparedStatement stmt = Con.prepareStatement(req);
@@ -187,16 +187,19 @@ public class UserService implements IService<User> {
         ResultSet res = ste.executeQuery(req);
         while (res.next()) {
             User u = new User();
+            String image="C:\\Users\\user\\Desktop\\3A11\\pidev\\PiDevWebProject\\public\\uploads\\"+res.getString("image");
             u.setId(res.getInt("ID"));
             u.setNom(res.getString("Nom"));
             u.setPrenom(res.getString("Prenom"));
             u.setEmail(res.getString("Email"));
             u.setMdp(res.getString("Mdp"));
             u.setTel(res.getInt("Tel"));
-            u.setImage(res.getString("image"));
+            u.setImage(image);
 
             // Get the role string from the database
             String roleString = res.getString("Role");
+
+
 
             // Convert the role string to the corresponding enum constant
             if (roleString != null) {
