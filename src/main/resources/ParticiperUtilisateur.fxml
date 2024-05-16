@@ -19,11 +19,13 @@
                             <children>
                                 <TableView fx:id="tableView" layoutX="35.0" layoutY="50.0" prefHeight="291.0" prefWidth="530.0" styleClass="table-view">
                                     <columns>
-                                        <TableColumn fx:id="viewnom" prefWidth="104.0" text="Name" />
-                                        <TableColumn fx:id="viewdate" prefWidth="112.0" text="Date" />
-                                        <TableColumn fx:id="viewtype" prefWidth="106.0" text="Type" />
-                                        <TableColumn fx:id="viewlien" prefWidth="100.0" text="Link" />
-                                        <TableColumn fx:id="viewprix" prefWidth="107.0" text="Price" />
+                                        <TableColumn fx:id="viewnom" prefWidth="67.0" text="Name" />
+                                        <TableColumn fx:id="viewdate" prefWidth="86.0" text="Date" />
+                                        <TableColumn fx:id="viewtype" prefWidth="74.0" text="Type" />
+                                        <TableColumn fx:id="viewlien" prefWidth="60.0" text="Link" />
+                                        <TableColumn fx:id="viewprix" prefWidth="65.0" text="Price" />
+                              <TableColumn fx:id="viewParticipants" prefWidth="73.0" text="Particiapnts" />
+                              <TableColumn fx:id="viewMax" prefWidth="104.0" text="Max Participants" />
                                     </columns>
                                 </TableView>
                                 <TextField fx:id="searchFor" layoutX="91.0" layoutY="15.0" prefHeight="25.0" prefWidth="253.0" />
