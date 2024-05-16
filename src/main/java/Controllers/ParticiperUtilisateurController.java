@@ -35,6 +35,13 @@ public class ParticiperUtilisateurController {
     private TableColumn<Concours, String> viewnom;
 
     @FXML
+    private TableColumn<Concours, Integer> viewMax;
+
+    @FXML
+    private TableColumn<Concours, Integer> viewParticipants;
+
+
+    @FXML
     private ComboBox<String> Sort;
 
 
@@ -64,6 +71,8 @@ public class ParticiperUtilisateurController {
             viewprix.setCellValueFactory(new PropertyValueFactory<>("prix"));
             viewlien.setCellValueFactory(new PropertyValueFactory<>("lien"));
             viewnom.setCellValueFactory(new PropertyValueFactory<>("nom"));
+            viewParticipants.setCellValueFactory(new PropertyValueFactory<>("Nparticipant"));
+            viewMax.setCellValueFactory(new PropertyValueFactory<>("Maxparticipant"));
 
         } catch (SQLException e) {
             throw new RuntimeException(e);

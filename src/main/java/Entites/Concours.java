@@ -11,6 +11,10 @@ public class Concours {
     private String Lien;
     private String SType;
     private String nom;
+    
+    private int Nparticipant;
+    private int Nvote;
+    private int Maxparticipant;
 
     private int Nparticipant;
     private int Nvote;

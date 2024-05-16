@@ -35,6 +35,10 @@ public class VoterUtilisateurController {
     private TableColumn<Concours, String> viewnom;
 
     @FXML
+    private TableColumn<Concours,Integer> viewvote;
+
+
+    @FXML
     private ComboBox<String> Sort;
 
 
@@ -64,6 +68,7 @@ public class VoterUtilisateurController {
             viewprix.setCellValueFactory(new PropertyValueFactory<>("prix"));
             viewlien.setCellValueFactory(new PropertyValueFactory<>("lien"));
             viewnom.setCellValueFactory(new PropertyValueFactory<>("nom"));
+            viewvote.setCellValueFactory(new PropertyValueFactory<>("Nparticipant"));
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
