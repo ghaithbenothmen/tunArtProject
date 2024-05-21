@@ -81,6 +81,12 @@
                </font>
             </Button>
             <FontAwesomeIcon glyphName="AREA_CHART" layoutX="45.0" layoutY="571.0" size="1.5em" />
+            <Button fx:id="concours" layoutY="584.0" mnemonicParsing="false" onAction="#concours" prefHeight="40.0" prefWidth="223.0" styleClass="nav-button" stylesheets="@dashboardDesign.css" text="Concours">
+               <font>
+                  <Font name="Leelawadee UI" size="17.0" />
+               </font>
+            </Button>
+            <FontAwesomeIcon glyphName="AREA_CHART" layoutX="45.0" layoutY="611.0" size="1.5em" text="" />
             </children>
         </AnchorPane>
 

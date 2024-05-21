@@ -8,6 +8,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.sql.Date;
 
+import Entites.Niveau;
 import Entites.Type;
 import Utils.ConnexionDB;
 public class ServiceConcours implements IServiceA<Concours>{
@@ -30,7 +31,9 @@ public class ServiceConcours implements IServiceA<Concours>{
 
         java.util.Date utilDate = concours.getDate();
         Date sqlDate = new Date(utilDate.getTime());
-        String req="INSERT INTO `concours` ( `date`, `type`, `prix`, `Lien`, `Nparticipant`, `Nvote`, `Maxparticipant`) VALUES ( '"+sqlDate+"', '"+concours.getType()+"', '"+concours.getPrix()+"', '"+concours.getLien()+"', '"+concours.getNom()+"', '"+0+"', '"+0+"', '"+concours.getMaxparticipant()+"');";
+        System.out.println("tyyyyyyyyyyyyyypppp"+concours.getReference());
+        String req = "INSERT INTO `concours` (`Date`, `Type`, `Prix`, `Lien`,`nom`,`Nparticipant`, `Nvote`, `Maxparticipant`) "
+                + "VALUES ('"+sqlDate+"', '"+concours.getSType()+"', '"+concours.getPrix()+"', '"+concours.getLien()+"', '"+concours.getNom()+"', '"+0+"', '"+0+"', '"+concours.getMaxparticipant()+"')";
         ste.executeUpdate(req);
     }
     public void ajouterPST(Concours concours) throws SQLException {
@@ -52,7 +55,7 @@ public class ServiceConcours implements IServiceA<Concours>{
 
     @Override
     public void deletea(Concours concours) {
-        String query = "DELETE FROM `concours` WHERE refrence="+concours.getReference()+"";
+        String query = "DELETE FROM `concours` WHERE Refrence="+concours.getReference()+"";
 
         try {
             PreparedStatement preparedStatement = con.prepareStatement(query);
@@ -70,7 +73,7 @@ public class ServiceConcours implements IServiceA<Concours>{
         java.util.Date utilDate = concours.getDate();
         Date sqlDate = new Date(utilDate.getTime());
 
-        String query = "UPDATE `concours` SET `date`=?,`type`=?,`prix`=?,`lien`=?,`nom`=?,`Nparticipant`=?,`Nvote`=?,`Maxparticipant`=? WHERE refrence=?";
+        String query = "UPDATE `concours` SET `Date`=?,`Type`=?,`Prix`=?,`Lien`=?,`nom`=?,`Nparticipant`=?,`Nvote`=?,`Maxparticipant`=? WHERE Refrence=?";
         try {
             PreparedStatement preparedStatement = con.prepareStatement(query);
 
@@ -100,7 +103,7 @@ public class ServiceConcours implements IServiceA<Concours>{
     @Override
     public Concours findById(int id) throws SQLException {
         Concours T;
-        ResultSet res=ste.executeQuery("select * from concours WHERE refrence=="+id+"");
+        ResultSet res=ste.executeQuery("select * from concours WHERE Refrence=="+id+"");
         T = (Concours) res;
         return T;
     }
@@ -114,7 +117,10 @@ public class ServiceConcours implements IServiceA<Concours>{
 
             int id = res.getInt(1);
             Date date = res.getDate("date");
-            String SType = res.getString("type");
+
+            //String SType = res.getString("type");
+            Type SType = Type.valueOf(res.getString("Type"));
+
             int prix = res.getInt("prix");
             String lien = res.getString("lien");
             String nom = res.getString("nom");
@@ -123,14 +129,14 @@ public class ServiceConcours implements IServiceA<Concours>{
             int Maxparticipant = res.getInt("Maxparticipant");
 
 
-            Type type = null;
+         /*   Type type = null;
             try {
                 type = Type.valueOf(SType);
             } catch (IllegalArgumentException e) {
                 System.out.println("invalid value of type");
-            }
+            }*/
 
-            Concours p1 = new Concours(id, prix, date, type, lien, nom, Nparticipant,Nvote,Maxparticipant);
+            Concours p1 = new Concours(id, prix, date, SType, lien, nom, Nparticipant,Nvote,Maxparticipant);
 
             list.add(p1);
         }

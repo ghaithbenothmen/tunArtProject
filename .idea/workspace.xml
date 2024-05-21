@@ -4,28 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a5f78d19-35f0-47a6-97b8-33e8e500b968" name="Changes" comment="aziz concours">
+    <list default="true" id="a5f78d19-35f0-47a6-97b8-33e8e500b968" name="Changes" comment="helmi yassine">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_15_2024_6_12_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_15_2024_6_12_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/AfficherCommentaireController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/AfficherCommentaireController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/AjouterActualiteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/AjouterActualiteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/AjouterComController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/AjouterComController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/InscriptionControllers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/InscriptionControllers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Entites/Commentaire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entites/Commentaire.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Services/ActualiteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/ActualiteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Services/CommentaireService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/CommentaireService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/AjouterActualite.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AjouterActualite.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/AjouterActualite.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AjouterActualite.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/AfficherCommentaireController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/AfficherCommentaireController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/AjouterActualiteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/AjouterActualiteController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/AjouterComController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/AjouterComController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/AjouterConcoursController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/AjouterConcoursController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/ClientContainerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ClientContainerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entites/Concours.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entites/Concours.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Services/ServiceCandidatures.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/ServiceCandidatures.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Services/ServiceConcours.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/ServiceConcours.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Services/ServiceVotes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/ServiceVotes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/AfficherConcours.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AfficherConcours.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/AjouterConcours.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AjouterConcours.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ClientContainer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ClientContainer.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Sidebar.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Sidebar.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AfficherConcours.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AfficherConcours.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AjouterConcours.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AjouterConcours.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ClientContainer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ClientContainer.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Controllers/AjouterConcoursController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/AjouterConcoursController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/UpdateConcoursController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/UpdateConcoursController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Entites/Commentaire.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entites/Commentaire.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/ClientContainerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/ClientContainerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/ParticiperUtilisateurController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/ParticiperUtilisateurController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/VoterUtilisateurController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/VoterUtilisateurController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Entites/Concours.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entites/Concours.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Services/ActualiteService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Services/ActualiteService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Services/CommentaireService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Services/CommentaireService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ParticiperUtilisateur.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ParticiperUtilisateur.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Services/ServiceConcours.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Services/ServiceConcours.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/VoterUtilisateur.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/VoterUtilisateur.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +120,7 @@
       <workItem from="1715538715783" duration="663000" />
       <workItem from="1715700929079" duration="98000" />
       <workItem from="1715721817342" duration="395000" />
-      <workItem from="1715773436993" duration="23966000" />
+      <workItem from="1715773436993" duration="31048000" />
     </task>
     <task id="LOCAL-00001" summary="integration java">
       <option name="closed" value="true" />
@@ -160,7 +162,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715795108364</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="helmi yassine">
+      <option name="closed" value="true" />
+      <created>1715857625696</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1715857625696</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -184,7 +194,8 @@
     <MESSAGE value="integration java web" />
     <MESSAGE value="integration java webb" />
     <MESSAGE value="aziz concours" />
-    <option name="LAST_COMMIT_MESSAGE" value="aziz concours" />
+    <MESSAGE value="helmi yassine" />
+    <option name="LAST_COMMIT_MESSAGE" value="helmi yassine" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

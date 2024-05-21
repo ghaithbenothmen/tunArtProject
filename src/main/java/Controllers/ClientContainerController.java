@@ -113,4 +113,9 @@ public class ClientContainerController implements Initializable{
             e.printStackTrace();
         }
     }
+
+    @FXML
+    void concours(ActionEvent event) {
+        this.loadPage("../USER.fxml");
+    }
 }

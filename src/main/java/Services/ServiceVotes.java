@@ -32,7 +32,7 @@ public class ServiceVotes implements IServiceA<Votes>{
 
         java.util.Date utilDate = votes.getDate();
         Date sqlDate = new Date(utilDate.getTime());
-        String req="INSERT INTO `vote` ( `Date`, `ID_concours`, `ID_user`) VALUES ('"+sqlDate+"', '"+votes.getID_concours()+"', '"+votes.getID_user()+"');";
+        String req="INSERT INTO `vote` ( `date`, `idConcours`, `idUser`) VALUES ('"+sqlDate+"', '"+votes.getID_concours()+"', '"+votes.getID_user()+"');";
         ste.executeUpdate(req);
     }
 
@@ -41,7 +41,7 @@ public class ServiceVotes implements IServiceA<Votes>{
         java.util.Date utilDate = votes.getDate();
         Date sqlDate = new Date(utilDate.getTime());
 
-        String req="INSERT INTO `vote` ( `Date`, `ID_concours`, `ID_user`) VALUES ( ?,?,?);";
+        String req="INSERT INTO `vote` ( `date`, `idConcours`, `idUser`) VALUES ( ?,?,?);";
         PreparedStatement pre=con.prepareStatement(req);
 
 
@@ -55,7 +55,7 @@ public class ServiceVotes implements IServiceA<Votes>{
 
     @Override
     public void deletea(Votes votes) {
-        String query = "DELETE FROM `vote` WHERE ID_vote = "+votes.getId()+"";
+        String query = "DELETE FROM `vote` WHERE id_vote = "+votes.getId()+"";
 
         try {
             PreparedStatement preparedStatement = con.prepareStatement(query);
@@ -72,7 +72,7 @@ public class ServiceVotes implements IServiceA<Votes>{
         java.util.Date utilDate = votes.getDate();
         Date sqlDate = new Date(utilDate.getTime());
 
-        String query = "UPDATE `vote` SET `date`=?,`ID_concours`=?,`ID_user`=?, WHERE ID_vote=?";
+        String query = "UPDATE `vote` SET `date`=?,`idConcours`=?,`idUser`=?, WHERE id_vote=?";
         try {
             PreparedStatement preparedStatement = con.prepareStatement(query);
 
@@ -114,8 +114,8 @@ public class ServiceVotes implements IServiceA<Votes>{
 
             int id = res.getInt(1);
             Date Date = res.getDate("Date");
-            int ID_concours = res.getInt("ID_concours");
-            int ID_user = res.getInt("ID_user");
+            int ID_concours = res.getInt("idConcours");
+            int ID_user = res.getInt("idUser");
 
             Votes p1 = new Votes(id, Date, ID_concours, ID_user);
 

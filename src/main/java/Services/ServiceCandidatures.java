@@ -112,8 +112,8 @@ public class ServiceCandidatures implements IServiceA<Candidatures>{
 
                 int id = res.getInt(1);
                 Date Date = res.getDate("Date");
-                int ID_concours = res.getInt("ID_concours");
-                int ID_user = res.getInt("ID_user");
+                int ID_concours = res.getInt("idConcours");
+                int ID_user = res.getInt("idUser");
 
                 Candidatures p1 = new Candidatures(id, Date, ID_concours, ID_user);
 

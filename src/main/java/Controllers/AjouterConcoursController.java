@@ -1,5 +1,6 @@
 package Controllers;
 
+import Entites.Niveau;
 import Entites.Type;
 import Services.ServiceConcours;
 import javafx.event.ActionEvent;
@@ -44,7 +45,7 @@ public class AjouterConcoursController implements Initializable {
 
 
     @FXML
-    private ChoiceBox<Type> ChoiceType;
+    private ComboBox ChoiceType;
 
 
     @Override
@@ -59,7 +60,10 @@ public class AjouterConcoursController implements Initializable {
 
 
         int prix = Integer.parseInt(txtprix.getText());
-        Type type = ChoiceType.getValue();
+       // Type type = ChoiceType.getValue();
+
+        Type type = (Type) ChoiceType.getSelectionModel().getSelectedItem();
+
         String lien = txtlien.getText();
         String nom = txtnom.getText();
         int Maxparticipant = Integer.parseInt(txtMaxparticipant.getText());
@@ -105,12 +109,14 @@ public class AjouterConcoursController implements Initializable {
             alert1.showAndWait();
             return;
         } else {
-            Concours p1 = new Concours(prix, sqlDateFin, type, lien, nom,0,0,Maxparticipant);
+            Concours p1 = new Concours(prix, sqlDateFin, type, lien, nom,0,0,2);
             Alert alert1 = new Alert(Alert.AlertType.CONFIRMATION);
             alert1.setTitle("Confirmation");
             alert1.setContentText("Concour ajouté avec succés");
             alert1.showAndWait();
             try {
+                System.out.println(p1);
+
                 ser.add(p1);
             } catch (SQLException e) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);

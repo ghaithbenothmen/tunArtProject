@@ -16,9 +16,6 @@ public class Concours {
     private int Nvote;
     private int Maxparticipant;
 
-    private int Nparticipant;
-    private int Nvote;
-    private int Maxparticipant;
 
     public Concours(int reference,String nom) {
         this.reference = reference;
@@ -124,7 +121,7 @@ public class Concours {
         return "\nConcours{" +
                 "id=" + reference +
                 ", date='" + date + '\'' +
-                ", type=" + SType +
+                ", type=" + type +
                 ", prix='" + prix + '\'' +
                 ", Lien=" + Lien +
                 ", Nom=" + nom +
